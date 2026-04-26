@@ -10,3 +10,7 @@
 - CRM 流程
 - 報表自動化
 - 內容產製 SOP
+
+## 已建立流程
+
+- [[語音錄音整理到Obsidian/README|語音錄音整理到 Obsidian]]
