@@ -1,0 +1,110 @@
+{
+  "settings": {
+    "voice_ashun_enabled": {
+      "key": "voice_ashun_enabled",
+      "value": false,
+      "description": "控制阿順語音服務是否可用",
+      "updated_by": "system",
+      "updated_at": "serverTimestamp"
+    },
+    "meta_auto_publish_enabled": {
+      "key": "meta_auto_publish_enabled",
+      "value": false,
+      "description": "控制 Meta 正式自動發文是否可用",
+      "updated_by": "system",
+      "updated_at": "serverTimestamp"
+    },
+    "ai_auto_run_enabled": {
+      "key": "ai_auto_run_enabled",
+      "value": false,
+      "description": "控制 AI 是否允許自動批量執行",
+      "updated_by": "system",
+      "updated_at": "serverTimestamp"
+    }
+  },
+  "clients": {
+    "hansik-daily-hotpot": {
+      "name": "韓食日常鍋物",
+      "slug": "hansik-daily-hotpot",
+      "status": "active",
+      "industry": "餐飲",
+      "brand_voice": "溫暖、日常、生活感",
+      "social_accounts": {
+        "facebook_page_id": "1082884688247950",
+        "instagram_business_id": null
+      },
+      "notes": "Firebase 第一個 Meta 發文佇列樣板",
+      "created_at": "serverTimestamp",
+      "updated_at": "serverTimestamp"
+    }
+  },
+  "departments": {
+    "management": {
+      "name": "管理部",
+      "description": "阿順統籌、提姆先生決策與批准",
+      "lead_agent_id": "ashun",
+      "status": "active",
+      "created_at": "serverTimestamp"
+    },
+    "social_content": {
+      "name": "社群內容部",
+      "description": "負責社群策略、貼文、短影音腳本與素材需求",
+      "lead_agent_id": "social_editor",
+      "status": "active",
+      "created_at": "serverTimestamp"
+    }
+  },
+  "agents": {
+    "ashun": {
+      "name": "阿順",
+      "department_id": "management",
+      "role": "manager",
+      "status": "active",
+      "can_publish": false,
+      "can_spend_budget": false,
+      "requires_approval_for": ["publish", "ad_budget", "billing", "client_commitment"],
+      "created_at": "serverTimestamp"
+    },
+    "social_editor": {
+      "name": "社群主編",
+      "department_id": "social_content",
+      "role": "content_editor",
+      "status": "active",
+      "can_publish": false,
+      "can_spend_budget": false,
+      "requires_approval_for": ["publish", "client_commitment"],
+      "created_at": "serverTimestamp"
+    }
+  },
+  "content_queue": {
+    "sample_hansik_post_001": {
+      "client_id": "hansik-daily-hotpot",
+      "platforms": ["facebook"],
+      "status": "pending_review",
+      "content_type": "post",
+      "title": "Firebase 測試貼文",
+      "copy": "這是一則 Firebase content_queue 測試貼文，不會正式發布。",
+      "hashtags": ["韓食日常鍋物"],
+      "asset_ids": [],
+      "scheduled_at": null,
+      "approval_id": null,
+      "publishing_log_id": null,
+      "created_by": "ashun",
+      "review_notes": "Phase 0 測試資料",
+      "created_at": "serverTimestamp",
+      "updated_at": "serverTimestamp"
+    }
+  },
+  "audit_logs": {
+    "phase0_init": {
+      "actor_uid": "system",
+      "actor_role": "system",
+      "action": "initialize_firebase_phase0",
+      "target_type": "system",
+      "target_id": "firebase",
+      "client_id": null,
+      "summary": "建立 Ewalk.ai Firebase Phase 0 測試資料規格",
+      "created_at": "serverTimestamp"
+    }
+  }
+}

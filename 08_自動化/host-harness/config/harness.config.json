@@ -1,0 +1,77 @@
+{
+  "schema_version": "2026-06-04.phase0",
+  "harness_id": "ewalk_mac_studio_ashun_host",
+  "mode": "controlled_autonomy",
+  "primary_runtime": "openclaw",
+  "specialist_workers": [
+    "codex",
+    "github_researcher",
+    "social_editor",
+    "ads_planner",
+    "finance_auditor",
+    "report_analyst"
+  ],
+  "host_role": "ashun_dedicated_host",
+  "final_approver": "提姆先生",
+  "owner_company_account": "Ewalk.ai 公司 Google 帳號",
+  "workspace_root": "/Users/chenjinting/Desktop/Ewalk.ai 自動化系統",
+  "vault_root": "/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain",
+  "command_center_app": "/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/08_自動化/firebase/command-center-app/index.html",
+  "run_policy": {
+    "default_permission_level": "L1_write_vault",
+    "automatic_max_permission_level": "L2",
+    "record_every_run": true,
+    "write_formal_firestore_by_default": false,
+    "allow_external_side_effects": false
+  },
+  "automatic_allowlist": [
+    "host_status_check",
+    "client_registry_dry_run_refresh",
+    "command_center_local_data_refresh",
+    "ai_runs_local_refresh",
+    "approval_queue_local_refresh",
+    "daily_host_summary",
+    "vault_missing_data_scan"
+  ],
+  "approval_required": [
+    "meta_publish",
+    "instagram_publish",
+    "formal_email_or_dm",
+    "ad_budget_change",
+    "subscription_change",
+    "payment_method_change",
+    "formal_website_deploy",
+    "formal_firestore_high_risk_write",
+    "high_privilege_token_add",
+    "core_rule_change",
+    "mass_delete_or_irreversible_action"
+  ],
+  "first_wave_jobs": [
+    {
+      "job_id": "host_status_check",
+      "title": "阿順主機狀態檢查",
+      "permission_level": "L1",
+      "frequency": "every_15_minutes"
+    },
+    {
+      "job_id": "daily_host_summary",
+      "title": "阿順主機日報",
+      "permission_level": "L1",
+      "frequency": "daily"
+    },
+    {
+      "job_id": "client_registry_dry_run_refresh",
+      "title": "客戶名冊本機更新",
+      "permission_level": "L1",
+      "frequency": "manual_or_scheduled"
+    }
+  ],
+  "blocked_until_explicit_approval": [
+    "OpenClaw formal workspace access beyond phase A",
+    "OpenClaw shell access beyond test workspace",
+    "Meta API formal publish",
+    "Firebase Blaze or Storage enablement",
+    "Vercel production deploy automation",
+    "Gmail destructive actions"
+  ]
+}

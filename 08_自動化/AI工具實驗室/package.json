@@ -1,0 +1,12 @@
+{
+  "name": "ewalk-ai-tool-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "audit:website": "node tools/website-audit.mjs",
+    "audit:flow": "node tools/browser-flow-audit.mjs",
+    "build:workflow": "node tools/workflow-builder.mjs",
+    "smoke": "node tools/website-audit.mjs --demo --no-ai && node tools/browser-flow-audit.mjs --demo --no-ai && node tools/workflow-builder.mjs --demo --no-ai"
+  }
+}

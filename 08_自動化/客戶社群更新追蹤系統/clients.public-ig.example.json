@@ -1,0 +1,377 @@
+{
+  "version": 1,
+  "timezone": "Asia/Taipei",
+  "clients": [
+    {
+      "clientId": "thevision",
+      "clientName": "TheVision",
+      "owner": "客戶成功經理待指派",
+      "staff": [
+        {
+          "staffId": "olivia",
+          "staffName": "Olivia",
+          "role": "髮型師 / 創始人",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Olivia IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "thevision_olivia",
+              "accountId": "thevision_olivia",
+              "profileUrl": "https://www.instagram.com/thevision_olivia/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "vanilla",
+          "staffName": "Vanilla",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Vanilla IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "thevision_vanilla1009",
+              "accountId": "thevision_vanilla1009",
+              "profileUrl": "https://www.instagram.com/thevision_vanilla1009/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "nana",
+          "staffName": "Nana",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Nana IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "thevision_nana",
+              "accountId": "thevision_nana",
+              "profileUrl": "https://www.instagram.com/thevision_nana/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "nico",
+          "staffName": "Nico",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Nico IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "thevision_nico",
+              "accountId": "thevision_nico",
+              "profileUrl": "https://www.instagram.com/thevision_nico/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "mandy",
+          "staffName": "Mandy",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Mandy IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "thevision_mandy",
+              "accountId": "thevision_mandy",
+              "profileUrl": "https://www.instagram.com/thevision_mandy/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "molly",
+          "staffName": "Molly",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Molly IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "thevision_molly",
+              "accountId": "thevision_molly",
+              "profileUrl": "https://www.instagram.com/thevision_molly/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "luke",
+          "staffName": "Luke",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Luke IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "thevision_luke",
+              "accountId": "thevision_luke",
+              "profileUrl": "https://www.instagram.com/thevision_luke/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "kk",
+          "staffName": "KK",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "KK IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "kk_thevision",
+              "accountId": "kk_thevision",
+              "profileUrl": "https://www.instagram.com/kk_thevision/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "hsu-mo",
+          "staffName": "Hsu Mo",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Hsu Mo IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "thevision_hsu.mo",
+              "accountId": "thevision_hsu.mo",
+              "profileUrl": "https://www.instagram.com/thevision_hsu.mo/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "luta",
+          "staffName": "Luta",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Luta IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "thevision_luta",
+              "accountId": "thevision_luta",
+              "profileUrl": "https://www.instagram.com/thevision_luta/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "berry",
+          "staffName": "Berry",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Berry IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "thevision_berry",
+              "accountId": "thevision_berry",
+              "profileUrl": "https://www.instagram.com/thevision_berry/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clientId": "oc-hair-vogue",
+      "clientName": "OC hair Vogue",
+      "owner": "客戶成功經理待指派",
+      "staff": [
+        {
+          "staffId": "akiwang",
+          "staffName": "Akiwang",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Akiwang IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "oc_akiwang",
+              "accountId": "oc_akiwang",
+              "profileUrl": "https://www.instagram.com/oc_akiwang/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "eide",
+          "staffName": "Eide",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Eide IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "oc_eide_",
+              "accountId": "oc_eide_",
+              "profileUrl": "https://www.instagram.com/oc_eide_/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "lyra",
+          "staffName": "Lyra",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Lyra IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "oc_lyra",
+              "accountId": "oc_lyra",
+              "profileUrl": "https://www.instagram.com/oc_lyra/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "xmei",
+          "staffName": "Xmei",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Xmei IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "oc_xmei",
+              "accountId": "oc_xmei",
+              "profileUrl": "https://www.instagram.com/oc_xmei/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "orange",
+          "staffName": "Orange",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Orange IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "oc_orange071",
+              "accountId": "oc_orange071",
+              "profileUrl": "https://www.instagram.com/oc_orange071/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "ron",
+          "staffName": "Ron",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Ron IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "ron.dailyy_oc",
+              "accountId": "ron.dailyy_oc",
+              "profileUrl": "https://www.instagram.com/ron.dailyy_oc/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

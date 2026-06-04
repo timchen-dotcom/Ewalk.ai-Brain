@@ -1,0 +1,79 @@
+{
+  "project_id": "ewalk-ai-system-prod",
+  "updated_by": "ashun",
+  "requires_approval_by": "提姆先生",
+  "settings": [
+    {
+      "id": "command_center_live_read_enabled",
+      "name": "Command Center 正式 Firestore 讀取",
+      "enabled": false,
+      "stage": "phase2",
+      "risk_level": "medium",
+      "description": "允許內部 Command Center 透過 Firebase Auth 只讀正式 Firestore。",
+      "requires_approval": true
+    },
+    {
+      "id": "meta_auto_publish_enabled",
+      "name": "Meta 自動發文",
+      "enabled": false,
+      "stage": "phase3",
+      "risk_level": "high",
+      "description": "允許已批准 content_queue 進入 Meta API 發文流程。",
+      "requires_approval": true
+    },
+    {
+      "id": "meta_auto_publish_requires_final_approval",
+      "name": "Meta 發文最終批准",
+      "enabled": true,
+      "stage": "phase3",
+      "risk_level": "high",
+      "description": "所有正式發文都必須有提姆先生或授權主管的批准紀錄。",
+      "requires_approval": false
+    },
+    {
+      "id": "ads_budget_write_enabled",
+      "name": "廣告預算寫入",
+      "enabled": false,
+      "stage": "phase4",
+      "risk_level": "critical",
+      "description": "允許系統調整廣告預算。第一階段保持關閉。",
+      "requires_approval": true
+    },
+    {
+      "id": "ai_batch_jobs_enabled",
+      "name": "AI 批量任務",
+      "enabled": false,
+      "stage": "phase5",
+      "risk_level": "high",
+      "description": "允許系統批量產生內容、報表或研究摘要。",
+      "requires_approval": true
+    },
+    {
+      "id": "voice_realtime_public_enabled",
+      "name": "即時語音公開入口",
+      "enabled": false,
+      "stage": "phase5",
+      "risk_level": "high",
+      "description": "允許外部裝置連入阿順即時語音。避免 token 被持續消耗，預設關閉。",
+      "requires_approval": true
+    },
+    {
+      "id": "client_portal_enabled",
+      "name": "客戶入口",
+      "enabled": false,
+      "stage": "phase6",
+      "risk_level": "medium",
+      "description": "允許客戶登入查看資料與審核內容。",
+      "requires_approval": true
+    },
+    {
+      "id": "billing_actions_enabled",
+      "name": "訂閱與金流操作",
+      "enabled": false,
+      "stage": "phase6",
+      "risk_level": "critical",
+      "description": "允許系統取消訂閱、變更方案或操作付款相關事項。預設永久關閉，需逐案批准。",
+      "requires_approval": true
+    }
+  ]
+}

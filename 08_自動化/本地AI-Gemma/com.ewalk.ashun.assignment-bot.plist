@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.ewalk.ashun.assignment-bot</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>exec '/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/08_自動化/本地AI-Gemma/scripts/start_assignment_bot.sh'</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/chenjinting/Desktop/Ewalk.ai 自動化系統</string>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <key>KeepAlive</key>
+  <true/>
+
+  <key>StandardOutPath</key>
+  <string>/private/tmp/ewalk-ashun-assignment-bot.out.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>/private/tmp/ewalk-ashun-assignment-bot.err.log</string>
+</dict>
+</plist>

@@ -1,0 +1,2 @@
+active,client_name,brand_name,account_id,location_id,location_display_name,google_maps_url,owner,sla_days,alert_channel,notes
+TRUE,範例客戶,範例品牌,111111111111111111111,222222222222222222222,台北旗艦店,https://maps.google.com/?cid=example,客戶成功經理,2,customer_tasks,測試資料，正式啟用前請改為真實 account/location

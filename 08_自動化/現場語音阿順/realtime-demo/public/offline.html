@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>現場語音阿順｜離線備援</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+        background: #faf7f0;
+        color: #171717;
+        padding: 28px;
+      }
+      h1 { margin: 0 0 8px; font-size: 30px; }
+      p { color: #6b665e; line-height: 1.7; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+      .card {
+        border: 1px solid #ded8ca;
+        background: #fffdf8;
+        border-radius: 8px;
+        padding: 16px;
+      }
+      button {
+        min-height: 42px;
+        border: 1px solid #24564b;
+        border-radius: 8px;
+        background: #24564b;
+        color: #fff;
+        font-weight: 700;
+        padding: 10px 14px;
+        cursor: pointer;
+      }
+      .answer { white-space: pre-wrap; line-height: 1.75; }
+    </style>
+  </head>
+  <body>
+    <h1>現場語音阿順｜離線備援</h1>
+    <p>如果 Realtime Demo 無法啟動，可以先用這頁播放 5 題核心回答。這頁不需要 server。</p>
+    <div class="grid" id="qa"></div>
+    <script>
+      const qa = [
+        ["什麼是一個人的經濟？", "一個人的經濟，是 STAR Color 最重要的加盟邏輯。它不是要求每個人開大店、養大團隊，而是讓一位美業工作者也能擁有品牌、技術、行銷、教育與營運支援。透過集團和 Ewalk.ai 行銷大腦，一個人不再是孤軍作戰，而是用小型單位接上大型系統，創造更高收入、更低風險、更可複製的創業模式。"],
+        ["Ewalk.ai 行銷大腦能幫加盟店做什麼？", "Ewalk.ai 行銷大腦會協助每家店降低行銷落差。它可以整理市場資料、分析社群與廣告、建立下一季活動方案、優化每月業績，並把總部策略轉成每家店能執行的內容。簡單說，每家店雖然可能是一個人經營，但背後有一個集團級的行銷系統在支援。"],
+        ["STAR Color 跟一般染髮加盟有什麼不同？", "一般加盟常常只給品牌、裝潢和產品，但 STAR Color 的核心是把一個人的創業變成系統。它結合 AI 染髮技術、教育訓練、行銷大腦、總部活動與人才升遷，讓加盟者不只是開一間店，而是接上一套能持續進化的美業經濟系統。"],
+        ["為什麼要做現場語音阿順？", "因為我們要讓大家現場感受到，AI 大腦不是簡報上的概念，而是真的可以對話、整理資料、回答策略問題。當阿順能直接說明 STAR Color 的加盟邏輯、教育系統和行銷大腦，現場就會看見 Ewalk.ai 的價值不是工具，而是一套能陪著品牌長大的智慧系統。"],
+        ["5/20 現場最重要要讓大家記住什麼？", "最重要要記住一句話：STAR Color 不是賣一間店，而是讓一個人接上一套集團級的 AI 美業系統。大美好學院負責教育，Ewalk.ai 負責行銷大腦，幻色鏡方提供品牌與資源，最後讓每一位加盟者都能用更高勝率走向就業、創業與成長。"]
+      ];
+
+      function speak(text) {
+        speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = "zh-TW";
+        u.rate = 1.45;
+        speechSynthesis.speak(u);
+      }
+
+      document.getElementById("qa").innerHTML = qa.map(([q, a], i) => `
+        <div class="card">
+          <h2>${q}</h2>
+          <p class="answer">${a}</p>
+          <button onclick="speak(qa[${i}][1])">播放回答</button>
+        </div>
+      `).join("");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "discord_webhook_url": "貼上你的 Discord Webhook URL",
+  "discord_daily_handoff_enabled": false,
+  "discord_webhooks": {
+    "daily_handoff": "貼上 #每日接續 Webhook URL",
+    "important": "貼上 #重要提醒 Webhook URL",
+    "customer_tasks": "貼上 #客戶待辦 Webhook URL",
+    "system": "貼上 #系統通知 Webhook URL",
+    "inbox": "貼上 #想法收件匣 Webhook URL",
+    "self_upgrade": "貼上 #自我升級 Webhook URL",
+    "aesthetic_trends": "貼上 #美感趨勢搜集 Webhook URL"
+  },
+  "google_review_tracker": {
+    "enabled": false,
+    "timezone": "Asia/Taipei",
+    "clients_file": "../Google評論每日追蹤系統/clients.csv",
+    "state_file": "output/google-review-tracker-state.json",
+    "report_dir": "../../04_報表/Google評論追蹤",
+    "default_sla_days": 2,
+    "warning_days_remaining": 1,
+    "max_review_pages": 0,
+    "request_delay_seconds": 0.15,
+    "baseline_first_run": true,
+    "default_alert_channel": "customer_tasks",
+    "summary_channel": "customer_tasks",
+    "urgent_channel": "important",
+    "oauth": {
+      "client_id_env": "EWALK_GBP_CLIENT_ID",
+      "client_secret_env": "EWALK_GBP_CLIENT_SECRET",
+      "refresh_token_env": "EWALK_GBP_REFRESH_TOKEN"
+    }
+  },
+  "discord_username": "阿順｜Ewalk.ai",
+  "discord_avatar_url": "",
+  "email_notifications": {
+    "aesthetic_trends": {
+      "enabled": true,
+      "method": "apple_mail",
+      "from": "Tim.chen@ewalk.ai",
+      "to": ["Han.chang@ewalk.ai"],
+      "smtp_host": "smtp.gmail.com",
+      "smtp_port": 587,
+      "smtp_username": "Tim.chen@ewalk.ai",
+      "smtp_password_env": "EWALK_GMAIL_APP_PASSWORD",
+      "smtp_keychain_service": "ewalk-gmail-smtp"
+    }
+  },
+  "ashun_chat_enabled": true,
+  "ashun_chat_model": "gemma3:1b",
+  "ashun_chat_ollama_url": "http://127.0.0.1:11434/api/generate",
+  "ashun_chat_timeout_seconds": 25
+}

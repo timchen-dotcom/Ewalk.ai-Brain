@@ -8,6 +8,11 @@
 - `客戶品牌資料模組化模板.md`
 - `IG內容模板.md`
 - `Reels模板.md`
+- `影片AI分鏡腳本包模板.md`
 - `廣告模板.md`
 - `月報模板.md`
 - `語音筆記模板.md`
+- `PRP式交付規格模板.md`
+- `COMPRESSION規格檔模板.md`
+- `記憶變更單模板.md`
+- `Agent Harness任務執行紀錄模板.md`

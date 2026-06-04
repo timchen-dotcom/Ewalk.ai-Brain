@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 台灣社群行銷生態：髮型師 3 小時教案簡報</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/night.css" />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --panel: rgba(255, 255, 255, 0.072);
+      --panel2: rgba(255, 255, 255, 0.105);
+      --line: rgba(255, 255, 255, 0.16);
+      --text: #f4f7fb;
+      --muted: #aab5c4;
+      --accent: #e8643a;
+      --accent2: #4fc3f7;
+      --success: #81c784;
+      --warn: #ffb74d;
+      --danger: #ef767a;
+      --violet: #b39ddb;
+    }
+
+    body { background: var(--bg); }
+
+    .reveal {
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Segoe UI", sans-serif;
+      color: var(--text);
+    }
+
+    .reveal .slides section {
+      box-sizing: border-box;
+      padding: 34px 48px;
+      text-align: left;
+    }
+
+    .reveal h1,
+    .reveal h2,
+    .reveal h3 {
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Segoe UI", sans-serif;
+      letter-spacing: 0;
+      line-height: 1.16;
+      text-transform: none;
+      text-shadow: none;
+    }
+
+    .reveal h1 {
+      font-size: 2.02em;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .reveal h2 {
+      color: var(--accent2);
+      font-size: 1.28em;
+      font-weight: 800;
+      margin: 0 0 20px;
+    }
+
+    .reveal h3 {
+      color: var(--text);
+      font-size: 0.74em;
+      font-weight: 800;
+      margin: 0 0 8px;
+    }
+
+    .reveal p,
+    .reveal li,
+    .reveal td,
+    .reveal th {
+      font-size: 0.48em;
+      line-height: 1.6;
+      letter-spacing: 0;
+    }
+
+    .reveal ul,
+    .reveal ol {
+      margin: 0;
+      padding-left: 1.05em;
+    }
+
+    .reveal li { margin: 5px 0; }
+
+    .reveal a { color: var(--accent2); }
+    .reveal .progress { color: var(--accent); }
+    .reveal .controls { color: var(--accent2); }
+    .reveal .slide-number { background: rgba(0, 0, 0, 0.42); color: #d8e3ee; }
+
+    .deck-kicker {
+      color: var(--warn);
+      font-size: 0.39em;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .time-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      padding: 3px 12px;
+      color: #dce8f4;
+      background: rgba(13, 17, 23, 0.7);
+      font-size: 0.34em;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .title-slide {
+      display: grid;
+      min-height: 560px;
+      align-content: center;
+      justify-items: start;
+    }
+
+    .title-slide h1 {
+      max-width: 880px;
+      text-wrap: balance;
+    }
+
+    .title-slide .subtitle {
+      color: #d6e0ea;
+      font-size: 0.62em;
+      max-width: 820px;
+      margin: 20px 0 0;
+    }
+
+    .title-meta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .meta-pill {
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 14px;
+      color: #dce7f3;
+      font-size: 0.36em;
+      font-weight: 700;
+    }
+
+    .lead {
+      color: #dbe5f0;
+      font-size: 0.58em;
+      line-height: 1.55;
+      margin: 0 0 18px;
+      max-width: 920px;
+    }
+
+    .muted { color: var(--muted); }
+    .accent { color: var(--accent); }
+    .accent2 { color: var(--accent2); }
+    .warn { color: var(--warn); }
+    .success { color: var(--success); }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .grid-5 {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .card,
+    .metric,
+    .swot-card,
+    .platform-card,
+    .task-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .card { padding: 18px; }
+
+    .card.tight { padding: 14px; }
+
+    .card h3,
+    .platform-card h3,
+    .task-card h3 {
+      color: var(--text);
+    }
+
+    .card p,
+    .task-card p,
+    .platform-card p {
+      color: #bdc8d6;
+      margin: 0;
+    }
+
+    .metric {
+      padding: 16px;
+      text-align: center;
+    }
+
+    .metric .num {
+      color: var(--accent);
+      font-size: 1.06em;
+      line-height: 1;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .metric .label {
+      color: #c5d0dd;
+      font-size: 0.34em;
+      line-height: 1.45;
+      font-weight: 650;
+    }
+
+    .metric .delta {
+      color: var(--muted);
+      font-size: 0.28em;
+      margin-top: 8px;
+    }
+
+    .section-band {
+      background: linear-gradient(90deg, rgba(232, 100, 58, 0.14), rgba(79, 195, 247, 0.1));
+      border-left: 5px solid var(--accent);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 16px 0;
+    }
+
+    .section-band p {
+      margin: 0;
+      color: #e9f2fb;
+      font-size: 0.56em;
+      font-weight: 750;
+      line-height: 1.5;
+    }
+
+    .note-box {
+      background: rgba(255, 183, 77, 0.11);
+      border: 1px solid rgba(255, 183, 77, 0.35);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: #ffe3b5;
+      font-size: 0.42em;
+      line-height: 1.6;
+    }
+
+    .source {
+      color: #8ea0b4;
+      font-size: 0.28em;
+      line-height: 1.4;
+      margin-top: 14px;
+    }
+
+    .simple-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid var(--line);
+    }
+
+    .simple-table th,
+    .simple-table td {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      padding: 9px 10px;
+      vertical-align: top;
+    }
+
+    .simple-table th {
+      color: #e8f6ff;
+      background: rgba(79, 195, 247, 0.13);
+      font-weight: 800;
+      font-size: 0.36em;
+    }
+
+    .simple-table td {
+      color: #d0d9e4;
+      font-size: 0.33em;
+      line-height: 1.45;
+    }
+
+    .swot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .swot-card {
+      position: relative;
+      padding: 16px 18px 16px 66px;
+      min-height: 105px;
+      overflow: hidden;
+    }
+
+    .swot-card::before {
+      content: attr(data-letter);
+      position: absolute;
+      left: 18px;
+      top: 15px;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 0.5em;
+      font-weight: 900;
+      color: #0d1117;
+      background: var(--accent2);
+    }
+
+    .swot-card.s::before { background: var(--success); }
+    .swot-card.w::before { background: var(--warn); }
+    .swot-card.o::before { background: var(--accent2); }
+    .swot-card.t::before { background: var(--danger); }
+
+    .swot-card h3 { margin-bottom: 5px; }
+    .swot-card p { margin: 0; color: #c9d4e1; font-size: 0.39em; line-height: 1.55; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .flow-step {
+      position: relative;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 8px;
+      padding: 18px 14px;
+      min-height: 132px;
+    }
+
+    .flow-step .step-no {
+      color: var(--accent);
+      font-size: 0.34em;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .flow-step h3 { color: var(--accent2); }
+    .flow-step p { color: #c8d4df; margin: 0; font-size: 0.36em; }
+
+    .platform-card {
+      padding: 14px;
+      min-height: 168px;
+      border-top: 4px solid var(--accent2);
+    }
+
+    .platform-card .role {
+      color: var(--warn);
+      font-size: 0.31em;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .platform-card .reach {
+      color: var(--accent);
+      font-size: 0.58em;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .platform-card p {
+      font-size: 0.34em;
+      line-height: 1.45;
+    }
+
+    .task-card {
+      padding: 14px;
+      min-height: 135px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .task-card p { font-size: 0.35em; }
+
+    .content-model {
+      background: rgba(255, 255, 255, 0.065);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 13px;
+      min-height: 150px;
+    }
+
+    .content-model .badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--accent2);
+      color: #0d1117;
+      font-size: 0.34em;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .content-model h3 { color: #f8fbff; font-size: 0.45em; }
+    .content-model p { font-size: 0.33em; color: #c7d2de; margin: 0; }
+
+    .journey-viz {
+      position: relative;
+      height: 360px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.04);
+      margin-top: 12px;
+    }
+
+    .viz-layer {
+      position: absolute;
+      inset: 0;
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .viz-before {
+      background: linear-gradient(135deg, rgba(79, 195, 247, 0.16), rgba(255, 255, 255, 0.03));
+    }
+
+    .viz-after {
+      background: linear-gradient(135deg, rgba(232, 100, 58, 0.84), rgba(33, 52, 56, 0.9));
+      width: 100%;
+      clip-path: inset(0 45% 0 0);
+      overflow: hidden;
+      box-shadow: inset -3px 0 0 var(--warn), 10px 0 30px rgba(255, 183, 77, 0.18);
+    }
+
+    .viz-title {
+      color: #f4fbff;
+      font-size: 0.62em;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .viz-copy {
+      color: #c7d2df;
+      font-size: 0.38em;
+      line-height: 1.55;
+    }
+
+    .viz-stack {
+      display: grid;
+      gap: 10px;
+    }
+
+    .viz-pill {
+      border-radius: 8px;
+      background: rgba(13, 17, 23, 0.52);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 10px 12px;
+      color: #edf6ff;
+      font-size: 0.34em;
+      font-weight: 750;
+    }
+
+    .range {
+      width: 100%;
+      accent-color: var(--accent);
+      margin-top: 14px;
+    }
+
+    .wordcloud-wrap,
+    .poll-wrap {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .interactive-panel {
+      background: rgba(255, 255, 255, 0.075);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .interactive-panel label {
+      display: block;
+      font-size: 0.36em;
+      color: #cdd7e3;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .input-row input {
+      flex: 1;
+      min-width: 0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.28);
+      color: #fff;
+      padding: 11px 12px;
+      font-size: 18px;
+      outline: none;
+    }
+
+    .input-row button,
+    .poll-option,
+    .reset-btn {
+      border: 0;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 10px 14px;
+      cursor: pointer;
+    }
+
+    .reset-btn {
+      background: rgba(255, 255, 255, 0.12);
+      color: #dbe6f2;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .wordcloud-board {
+      min-height: 330px;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      padding: 22px;
+      background: radial-gradient(circle at 50% 45%, rgba(79, 195, 247, 0.13), rgba(255, 255, 255, 0.035));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+    }
+
+    .cloud-word {
+      display: inline-block;
+      color: var(--accent2);
+      font-weight: 900;
+      line-height: 1;
+      text-shadow: 0 0 18px rgba(79, 195, 247, 0.25);
+      white-space: nowrap;
+    }
+
+    .poll-options {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .poll-option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      text-align: left;
+      background: rgba(79, 195, 247, 0.14);
+      border: 1px solid rgba(79, 195, 247, 0.35);
+      min-height: 50px;
+    }
+
+    .poll-option .pct {
+      color: var(--warn);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .poll-bars {
+      display: grid;
+      gap: 12px;
+      padding-top: 10px;
+    }
+
+    .poll-bar-label {
+      display: flex;
+      justify-content: space-between;
+      color: #dce6f2;
+      font-size: 0.35em;
+      margin-bottom: 4px;
+      font-weight: 750;
+    }
+
+    .bar-track {
+      height: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--accent), var(--warn));
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 18px;
+      margin-top: 10px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #d6e1ec;
+      font-size: 0.34em;
+      line-height: 1.42;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .check-item::before {
+      content: "";
+      flex: 0 0 16px;
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      border: 2px solid var(--accent2);
+      margin-top: 2px;
+    }
+
+    .closing-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .closing-list .card {
+      text-align: center;
+      padding: 14px 10px;
+      min-height: 116px;
+    }
+
+    .closing-list .num {
+      color: var(--accent);
+      font-size: 0.72em;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .closing-list p {
+      color: #dce7f2;
+      font-size: 0.33em;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .small-list li {
+      font-size: 0.4em;
+      color: #d0dbe6;
+      line-height: 1.45;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 820px) {
+      .reveal .slides section { padding: 24px 24px; }
+      .grid-2, .grid-3, .grid-4, .grid-5, .flow, .wordcloud-wrap, .poll-wrap, .closing-list {
+        grid-template-columns: 1fr;
+      }
+      .swot-grid, .checklist { grid-template-columns: 1fr; }
+      .journey-viz { height: 420px; }
+      .viz-layer { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <section data-background-image="images/cover.png" data-background-opacity="0.36" data-background-size="cover">
+      <div class="title-slide">
+        <div class="deck-kicker">Ewalk.ai Teaching Deck · 3 Hours</div>
+        <h1>2026 台灣社群行銷生態：髮型師版本</h1>
+        <p class="subtitle">從 DataReportal、TWNIC、數發部與 LINE 2026 工具趨勢，拆成沙龍能執行的「被看見、被相信、被預約、被回流」閉環。</p>
+        <div class="title-meta">
+          <span class="meta-pill">學員：髮型師／沙龍店長</span>
+          <span class="meta-pill">目標：看懂 2026 與 2025 的差異</span>
+          <span class="meta-pill">產出：90 天行動表</span>
+        </div>
+      </div>
+      <aside class="notes">0:00-0:03。先說明這不是平台技巧課，而是年度生態判讀課。讓學員知道今天會從報告數字一路走到自己的 90 天行動。</aside>
+    </section>
+
+    <section id="slide-platform-wordcloud">
+      <span class="time-chip">0:03 · 破冰</span>
+      <h2>你現在最靠哪個平台接新客？</h2>
+      <div class="wordcloud-wrap">
+        <div class="interactive-panel">
+          <label for="platformInput">輸入平台或來源</label>
+          <form class="input-row" id="platformForm">
+            <input id="platformInput" autocomplete="off" placeholder="例如：IG、LINE、Google、介紹" />
+            <button type="submit">送出</button>
+          </form>
+          <button class="reset-btn" data-reset-cloud="platformCloud">重置本頁</button>
+          <p class="source">現場使用：請學員用手機或口頭回答，由講師快速輸入。資料存在本機瀏覽器，不會上傳。</p>
+        </div>
+        <div class="wordcloud-board" id="platformCloud" aria-live="polite"></div>
+      </div>
+      <aside class="notes">0:03-0:08。不要急著評斷平台好壞，先觀察班上共識。若多數人都只講 IG，後面要強調 2026 的重點是把 IG 接到 Google 與 LINE。</aside>
+    </section>
+
+    <section data-background-image="images/cover.png" data-background-opacity="0.18" data-background-size="cover">
+      <span class="time-chip">0:08 · 全課主軸</span>
+      <h2>先講結論：2026 不是流量變少，是路徑變複雜</h2>
+      <div class="grid-4">
+        <div class="metric"><div class="num">看見</div><div class="label">短影音、搜尋、社群討論多入口並行</div></div>
+        <div class="metric"><div class="num">相信</div><div class="label">作品、評價、專業解說變成信任資產</div></div>
+        <div class="metric"><div class="num">預約</div><div class="label">Google 商家、IG 個檔、LINE 選單要接得住</div></div>
+        <div class="metric"><div class="num">回流</div><div class="label">染燙週期、售後照護、分眾提醒才是營收穩定器</div></div>
+      </div>
+      <div class="section-band">
+        <p>髮型師的社群經營，正在從「發文曝光」變成「內容 + 搜尋 + 預約 + 留存」的系統工程。</p>
+      </div>
+      <aside class="notes">0:08-0:12。把今天所有平台討論都收斂到這四個字。提醒學員：平台只是入口，成交與回流才是沙龍經營的結果。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">0:12 · 資料判讀</span>
+      <h2>資料怎麼看：2026 報告其實是 2025 年底最新可得資料</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>DataReportal 的重要註記</h3>
+          <ul class="small-list">
+            <li>Digital 2026 Taiwan 發布於 2025 年底，資料多為 2025 年 10 月或年底最新可得數據。</li>
+            <li>平台廣告觸及會被 Meta、Google、TikTok 等工具修正，不等於真實活躍使用者。</li>
+            <li>所以課程比較重點不是硬算年增率，而是判斷「經營方向」。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>給髮型師的讀法</h3>
+          <ul class="small-list">
+            <li>看到平台總量：判斷那裡還有注意力。</li>
+            <li>看到平台波動：判斷是否要降低單一平台依賴。</li>
+            <li>看到行為習慣：判斷內容形式與預約流程是否跟上。</li>
+          </ul>
+        </div>
+      </div>
+      <p class="source">來源：DataReportal《Digital 2026: Taiwan》日期註記與社群數據解讀提醒。</p>
+      <aside class="notes">0:12-0:18。這頁要先消毒，避免學員問「Messenger 怎麼可能只剩幾萬」。重點是平台工具口徑可能變，不代表顧客真的消失。</aside>
+    </section>
+
+    <section data-background-image="images/digital-overview.png" data-background-opacity="0.16" data-background-size="cover">
+      <span class="time-chip">0:18 · 2025 vs 2026</span>
+      <h2>大盤差異：從「社群飽和」走向「經營成熟化」</h2>
+      <div class="journey-viz">
+        <div class="viz-layer viz-before">
+          <div>
+            <div class="viz-title">2025：平台還在放大</div>
+            <div class="viz-copy">IG、TikTok、短影音仍有成長故事，很多沙龍把焦點放在「多發一點、多拍一點」。</div>
+          </div>
+          <div class="viz-stack">
+            <div class="viz-pill">網路使用者 22.1M · 95.3%</div>
+            <div class="viz-pill">社群身份 18.4M · 79.4%</div>
+            <div class="viz-pill">行動下載中位數 95.66 Mbps</div>
+          </div>
+        </div>
+        <div class="viz-layer viz-after" id="maturityAfter">
+          <div>
+            <div class="viz-title">2026：入口分散，閉環重要</div>
+            <div class="viz-copy">網路與社群已高度普及，決勝點變成搜尋、評價、短影音信任、LINE 回流與 AI 輔助產能。</div>
+          </div>
+          <div class="viz-stack">
+            <div class="viz-pill">網路使用者 22.3M · 96.7%</div>
+            <div class="viz-pill">社群身份 18.1M · 78.4%</div>
+            <div class="viz-pill">行動下載中位數 114.28 Mbps</div>
+          </div>
+        </div>
+      </div>
+      <input id="maturitySlider" class="range" type="range" min="0" max="100" value="55" aria-label="切換 2025 到 2026 的經營成熟度" />
+      <p class="source">來源：DataReportal《Digital 2025: Taiwan》《Digital 2026: Taiwan》。</p>
+      <aside class="notes">0:18-0:25。拉動滑桿示範從曝光導向到閉環導向。提醒大家：社群身份小幅下修不代表市場壞掉，而是成熟市場的訊號。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">0:25 · SWOT 1</span>
+      <h2>大盤成熟化對髮型師的影響</h2>
+      <div class="swot-grid">
+        <div class="swot-card s" data-letter="S"><h3>Strength 優勢</h3><p>台灣網路與社群高度普及，潛在顧客大多已在線上，教育、作品、評價都能成為可累積資產。</p></div>
+        <div class="swot-card w" data-letter="W"><h3>Weakness 弱點</h3><p>總量接近飽和，單靠「今天又發了一篇」很難換到明顯紅利，內容品質與流程變重要。</p></div>
+        <div class="swot-card o" data-letter="O"><h3>Opportunity 機會</h3><p>成熟市場更重視口碑、服務體驗與專業信任，沙龍可用顧客旅程與評價管理勝出。</p></div>
+        <div class="swot-card t" data-letter="T"><h3>Threat 威脅</h3><p>平台修正可能製造數字假象，如果只看單一平台觸及，容易誤判預算與經營重心。</p></div>
+      </div>
+      <aside class="notes">0:25-0:32。讓學員寫下自己現在是否還停在「發文量」邏輯。接下來轉進入口與平台分工。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">0:32 · 行為變化</span>
+      <h2>台灣人資訊入口的變化：通訊、影音、查詢、AI 同時存在</h2>
+      <div class="grid-4">
+        <div class="metric"><div class="num">97.2%</div><div class="label">12 歲以上網路族群近三個月使用即時通訊</div></div>
+        <div class="metric"><div class="num">91.2%</div><div class="label">近三個月使用網路影音娛樂</div></div>
+        <div class="metric"><div class="num">69.6%</div><div class="label">查詢商品或服務資訊</div></div>
+        <div class="metric"><div class="num">AI</div><div class="label">數發部指出資訊取得途徑正因 AI 時代出現轉變</div></div>
+      </div>
+      <div class="section-band">
+        <p>髮型師要問的不是「顧客在哪個平台」，而是「顧客在什麼情境下需要我」。</p>
+      </div>
+      <p class="source">來源：數位發展部 114 年數位近用調查報告，發布於 2026-01-13。</p>
+      <aside class="notes">0:32-0:38。把資訊入口拆成情境：想變漂亮時搜尋、無聊滑手機時看短影音、想預約時找 LINE 或 Google、想確認時看評價。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">0:38 · 平台版圖</span>
+      <h2>2026 平台版圖：每個平台都要有任務，不要平均用力</h2>
+      <div class="grid-3">
+        <div class="platform-card"><div class="role">教育與搜尋型影音</div><div class="reach">YouTube 18.1M</div><p>Shorts 抓注意力，長片建立技術信任與服務解釋。</p></div>
+        <div class="platform-card"><div class="role">在地口碑與熟齡客群</div><div class="reach">Facebook 17.3M</div><p>店家公告、社團口碑、活動資訊仍有價值。</p></div>
+        <div class="platform-card"><div class="role">作品集與個人品牌</div><div class="reach">Instagram 12.2M</div><p>2026 應升級成可搜尋的作品庫與信任頁。</p></div>
+        <div class="platform-card"><div class="role">爆發觸及</div><div class="reach">TikTok 8.67M</div><p>適合創造陌生觸及，但要接回預約入口。</p></div>
+        <div class="platform-card"><div class="role">觀點與日常討論</div><div class="reach">Threads 6.65M</div><p>讓設計師的人格、審美與專業觀點被看見。</p></div>
+        <div class="platform-card"><div class="role">口碑與討論場</div><div class="reach">Reddit 4.95M</div><p>廣告觸及數成長快，但美業應先觀察社群語境。</p></div>
+      </div>
+      <p class="source">來源：DataReportal《Digital 2026: Taiwan》平台廣告觸及段落。</p>
+      <aside class="notes">0:38-0:45。用「任務」而非「平台排名」講解。請學員圈出自己現在的主場與最弱一環。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">0:45 · YouTube</span>
+      <h2>YouTube：不是只拍長片，而是搜尋型影音資產</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>2026 的角色</h3>
+          <ul class="small-list">
+            <li>大眾觸及仍大，適合承接「想研究髮型、髮質、燙染風險」的人。</li>
+            <li>Shorts 負責被看見，長片負責讓顧客理解你的專業。</li>
+            <li>影片標題要像顧客會搜尋的問題，而不是只寫作品名稱。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>髮型師可做的 3 種題目</h3>
+          <ul class="small-list">
+            <li>「細軟髮燙髮前你要知道的 3 件事」</li>
+            <li>「染後兩週褪色正常嗎？用沙龍角度解釋」</li>
+            <li>「剪短前如何跟設計師溝通臉型與整理習慣」</li>
+          </ul>
+        </div>
+      </div>
+      <p class="source">來源：DataReportal 2026：YouTube 台灣廣告觸及 18.1M。</p>
+      <aside class="notes">0:45-0:50。提醒學員 YouTube 不一定從每週長片開始，先從 Shorts 與可重複回答的顧客問題開始。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">0:50 · Facebook</span>
+      <h2>Facebook：沒有死，但角色變了</h2>
+      <div class="grid-3">
+        <div class="card"><h3>在地信任</h3><p>商圈、社團、附近居民對店家資訊與評價仍會參考 Facebook。</p></div>
+        <div class="card"><h3>熟齡客群</h3><p>剪染燙護、白髮染、頭皮護理等服務，在 Facebook 仍有可溝通族群。</p></div>
+        <div class="card"><h3>公告中心</h3><p>營業時間、店休、活動、徵才、優惠可以維持基本更新，不需要把全部創作力壓在這裡。</p></div>
+      </div>
+      <div class="note-box">實務建議：Facebook 可以是沙龍「店家信任資料夾」，但不要把它當成唯一的新客成長引擎。</div>
+      <p class="source">來源：DataReportal 2026：Facebook 台灣廣告觸及 17.3M，且 Meta 觸及數需謹慎解讀。</p>
+      <aside class="notes">0:50-0:55。先破除「FB 死了」的直覺。它在美業常常不是爆紅平台，而是查證與在地信任平台。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">0:55 · Instagram</span>
+      <h2>Instagram：作品集主場，升級成搜尋型作品庫</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>2026 與 2025 差異</h3>
+          <ul class="small-list">
+            <li>DataReportal 顯示 Instagram 台灣廣告觸及從 2025 的 11.3M 到 2026 報告期 12.2M。</li>
+            <li>對髮型師來說，IG 不只是漂亮版面，而是顧客做決策前的作品驗證。</li>
+            <li>關鍵字、地區、服務項目、精選動態，都要讓人找得到。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>IG 作品庫要有的 5 格</h3>
+          <ul class="small-list">
+            <li>前後對比</li>
+            <li>髮質／臉型／整理習慣說明</li>
+            <li>價格區間或諮詢門檻</li>
+            <li>預約流程</li>
+            <li>顧客常見疑問</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">0:55-1:00。讓學員打開自己的 IG 首頁，問：陌生人 10 秒內知道你擅長什麼嗎？知道怎麼預約嗎？</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">1:00 · TikTok</span>
+      <h2>TikTok：爆款流量與低信任轉換的拉扯</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>適合做什麼</h3>
+          <ul class="small-list">
+            <li>強視覺前後對比。</li>
+            <li>快速迷思破解。</li>
+            <li>髮型趨勢與流行梗的快速反應。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>要注意什麼</h3>
+          <ul class="small-list">
+            <li>陌生觸及不等於預約。</li>
+            <li>爆款可能帶來不精準諮詢，增加回覆成本。</li>
+            <li>要把流量導回 IG、Google 或 LINE 才能沉澱。</li>
+          </ul>
+        </div>
+      </div>
+      <p class="source">來源：DataReportal 2025、2026：TikTok 18+ 台灣廣告觸及由 8.34M 到 8.67M。</p>
+      <aside class="notes">1:00-1:05。提醒：TikTok 是擴音器，不是收銀台。每支影片都要有下一步。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">1:05 · Threads</span>
+      <h2>Threads：2026 台灣社群討論的新日常</h2>
+      <div class="grid-3">
+        <div class="task-card"><h3>觀點</h3><p>例如「為什麼漂髮前我一定先問你工作型態？」用專業態度建立信任。</p></div>
+        <div class="task-card"><h3>生活感</h3><p>讓顧客知道你不是只會做頭髮，也有審美、個性與溝通風格。</p></div>
+        <div class="task-card"><h3>即時互動</h3><p>把日常問題變成短回覆，再延伸成 IG Reels 或 LINE FAQ。</p></div>
+      </div>
+      <div class="section-band">
+        <p>Threads 適合設計師做「人味」，但預約和作品仍要接回 IG、Google、LINE。</p>
+      </div>
+      <p class="source">來源：DataReportal 2026：Threads 台灣廣告觸及 6.65M。</p>
+      <aside class="notes">1:05-1:10。請學員想一個他們很常跟客人解釋的觀念，直接轉成 Threads 的一句話。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">1:10 · SWOT 2</span>
+      <h2>平台分散化對髮型師的影響</h2>
+      <div class="swot-grid">
+        <div class="swot-card s" data-letter="S"><h3>Strength 優勢</h3><p>FB、IG、YouTube、TikTok、Threads 各自能觸及不同客群，不必把所有希望押在同一入口。</p></div>
+        <div class="swot-card w" data-letter="W"><h3>Weakness 弱點</h3><p>髮型師時間有限，多平台經營會拉高拍攝、回覆、排程與維護成本。</p></div>
+        <div class="swot-card o" data-letter="O"><h3>Opportunity 機會</h3><p>可用「IG 作品、Threads 觀點、YouTube 教學、LINE 回流、Google 成交」做平台分工。</p></div>
+        <div class="swot-card t" data-letter="T"><h3>Threat 威脅</h3><p>沒有主場與名單池，流量會被演算法拿走；帳號波動時，預約也跟著不穩。</p></div>
+      </div>
+      <aside class="notes">1:10-1:16。讓學員用一張紙畫出自己的平台分工。若沒有 Google 或 LINE，後半堂會補。</aside>
+    </section>
+
+    <section data-background-image="images/short-video.png" data-background-opacity="0.26" data-background-size="cover">
+      <span class="time-chip">1:16 · 短影音</span>
+      <h2>短影音不是趨勢，是日常習慣</h2>
+      <div class="grid-3">
+        <div class="metric"><div class="num">78.46%</div><div class="label">TWNIC：近三個月看過短影音</div></div>
+        <div class="metric"><div class="num">58.04%</div><div class="label">TWNIC：每天觀看短影音</div></div>
+        <div class="metric"><div class="num">114.28</div><div class="label">DataReportal：行動下載中位數 Mbps，影音體驗更順</div></div>
+      </div>
+      <div class="section-band">
+        <p>2026 的問題不是要不要拍短影音，而是能不能把拍攝變成不痛苦的服務流程。</p>
+      </div>
+      <p class="source">來源：TWNIC 2025 Taiwan Internet Report；DataReportal《Digital 2026: Taiwan》。</p>
+      <aside class="notes">1:16-1:22。強調短影音不是另外加工作，而是把服務流程中的可視化片段留下來。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">1:22 · 內容模型</span>
+      <h2>髮型短影音的 5 種內容模型</h2>
+      <div class="grid-5">
+        <div class="content-model"><div class="badge">1</div><h3>前後對比</h3><p>最直覺展示成果，但要補一句「適合誰」。</p></div>
+        <div class="content-model"><div class="badge">2</div><h3>過程縮時</h3><p>讓顧客理解工序，降低價格疑慮。</p></div>
+        <div class="content-model"><div class="badge">3</div><h3>髮質教育</h3><p>用簡單比喻講細軟、自然捲、受損髮。</p></div>
+        <div class="content-model"><div class="badge">4</div><h3>顧客故事</h3><p>不是只拍頭髮，而是講她為什麼想改變。</p></div>
+        <div class="content-model"><div class="badge">5</div><h3>迷思破解</h3><p>回答「漂完一定爛嗎」「燙髮會不會老」。</p></div>
+      </div>
+      <div class="note-box">每支片都用同一公式：顧客問題 → 專業判斷 → 作品證據 → 下一步 CTA。</div>
+      <aside class="notes">1:22-1:30。請學員圈出自己最容易開始的一種模型。不要讓大家一開始就追求電影感，先追求穩定可複製。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">1:30 · 創作者信任</span>
+      <h2>網紅與知識型內容：美業正好卡在甜蜜點</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>TWNIC 行為訊號</h3>
+          <ul class="small-list">
+            <li>超過一半的受訪者近一個月看過網紅或創作者內容。</li>
+            <li>知識型、美容時尚、健康照護等主題都與髮型師專業有重疊。</li>
+            <li>顧客不是只看娛樂，也會看「對我有沒有幫助」。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>髮型師的定位</h3>
+          <p class="lead">你不一定要當大型網紅，但可以成為特定客群心中的「可信任微型專家」。</p>
+          <p class="muted">例如：自然捲救星、細軟髮燙髮顧問、上班族低維護髮型專家。</p>
+        </div>
+      </div>
+      <p class="source">來源：TWNIC 2025 Taiwan Internet Report。</p>
+      <aside class="notes">1:30-1:35。用「微型專家」降低壓力。髮型師不用模仿娛樂型網紅，而是把每天回答顧客的內容系統化。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">1:35 · SWOT 3</span>
+      <h2>短影音與創作者信任</h2>
+      <div class="swot-grid">
+        <div class="swot-card s" data-letter="S"><h3>Strength 優勢</h3><p>髮型服務天然有前後對比、過程變化與成果可視化，很適合短影音敘事。</p></div>
+        <div class="swot-card w" data-letter="W"><h3>Weakness 弱點</h3><p>拍攝、剪輯、腳本若沒有固定流程，容易三分鐘熱度，最後變成額外負擔。</p></div>
+        <div class="swot-card o" data-letter="O"><h3>Opportunity 機會</h3><p>顧客願意看簡單易懂的美容時尚知識，設計師可用短影音建立專業親近感。</p></div>
+        <div class="swot-card t" data-letter="T"><h3>Threat 威脅</h3><p>過度娛樂化、過度修圖或承諾過滿，會把流量換成不信任與客訴風險。</p></div>
+      </div>
+      <aside class="notes">1:35-1:42。讓大家理解「爆款」不是唯一 KPI。美業內容要同時考慮信任與成交品質。</aside>
+    </section>
+
+    <section id="slide-service-poll">
+      <span class="time-chip">1:42 · 休息前練習</span>
+      <h2>把一個服務變成 3 支短影音：你會選哪個？</h2>
+      <div class="poll-wrap">
+        <div class="interactive-panel">
+          <p class="lead">請每位學員選一個最想拿來做內容的服務。投票後，等一下用最高票做示範。</p>
+          <div class="poll-options" id="servicePollOptions">
+            <button class="poll-option" data-poll="servicePoll" data-option="剪髮">剪髮 <span class="pct">0%</span></button>
+            <button class="poll-option" data-poll="servicePoll" data-option="染髮">染髮 <span class="pct">0%</span></button>
+            <button class="poll-option" data-poll="servicePoll" data-option="燙髮">燙髮 <span class="pct">0%</span></button>
+            <button class="poll-option" data-poll="servicePoll" data-option="護髮／頭皮">護髮／頭皮 <span class="pct">0%</span></button>
+          </div>
+          <button class="reset-btn" data-reset-poll="servicePoll">重置投票</button>
+        </div>
+        <div class="interactive-panel">
+          <h3>即時結果</h3>
+          <div class="poll-bars" id="servicePollBars"></div>
+        </div>
+      </div>
+      <aside class="notes">1:42-1:50。依最高票示範：一個服務拆成「問題型、過程型、成果型」三支短影音。接著休息 10 分鐘。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">1:50 · 休息</span>
+      <h2>休息 10 分鐘</h2>
+      <div class="section-band">
+        <p>回來後，我們會從「被看見」進入「被預約、被回流」。請先想一件事：你的客人現在最常在哪一步漏掉？</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>漏在看見</h3><p>作品不夠清楚，或平台入口太少。</p></div>
+        <div class="card"><h3>漏在相信</h3><p>有流量，但顧客不敢預約或一直問價格。</p></div>
+        <div class="card"><h3>漏在回流</h3><p>做完一次就斷線，沒有週期提醒。</p></div>
+      </div>
+      <aside class="notes">1:50-2:00。休息頁保留在投影上。回來時請三位學員分享自己的漏斗斷點。</aside>
+    </section>
+
+    <section data-background-image="images/conversion-funnel.png" data-background-opacity="0.29" data-background-size="cover">
+      <span class="time-chip">2:00 · 成交漏斗</span>
+      <h2>沙龍成交漏斗：看見、相信、預約、回流</h2>
+      <div class="flow">
+        <div class="flow-step"><div class="step-no">01</div><h3>被看見</h3><p>IG Reels、TikTok、YouTube Shorts、Threads、Google 搜尋。</p></div>
+        <div class="flow-step"><div class="step-no">02</div><h3>被相信</h3><p>作品前後對比、Google 評價、顧客故事、專業解說。</p></div>
+        <div class="flow-step"><div class="step-no">03</div><h3>被預約</h3><p>Google 商家、IG 個檔連結、LINE 圖文選單、預約表單。</p></div>
+        <div class="flow-step"><div class="step-no">04</div><h3>被回流</h3><p>LINE 分眾、週期提醒、售後照護、生日與節日方案。</p></div>
+      </div>
+      <aside class="notes">2:00-2:05。把前半堂的平台都放回漏斗。提醒：看見是開頭，不是終點。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">2:05 · Google 商家</span>
+      <h2>Google 商家：2026 沙龍最不能漏的成交入口</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>為什麼重要</h3>
+          <ul class="small-list">
+            <li>顧客搜尋「地區 + 剪髮／染髮／護髮」時，Google 商家常比社群更接近成交。</li>
+            <li>地圖、電話、營業時間、照片、評論、服務項目會一起影響信任。</li>
+            <li>它是陌生顧客從需求到預約的短路徑。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>本週可以補的 5 件事</h3>
+          <ul class="small-list">
+            <li>營業時間與預約連結正確。</li>
+            <li>服務項目補齊剪、染、燙、護、頭皮。</li>
+            <li>每週新增 3-5 張真實作品照片。</li>
+            <li>每則評價都回覆。</li>
+            <li>把 IG／LINE 入口放到顧客找得到的地方。</li>
+          </ul>
+        </div>
+      </div>
+      <p class="source">來源：Google Business Profile 官方說明；數發部商品或服務資訊查詢行為。</p>
+      <aside class="notes">2:05-2:12。請學員現場搜尋自己的店名，看 Google 顯示是否完整。這頁通常會讓很多人有立即行動感。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">2:12 · 評價與照片</span>
+      <h2>Google 評價與作品照片怎麼搭配</h2>
+      <table class="simple-table">
+        <thead><tr><th>時機</th><th>動作</th><th>話術重點</th><th>避免</th></tr></thead>
+        <tbody>
+          <tr><td>服務完成當天</td><td>拍攝完成照與細節照</td><td>確認顧客同意，記錄服務項目與髮況</td><td>只拍模糊背影、無法看成果</td></tr>
+          <tr><td>顧客滿意時</td><td>請顧客留下 Google 評價</td><td>「如果今天整理方式對你有幫助，願意幫我寫一則真實心得嗎？」</td><td>用折扣交換好評</td></tr>
+          <tr><td>評價出現後</td><td>店家公開回覆</td><td>回覆服務重點、感謝信任、提醒照護</td><td>只回「謝謝」兩字</td></tr>
+          <tr><td>每週固定</td><td>照片分類上架</td><td>剪髮、染髮、燙髮、護髮各自累積</td><td>一次大量上傳，之後停更</td></tr>
+        </tbody>
+      </table>
+      <aside class="notes">2:12-2:18。這頁偏 SOP。提醒學員：評價不是求五星，而是累積真實服務證據。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">2:18 · LINE 官方帳號</span>
+      <h2>LINE 官方帳號：熟客回流的核心資產</h2>
+      <div class="grid-4">
+        <div class="task-card"><h3>圖文選單</h3><p>預約、價目、作品、交通、售後照護，一鍵完成。</p></div>
+        <div class="task-card"><h3>分眾標籤</h3><p>剪髮、染髮、燙髮、頭皮、VIP、久未回訪。</p></div>
+        <div class="task-card"><h3>週期提醒</h3><p>染後 6-8 週、燙後 8-12 週，提醒回店或照護。</p></div>
+        <div class="task-card"><h3>售後教育</h3><p>把整理方法、洗護方式、褪色照護變成訊息腳本。</p></div>
+      </div>
+      <div class="section-band">
+        <p>IG 帶來注意力，Google 接近成交，LINE 負責把一次消費變長期關係。</p>
+      </div>
+      <aside class="notes">2:18-2:25。提醒 LINE 不是只拿來群發優惠。它應該是沙龍的顧客關係系統。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">2:25 · LINE 2026 工具趨勢</span>
+      <h2>LINE 2026：官方帳號更像商務系統，廣告更 AI 化</h2>
+      <div class="grid-3">
+        <div class="metric"><div class="num">340萬+</div><div class="label">LINE 官方帳號數已突破 340 萬</div></div>
+        <div class="metric"><div class="num">OA Plus</div><div class="label">2026.3 推出，整合會員、預約、訂位等進階經營系統</div></div>
+        <div class="metric"><div class="num">LAP AI</div><div class="label">廣告創建、素材生成、報告洞察導入 AI 助手</div></div>
+      </div>
+      <div class="note-box">給沙龍的解讀：LINE 會越來越像「中小商家的營運後台」，髮型師要先把顧客資料、分眾、預約與回流流程整理好。</div>
+      <p class="source">來源：LINE Biz-Solutions《2026 LINE SMB Day》。</p>
+      <aside class="notes">2:25-2:32。不要把 LINE 新工具講成全部都要立刻買。重點是方向：官方帳號從訊息工具變成營運工具。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">2:32 · SWOT 4</span>
+      <h2>Google + LINE 成交閉環</h2>
+      <div class="swot-grid">
+        <div class="swot-card s" data-letter="S"><h3>Strength 優勢</h3><p>Google 負責新客搜尋，LINE 負責熟客回流，兩者都很貼近沙龍日常營運。</p></div>
+        <div class="swot-card w" data-letter="W"><h3>Weakness 弱點</h3><p>多數店家缺完整預約連結、評價流程與 LINE 分眾設計，導致流量接不住。</p></div>
+        <div class="swot-card o" data-letter="O"><h3>Opportunity 機會</h3><p>用 Google 評價與 LINE 週期提醒，把一次消費延伸為長期關係與回訪營收。</p></div>
+        <div class="swot-card t" data-letter="T"><h3>Threat 威脅</h3><p>只靠 IG 私訊或個人 LINE 容易漏單、難交接、難追蹤，也難放大團隊營運。</p></div>
+      </div>
+      <aside class="notes">2:32-2:38。此處時間可依前面進度微調。若班上店長較多，可多講交接與資料留存。</aside>
+    </section>
+
+    <section data-background-image="images/ai-future.png" data-background-opacity="0.22" data-background-size="cover">
+      <span class="time-chip">2:38 · AI 與搜尋</span>
+      <h2>AI 進入搜尋與內容生產：顧客問問題的方式正在改變</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>數位行為訊號</h3>
+          <ul class="small-list">
+            <li>數發部指出，維基百科查詢使用率下降，可能反映 AI 時代資訊取得途徑正在轉變。</li>
+            <li>顧客未來可能先問 AI「我適合什麼髮型」，再到社群與 Google 驗證店家。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>髮型師要準備什麼</h3>
+          <ul class="small-list">
+            <li>把作品與服務說明寫清楚，讓人與機器都看得懂。</li>
+            <li>把 FAQ、顧客疑問、術後照護整理成內容素材。</li>
+            <li>保留真實案例，避免 AI 內容空泛化。</li>
+          </ul>
+        </div>
+      </div>
+      <p class="source">來源：數位發展部 114 年數位近用調查報告。</p>
+      <aside class="notes">2:38-2:44。避免把 AI 講得太玄。直接說：顧客會更會問，髮型師也要更會整理知識。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">2:44 · AI 工具</span>
+      <h2>AI 可以幫髮型師做什麼</h2>
+      <div class="grid-3">
+        <div class="task-card"><h3>短影音腳本</h3><p>把顧客問題變成 15 秒、30 秒、60 秒三種版本。</p></div>
+        <div class="task-card"><h3>貼文標題</h3><p>把作品命名成顧客會搜尋、會理解的語言。</p></div>
+        <div class="task-card"><h3>顧客問答</h3><p>整理價格、髮況、保養、預約前注意事項。</p></div>
+        <div class="task-card"><h3>LINE 回覆草稿</h3><p>建立諮詢、改期、售後、評價邀請的標準回覆。</p></div>
+        <div class="task-card"><h3>活動企劃</h3><p>設計淡季、節日、會員回流、老客推薦方案。</p></div>
+        <div class="task-card"><h3>報表解讀</h3><p>把 IG、Google、LINE 數據轉成下週行動。</p></div>
+      </div>
+      <aside class="notes">2:44-2:50。這頁可以示範一個 prompt：把「染後褪色」變成三支 Reels 腳本。若時間不足，口頭帶過。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">2:50 · AI 邊界</span>
+      <h2>但 AI 不能幫你取代什麼</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>不能取代</h3>
+          <ul class="small-list">
+            <li>技術手感與現場判斷。</li>
+            <li>審美品味與顧客溝通。</li>
+            <li>真實作品與服務體驗。</li>
+            <li>顧客願意再回來的信任。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>最好的分工</h3>
+          <p class="lead">AI 負責把你的專業變得更有系統；你負責讓內容有真實作品、真實語氣與真實承諾。</p>
+        </div>
+      </div>
+      <aside class="notes">2:50-2:55。這頁要講價值觀。美業最怕假作品、假評價與過度承諾，AI 只能輔助，不能讓信任變廉價。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">2:55 · SWOT 5</span>
+      <h2>AI 與社群搜尋</h2>
+      <div class="swot-grid">
+        <div class="swot-card s" data-letter="S"><h3>Strength 優勢</h3><p>AI 可降低文案、腳本、活動企劃與回覆草稿的製作成本，小店也能提高產能。</p></div>
+        <div class="swot-card w" data-letter="W"><h3>Weakness 弱點</h3><p>AI 內容若缺少真實作品與個人語氣，會變得像罐頭，讓顧客感覺不到人味。</p></div>
+        <div class="swot-card o" data-letter="O"><h3>Opportunity 機會</h3><p>髮型師可用 AI 把作品整理成知識庫、FAQ、短影音腳本與顧客教育系統。</p></div>
+        <div class="swot-card t" data-letter="T"><h3>Threat 威脅</h3><p>假作品、過度修圖、假評價與誇大承諾會破壞美業最核心的信任。</p></div>
+      </div>
+      <aside class="notes">2:55-3:00。若課程時間嚴格，這頁和下一頁工作坊可以合併快講；若是工作坊型課程，則把後續行動表留作課後作業。</aside>
+    </section>
+
+    <section id="slide-workshop-cloud">
+      <span class="time-chip">工作坊 · 7 日內容表</span>
+      <h2>每人做一份自己的 7 日內容表：第一個主題是什麼？</h2>
+      <div class="wordcloud-wrap">
+        <div class="interactive-panel">
+          <label for="workshopInput">輸入服務主題或客群</label>
+          <form class="input-row" id="workshopForm">
+            <input id="workshopInput" autocomplete="off" placeholder="例如：自然捲、白髮染、護髮、短髮" />
+            <button type="submit">送出</button>
+          </form>
+          <button class="reset-btn" data-reset-cloud="workshopCloud">重置本頁</button>
+          <p class="source">講師操作：將高頻主題挑 1 個，示範拆成 7 天內容。</p>
+        </div>
+        <div class="wordcloud-board" id="workshopCloud" aria-live="polite"></div>
+      </div>
+      <aside class="notes">建議視現場時間彈性 5-10 分鐘。若已超時，改成課後作業：每人交一份 7 日內容表。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">90 天行動 · 第 1 個月</span>
+      <h2>第一個月先補地基：讓顧客找得到、看得懂、約得到</h2>
+      <table class="simple-table">
+        <thead><tr><th>週次</th><th>任務</th><th>完成標準</th><th>檢查指標</th></tr></thead>
+        <tbody>
+          <tr><td>第 1 週</td><td>Google 商家健檢</td><td>營業時間、服務、預約、照片、店址正確</td><td>搜尋店名後資訊完整</td></tr>
+          <tr><td>第 2 週</td><td>IG 首頁改造</td><td>自介寫清楚服務、地區、預約方式、代表作品</td><td>陌生人 10 秒內懂你擅長什麼</td></tr>
+          <tr><td>第 3 週</td><td>LINE 圖文選單</td><td>預約、價目、作品、交通、售後照護入口</td><td>顧客不用私訊也能找到下一步</td></tr>
+          <tr><td>第 4 週</td><td>評價與作品流程</td><td>建立拍照、評價邀請、回覆、照片上架 SOP</td><td>每週至少新增 3 則可用證據</td></tr>
+        </tbody>
+      </table>
+      <aside class="notes">這是課末行動表，不要講成理論。每一週都要讓學員知道做完長什麼樣。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">90 天行動 · 第 2-3 個月</span>
+      <h2>第二、三個月：建立節奏，再用小額廣告放大</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>每週基本節奏</h3>
+          <ul class="small-list">
+            <li>3 支 Reels／Shorts：成果、教育、迷思破解。</li>
+            <li>2 則 Threads：觀點、日常、顧客問題。</li>
+            <li>1 次 Google 商家更新：作品照片或活動。</li>
+            <li>1 則 LINE 回流訊息：照護、週期提醒或會員活動。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>小額廣告原則</h3>
+          <ul class="small-list">
+            <li>只放大已經有自然互動的素材。</li>
+            <li>導向 LINE 預約或明確諮詢頁，不只導到首頁。</li>
+            <li>每兩週看一次：詢問數、預約數、客單、回訪。</li>
+            <li>廣告不是救爛流程，是放大好流程。</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="notes">用這頁讓學員不要貪多。節奏先穩，再談廣告。若店內多人，可分工：設計師拍、行政排、店長看數據。</aside>
+    </section>
+
+    <section>
+      <span class="time-chip">自評檢核</span>
+      <h2>髮型師 2026 社群行銷健康度：20 題自評</h2>
+      <div class="checklist">
+        <div class="check-item">Google 商家資訊完整，且有預約入口。</div>
+        <div class="check-item">每週至少新增作品照片或店家更新。</div>
+        <div class="check-item">IG 自介清楚寫出地區、服務與預約方式。</div>
+        <div class="check-item">IG 精選動態包含價目、作品、交通、FAQ。</div>
+        <div class="check-item">短影音有固定 3 種內容模型。</div>
+        <div class="check-item">每支影片都有明確下一步 CTA。</div>
+        <div class="check-item">LINE 圖文選單可完成預約與查詢。</div>
+        <div class="check-item">LINE 有染燙護週期提醒設計。</div>
+        <div class="check-item">每則 Google 評價都有回覆。</div>
+        <div class="check-item">顧客同意拍攝與使用作品有流程。</div>
+        <div class="check-item">Threads 或文字平台有穩定觀點內容。</div>
+        <div class="check-item">YouTube／Shorts 至少有可搜尋題目。</div>
+        <div class="check-item">有用 AI 協助腳本、標題或 FAQ。</div>
+        <div class="check-item">AI 產出會經過真實作品與語氣校正。</div>
+        <div class="check-item">知道每月新客來源比例。</div>
+        <div class="check-item">知道每月回訪與老客推薦比例。</div>
+        <div class="check-item">有固定追蹤詢問到預約的轉換。</div>
+        <div class="check-item">廣告素材先自然測試再放大。</div>
+        <div class="check-item">私訊回覆有模板，不靠臨場記憶。</div>
+        <div class="check-item">90 天內有一個可衡量主目標。</div>
+      </div>
+      <aside class="notes">請學員勾選。0-7：先補基礎；8-14：建立節奏；15-20：可以開始廣告與自動化。</aside>
+    </section>
+
+    <section data-background-image="images/cover.png" data-background-opacity="0.22" data-background-size="cover">
+      <span class="time-chip">收尾</span>
+      <h2>明年再看這份報告時，要看什麼？</h2>
+      <div class="closing-list">
+        <div class="card"><div class="num">1</div><p>平台觸及是否只是工具口徑變動，還是真實行為改變？</p></div>
+        <div class="card"><div class="num">2</div><p>短影音是否繼續日常化，顧客更相信哪種內容？</p></div>
+        <div class="card"><div class="num">3</div><p>AI 搜尋是否改變顧客找髮型與找店家的方式？</p></div>
+        <div class="card"><div class="num">4</div><p>LINE 是否更接近預約、會員、廣告與 CRM 中心？</p></div>
+        <div class="card"><div class="num">5</div><p>Google 評價與作品照片是否成為更重要的成交證據？</p></div>
+      </div>
+      <div class="section-band">
+        <p>2026 的核心任務：不要只追平台紅利，要建立自己的顧客閉環。</p>
+      </div>
+      <p class="source">主要來源：DataReportal Digital 2025/2026 Taiwan、TWNIC 2025 Taiwan Internet Report、數發部 114 年數位近用調查、LINE Biz-Solutions 2026 SMB Day、Google Business Profile。</p>
+      <aside class="notes">最後請學員寫下 90 天唯一主目標，例如「Google 評價增加 30 則」「LINE 回流訊息每月 2 則」「每週穩定 3 支短影音」。</aside>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: "slide",
+    transitionSpeed: "default",
+    backgroundTransition: "fade",
+    center: true,
+    progress: true,
+    controls: true,
+    slideNumber: "c/t"
+  });
+
+  function readStore(key, fallback) {
+    try {
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch (error) {
+      return fallback;
+    }
+  }
+
+  function writeStore(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+  }
+
+  function renderCloud(boardId, storageKey, starter) {
+    const board = document.getElementById(boardId);
+    if (!board) return;
+    const counts = readStore(storageKey, starter);
+    const entries = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 26);
+    const max = Math.max(1, ...entries.map((entry) => entry[1]));
+    board.innerHTML = "";
+    entries.forEach(([word, count], index) => {
+      const span = document.createElement("span");
+      span.className = "cloud-word";
+      span.textContent = word;
+      const size = 22 + (count / max) * 38 + (index < 3 ? 8 : 0);
+      span.style.fontSize = size + "px";
+      span.style.color = index % 3 === 0 ? "var(--accent2)" : index % 3 === 1 ? "var(--warn)" : "var(--success)";
+      board.appendChild(span);
+    });
+  }
+
+  function bindCloud(formId, inputId, boardId, storageKey, starter) {
+    renderCloud(boardId, storageKey, starter);
+    const form = document.getElementById(formId);
+    const input = document.getElementById(inputId);
+    if (!form || !input) return;
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const value = input.value.trim();
+      if (!value) return;
+      const counts = readStore(storageKey, starter);
+      counts[value] = (counts[value] || 0) + 1;
+      writeStore(storageKey, counts);
+      input.value = "";
+      renderCloud(boardId, storageKey, starter);
+    });
+  }
+
+  function renderPoll(key) {
+    const buttons = Array.from(document.querySelectorAll(`[data-poll="${key}"]`));
+    const bars = document.getElementById(key + "Bars");
+    if (!buttons.length || !bars) return;
+    const counts = readStore(key, {});
+    const options = buttons.map((button) => button.dataset.option);
+    const total = options.reduce((sum, option) => sum + (counts[option] || 0), 0);
+    buttons.forEach((button) => {
+      const option = button.dataset.option;
+      const pct = total ? Math.round(((counts[option] || 0) / total) * 100) : 0;
+      const pctNode = button.querySelector(".pct");
+      if (pctNode) pctNode.textContent = pct + "%";
+    });
+    bars.innerHTML = "";
+    options.forEach((option) => {
+      const pct = total ? Math.round(((counts[option] || 0) / total) * 100) : 0;
+      const item = document.createElement("div");
+      item.innerHTML = `
+        <div class="poll-bar-label"><span>${option}</span><span>${counts[option] || 0} 票 · ${pct}%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div>
+      `;
+      bars.appendChild(item);
+    });
+  }
+
+  function bindPoll(key) {
+    document.querySelectorAll(`[data-poll="${key}"]`).forEach((button) => {
+      button.addEventListener("click", () => {
+        const counts = readStore(key, {});
+        const option = button.dataset.option;
+        counts[option] = (counts[option] || 0) + 1;
+        writeStore(key, counts);
+        renderPoll(key);
+      });
+    });
+    renderPoll(key);
+  }
+
+  function bindResets() {
+    document.querySelectorAll("[data-reset-cloud]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const boardId = button.dataset.resetCloud;
+        if (boardId === "platformCloud") {
+          localStorage.removeItem("deck_platform_cloud");
+          renderCloud("platformCloud", "deck_platform_cloud", platformStarter);
+        }
+        if (boardId === "workshopCloud") {
+          localStorage.removeItem("deck_workshop_cloud");
+          renderCloud("workshopCloud", "deck_workshop_cloud", workshopStarter);
+        }
+      });
+    });
+    document.querySelectorAll("[data-reset-poll]").forEach((button) => {
+      button.addEventListener("click", () => {
+        localStorage.removeItem(button.dataset.resetPoll);
+        renderPoll(button.dataset.resetPoll);
+      });
+    });
+  }
+
+  function bindMaturitySlider() {
+    const slider = document.getElementById("maturitySlider");
+    const after = document.getElementById("maturityAfter");
+    if (!slider || !after) return;
+    const update = () => {
+      after.style.clipPath = `inset(0 ${100 - Number(slider.value)}% 0 0)`;
+    };
+    slider.addEventListener("input", update);
+    update();
+  }
+
+  const platformStarter = {
+    "IG": 7,
+    "LINE": 5,
+    "Google": 4,
+    "介紹": 4,
+    "Facebook": 2,
+    "TikTok": 2,
+    "Threads": 1
+  };
+
+  const workshopStarter = {
+    "自然捲": 4,
+    "白髮染": 3,
+    "細軟髮": 3,
+    "護髮": 2,
+    "短髮": 2,
+    "頭皮護理": 2
+  };
+
+  bindCloud("platformForm", "platformInput", "platformCloud", "deck_platform_cloud", platformStarter);
+  bindCloud("workshopForm", "workshopInput", "workshopCloud", "deck_workshop_cloud", workshopStarter);
+  bindPoll("servicePoll");
+  bindResets();
+  bindMaturitySlider();
+</script>
+</body>
+</html>

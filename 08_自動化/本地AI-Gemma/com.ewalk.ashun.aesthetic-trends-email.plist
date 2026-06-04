@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.ewalk.ashun.aesthetic-trends-email</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/08_自動化/本地AI-Gemma/scripts/run_aesthetic_trends_email.sh</string>
+  </array>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>7</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+
+  <key>StartInterval</key>
+  <integer>3600</integer>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <key>StandardOutPath</key>
+  <string>/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/08_自動化/本地AI-Gemma/output/aesthetic-trends-email/launchd.stdout.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/08_自動化/本地AI-Gemma/output/aesthetic-trends-email/launchd.stderr.log</string>
+</dict>
+</plist>

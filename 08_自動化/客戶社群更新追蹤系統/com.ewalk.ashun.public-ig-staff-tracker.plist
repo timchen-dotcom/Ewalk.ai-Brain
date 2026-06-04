@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.ewalk.ashun.public-ig-staff-tracker</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>cd "/Users/chenjinting/Desktop/Ewalk.ai 自動化系統" &amp;&amp; "Ewalk.ai Brain/腳本/social-frequency-tracker/run-public-ig-tracker.command"</string>
+  </array>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key>
+    <integer>2</integer>
+    <key>Hour</key>
+    <integer>10</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/08_自動化/客戶社群更新追蹤系統/public-ig-staff-tracker.out.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/08_自動化/客戶社群更新追蹤系統/public-ig-staff-tracker.err.log</string>
+</dict>
+</plist>

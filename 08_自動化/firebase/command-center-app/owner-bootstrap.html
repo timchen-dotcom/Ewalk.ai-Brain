@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Ewalk.ai Owner Bootstrap</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .bootstrap-shell {
+        display: grid;
+        gap: 18px;
+        margin: 0 auto;
+        max-width: 780px;
+        padding: 48px 24px;
+      }
+
+      .bootstrap-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 16px;
+        padding: 22px;
+      }
+
+      pre {
+        background: #f7fafb;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        color: var(--ink);
+        margin: 0;
+        min-height: 160px;
+        overflow-wrap: anywhere;
+        padding: 14px;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="bootstrap-shell">
+      <section class="bootstrap-card">
+        <div>
+          <p class="eyebrow">Owner Role Bootstrap</p>
+          <h1>建立提姆先生 owner 權限文件</h1>
+        </div>
+        <p>這一步只會嘗試寫入 <code>users/{uid}</code> 與一筆稽核紀錄，不發文、不部署 rules、不處理金流。</p>
+        <button class="primary-action" id="writeButton" type="button">寫入 owner 權限</button>
+        <pre id="log">準備中...</pre>
+      </section>
+    </main>
+    <script src="./firebase-config.local.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+      import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+      import { doc, getDoc, getFirestore, serverTimestamp, setDoc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+      const log = document.getElementById("log");
+      const writeButton = document.getElementById("writeButton");
+      const app = initializeApp(window.EWALK_FIREBASE_CONFIG);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+
+      let currentUser = null;
+
+      function writeLog(payload) {
+        log.textContent = typeof payload === "string" ? payload : JSON.stringify(payload, null, 2);
+      }
+
+      function firestoreValue(value) {
+        if (value === null || value === undefined) return { nullValue: null };
+        if (typeof value === "string") return /^\d{4}-\d{2}-\d{2}T/.test(value) ? { timestampValue: value } : { stringValue: value };
+        if (typeof value === "boolean") return { booleanValue: value };
+        if (typeof value === "number") return Number.isInteger(value) ? { integerValue: String(value) } : { doubleValue: value };
+        if (Array.isArray(value)) return { arrayValue: { values: value.map((item) => firestoreValue(item)) } };
+        if (typeof value === "object") {
+          return { mapValue: { fields: Object.fromEntries(Object.entries(value).map(([key, child]) => [key, firestoreValue(child)])) } };
+        }
+        return { stringValue: String(value) };
+      }
+
+      function fields(data) {
+        return Object.fromEntries(Object.entries(data).map(([key, value]) => [key, firestoreValue(value)]));
+      }
+
+      function docName(collection, id) {
+        return `projects/${window.EWALK_FIREBASE_CONFIG.projectId}/databases/(default)/documents/${collection}/${id}`;
+      }
+
+      async function signInWithAdminScope() {
+        const provider = new GoogleAuthProvider();
+        provider.addScope("https://www.googleapis.com/auth/datastore");
+        provider.setCustomParameters({ hd: "ewalk.ai", prompt: "consent" });
+        const result = await signInWithPopup(auth, provider);
+        currentUser = result.user;
+        const oauthCredential = GoogleAuthProvider.credentialFromResult(result);
+        return { user: result.user, accessToken: oauthCredential?.accessToken };
+      }
+
+      async function writeOwnerRoleViaRest(user, accessToken) {
+        if (!accessToken) throw new Error("沒有取得 Google OAuth access token。");
+        const now = new Date().toISOString();
+        const auditId = `user-role-bootstrap-${now.replace(/\D/g, "").slice(0, 14)}`;
+        const ownerDoc = {
+          uid: user.uid,
+          email: user.email,
+          display_name: "提姆先生",
+          role: "owner",
+          status: "active",
+          client_ids: [],
+          department_ids: ["management"],
+          created_at: now,
+          updated_at: now,
+          updated_by: "ashun",
+          approved_by: "提姆先生",
+        };
+        const auditDoc = {
+          action: "user_role_bootstrap",
+          target_uid: user.uid,
+          target_email: user.email,
+          role: "owner",
+          approved_by: "提姆先生",
+          performed_by: "ashun",
+          project_id: window.EWALK_FIREBASE_CONFIG.projectId,
+          created_at: now,
+        };
+        const commit = {
+          writes: [
+            {
+              update: {
+                name: docName("users", user.uid),
+                fields: fields(ownerDoc),
+              },
+            },
+            {
+              update: {
+                name: docName("audit_logs", auditId),
+                fields: fields(auditDoc),
+              },
+            },
+          ],
+        };
+
+        const endpoint = `https://firestore.googleapis.com/v1/projects/${window.EWALK_FIREBASE_CONFIG.projectId}/databases/(default)/documents:commit`;
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            authorization: `Bearer ${accessToken}`,
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(commit),
+        });
+        const body = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(`Firestore REST commit failed: ${response.status} ${JSON.stringify(body)}`);
+
+        const verifyResponse = await fetch(
+          `https://firestore.googleapis.com/v1/projects/${window.EWALK_FIREBASE_CONFIG.projectId}/databases/(default)/documents/users/${user.uid}`,
+          { headers: { authorization: `Bearer ${accessToken}` } }
+        );
+        const verifyBody = await verifyResponse.json().catch(() => ({}));
+        if (!verifyResponse.ok || !verifyBody.name) {
+          throw new Error(`Firestore REST verify failed: ${verifyResponse.status} ${JSON.stringify(verifyBody)}`);
+        }
+
+        return {
+          wrote: [`users/${user.uid}`, `audit_logs/${auditId}`],
+          verified_document: verifyBody.name,
+        };
+      }
+
+      onAuthStateChanged(auth, (user) => {
+        currentUser = user;
+        if (user) {
+          writeLog({
+            status: "ready",
+            email: user.email,
+            uid: user.uid,
+            next: "按下寫入 owner 權限",
+          });
+        } else {
+          writeLog("尚未登入；按下按鈕後會先開啟 Google 登入。");
+        }
+      });
+
+      async function writeOwnerRole() {
+        writeButton.disabled = true;
+        let adminAccessToken = null;
+        try {
+          let user = currentUser;
+          if (!user) {
+            const signedIn = await signInWithAdminScope();
+            user = signedIn.user;
+            adminAccessToken = signedIn.accessToken;
+          }
+          if (user.email !== "tim.chen@ewalk.ai") throw new Error("owner role 只允許 tim.chen@ewalk.ai。");
+
+          const now = new Date().toISOString();
+          const userRef = doc(db, "users", user.uid);
+          const auditRef = doc(db, "audit_logs", `user-role-bootstrap-${now.replace(/\D/g, "").slice(0, 14)}`);
+          const ownerDoc = {
+            uid: user.uid,
+            email: user.email,
+            display_name: "提姆先生",
+            role: "owner",
+            status: "active",
+            client_ids: [],
+            department_ids: ["management"],
+            created_at: serverTimestamp(),
+            updated_at: serverTimestamp(),
+            updated_by: "ashun",
+            approved_by: "提姆先生",
+          };
+          const auditDoc = {
+            action: "user_role_bootstrap",
+            target_uid: user.uid,
+            target_email: user.email,
+            role: "owner",
+            approved_by: "提姆先生",
+            performed_by: "ashun",
+            project_id: window.EWALK_FIREBASE_CONFIG.projectId,
+            created_at: serverTimestamp(),
+          };
+
+          await setDoc(userRef, ownerDoc, { merge: true });
+          await setDoc(auditRef, auditDoc, { merge: false });
+          const check = await getDoc(userRef);
+          writeLog({
+            ok: true,
+            wrote: [`users/${user.uid}`, auditRef.path],
+            verified_role: check.data()?.role,
+            verified_status: check.data()?.status,
+          });
+        } catch (error) {
+          if (error.code === "permission-denied") {
+            writeLog("client rules 擋住寫入，正在改用 Google 管理員 OAuth 寫入...");
+            const signedIn = adminAccessToken && currentUser ? { user: currentUser, accessToken: adminAccessToken } : await signInWithAdminScope();
+            const { user, accessToken } = signedIn;
+            if (user.email !== "tim.chen@ewalk.ai") throw new Error("owner role 只允許 tim.chen@ewalk.ai。");
+            const restResult = await writeOwnerRoleViaRest(user, accessToken);
+            writeLog({
+              ok: true,
+              method: "google-oauth-firestore-rest",
+              ...restResult,
+            });
+          } else {
+            console.error(error);
+            writeLog({
+              ok: false,
+              message: error.message,
+              code: error.code || "unknown",
+              note: "若出現 permission-denied，頁面會改用 Google 管理員 OAuth 寫入。",
+            });
+          }
+        } finally {
+          writeButton.disabled = false;
+        }
+      }
+
+      writeButton.addEventListener("click", writeOwnerRole);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ewalk.ai Firebase Emulator 匯入器</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 32px;
+      color: #1f2933;
+      background: #f7f8fa;
+    }
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      background: white;
+      border: 1px solid #d8dee8;
+      border-radius: 8px;
+      padding: 24px;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 0 0 8px;
+    }
+    p {
+      line-height: 1.6;
+    }
+    button {
+      border: 0;
+      border-radius: 6px;
+      background: #1265d8;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+      padding: 10px 14px;
+    }
+    button:disabled {
+      cursor: not-allowed;
+      opacity: .55;
+    }
+    pre {
+      background: #111827;
+      color: #e5e7eb;
+      min-height: 260px;
+      overflow: auto;
+      padding: 16px;
+      white-space: pre-wrap;
+    }
+    .ok {
+      color: #137333;
+      font-weight: 700;
+    }
+    .warn {
+      color: #9a6700;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Ewalk.ai Firebase Emulator 匯入器</h1>
+  <p>
+    這個頁面只會寫入本機 Firestore Emulator：
+    <code>http://127.0.0.1:18080</code>。不會碰正式 Firebase，不會產生雲端費用。
+  </p>
+  <p class="warn">請先確認「啟動FirebaseEmulator.command」正在執行，再按匯入。</p>
+  <button id="run">匯入 Phase 0 測試資料</button>
+  <p id="status"></p>
+  <pre id="log"></pre>
+</main>
+
+<script>
+const projectId = "ewalk-ai-system-prod";
+const baseUrl = `http://127.0.0.1:18080/v1/projects/${projectId}/databases/(default)/documents`;
+const seed = {
+  settings: {
+    voice_ashun_enabled: {
+      key: "voice_ashun_enabled",
+      value: false,
+      description: "控制阿順語音服務是否可用",
+      updated_by: "system",
+      updated_at: "serverTimestamp"
+    },
+    meta_auto_publish_enabled: {
+      key: "meta_auto_publish_enabled",
+      value: false,
+      description: "控制 Meta 正式自動發文是否可用",
+      updated_by: "system",
+      updated_at: "serverTimestamp"
+    },
+    ai_auto_run_enabled: {
+      key: "ai_auto_run_enabled",
+      value: false,
+      description: "控制 AI 是否允許自動批量執行",
+      updated_by: "system",
+      updated_at: "serverTimestamp"
+    }
+  },
+  clients: {
+    "hansik-daily-hotpot": {
+      name: "韓食日常鍋物",
+      slug: "hansik-daily-hotpot",
+      status: "active",
+      industry: "餐飲",
+      brand_voice: "溫暖、日常、生活感",
+      social_accounts: {
+        facebook_page_id: "1082884688247950",
+        instagram_business_id: null
+      },
+      notes: "Firebase 第一個 Meta 發文佇列樣板",
+      created_at: "serverTimestamp",
+      updated_at: "serverTimestamp"
+    }
+  },
+  departments: {
+    management: {
+      name: "管理部",
+      description: "阿順統籌、提姆先生決策與批准",
+      lead_agent_id: "ashun",
+      status: "active",
+      created_at: "serverTimestamp"
+    },
+    social_content: {
+      name: "社群內容部",
+      description: "負責社群策略、貼文、短影音腳本與素材需求",
+      lead_agent_id: "social_editor",
+      status: "active",
+      created_at: "serverTimestamp"
+    }
+  },
+  agents: {
+    ashun: {
+      name: "阿順",
+      department_id: "management",
+      role: "manager",
+      status: "active",
+      can_publish: false,
+      can_spend_budget: false,
+      requires_approval_for: ["publish", "ad_budget", "billing", "client_commitment"],
+      created_at: "serverTimestamp"
+    },
+    social_editor: {
+      name: "社群主編",
+      department_id: "social_content",
+      role: "content_editor",
+      status: "active",
+      can_publish: false,
+      can_spend_budget: false,
+      requires_approval_for: ["publish", "client_commitment"],
+      created_at: "serverTimestamp"
+    }
+  },
+  content_queue: {
+    sample_hansik_post_001: {
+      client_id: "hansik-daily-hotpot",
+      platforms: ["facebook"],
+      status: "pending_review",
+      content_type: "post",
+      title: "Firebase 測試貼文",
+      copy: "這是一則 Firebase content_queue 測試貼文，不會正式發布。",
+      hashtags: ["韓食日常鍋物"],
+      asset_ids: [],
+      scheduled_at: null,
+      approval_id: null,
+      publishing_log_id: null,
+      created_by: "ashun",
+      review_notes: "Phase 0 測試資料",
+      created_at: "serverTimestamp",
+      updated_at: "serverTimestamp"
+    }
+  },
+  audit_logs: {
+    phase0_init: {
+      actor_uid: "system",
+      actor_role: "system",
+      action: "initialize_firebase_phase0",
+      target_type: "system",
+      target_id: "firebase",
+      client_id: null,
+      summary: "建立 Ewalk.ai Firebase Phase 0 測試資料規格",
+      created_at: "serverTimestamp"
+    }
+  }
+};
+
+function log(message) {
+  document.querySelector("#log").textContent += `${message}\n`;
+}
+
+function toFirestoreValue(value) {
+  if (value === "serverTimestamp") return { timestampValue: new Date().toISOString() };
+  if (value === null) return { nullValue: null };
+  if (Array.isArray(value)) return { arrayValue: { values: value.map(toFirestoreValue) } };
+  if (typeof value === "boolean") return { booleanValue: value };
+  if (typeof value === "number") return Number.isInteger(value) ? { integerValue: value } : { doubleValue: value };
+  if (typeof value === "string") return { stringValue: value };
+  return {
+    mapValue: {
+      fields: Object.fromEntries(Object.entries(value).map(([key, child]) => [key, toFirestoreValue(child)]))
+    }
+  };
+}
+
+function toFirestoreDocument(data) {
+  return {
+    fields: Object.fromEntries(Object.entries(data).map(([key, value]) => [key, toFirestoreValue(value)]))
+  };
+}
+
+async function writeDocument(collectionId, documentId, data) {
+  const response = await fetch(`${baseUrl}/${encodeURIComponent(collectionId)}/${encodeURIComponent(documentId)}`, {
+    method: "PATCH",
+    headers: {
+      authorization: "Bearer owner",
+      "content-type": "application/json"
+    },
+    body: JSON.stringify(toFirestoreDocument(data))
+  });
+
+  if (!response.ok) {
+    throw new Error(`${collectionId}/${documentId} HTTP ${response.status}: ${await response.text()}`);
+  }
+}
+
+async function runImport() {
+  const button = document.querySelector("#run");
+  const status = document.querySelector("#status");
+  button.disabled = true;
+  status.textContent = "匯入中...";
+  document.querySelector("#log").textContent = "";
+
+  let count = 0;
+  try {
+    for (const [collectionId, documents] of Object.entries(seed)) {
+      for (const [documentId, data] of Object.entries(documents)) {
+        await writeDocument(collectionId, documentId, data);
+        count += 1;
+        log(`已匯入：${collectionId}/${documentId}`);
+      }
+    }
+    status.innerHTML = `<span class="ok">完成：已匯入 ${count} 筆資料。</span>`;
+    log("");
+    log("可以打開 Emulator UI 查看：http://127.0.0.1:14000/firestore");
+  } catch (error) {
+    status.textContent = "匯入失敗，請確認 Emulator 有啟動。";
+    log(error.message);
+    button.disabled = false;
+  }
+}
+
+document.querySelector("#run").addEventListener("click", runImport);
+</script>
+</body>
+</html>

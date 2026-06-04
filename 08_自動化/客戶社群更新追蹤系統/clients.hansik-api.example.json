@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "timezone": "Asia/Taipei",
+  "clients": [
+    {
+      "clientId": "hansik-daily-hotpot",
+      "clientName": "韓食日常鍋物",
+      "owner": "阿順",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "displayName": "韓食日常鍋物 FB 粉專",
+          "enabled": true,
+          "source": "facebook_page_graph",
+          "accountId": "1082884688247950",
+          "pageId": "1082884688247950",
+          "targetPerWeek": 3,
+          "targetPerMonth": 12,
+          "tokenEnv": "META_PAGE_ACCESS_TOKEN"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Ewalk.ai Firebase UID</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      body {
+        min-height: 100vh;
+      }
+
+      .bootstrap-shell {
+        display: grid;
+        gap: 18px;
+        margin: 0 auto;
+        max-width: 760px;
+        padding: 48px 24px;
+      }
+
+      .bootstrap-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 16px;
+        padding: 22px;
+      }
+
+      .result-box {
+        background: #f7fafb;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        display: grid;
+        gap: 10px;
+        padding: 14px;
+      }
+
+      .result-row {
+        display: grid;
+        gap: 4px;
+      }
+
+      .result-row span {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 760;
+      }
+
+      .result-row code {
+        color: var(--ink);
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        overflow-wrap: anywhere;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .secondary-action {
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        color: var(--ink);
+        cursor: pointer;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 760;
+        min-height: 40px;
+        padding: 0 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="bootstrap-shell">
+      <section class="bootstrap-card">
+        <div>
+          <p class="eyebrow">Firebase Auth Bootstrap</p>
+          <h1>取得提姆先生 Firebase UID</h1>
+        </div>
+        <p id="statusText">按下登入後，只會建立 / 讀取 Firebase Authentication 使用者，不會寫入 Firestore。</p>
+        <div class="actions">
+          <button class="primary-action" id="signInButton" type="button">用 Google 登入</button>
+          <button class="secondary-action" id="copyButton" type="button" disabled>複製 UID</button>
+        </div>
+        <div class="result-box" aria-label="登入結果">
+          <div class="result-row">
+            <span>Email</span>
+            <code id="emailValue">尚未登入</code>
+          </div>
+          <div class="result-row">
+            <span>UID</span>
+            <code id="uidValue">尚未取得</code>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./firebase-config.local.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+      import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+      const statusText = document.getElementById("statusText");
+      const signInButton = document.getElementById("signInButton");
+      const copyButton = document.getElementById("copyButton");
+      const emailValue = document.getElementById("emailValue");
+      const uidValue = document.getElementById("uidValue");
+
+      let currentUid = "";
+
+      function setStatus(message) {
+        statusText.textContent = message;
+      }
+
+      function showUser(user) {
+        currentUid = user.uid;
+        emailValue.textContent = user.email || "未取得 email";
+        uidValue.textContent = user.uid;
+        copyButton.disabled = false;
+        setStatus("已取得 UID。下一步可建立 users/{uid} owner 權限文件。");
+      }
+
+      async function signIn() {
+        if (!window.EWALK_FIREBASE_CONFIG) {
+          setStatus("找不到 firebase-config.local.js，請先建立 Firebase Web App config。");
+          return;
+        }
+        signInButton.disabled = true;
+        setStatus("正在開啟 Google 登入...");
+        try {
+          const app = initializeApp(window.EWALK_FIREBASE_CONFIG);
+          const auth = getAuth(app);
+          const provider = new GoogleAuthProvider();
+          const credential = await signInWithPopup(auth, provider);
+          showUser(credential.user);
+        } catch (error) {
+          console.error(error);
+          setStatus(error.message || "登入失敗，請確認彈出視窗與 Google 帳號。");
+        } finally {
+          signInButton.disabled = false;
+        }
+      }
+
+      async function copyUid() {
+        if (!currentUid) return;
+        await navigator.clipboard.writeText(currentUid);
+        setStatus("UID 已複製。");
+      }
+
+      signInButton.addEventListener("click", signIn);
+      copyButton.addEventListener("click", copyUid);
+    </script>
+  </body>
+</html>

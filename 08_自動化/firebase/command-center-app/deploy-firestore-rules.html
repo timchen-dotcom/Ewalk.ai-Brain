@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Ewalk.ai Deploy Firestore Rules</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .bootstrap-shell {
+        display: grid;
+        gap: 18px;
+        margin: 0 auto;
+        max-width: 820px;
+        padding: 48px 24px;
+      }
+
+      .bootstrap-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 16px;
+        padding: 22px;
+      }
+
+      pre {
+        background: #f7fafb;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        color: var(--ink);
+        margin: 0;
+        max-height: 360px;
+        min-height: 180px;
+        overflow: auto;
+        overflow-wrap: anywhere;
+        padding: 14px;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="bootstrap-shell">
+      <section class="bootstrap-card">
+        <div>
+          <p class="eyebrow">Firestore Rules Deploy</p>
+          <h1>部署 Ewalk.ai Firestore Rules</h1>
+        </div>
+        <p>這一步只會建立 Firestore ruleset 並發布到 <code>cloud.firestore</code>，不碰 Storage、不啟用 Blaze、不處理 Meta 或金流。</p>
+        <button class="primary-action" id="deployButton" type="button">部署 Firestore Rules</button>
+        <pre id="log">等待部署...</pre>
+      </section>
+    </main>
+    <script src="./firebase-config.local.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+      import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+      const RULES_CONTENT = String.raw`rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function role() {
+      return signedIn() && userDoc().data.role is string ? userDoc().data.role : "guest";
+    }
+
+    function isAdmin() {
+      return signedIn() && role() in ["owner", "admin"];
+    }
+
+    function isStaff() {
+      return signedIn() && role() in ["owner", "admin", "manager", "staff", "agent"];
+    }
+
+    function isClientUser(clientId) {
+      return signedIn()
+        && role() == "client"
+        && clientId in userDoc().data.client_ids;
+    }
+
+    function immutable(fields) {
+      return !request.resource.data.diff(resource.data).affectedKeys().hasAny(fields);
+    }
+
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isAdmin());
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /clients/{clientId} {
+      allow read: if isStaff() || isClientUser(clientId);
+      allow create, update: if isAdmin() || role() == "manager";
+      allow delete: if isAdmin();
+    }
+
+    match /departments/{departmentId} {
+      allow read: if isStaff();
+      allow write: if isAdmin();
+    }
+
+    match /agents/{agentId} {
+      allow read: if isStaff();
+      allow write: if isAdmin() || role() == "manager";
+    }
+
+    match /tasks/{taskId} {
+      allow read: if isStaff() || isClientUser(resource.data.client_id);
+      allow create: if isStaff();
+      allow update: if isStaff() && immutable(["created_at", "created_by"]);
+      allow delete: if isAdmin();
+    }
+
+    match /content_queue/{contentId} {
+      allow read: if isStaff() || isClientUser(resource.data.client_id);
+      allow create: if isStaff();
+      allow update: if isStaff() && immutable(["created_at", "created_by"]);
+      allow delete: if isAdmin();
+    }
+
+    match /approvals/{approvalId} {
+      allow read: if isStaff();
+      allow create: if isStaff();
+      allow update: if isAdmin() || role() == "manager";
+      allow delete: if isAdmin();
+    }
+
+    match /assets/{assetId} {
+      allow read: if isStaff() || isClientUser(resource.data.client_id);
+      allow create: if isStaff();
+      allow update: if isStaff() && immutable(["created_at", "created_by", "storage_path"]);
+      allow delete: if isAdmin();
+    }
+
+    match /publishing_logs/{logId} {
+      allow read: if isStaff();
+      allow create: if isStaff();
+      allow update, delete: if isAdmin();
+    }
+
+    match /ad_accounts/{adAccountId} {
+      allow read: if isStaff();
+      allow write: if isAdmin() || role() == "manager";
+    }
+
+    match /campaign_reports/{reportId} {
+      allow read: if isStaff() || isClientUser(resource.data.client_id);
+      allow create, update: if isStaff();
+      allow delete: if isAdmin();
+    }
+
+    match /ai_runs/{runId} {
+      allow read: if isStaff();
+      allow create: if isStaff();
+      allow update, delete: if isAdmin();
+    }
+
+    match /usage_costs/{costId} {
+      allow read: if isStaff();
+      allow create, update: if isAdmin() || role() == "manager";
+      allow delete: if isAdmin();
+    }
+
+    match /subscriptions/{subscriptionId} {
+      allow read: if isStaff();
+      allow write: if isAdmin() || role() == "manager";
+    }
+
+    match /client_portals/{portalId} {
+      allow read: if isStaff() || isClientUser(resource.data.client_id);
+      allow write: if isStaff();
+    }
+
+    match /settings/{settingId} {
+      allow read: if isStaff();
+      allow write: if isAdmin();
+    }
+
+    match /audit_logs/{logId} {
+      allow read: if isAdmin() || role() == "manager";
+      allow create: if isStaff();
+      allow update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+`;
+
+      const app = initializeApp(window.EWALK_FIREBASE_CONFIG);
+      const auth = getAuth(app);
+      const log = document.getElementById("log");
+      const deployButton = document.getElementById("deployButton");
+      const projectId = window.EWALK_FIREBASE_CONFIG.projectId;
+
+      function writeLog(payload) {
+        log.textContent = typeof payload === "string" ? payload : JSON.stringify(payload, null, 2);
+      }
+
+      async function getAdminAccessToken() {
+        const provider = new GoogleAuthProvider();
+        provider.addScope("https://www.googleapis.com/auth/cloud-platform");
+        provider.addScope("https://www.googleapis.com/auth/firebase");
+        provider.setCustomParameters({ hd: "ewalk.ai", prompt: "consent" });
+        const result = await signInWithPopup(auth, provider);
+        if (result.user.email !== "tim.chen@ewalk.ai") throw new Error("只允許 tim.chen@ewalk.ai 部署 Firestore rules。");
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        if (!credential?.accessToken) throw new Error("沒有取得 Google OAuth access token。");
+        return { accessToken: credential.accessToken, email: result.user.email };
+      }
+
+      async function apiFetch(url, accessToken, options = {}) {
+        const response = await fetch(url, {
+          ...options,
+          headers: {
+            authorization: `Bearer ${accessToken}`,
+            "content-type": "application/json",
+            ...(options.headers || {}),
+          },
+        });
+        const body = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(`${options.method || "GET"} ${url} failed: ${response.status} ${JSON.stringify(body)}`);
+        return body;
+      }
+
+      async function deployRules() {
+        deployButton.disabled = true;
+        try {
+          writeLog("正在取得 Google 管理員授權...");
+          const { accessToken, email } = await getAdminAccessToken();
+          writeLog({ step: "authorized", email });
+
+          const ruleset = await apiFetch(`https://firebaserules.googleapis.com/v1/projects/${projectId}/rulesets`, accessToken, {
+            method: "POST",
+            body: JSON.stringify({
+              source: {
+                files: [
+                  {
+                    name: "firestore.rules",
+                    content: RULES_CONTENT,
+                  },
+                ],
+              },
+            }),
+          });
+          writeLog({ step: "ruleset-created", ruleset: ruleset.name });
+
+          const releaseBody = {
+            name: `projects/${projectId}/releases/cloud.firestore`,
+            rulesetName: ruleset.name,
+          };
+          let release;
+          try {
+            release = await apiFetch(
+              `https://firebaserules.googleapis.com/v1/projects/${projectId}/releases/cloud.firestore`,
+              accessToken,
+              {
+                method: "PATCH",
+                body: JSON.stringify({
+                  release: releaseBody,
+                  updateMask: "rulesetName",
+                }),
+              }
+            );
+          } catch (patchError) {
+            try {
+              release = await apiFetch(`https://firebaserules.googleapis.com/v1/projects/${projectId}/releases`, accessToken, {
+                method: "POST",
+                body: JSON.stringify(releaseBody),
+              });
+            } catch (createError) {
+              throw new Error(`PATCH failed: ${patchError.message}; CREATE failed: ${createError.message}`);
+            }
+          }
+
+          writeLog({
+            ok: true,
+            project_id: projectId,
+            release: release.name,
+            ruleset: release.rulesetName,
+            deployed_at: new Date().toISOString(),
+          });
+        } catch (error) {
+          console.error(error);
+          writeLog({
+            ok: false,
+            message: error.message,
+            note: "若部署失敗，需回 Firebase CLI 或 Firebase Console 規則頁處理。",
+          });
+        } finally {
+          deployButton.disabled = false;
+        }
+      }
+
+      deployButton.addEventListener("click", deployRules);
+    </script>
+  </body>
+</html>

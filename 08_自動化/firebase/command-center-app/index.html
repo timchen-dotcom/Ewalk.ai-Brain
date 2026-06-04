@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Ewalk.ai Command Center</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./data/snapshot.js"></script>
+    <script src="./data/client-registry.js"></script>
+    <script src="./data/ai-runs.js"></script>
+    <script src="./data/approval-queue.js"></script>
+    <script src="./data/host-status.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#overview" aria-label="Ewalk.ai Command Center">
+          <span class="brand-mark" aria-hidden="true"><span class="ewalk-mark"></span></span>
+          <span>
+            <strong>Ewalk.ai</strong>
+            <small>AI Marketing OS</small>
+          </span>
+        </a>
+        <nav class="nav" aria-label="主選單">
+          <a class="active" href="#overview">總覽</a>
+          <a href="#approvals">批准佇列</a>
+          <a href="#clients">客戶名冊</a>
+          <a href="#queue">內容佇列</a>
+          <a href="#followups">成效追蹤</a>
+          <a href="#host">阿順主機</a>
+          <a href="#ai-runs">AI 執行紀錄</a>
+          <a href="#controls">權限控管</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <header class="topbar" id="overview">
+          <div>
+            <p class="eyebrow">AI Marketing OS</p>
+            <h1>Ewalk.ai Command Center</h1>
+            <p class="topbar-subtitle">提姆先生先看「待批准」與「下一步」，再看客戶、內容與 AI 執行紀錄。</p>
+          </div>
+          <div class="project-pill">
+            <span>Project</span>
+            <strong id="projectId">ewalk-ai-system-prod</strong>
+          </div>
+        </header>
+
+        <section class="client-strip" aria-label="客戶狀態">
+          <img class="client-logo" id="clientLogo" alt="" />
+          <div>
+            <h2 id="clientName">韓食日常鍋物</h2>
+            <p id="clientMeta">餐飲 · active</p>
+          </div>
+          <div class="review-focus">
+            <span>目前需要你看</span>
+            <strong id="reviewFocusValue">0 筆待批准</strong>
+            <small id="reviewFocusNote">先看批准佇列，不會自動執行</small>
+          </div>
+        </section>
+
+        <section class="live-read" aria-label="正式資料讀取">
+          <div>
+            <p class="eyebrow">目前資料來源</p>
+            <h2 id="dataSourceTitle">本機預覽資料</h2>
+            <p id="dataSourceMessage">這是給提姆先生審核版面與流程用的預覽資料；不會發文、不會動廣告、不會動金流。</p>
+          </div>
+          <button class="primary-action" id="liveReadButton" type="button">讀取正式雲端資料</button>
+        </section>
+
+        <section class="metrics" aria-label="總覽指標">
+          <article class="metric">
+            <span>客戶數</span>
+            <strong id="metricClients">0</strong>
+          </article>
+          <article class="metric">
+            <span>總佇列</span>
+            <strong id="metricTotal">0</strong>
+          </article>
+          <article class="metric">
+            <span>已發布</span>
+            <strong id="metricPublished">0</strong>
+          </article>
+          <article class="metric">
+            <span>已批准</span>
+            <strong id="metricApproved">0</strong>
+          </article>
+          <article class="metric attention">
+            <span>待批准</span>
+            <strong id="metricApprovals">0</strong>
+          </article>
+          <article class="metric">
+            <span>成效待回收</span>
+            <strong id="metricFollowups">0</strong>
+          </article>
+          <article class="metric">
+            <span>AI 執行紀錄</span>
+            <strong id="metricAiRuns">0</strong>
+          </article>
+        </section>
+
+        <section class="panel host-panel" id="host">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Ashun Host</p>
+              <h2>Mac Studio 阿順主機狀態</h2>
+            </div>
+            <span class="panel-note" id="hostStatusMode">本機狀態</span>
+          </div>
+          <div class="host-grid">
+            <article class="host-card">
+              <span>最近檢查</span>
+              <strong id="hostLastCheck">尚未產生</strong>
+              <small id="hostName">Mac Studio</small>
+            </article>
+            <article class="host-card">
+              <span>主機狀態</span>
+              <strong id="hostHealth">待檢查</strong>
+              <small id="hostPower">睡眠設定待確認</small>
+            </article>
+            <article class="host-card">
+              <span>內建資料碟</span>
+              <strong id="hostDisk">待檢查</strong>
+              <small>大型素材優先放提姆接案碟</small>
+            </article>
+            <article class="host-card">
+              <span>工作磁碟</span>
+              <strong id="hostWorkDisk">待檢查</strong>
+              <small>/Volumes/提姆接案碟</small>
+            </article>
+          </div>
+          <div class="host-note" id="hostGuardrails">
+            低風險任務可自動執行；發文、金流、廣告預算、正式部署仍需提姆先生批准。
+          </div>
+        </section>
+
+        <section class="panel" id="approvals">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Approval Queue</p>
+              <h2>提姆先生待批准事項</h2>
+            </div>
+            <span class="panel-note" id="approvalQueueMode">Dry-run，本機預覽</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>事項</th>
+                  <th>客戶 / 系統</th>
+                  <th>類型</th>
+                  <th>為什麼要做</th>
+                  <th>風險</th>
+                  <th>狀態</th>
+                  <th>阿順建議</th>
+                </tr>
+              </thead>
+              <tbody id="approvalRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel" id="clients">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Client Registry</p>
+              <h2>Ewalk.ai 客戶名冊</h2>
+            </div>
+            <span class="panel-note" id="clientRegistryMode">Dry-run，本機預覽</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>客戶</th>
+                  <th>產業</th>
+                  <th>狀態</th>
+                  <th>資料狀態</th>
+                  <th>下一步</th>
+                </tr>
+              </thead>
+              <tbody id="clientRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="section-grid">
+          <article class="panel" id="queue">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Content Queue</p>
+                <h2>內容佇列</h2>
+              </div>
+              <div class="segmented" role="tablist" aria-label="內容狀態篩選">
+                <button class="active" type="button" data-filter="all">全部</button>
+                <button type="button" data-filter="approved">已批准</button>
+                <button type="button" data-filter="published">已發布</button>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>主題</th>
+                    <th>平台</th>
+                    <th>時間</th>
+                    <th>狀態</th>
+                    <th>下一步</th>
+                  </tr>
+                </thead>
+                <tbody id="queueRows"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <aside class="panel compact" id="controls">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Guardrails</p>
+                <h2>權限控管</h2>
+              </div>
+            </div>
+            <ul class="guardrails">
+              <li><span></span>正式發文需提姆先生批准</li>
+              <li><span></span>廣告預算不在本階段開放</li>
+              <li><span></span>Blaze 與金流維持人工批准</li>
+              <li><span></span>客戶入口尚未對外開啟</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section class="panel" id="followups">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Performance</p>
+              <h2>成效追蹤佇列</h2>
+            </div>
+          </div>
+          <div class="cards" id="followupCards"></div>
+        </section>
+
+        <section class="panel" id="ai-runs">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Harness Runtime</p>
+              <h2>AI 執行紀錄</h2>
+            </div>
+            <span class="panel-note" id="aiRunsMode">Dry-run，本機預覽</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>任務</th>
+                  <th>角色 / 工具</th>
+                  <th>權限</th>
+                  <th>批准</th>
+                  <th>狀態</th>
+                  <th>時間</th>
+                </tr>
+              </thead>
+              <tbody id="aiRunRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

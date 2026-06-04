@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "timezone": "Asia/Taipei",
+  "clients": [
+    {
+      "clientId": "hansik-daily-hotpot",
+      "clientName": "韓食日常鍋物",
+      "owner": "阿順",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "displayName": "韓食日常鍋物 FB 粉專",
+          "enabled": true,
+          "source": "pending_auth",
+          "accountId": "1082884688247950",
+          "pageId": "1082884688247950",
+          "targetPerWeek": 3,
+          "targetPerMonth": 12,
+          "tokenEnv": "META_PAGE_ACCESS_TOKEN"
+        },
+        {
+          "platform": "instagram",
+          "displayName": "韓食日常鍋物 IG",
+          "enabled": true,
+          "source": "pending_auth",
+          "accountId": "待補 Instagram Business Account ID",
+          "targetPerWeek": 3,
+          "targetPerMonth": 12,
+          "tokenEnv": "META_PAGE_ACCESS_TOKEN"
+        }
+      ]
+    },
+    {
+      "clientId": "thevision",
+      "clientName": "TheVision",
+      "owner": "客戶成功經理待指派",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "displayName": "TheVision IG",
+          "enabled": true,
+          "source": "pending_auth",
+          "accountId": "thevision_salon",
+          "targetPerWeek": 3,
+          "targetPerMonth": 12
+        },
+        {
+          "platform": "facebook",
+          "displayName": "TheVision FB",
+          "enabled": true,
+          "source": "pending_auth",
+          "accountId": "待補 Facebook Page ID",
+          "targetPerWeek": 2,
+          "targetPerMonth": 8
+        }
+      ]
+    },
+    {
+      "clientId": "jiayu-window-film",
+      "clientName": "嘉昱隔熱膜",
+      "owner": "客戶成功經理待指派",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "displayName": "嘉昱隔熱膜 FB",
+          "enabled": true,
+          "source": "pending_auth",
+          "accountId": "jiayu1988",
+          "targetPerWeek": 2,
+          "targetPerMonth": 8
+        },
+        {
+          "platform": "instagram",
+          "displayName": "嘉昱隔熱膜 IG",
+          "enabled": true,
+          "source": "pending_auth",
+          "accountId": "待補 Instagram Business Account ID",
+          "targetPerWeek": 1,
+          "targetPerMonth": 4
+        }
+      ]
+    },
+    {
+      "clientId": "star-spa",
+      "clientName": "STAR SPA",
+      "owner": "客戶成功經理待指派",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "displayName": "STAR SPA IG",
+          "enabled": true,
+          "source": "pending_auth",
+          "accountId": "starspa.wellness",
+          "targetPerWeek": 3,
+          "targetPerMonth": 12
+        }
+      ]
+    },
+    {
+      "clientId": "tg-hair-salon",
+      "clientName": "TG hair salon",
+      "owner": "客戶成功經理待指派",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "displayName": "TG hair salon IG",
+          "enabled": true,
+          "source": "pending_auth",
+          "accountId": "tghair_salon",
+          "targetPerWeek": 3,
+          "targetPerMonth": 12
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": "2026-06-04.phase0",
+  "mode": "dry-run-local",
+  "queue_id": "ewalk_host_harness_queue",
+  "updated_at": "2026-06-04T12:00:05.727Z",
+  "tasks": [
+    {
+      "task_id": "host_status_check",
+      "title": "阿順主機狀態檢查",
+      "type": "host_status_check",
+      "permission_level": "L1",
+      "status": "queued",
+      "approval_required": false
+    },
+    {
+      "task_id": "client_registry_dry_run_refresh",
+      "title": "客戶名冊本機資料更新",
+      "type": "client_registry_dry_run_refresh",
+      "permission_level": "L1",
+      "status": "queued",
+      "approval_required": false
+    },
+    {
+      "task_id": "command_center_local_data_refresh",
+      "title": "Command Center 本機資料更新",
+      "type": "command_center_local_data_refresh",
+      "permission_level": "L1",
+      "status": "queued",
+      "approval_required": false
+    },
+    {
+      "task_id": "daily_host_summary",
+      "title": "阿順主機日報產出",
+      "type": "daily_host_summary",
+      "permission_level": "L1",
+      "status": "queued",
+      "approval_required": false
+    },
+    {
+      "task_id": "openclaw_formal_access",
+      "title": "OpenClaw 正式資料接入",
+      "type": "openclaw_formal_access",
+      "permission_level": "L4",
+      "status": "blocked",
+      "approval_required": true,
+      "blocked_reason": "第一版只允許 OpenClaw 低風險測試 workspace，不接正式資料與外部副作用。"
+    }
+  ]
+}

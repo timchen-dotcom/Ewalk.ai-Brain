@@ -11,4 +11,17 @@
 *.tmp
 *.temp
 ~$*
+__pycache__/
+*.pyc
+*.log
 
+# Local automation secrets
+.env
+**/.env
+**/.env.local
+**/*.secret.*
+**/gpt_image2_pipeline_*.log
+08_自動化/本地AI-Gemma/config.local.json
+08_自動化/本地AI-Gemma/output/
+腳本/meta-facebook/.env
+腳本/meta-facebook/.env.local

@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "clientId": "xxx-hair-stylist",
+      "platform": "instagram",
+      "accountId": "sample_ig_xxx_hair",
+      "postId": "ig_001",
+      "publishedAt": "2026-06-01T11:20:00+08:00",
+      "permalink": "https://www.instagram.com/p/sample-001/",
+      "caption": "霧感棕髮色整理"
+    },
+    {
+      "clientId": "xxx-hair-stylist",
+      "platform": "instagram",
+      "accountId": "sample_ig_xxx_hair",
+      "postId": "ig_002",
+      "publishedAt": "2026-06-02T15:10:00+08:00",
+      "permalink": "https://www.instagram.com/p/sample-002/",
+      "caption": "層次剪髮作品"
+    },
+    {
+      "clientId": "xxx-hair-stylist",
+      "platform": "facebook",
+      "accountId": "sample_fb_xxx_hair",
+      "postId": "fb_001",
+      "publishedAt": "2026-06-01T19:00:00+08:00",
+      "permalink": "https://www.facebook.com/sample/posts/fb_001",
+      "caption": "本週預約時段公告"
+    }
+  ]
+}

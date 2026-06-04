@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STAR Color Opening Player</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="stage" aria-label="活動開場音樂播放器">
+      <div class="scene-background" aria-hidden="true"></div>
+      <div class="scene-tint" aria-hidden="true"></div>
+
+      <section class="animation-stage" aria-label="背景動畫">
+        <div class="animation-window">
+          <video class="background-video" src="./assets/opening-loop.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </section>
+
+      <aside class="instagram-card" aria-label="STAR Color Instagram">
+        <div class="instagram-qr">
+          <img src="./assets/starcolor-instagram-qr.jpg" alt="@starcolor.life Instagram QR Code">
+        </div>
+        <p class="instagram-title">STAR Color｜AI染髮 x 智慧生活＋</p>
+        <p class="instagram-copy">讓大家動動手指頭追蹤我</p>
+      </aside>
+
+      <section class="lyrics-panel" aria-live="polite">
+        <p id="lyricPrevious" class="lyric previous"></p>
+        <p id="lyricCurrent" class="lyric current">等待第一首歌</p>
+        <p id="lyricNext" class="lyric next"></p>
+      </section>
+
+      <section class="player-shell">
+        <header class="now-playing">
+          <div>
+            <h1 id="trackTitle">活動開場音樂播放器</h1>
+            <p id="trackMeta" class="track-meta">等待音樂檔</p>
+          </div>
+        </header>
+        <section class="control-panel">
+          <div class="timeline">
+            <span id="currentTime">0:00</span>
+            <input id="seekBar" type="range" min="0" max="1000" value="0" aria-label="播放進度">
+            <span id="duration">0:00</span>
+          </div>
+
+          <div class="main-controls">
+            <button id="prevBtn" class="icon-btn" type="button" aria-label="上一首">‹</button>
+            <button id="playBtn" class="play-btn" type="button" aria-label="播放">Play</button>
+            <button id="nextBtn" class="icon-btn" type="button" aria-label="下一首">›</button>
+          </div>
+
+          <div class="mode-controls" role="group" aria-label="播放模式">
+            <button id="sequenceBtn" class="mode-btn active" type="button" data-mode="sequence">順播</button>
+            <button id="playlistLoopBtn" class="mode-btn" type="button" data-mode="playlist">清單循環</button>
+            <button id="singleLoopBtn" class="mode-btn" type="button" data-mode="single">單曲循環</button>
+          </div>
+        </section>
+      </section>
+
+      <aside class="playlist-panel" aria-label="播放清單">
+        <div class="playlist-head">
+          <p>Playlist</p>
+          <span id="trackCount">0</span>
+        </div>
+        <ol id="playlist" class="playlist"></ol>
+      </aside>
+
+      <audio id="audioPlayer" preload="metadata"></audio>
+    </main>
+
+    <script src="./playlist.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

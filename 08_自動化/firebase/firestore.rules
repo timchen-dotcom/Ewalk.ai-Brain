@@ -1,0 +1,138 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function role() {
+      return signedIn() && userDoc().data.role is string ? userDoc().data.role : "guest";
+    }
+
+    function isAdmin() {
+      return signedIn() && role() in ["owner", "admin"];
+    }
+
+    function isStaff() {
+      return signedIn() && role() in ["owner", "admin", "manager", "staff", "agent"];
+    }
+
+    function isClientUser(clientId) {
+      return signedIn()
+        && role() == "client"
+        && clientId in userDoc().data.client_ids;
+    }
+
+    function immutable(fields) {
+      return !request.resource.data.diff(resource.data).affectedKeys().hasAny(fields);
+    }
+
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isAdmin());
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /clients/{clientId} {
+      allow read: if isStaff() || isClientUser(clientId);
+      allow create, update: if isAdmin() || role() == "manager";
+      allow delete: if isAdmin();
+    }
+
+    match /departments/{departmentId} {
+      allow read: if isStaff();
+      allow write: if isAdmin();
+    }
+
+    match /agents/{agentId} {
+      allow read: if isStaff();
+      allow write: if isAdmin() || role() == "manager";
+    }
+
+    match /tasks/{taskId} {
+      allow read: if isStaff() || isClientUser(resource.data.client_id);
+      allow create: if isStaff();
+      allow update: if isStaff() && immutable(["created_at", "created_by"]);
+      allow delete: if isAdmin();
+    }
+
+    match /content_queue/{contentId} {
+      allow read: if isStaff() || isClientUser(resource.data.client_id);
+      allow create: if isStaff();
+      allow update: if isStaff() && immutable(["created_at", "created_by"]);
+      allow delete: if isAdmin();
+    }
+
+    match /approvals/{approvalId} {
+      allow read: if isStaff();
+      allow create: if isStaff();
+      allow update: if isAdmin() || role() == "manager";
+      allow delete: if isAdmin();
+    }
+
+    match /assets/{assetId} {
+      allow read: if isStaff() || isClientUser(resource.data.client_id);
+      allow create: if isStaff();
+      allow update: if isStaff() && immutable(["created_at", "created_by", "storage_path"]);
+      allow delete: if isAdmin();
+    }
+
+    match /publishing_logs/{logId} {
+      allow read: if isStaff();
+      allow create: if isStaff();
+      allow update, delete: if isAdmin();
+    }
+
+    match /ad_accounts/{adAccountId} {
+      allow read: if isStaff();
+      allow write: if isAdmin() || role() == "manager";
+    }
+
+    match /campaign_reports/{reportId} {
+      allow read: if isStaff() || isClientUser(resource.data.client_id);
+      allow create, update: if isStaff();
+      allow delete: if isAdmin();
+    }
+
+    match /ai_runs/{runId} {
+      allow read: if isStaff();
+      allow create: if isStaff();
+      allow update, delete: if isAdmin();
+    }
+
+    match /usage_costs/{costId} {
+      allow read: if isStaff();
+      allow create, update: if isAdmin() || role() == "manager";
+      allow delete: if isAdmin();
+    }
+
+    match /subscriptions/{subscriptionId} {
+      allow read: if isStaff();
+      allow write: if isAdmin() || role() == "manager";
+    }
+
+    match /client_portals/{portalId} {
+      allow read: if isStaff() || isClientUser(resource.data.client_id);
+      allow write: if isStaff();
+    }
+
+    match /settings/{settingId} {
+      allow read: if isStaff();
+      allow write: if isAdmin();
+    }
+
+    match /audit_logs/{logId} {
+      allow read: if isAdmin() || role() == "manager";
+      allow create: if isStaff();
+      allow update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

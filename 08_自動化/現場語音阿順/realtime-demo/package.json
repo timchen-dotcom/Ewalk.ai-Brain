@@ -1,0 +1,10 @@
+{
+  "name": "ashun-realtime-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "sync:knowledge": "node scripts/sync-knowledge.mjs"
+  }
+}

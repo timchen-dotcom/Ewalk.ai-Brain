@@ -1,0 +1,2 @@
+active,client_name,brand_name,account_id,location_id,location_display_name,google_maps_url,owner,sla_days,alert_channel,notes
+FALSE,Thevision,The Vision hair salon 淡水美學髮廊,待匯出,待匯出,The Vision hair salon 淡水美學髮廊,https://maps.app.goo.gl/zw8z2HHSvDRHdBeNA,Olivia,3,customer_tasks,待 Google Basic API Access 案件 6-4682000041440 審核通過後匯出 account_id/location_id 並啟用；急件同步 important；負評一定要提姆先生確認

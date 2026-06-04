@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "timezone": "Asia/Taipei",
+  "clients": [
+    {
+      "clientId": "example-client",
+      "clientName": "正式客戶名稱",
+      "owner": "客戶成功經理姓名",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "displayName": "正式客戶 FB 粉專",
+          "enabled": true,
+          "source": "facebook_page_graph",
+          "accountId": "facebook_page_id",
+          "pageId": "facebook_page_id",
+          "targetPerWeek": 3,
+          "targetPerMonth": 12,
+          "tokenEnv": "META_PAGE_ACCESS_TOKEN"
+        },
+        {
+          "platform": "instagram",
+          "displayName": "正式客戶 IG 商業帳號",
+          "enabled": true,
+          "source": "instagram_business_graph",
+          "accountId": "instagram_business_account_id",
+          "instagramUserId": "instagram_business_account_id",
+          "targetPerWeek": 3,
+          "targetPerMonth": 12,
+          "tokenEnv": "META_PAGE_ACCESS_TOKEN"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/", "destination": "/api/index.mjs" },
+    { "source": "/status", "destination": "/api/status.mjs" },
+    { "source": "/session", "destination": "/api/session.mjs" },
+    { "source": "/ask", "destination": "/api/ask.mjs" },
+    { "source": "/tool/searchKnowledge", "destination": "/api/tool/searchKnowledge.mjs" }
+  ],
+  "functions": {
+    "api/**/*.mjs": {
+      "maxDuration": 30
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "timezone": "Asia/Taipei",
+  "clients": [
+    {
+      "clientId": "thevision",
+      "clientName": "TheVision",
+      "owner": "客戶成功經理待指派",
+      "staff": [
+        {
+          "staffId": "olivia",
+          "staffName": "Olivia",
+          "role": "髮型師 / 創始人",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Olivia IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "thevision_olivia",
+              "accountId": "thevision_olivia",
+              "profileUrl": "https://www.instagram.com/thevision_olivia/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "nana",
+          "staffName": "Nana",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Nana IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "thevision_nana",
+              "accountId": "thevision_nana",
+              "profileUrl": "https://www.instagram.com/thevision_nana/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "luke",
+          "staffName": "Luke",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Luke IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "thevision_luke",
+              "accountId": "thevision_luke",
+              "profileUrl": "https://www.instagram.com/thevision_luke/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clientId": "oc-hair-vogue",
+      "clientName": "OC hair Vogue",
+      "owner": "客戶成功經理待指派",
+      "staff": [
+        {
+          "staffId": "akiwang",
+          "staffName": "Akiwang",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Akiwang IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "oc_akiwang",
+              "accountId": "oc_akiwang",
+              "profileUrl": "https://www.instagram.com/oc_akiwang/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        },
+        {
+          "staffId": "lyra",
+          "staffName": "Lyra",
+          "role": "髮型師",
+          "platforms": [
+            {
+              "platform": "instagram",
+              "displayName": "Lyra IG",
+              "enabled": true,
+              "source": "apify_instagram_public",
+              "handle": "oc_lyra",
+              "accountId": "oc_lyra",
+              "profileUrl": "https://www.instagram.com/oc_lyra/",
+              "targetPerWeek": 3,
+              "targetPerMonth": 12,
+              "resultsLimit": 12,
+              "tokenEnv": "APIFY_TOKEN",
+              "dataPolicy": "public_posts_only"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

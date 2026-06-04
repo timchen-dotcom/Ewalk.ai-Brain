@@ -1,0 +1,46 @@
+{
+  "accounts/111111111111111111111/locations/222222222222222222222": {
+    "averageRating": 4.7,
+    "totalReviewCount": 3,
+    "reviews": [
+      {
+        "name": "accounts/111111111111111111111/locations/222222222222222222222/reviews/review-new-001",
+        "reviewId": "review-new-001",
+        "reviewer": {
+          "displayName": "王小姐"
+        },
+        "starRating": "FIVE",
+        "comment": "今天服務很細心，環境也舒服，下次會再來。",
+        "createTime": "2026-05-31T02:30:00Z",
+        "updateTime": "2026-05-31T02:30:00Z"
+      },
+      {
+        "name": "accounts/111111111111111111111/locations/222222222222222222222/reviews/review-due-002",
+        "reviewId": "review-due-002",
+        "reviewer": {
+          "displayName": "陳先生"
+        },
+        "starRating": "THREE",
+        "comment": "整體還可以，但等候時間有點久。",
+        "createTime": "2026-05-29T06:00:00Z",
+        "updateTime": "2026-05-29T06:00:00Z"
+      },
+      {
+        "name": "accounts/111111111111111111111/locations/222222222222222222222/reviews/review-replied-003",
+        "reviewId": "review-replied-003",
+        "reviewer": {
+          "displayName": "Lin"
+        },
+        "starRating": "FIVE",
+        "comment": "設計師很專業。",
+        "createTime": "2026-05-28T04:00:00Z",
+        "updateTime": "2026-05-28T04:00:00Z",
+        "reviewReply": {
+          "comment": "謝謝您的肯定，期待下次再為您服務。",
+          "updateTime": "2026-05-28T08:00:00Z",
+          "reviewReplyState": "PUBLISHED"
+        }
+      }
+    ]
+  }
+}

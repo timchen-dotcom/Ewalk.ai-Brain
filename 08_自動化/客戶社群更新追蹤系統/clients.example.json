@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "timezone": "Asia/Taipei",
+  "clients": [
+    {
+      "clientId": "xxx-hair-stylist",
+      "clientName": "XXX髮型師",
+      "owner": "客戶成功經理待指派",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "displayName": "XXX髮型師 IG",
+          "enabled": true,
+          "source": "sample",
+          "accountId": "sample_ig_xxx_hair",
+          "targetPerWeek": 3,
+          "targetPerMonth": 12
+        },
+        {
+          "platform": "facebook",
+          "displayName": "XXX髮型師 FB",
+          "enabled": true,
+          "source": "sample",
+          "accountId": "sample_fb_xxx_hair",
+          "targetPerWeek": 3,
+          "targetPerMonth": 12
+        }
+      ]
+    }
+  ]
+}

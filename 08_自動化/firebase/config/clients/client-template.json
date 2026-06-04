@@ -1,0 +1,13 @@
+{
+  "client_id": "client-slug",
+  "client_name": "客戶正式名稱",
+  "input": "01_客戶/客戶正式名稱/02_活動與內容/Meta自動發文佇列.md",
+  "content_queue_output": "08_自動化/firebase/output/client-slug-content-queue.dry-run.json",
+  "performance_followups_output": "08_自動化/firebase/output/client-slug-performance-followups.dry-run.json",
+  "command_center_output": "08_自動化/firebase/output/client-slug-command-center-preview.html",
+  "hashtags": ["品牌Hashtag"],
+  "default_reviewer": "阿順",
+  "default_final_approver": "提姆先生",
+  "default_platforms": ["facebook"],
+  "followup_checkpoints_hours": [24, 72]
+}
