@@ -1,0 +1,10 @@
+{
+  "name": "theday-order-test",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify": "node scripts/verify.mjs",
+    "deploy:api": "node scripts/deploy-vercel-api.mjs"
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "output": "/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/01_客戶/STAR Color/03_提案與交付/0506_AI染髮師課程簡報/STAR_Color_0506_AI染髮師社群行銷課程.pptx",
+  "outputBytes": 2163541,
+  "slideCount": 22,
+  "slideSize": {
+    "width": 1280,
+    "height": 720
+  },
+  "previewDir": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview",
+  "previewPaths": [
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-01.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-02.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-03.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-04.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-05.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-06.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-07.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-08.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-09.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-10.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-11.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-12.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-13.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-14.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-15.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-16.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-17.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-18.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-19.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-20.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-21.png",
+    "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/preview/slide-22.png"
+  ],
+  "layoutDir": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout",
+  "layoutResults": [
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-01.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-02.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-03.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-04.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-05.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-06.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-07.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-08.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-09.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-10.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-11.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-12.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-13.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-14.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-15.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-16.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-17.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-18.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-19.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-20.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-21.layout.json"
+    },
+    {
+      "layoutPath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/layout/slide-22.layout.json"
+    }
+  ],
+  "contactSheet": "/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/01_客戶/STAR Color/03_提案與交付/0506_AI染髮師課程簡報/STAR_Color_0506_AI染髮師社群行銷課程_預覽.png",
+  "slides": [
+    {
+      "index": 1,
+      "requestedSlideNumber": 1,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-01.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 2,
+      "requestedSlideNumber": 2,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-02.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 3,
+      "requestedSlideNumber": 3,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-03.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 4,
+      "requestedSlideNumber": 4,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-04.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 5,
+      "requestedSlideNumber": 5,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-05.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 6,
+      "requestedSlideNumber": 6,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-06.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 7,
+      "requestedSlideNumber": 7,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-07.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 8,
+      "requestedSlideNumber": 8,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-08.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 9,
+      "requestedSlideNumber": 9,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-09.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 10,
+      "requestedSlideNumber": 10,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-10.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 11,
+      "requestedSlideNumber": 11,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-11.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 12,
+      "requestedSlideNumber": 12,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-12.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 13,
+      "requestedSlideNumber": 13,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-13.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 14,
+      "requestedSlideNumber": 14,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-14.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 15,
+      "requestedSlideNumber": 15,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-15.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 16,
+      "requestedSlideNumber": 16,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-16.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 17,
+      "requestedSlideNumber": 17,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-17.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 18,
+      "requestedSlideNumber": 18,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-18.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 19,
+      "requestedSlideNumber": 19,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-19.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 20,
+      "requestedSlideNumber": 20,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-20.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 21,
+      "requestedSlideNumber": 21,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-21.mjs",
+      "exportName": "default"
+    },
+    {
+      "index": 22,
+      "requestedSlideNumber": 22,
+      "modulePath": "/private/tmp/codex-presentations/019df261-7b00-7a50-97fb-b0d2c99c5a8d/star-color-0506-course/slides/slide-22.mjs",
+      "exportName": "default"
+    }
+  ]
+}

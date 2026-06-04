@@ -1,0 +1,10 @@
+Use case: ads-marketing
+Asset type: Facebook/Instagram social post visual, vertical 1080x1350.
+Primary request: Create the final social media image for 韓食日常鍋物 featuring 海鮮豆腐湯, using the product reference image only as food/composition reference. Do not copy the reference photo directly.
+Brand: 韓食日常鍋物, modern Korean hot pot / Korean everyday meal brand.
+Scene/backdrop: bright clean tabletop, modern Korean casual dining mood, warm but not heavy, white/cream surface with subtle brand color graphic accents.
+Subject: a steaming Korean seafood tofu soup in a black stone pot, with soft tofu cubes, shrimp, squid or mixed seafood, scallion, light red-orange broth, and a small bowl of rice nearby. Food should look like a real restaurant serving, appetizing and balanced, not overly spicy or greasy.
+Composition: vertical poster, hero soup pot fills lower two-thirds, clean negative space in upper area for simple headline. Add restrained graphic blocks/curves in Hermes orange #F37021, deep navy #0B2545, pure warm white #FAFAF7, and a small fresh green accent. Professional Taiwanese restaurant social post, polished but approachable.
+Text on image: include only these readable Traditional Chinese text elements: 「海鮮豆腐湯」 and smaller line 「鮮味剛剛好」. If text quality may degrade, prioritize food and clean layout.
+Style: high-end but friendly restaurant ad, bright natural light, crisp appetizing food detail, clean commercial photography with minimal modern design overlay.
+Avoid: do not include people, Korean hanbok, traditional heavy pattern, red-black BBQ aesthetic, oily greasy filter, cluttered text, fake coupons, prices, QR codes, watermarks, distorted pots, unreadable fake text.

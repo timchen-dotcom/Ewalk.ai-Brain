@@ -1,0 +1,404 @@
+{
+  "client": "韓食日常鍋物",
+  "generatedAt": "2026-06-04T05:05:42.931Z",
+  "mode": "dry-run",
+  "livePolicy": "全部 Campaign / Ad Group / Ad / Keyword 預設 PAUSED；未經提姆先生批准不得啟用 ACTIVE 或發布正式花費。",
+  "googleAdsAccount": {
+    "accountName": "EWALK數位漫步｜美業AI行銷服務領航者",
+    "customerId": "7287266360"
+  },
+  "sourceFiles": [
+    "2026-06-02_Google搜尋廣告建稿表.csv",
+    "2026-06-03_GoogleAds後台設定實測紀錄.md",
+    "2026-06-03_GoogleAds_PAUSED草稿設定操作單.md"
+  ],
+  "sharedSettings": {
+    "customerId": "7287266360",
+    "currency": "TWD",
+    "status": "PAUSED",
+    "startDate": "2026-06-03",
+    "endDate": "2026-06-30",
+    "location": {
+      "name": "臺南市",
+      "storeAddress": "台南市南區文南路49號1樓",
+      "latitude": 22.9830414,
+      "longitude": 120.1897276,
+      "geoTargetConstant": "NEEDS_GOOGLE_ADS_API_RESOLUTION"
+    },
+    "language": {
+      "name": "繁體中文（台灣）",
+      "languageConstant": "NEEDS_GOOGLE_ADS_API_RESOLUTION"
+    },
+    "networks": {
+      "targetGoogleSearch": true,
+      "targetSearchPartners": false,
+      "targetContentNetwork": false
+    },
+    "bidding": {
+      "strategy": "MAXIMIZE_CLICKS",
+      "cpcBidCeilingMicros": 20000000
+    },
+    "callAsset": {
+      "phoneNumber": "06 263 5885",
+      "countryCode": "TW"
+    }
+  },
+  "campaigns": [
+    {
+      "name": "HIH_202606_Search_Brand_Map",
+      "adGroupName": "Brand_Search",
+      "dailyBudgetTwd": 43,
+      "finalUrl": "https://shop.ichefpos.com/store/nNLhMqsW/ordering",
+      "originalIntentUrl": "https://www.google.com/maps/place/%E9%9F%93%E9%A3%9F%E6%97%A5%E5%B8%B8%E9%8D%8B%E7%89%A9+%E6%96%87%E5%8D%97%E5%BA%97/@22.9830414,120.1897276,1948m/data=!3m2!1e3!4b1!4m6!3m5!1s0x346e77f80f0cb895:0x25665092d56ed1cb!8m2!3d22.9830414!4d120.1897276!16s%2Fg%2F11z9rg471f?entry=ttu",
+      "finalUrlNote": "後台實測使用官方 iCHEF 點餐頁較穩定；Google Maps 連結保留作為 sitelink/導航素材，避免搜尋廣告主網址驗證卡住。",
+      "displayPath": [
+        "opening",
+        "hansik"
+      ],
+      "keywords": [
+        {
+          "text": "韓食日常",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "韓食日常",
+          "matchType": "EXACT"
+        },
+        {
+          "text": "韓食日常鍋物",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "韓食日常鍋物",
+          "matchType": "EXACT"
+        },
+        {
+          "text": "韓食日常文南店",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "韓食日常文南店",
+          "matchType": "EXACT"
+        },
+        {
+          "text": "Hansik Ilsang",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "韓食日常 Uber Eats",
+          "matchType": "PHRASE"
+        }
+      ],
+      "headlines": [
+        "韓食日常鍋物開幕慶",
+        "點鍋物送手工料",
+        "韓食日常文南店",
+        "導航前往韓食日常",
+        "Uber Eats看韓食日常",
+        "6月開幕慶進行中"
+      ],
+      "descriptions": [
+        "韓食日常鍋物文南店6/1至6/30開幕慶，點鍋物隨鍋送手工料。",
+        "想吃韓式鍋物可查看菜單、導航前往，或搜尋Uber Eats韓食日常。"
+      ],
+      "status": "PAUSED",
+      "dailyBudgetMicros": 43000000,
+      "adGroupStatus": "PAUSED",
+      "adStatus": "PAUSED",
+      "keywordStatus": "PAUSED",
+      "responsiveSearchAd": {
+        "status": "PAUSED",
+        "finalUrls": [
+          "https://shop.ichefpos.com/store/nNLhMqsW/ordering"
+        ],
+        "displayPath": [
+          "opening",
+          "hansik"
+        ],
+        "headlines": [
+          {
+            "text": "韓食日常鍋物開幕慶"
+          },
+          {
+            "text": "點鍋物送手工料"
+          },
+          {
+            "text": "韓食日常文南店"
+          },
+          {
+            "text": "導航前往韓食日常"
+          },
+          {
+            "text": "Uber Eats看韓食日常"
+          },
+          {
+            "text": "6月開幕慶進行中"
+          }
+        ],
+        "descriptions": [
+          {
+            "text": "韓食日常鍋物文南店6/1至6/30開幕慶，點鍋物隨鍋送手工料。"
+          },
+          {
+            "text": "想吃韓式鍋物可查看菜單、導航前往，或搜尋Uber Eats韓食日常。"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HIH_202606_Search_Local_KoreanHotpot",
+      "adGroupName": "Local_KoreanHotpot",
+      "dailyBudgetTwd": 71,
+      "finalUrl": "https://shop.ichefpos.com/store/nNLhMqsW/ordering",
+      "originalIntentUrl": "https://www.google.com/maps/place/%E9%9F%93%E9%A3%9F%E6%97%A5%E5%B8%B8%E9%8D%8B%E7%89%A9+%E6%96%87%E5%8D%97%E5%BA%97/@22.9830414,120.1897276,1948m/data=!3m2!1e3!4b1!4m6!3m5!1s0x346e77f80f0cb895:0x25665092d56ed1cb!8m2!3d22.9830414!4d120.1897276!16s%2Fg%2F11z9rg471f?entry=ttu",
+      "finalUrlNote": "附近韓式鍋物搜尋先導到官方菜單頁；Google Maps 導航作為 sitelink，降低主網址政策與追蹤風險。",
+      "displayPath": [
+        "korean",
+        "hotpot"
+      ],
+      "keywords": [
+        {
+          "text": "附近韓式料理",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "附近韓式鍋物",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "韓式火鍋",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "韓式料理",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "泡菜鍋",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "大醬湯",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "韓式湯飯",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "海鮮豆腐湯",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "馬鈴薯排骨湯",
+          "matchType": "PHRASE"
+        }
+      ],
+      "headlines": [
+        "韓式鍋物新選擇",
+        "今天晚餐來一鍋",
+        "泡菜鍋與大醬湯",
+        "附近韓式鍋物",
+        "平日也能吃韓食",
+        "文南店開幕慶"
+      ],
+      "descriptions": [
+        "想吃韓式鍋物、泡菜鍋、大醬湯或韓式湯飯？韓食日常鍋物文南店開幕慶進行中。",
+        "文南店6月開幕慶進行中，點鍋物隨鍋送手工料，適合午餐晚餐到店享用。"
+      ],
+      "status": "PAUSED",
+      "dailyBudgetMicros": 71000000,
+      "adGroupStatus": "PAUSED",
+      "adStatus": "PAUSED",
+      "keywordStatus": "PAUSED",
+      "responsiveSearchAd": {
+        "status": "PAUSED",
+        "finalUrls": [
+          "https://shop.ichefpos.com/store/nNLhMqsW/ordering"
+        ],
+        "displayPath": [
+          "korean",
+          "hotpot"
+        ],
+        "headlines": [
+          {
+            "text": "韓式鍋物新選擇"
+          },
+          {
+            "text": "今天晚餐來一鍋"
+          },
+          {
+            "text": "泡菜鍋與大醬湯"
+          },
+          {
+            "text": "附近韓式鍋物"
+          },
+          {
+            "text": "平日也能吃韓食"
+          },
+          {
+            "text": "文南店開幕慶"
+          }
+        ],
+        "descriptions": [
+          {
+            "text": "想吃韓式鍋物、泡菜鍋、大醬湯或韓式湯飯？韓食日常鍋物文南店開幕慶進行中。"
+          },
+          {
+            "text": "文南店6月開幕慶進行中，點鍋物隨鍋送手工料，適合午餐晚餐到店享用。"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HIH_202606_Search_Delivery",
+      "adGroupName": "Delivery_Search",
+      "dailyBudgetTwd": 29,
+      "finalUrl": "https://www.ubereats.com/tw/store/%E9%9F%93%E9%A3%9F%E6%97%A5%E5%B8%B8%E9%8D%8B%E7%89%A9/NN13z4XCUzC1LnsuTcQjhw",
+      "originalIntentUrl": "https://www.ubereats.com/tw/store/%E9%9F%93%E9%A3%9F%E6%97%A5%E5%B8%B8%E9%8D%8B%E7%89%A9/NN13z4XCUzC1LnsuTcQjhw",
+      "finalUrlNote": "外送搜尋以 Uber Eats 已確認店家頁承接；Foodpanda 未確認前不放入正式廣告文字。",
+      "displayPath": [
+        "delivery",
+        "hansik"
+      ],
+      "keywords": [
+        {
+          "text": "韓式料理外送",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "韓式鍋物外送",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "泡菜鍋外送",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "Uber Eats 韓式",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "韓食日常外送",
+          "matchType": "PHRASE"
+        },
+        {
+          "text": "附近外送韓式料理",
+          "matchType": "PHRASE"
+        }
+      ],
+      "headlines": [
+        "韓式鍋物也能外送",
+        "Uber Eats搜尋韓食日常",
+        "官方點餐看菜單",
+        "點鍋物送手工料",
+        "在家吃韓式鍋物"
+      ],
+      "descriptions": [
+        "想外送韓式鍋物，可先查看Uber Eats或官方點餐頁。6/1至6/30開幕慶點鍋物送手工料。",
+        "可先查看Uber Eats或官方點餐頁，想吃韓式鍋物在家也能輕鬆安排。"
+      ],
+      "status": "PAUSED",
+      "dailyBudgetMicros": 29000000,
+      "adGroupStatus": "PAUSED",
+      "adStatus": "PAUSED",
+      "keywordStatus": "PAUSED",
+      "responsiveSearchAd": {
+        "status": "PAUSED",
+        "finalUrls": [
+          "https://www.ubereats.com/tw/store/%E9%9F%93%E9%A3%9F%E6%97%A5%E5%B8%B8%E9%8D%8B%E7%89%A9/NN13z4XCUzC1LnsuTcQjhw"
+        ],
+        "displayPath": [
+          "delivery",
+          "hansik"
+        ],
+        "headlines": [
+          {
+            "text": "韓式鍋物也能外送"
+          },
+          {
+            "text": "Uber Eats搜尋韓食日常"
+          },
+          {
+            "text": "官方點餐看菜單"
+          },
+          {
+            "text": "點鍋物送手工料"
+          },
+          {
+            "text": "在家吃韓式鍋物"
+          }
+        ],
+        "descriptions": [
+          {
+            "text": "想外送韓式鍋物，可先查看Uber Eats或官方點餐頁。6/1至6/30開幕慶點鍋物送手工料。"
+          },
+          {
+            "text": "可先查看Uber Eats或官方點餐頁，想吃韓式鍋物在家也能輕鬆安排。"
+          }
+        ]
+      }
+    }
+  ],
+  "assets": {
+    "sitelinks": [
+      {
+        "text": "導航前往",
+        "finalUrl": "https://www.google.com/maps/place/%E9%9F%93%E9%A3%9F%E6%97%A5%E5%B8%B8%E9%8D%8B%E7%89%A9+%E6%96%87%E5%8D%97%E5%BA%97/@22.9830414,120.1897276,1948m/data=!3m2!1e3!4b1!4m6!3m5!1s0x346e77f80f0cb895:0x25665092d56ed1cb!8m2!3d22.9830414!4d120.1897276!16s%2Fg%2F11z9rg471f?entry=ttu",
+        "description1": "查看店址",
+        "description2": "前往文南店"
+      },
+      {
+        "text": "查看官方菜單",
+        "finalUrl": "https://shop.ichefpos.com/store/nNLhMqsW/ordering",
+        "description1": "多款鍋物",
+        "description2": "查看餐點"
+      },
+      {
+        "text": "Uber Eats外送",
+        "finalUrl": "https://www.ubereats.com/tw/store/%E9%9F%93%E9%A3%9F%E6%97%A5%E5%B8%B8%E9%8D%8B%E7%89%A9/NN13z4XCUzC1LnsuTcQjhw",
+        "description1": "外送平台",
+        "description2": "搜尋韓食日常"
+      }
+    ],
+    "callouts": [
+      "6/1-6/30開幕慶",
+      "點鍋物送手工料",
+      "多款韓式湯鍋",
+      "文南店新開幕",
+      "可導航前往"
+    ],
+    "call": {
+      "phoneNumber": "06 263 5885",
+      "countryCode": "TW"
+    }
+  },
+  "negativeKeywords": [
+    "食譜",
+    "做法",
+    "教學",
+    "影片",
+    "韓劇",
+    "免費",
+    "加盟",
+    "批發",
+    "求職",
+    "工作",
+    "二手",
+    "泡菜製作",
+    "火鍋料批發",
+    "韓文",
+    "韓國旅遊"
+  ],
+  "apiReadiness": {
+    "readyForLiveApi": false,
+    "missingBeforeLiveApi": [
+      "Google Ads developer token",
+      "Google Ads API OAuth client / refresh token",
+      "確認臺南市 geoTargetConstant",
+      "確認繁體中文（台灣） languageConstant",
+      "確認是否要以 API 建立正式 PAUSED 草稿"
+    ],
+    "safeNextStep": "使用本 dry-run JSON 轉成 Google Ads API mutate operations，或先用 Google Ads Editor 匯入 CSV 檢查，所有狀態保持 PAUSED。"
+  }
+}

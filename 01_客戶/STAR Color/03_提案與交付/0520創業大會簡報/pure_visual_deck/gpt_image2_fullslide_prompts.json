@@ -1,0 +1,962 @@
+{
+  "model": "gpt-image-2",
+  "size": "1536x1024",
+  "quality": "high",
+  "brand_kit_path": "../../../01_品牌資料/簡報生成品牌包/brand_kit.json",
+  "source_markdown": "../STAR_Color_0520加盟簡報0511.md",
+  "deck_title": "STAR Color 0520 加盟簡報0511 完整46頁 GPT Image 2 整頁烘字確認版",
+  "brand_style": "STAR Color presentation brand kit v1.5. Follow the 0512 Keynote visual system as the primary style reference: cosmic deep-blue AI beauty conference stage, blue-violet galaxy ribbons, star magenta hair-color energy waves, crystal white and silver tech line details, premium product-stage composition. Every slide must include a non-text graphic header and non-text graphic footer; all text stays in the main content area.",
+  "global_rules": [
+    "Create one complete 16:9 presentation slide as a single finished image.",
+    "All visible text must be Traditional Chinese only.",
+    "Use only the exact Chinese text listed in each page's must_include_text and optional short labels.",
+    "Do not add English, fake logos, fake QR codes, random watermarks, unreadable microtext, or extra captions.",
+    "Keep the slide readable from a conference screen: large headline, clear spacing, few text groups.",
+    "If making charts, use simple visual structures with short Chinese labels, not dense data tables.",
+    "Every slide must include a non-text graphic header and a non-text graphic footer.",
+    "Header and footer must contain no words, no slogan, no page number, no QR code, and no fake logo.",
+    "Use STAR_Color_0520加盟簡報0511.md as the source of truth for content, numbers, and chartable data.",
+    "After source Slide 8 and before source Slide 9, include three machine-vendor stage pages based on STAR_Color_機器廠商出場資料庫.md.",
+    "Machine-vendor pages should introduce the AI hair-color machine, its measurable technical features, and the cloud color formula system.",
+    "After source Slide 24 and before source Slide 25, include three advertising-performance expert pages based on STAR_Color_廣告投放數據資料庫.md.",
+    "Stage order: pages 1-8 are presented by 幻色鏡方執行長 Kenny; page 9 is a handoff transition; pages 10-20 are presented by 雙師 Akemi.",
+    "Move the finance/franchise block from the previous pages 21-30 to immediately before source Slide 28; this block is presented by 業務部經理.",
+    "Before the closing action pages, include four chairman policy-and-funding pages based on STAR_Color_許文元理事長政策經費資料庫.md.",
+    "Chairman policy pages should connect 2026 policy, 三年 10 萬, TTQS, iCAP, 產業人才投資計畫, and 勞工自主學習計畫 to learning action.",
+    "Chairman policy pages must not promise guaranteed subsidy, guaranteed certification, guaranteed franchise success, or guaranteed income.",
+    "For store model, small-space operation, and franchise landing pages, follow STAR_Color_門店設計資產資料庫.md.",
+    "Store design pages may show S.Color signage, NT / 999 vertical acrylic signboards, glass door waist band, white/gray exterior, sofa wall artwork, and compact salon interiors.",
+    "Store design pages must not invent new prices, fake logos, or unrelated luxury salon concepts.",
+    "Presenter assignments are metadata only; do not render speaker names on the slide image.",
+    "Advertising metrics must be shown as current data and initial market response, not guaranteed acquisition or guaranteed branch performance."
+  ],
+  "negative": "No English words, no random letters, no gibberish Chinese, no simplified Chinese, no fake brand marks, no extra tiny paragraphs, no misspelled STAR Color, no over-crowded dashboard, no stock-photo watermark, no QR code.",
+  "pages": [
+    {
+      "page": 1,
+      "source_slide": "1",
+      "source_title": "封面",
+      "role": "cover",
+      "headline": "AI 智能染髮創業大會",
+      "supporting_text": "封面",
+      "must_include_text": [
+        "AI 智能染髮創業大會",
+        "STAR Color Colorists",
+        "一個人的 AI 美業經濟",
+        "科技賦能・趨勢引領・創造美業新未來"
+      ],
+      "visual_scene": "0512 Keynote style opening stage: cosmic blue-violet AI beauty conference, AI hair-color machine, elegant presenter figure, luminous galaxy ribbons.",
+      "chart_or_structure": "大會舞台式主視覺，強行動感與留白。",
+      "prompt": "Create slide 01 based on source 1: 封面. Main headline must be 「AI 智能染髮創業大會」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: 0512 Keynote style opening stage: cosmic blue-violet AI beauty conference, AI hair-color machine, elegant presenter figure, luminous galaxy ribbons. Use this chart/structure: 大會舞台式主視覺，強行動感與留白。",
+      "presenter": "幻色鏡方執行長 Kenny"
+    },
+    {
+      "page": 2,
+      "source_slide": "2",
+      "source_title": "今天不是聽產品，而是看懂一套新經濟",
+      "role": "content",
+      "headline": "今天，我們不只談染髮。",
+      "supporting_text": "STAR Color 要創造的，是「一個人的 AI 美業經濟」。",
+      "must_include_text": [
+        "今天，我們不只談染髮。",
+        "STAR Color 要創造的，是「一個人的 AI 美業經濟」。",
+        "我們要談的是：",
+        "一個人如何用 AI 進入美業",
+        "一個人如何學會可複製的技術",
+        "一個人如何建立穩定現金流",
+        "一個人如何從服務者，走向經營者"
+      ],
+      "visual_scene": "STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer.",
+      "chart_or_structure": "簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "prompt": "Create slide 02 based on source 2: 今天不是聽產品，而是看懂一套新經濟. Main headline must be 「今天，我們不只談染髮。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer. Use this chart/structure: 簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "presenter": "幻色鏡方執行長 Kenny"
+    },
+    {
+      "page": 3,
+      "source_slide": "3",
+      "source_title": "核心公式",
+      "role": "content",
+      "headline": "STAR Color = 一個人的經濟",
+      "supporting_text": "AI 染髮技術 + 標準化流程 + 透明定價 + 微型教育系統 + AI行銷系統 + 加盟營運模型 = 一個人的 AI 美業經濟",
+      "must_include_text": [
+        "STAR Color = 一個人的經濟",
+        "AI 染髮技術",
+        "+ 標準化流程",
+        "+ 透明定價",
+        "+ 微型教育系統",
+        "+ AI行銷系統",
+        "+ 加盟營運模型"
+      ],
+      "visual_scene": "STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer.",
+      "chart_or_structure": "發光模組系統圖，中心節點加周圍模組。",
+      "prompt": "Create slide 03 based on source 3: 核心公式. Main headline must be 「STAR Color = 一個人的經濟」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer. Use this chart/structure: 發光模組系統圖，中心節點加周圍模組。",
+      "presenter": "幻色鏡方執行長 Kenny"
+    },
+    {
+      "page": 4,
+      "source_slide": "3-1",
+      "source_title": "你加入的不是一間店，而是一個 AI 美業生命體",
+      "role": "system",
+      "headline": "一個人的經濟，背後是一整個生命體。",
+      "supporting_text": "加盟 STAR Color，不是從零開始開一間店，而是加入一個會學習、會支援、會複製的 AI 美業生命體。",
+      "must_include_text": [
+        "一個人的經濟，背後是一整個生命體。",
+        "加盟 STAR Color，不是從零開始開一間店，而是加入一個會學習、會支援、會複製的 AI 美業生命體。",
+        "骨架：幻色鏡方美業控股集團",
+        "大腦：Ewalk.ai",
+        "神經系統：大美好學院",
+        "血肉：STAR Color / STAR SPA",
+        "心臟：一個人的經濟"
+      ],
+      "visual_scene": "STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer.",
+      "chart_or_structure": "發光模組系統圖，中心節點加周圍模組。",
+      "prompt": "Create slide 04 based on source 3-1: 你加入的不是一間店，而是一個 AI 美業生命體. Main headline must be 「一個人的經濟，背後是一整個生命體。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer. Use this chart/structure: 發光模組系統圖，中心節點加周圍模組。",
+      "presenter": "幻色鏡方執行長 Kenny"
+    },
+    {
+      "page": 5,
+      "source_slide": "4",
+      "source_title": "大會承諾",
+      "role": "content",
+      "headline": "90 分鐘後，你會看懂三件事",
+      "supporting_text": "大會承諾",
+      "must_include_text": [
+        "90 分鐘後，你會看懂三件事",
+        "為什麼美業正在進入 AI 與微型創業時代",
+        "STAR Color 如何把染髮變成可複製的經營模型",
+        "你可以如何從學習、就業、創業到加盟，進入這個系統"
+      ],
+      "visual_scene": "STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer.",
+      "chart_or_structure": "簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "prompt": "Create slide 05 based on source 4: 大會承諾. Main headline must be 「90 分鐘後，你會看懂三件事」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer. Use this chart/structure: 簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "presenter": "幻色鏡方執行長 Kenny"
+    },
+    {
+      "page": 6,
+      "source_slide": "5",
+      "source_title": "美業不是沒有需求，是傳統供給方式正在失效",
+      "role": "content",
+      "headline": "美業的需求還在，但傳統做法越來越難。",
+      "supporting_text": "下一波美業機會，不在於開更大的店，而在於建立更容易複製的系統。",
+      "must_include_text": [
+        "美業的需求還在，但傳統做法越來越難。",
+        "下一波美業機會，不在於開更大的店，而在於建立更容易複製的系統。",
+        "傳統美業正在遇到四個壓力：",
+        "人才難找",
+        "技術難教",
+        "成本提高",
+        "顧客更重視價格透明與效率"
+      ],
+      "visual_scene": "STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer.",
+      "chart_or_structure": "問題到解法的對比圖，使用四張壓力卡或信任卡。",
+      "prompt": "Create slide 06 based on source 5: 美業不是沒有需求，是傳統供給方式正在失效. Main headline must be 「美業的需求還在，但傳統做法越來越難。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer. Use this chart/structure: 問題到解法的對比圖，使用四張壓力卡或信任卡。",
+      "presenter": "幻色鏡方執行長 Kenny"
+    },
+    {
+      "page": 7,
+      "source_slide": "6",
+      "source_title": "傳統美業的核心風險：太依賴人",
+      "role": "content",
+      "headline": "傳統染髮生意，最大的風險不是沒有客人。",
+      "supporting_text": "當一門生意太依賴人，它就很難快速複製。",
+      "must_include_text": [
+        "傳統染髮生意，最大的風險不是沒有客人。",
+        "當一門生意太依賴人，它就很難快速複製。",
+        "真正的風險是：",
+        "顏色判斷靠師傅經驗",
+        "服務品質靠個人手感",
+        "價格說明靠現場話術",
+        "訓練速度靠師徒制"
+      ],
+      "visual_scene": "Market transformation scene from traditional salon pressure to AI-enabled beauty system, cinematic but business-professional.",
+      "chart_or_structure": "問題到解法的對比圖，使用四張壓力卡或信任卡。",
+      "prompt": "Create slide 07 based on source 6: 傳統美業的核心風險：太依賴人. Main headline must be 「傳統染髮生意，最大的風險不是沒有客人。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: Market transformation scene from traditional salon pressure to AI-enabled beauty system, cinematic but business-professional. Use this chart/structure: 問題到解法的對比圖，使用四張壓力卡或信任卡。",
+      "presenter": "幻色鏡方執行長 Kenny"
+    },
+    {
+      "page": 8,
+      "source_slide": "7",
+      "source_title": "顧客也變了：她要的是確定感",
+      "role": "content",
+      "headline": "現在的消費者，不只想變美，更想安心。",
+      "supporting_text": "AI 智能染髮的價值，不只是科技，而是讓美變得更可預期。",
+      "must_include_text": [
+        "現在的消費者，不只想變美，更想安心。",
+        "AI 智能染髮的價值，不只是科技，而是讓美變得更可預期。",
+        "顧客在意：",
+        "價格能不能先知道",
+        "髮色會不會翻車",
+        "會不會被推銷",
+        "下次能不能染回同樣的顏色"
+      ],
+      "visual_scene": "Market transformation scene from traditional salon pressure to AI-enabled beauty system, cinematic but business-professional.",
+      "chart_or_structure": "問題到解法的對比圖，使用四張壓力卡或信任卡。",
+      "prompt": "Create slide 08 based on source 7: 顧客也變了：她要的是確定感. Main headline must be 「現在的消費者，不只想變美，更想安心。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: Market transformation scene from traditional salon pressure to AI-enabled beauty system, cinematic but business-professional. Use this chart/structure: 問題到解法的對比圖，使用四張壓力卡或信任卡。",
+      "presenter": "幻色鏡方執行長 Kenny"
+    },
+    {
+      "page": 9,
+      "source_slide": "8",
+      "source_title": "STAR Color 的解法總覽",
+      "role": "system",
+      "headline": "把染髮從「靠經驗」變成「靠系統」。",
+      "supporting_text": "STAR Color 的解法總覽",
+      "must_include_text": [
+        "把染髮從「靠經驗」變成「靠系統」。",
+        "AI 智能染髮機",
+        "App 配方調色",
+        "標準化服務流程",
+        "顧客色彩紀錄",
+        "透明均一價",
+        "AI 髮色顧問"
+      ],
+      "visual_scene": "STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer.",
+      "chart_or_structure": "發光模組系統圖，中心節點加周圍模組。",
+      "prompt": "Create slide 09 based on source 8: STAR Color 的解法總覽. Main headline must be 「把染髮從「靠經驗」變成「靠系統」。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer. Use this chart/structure: 發光模組系統圖，中心節點加周圍模組。",
+      "presenter": "轉場頁：Kenny 交棒至 Akemi"
+    },
+    {
+      "source_slide": "MV-1",
+      "role": "machine-vendor",
+      "headline": "機器出場：芯色彩全新 AI 智能調色機",
+      "supporting_text": "此段落由機器廠商上台，先讓觀眾理解 AI 染髮機不是展示道具，而是 STAR Color 標準化服務的技術核心。",
+      "must_include_text": [
+        "機器出場：芯色彩全新 AI 智能調色機",
+        "機器廠商上台",
+        "芯色彩 AI 智能色彩引擎系統",
+        "全新染髮體驗",
+        "八大特點"
+      ],
+      "visual_scene": "Machine vendor stage reveal in STAR Color 0512 Keynote style: premium blue-violet conference stage, official white cylindrical AI hair-color machine, spotlight reveal, product closeups, color-formula interface.",
+      "chart_or_structure": "產品出場舞台 + 機器核心模組環繞，作為廠商上台的過場頁。",
+      "page": 10,
+      "prompt": "Create slide 10 as an inserted machine-vendor stage section inside the AI hair-color machine chapter. Main headline must be 「機器出場：芯色彩全新 AI 智能調色機」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Treat this as the machine supplier presenting the technology on stage; keep it premium, technical, and credible. Use this visual direction: Machine vendor stage reveal in STAR Color 0512 Keynote style: premium blue-violet conference stage, official white cylindrical AI hair-color machine, spotlight reveal, product closeups, color-formula interface. Use this chart/structure: 產品出場舞台 + 機器核心模組環繞，作為廠商上台的過場頁。",
+      "presenter": "雙師 Akemi"
+    },
+    {
+      "source_slide": "MV-2",
+      "role": "machine-vendor",
+      "headline": "把調色從手感，變成可量測的系統。",
+      "supporting_text": "廠商段落的技術重點：機器把配方、辨識、秤量與調配流程標準化，讓染髮服務更容易訓練與複製。",
+      "must_include_text": [
+        "把調色從手感，變成可量測的系統。",
+        "3 大自研晶片",
+        "12 色自研配色體系",
+        "20 項國家專利",
+        "50 秒調配完成配方",
+        "智能識別",
+        "精準電子秤",
+        "自動調配"
+      ],
+      "visual_scene": "Technical product keynote page: AI chip glow, formula canisters, machine screen, precision scale, automated color mixing modules, clean premium technology layout.",
+      "chart_or_structure": "八大特點中的技術重點卡片，最多用 3-4 個大數字與短標籤呈現。",
+      "page": 11,
+      "prompt": "Create slide 11 as an inserted machine-vendor stage section inside the AI hair-color machine chapter. Main headline must be 「把調色從手感，變成可量測的系統。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Treat this as the machine supplier presenting the technology on stage; keep it premium, technical, and credible. Use this visual direction: Technical product keynote page: AI chip glow, formula canisters, machine screen, precision scale, automated color mixing modules, clean premium technology layout. Use this chart/structure: 八大特點中的技術重點卡片，最多用 3-4 個大數字與短標籤呈現。",
+      "presenter": "雙師 Akemi"
+    },
+    {
+      "source_slide": "MV-3",
+      "role": "machine-vendor",
+      "headline": "配方不是存在腦袋，而是在雲端持續更新。",
+      "supporting_text": "把機器連到雲端配色中心、色彩資料庫與門店後台，讓 AI 染髮機成為可累積資料、可管理、可更新的營運系統。",
+      "must_include_text": [
+        "配方不是存在腦袋，而是在雲端持續更新。",
+        "雲端智能配色中心",
+        "711+ 色彩資料庫",
+        "色彩配方雲端自動更新",
+        "終端門店後台管理系統",
+        "智能色彩溝通營銷系統"
+      ],
+      "visual_scene": "Cloud color formula system: AI hair-color machine connected to cloud color database, salon app screens, branch backend dashboard, color formula data streams, premium blue-violet galaxy network.",
+      "chart_or_structure": "機器 → 雲端配色中心 → 色彩資料庫 → 門店後台 → 顧客服務的資料流。",
+      "page": 12,
+      "prompt": "Create slide 12 as an inserted machine-vendor stage section inside the AI hair-color machine chapter. Main headline must be 「配方不是存在腦袋，而是在雲端持續更新。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Treat this as the machine supplier presenting the technology on stage; keep it premium, technical, and credible. Use this visual direction: Cloud color formula system: AI hair-color machine connected to cloud color database, salon app screens, branch backend dashboard, color formula data streams, premium blue-violet galaxy network. Use this chart/structure: 機器 → 雲端配色中心 → 色彩資料庫 → 門店後台 → 顧客服務的資料流。",
+      "presenter": "雙師 Akemi"
+    },
+    {
+      "page": 13,
+      "source_slide": "9",
+      "source_title": "AI 染髮機：把複雜配方變成穩定流程",
+      "role": "process",
+      "headline": "50 秒，完成一份可被記錄的染髮配方。",
+      "supporting_text": "AI 不是取代人，而是讓一個人更快達到穩定專業。",
+      "must_include_text": [
+        "50 秒，完成一份可被記錄的染髮配方。",
+        "AI 不是取代人，而是讓一個人更快達到穩定專業。",
+        "50 秒",
+        "單次精準調配 < 0.2G",
+        "快速調配顧客所需髮色",
+        "降低人工判斷的不穩定",
+        "讓色彩邏輯更容易被訓練"
+      ],
+      "visual_scene": "Premium product-stage scene with a sleek AI hair-color machine, color formula UI, glowing blue-violet platform, magenta hair-color energy.",
+      "chart_or_structure": "水平或弧形流程圖，步驟以發光節點呈現。",
+      "prompt": "Create slide 13 based on source 9: AI 染髮機：把複雜配方變成穩定流程. Main headline must be 「50 秒，完成一份可被記錄的染髮配方。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: Premium product-stage scene with a sleek AI hair-color machine, color formula UI, glowing blue-violet platform, magenta hair-color energy. Use this chart/structure: 水平或弧形流程圖，步驟以發光節點呈現。",
+      "presenter": "雙師 Akemi"
+    },
+    {
+      "page": 14,
+      "source_slide": "10",
+      "source_title": "低庫存高變化：12 款髮膏，延伸 800+ 色",
+      "role": "content",
+      "headline": "低庫存，不代表選擇少。",
+      "supporting_text": "STAR Color 用系統化配方，降低傳統染膏庫存壓力，同時保留足夠色彩變化。",
+      "must_include_text": [
+        "低庫存，不代表選擇少。",
+        "12 款髮膏庫存",
+        "800+ 色彩變化",
+        "降低庫存管理成本",
+        "提高門店營運效率"
+      ],
+      "visual_scene": "Premium product-stage scene with a sleek AI hair-color machine, color formula UI, glowing blue-violet platform, magenta hair-color energy.",
+      "chart_or_structure": "大型數字卡與產品科技視覺，最多三個指標。",
+      "prompt": "Create slide 14 based on source 10: 低庫存高變化：12 款髮膏，延伸 800+ 色. Main headline must be 「低庫存，不代表選擇少。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: Premium product-stage scene with a sleek AI hair-color machine, color formula UI, glowing blue-violet platform, magenta hair-color energy. Use this chart/structure: 大型數字卡與產品科技視覺，最多三個指標。",
+      "presenter": "雙師 Akemi"
+    },
+    {
+      "page": 15,
+      "source_slide": "11",
+      "source_title": "$999 高頻剛需：透明定價創造循環消費",
+      "role": "content",
+      "headline": "顧客不怕花錢，怕的是不知道要花多少。",
+      "supporting_text": "透明定價不是促銷，而是信任設計。",
+      "must_include_text": [
+        "顧客不怕花錢，怕的是不知道要花多少。",
+        "透明定價不是促銷，而是信任設計。",
+        "STAR Color 的價格策略：",
+        "洗染 $999",
+        "不分長短",
+        "價格透明",
+        "降低第一次進店壓力"
+      ],
+      "visual_scene": "STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer.",
+      "chart_or_structure": "大型數字卡與產品科技視覺，最多三個指標。",
+      "prompt": "Create slide 15 based on source 11: $999 高頻剛需：透明定價創造循環消費. Main headline must be 「顧客不怕花錢，怕的是不知道要花多少。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer. Use this chart/structure: 大型數字卡與產品科技視覺，最多三個指標。",
+      "presenter": "雙師 Akemi"
+    },
+    {
+      "page": 16,
+      "source_slide": "12",
+      "source_title": "服務流程：讓新手也能理解，讓門店更容易複製",
+      "role": "process",
+      "headline": "一套服務能被教會，才有機會被複製。",
+      "supporting_text": "服務流程：讓新手也能理解，讓門店更容易複製",
+      "must_include_text": [
+        "一套服務能被教會，才有機會被複製。",
+        "顧客諮詢",
+        "髮況與目標色判斷",
+        "App 配方 / AI 調色",
+        "標準化操作",
+        "顧客色彩紀錄",
+        "回訪與再消費"
+      ],
+      "visual_scene": "Blue-violet galaxy roadmap with numbered glowing steps, clean and readable.",
+      "chart_or_structure": "水平或弧形流程圖，步驟以發光節點呈現。",
+      "prompt": "Create slide 16 based on source 12: 服務流程：讓新手也能理解，讓門店更容易複製. Main headline must be 「一套服務能被教會，才有機會被複製。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: Blue-violet galaxy roadmap with numbered glowing steps, clean and readable. Use this chart/structure: 水平或弧形流程圖，步驟以發光節點呈現。",
+      "presenter": "雙師 Akemi"
+    },
+    {
+      "page": 17,
+      "source_slide": "13",
+      "source_title": "不是找會的人加盟，而是讓想做的人學會",
+      "role": "content",
+      "headline": "STAR Color 的關鍵，不只在 AI，而在教育。",
+      "supporting_text": "大美好學院，就是承載一個人的經濟的微型教育系統。",
+      "must_include_text": [
+        "STAR Color 的關鍵，不只在 AI，而在教育。",
+        "大美好學院，就是承載一個人的經濟的微型教育系統。",
+        "如果沒有教育系統，AI 染髮只是一台機器。",
+        "有了大美好學院，它變成：",
+        "可學習的技術",
+        "可考核的能力",
+        "可晉升的職能"
+      ],
+      "visual_scene": "Franchise information system stage visual: cloud API core, GADM headquarters, OPS store, CSM member, BONUS profit-sharing backend, glowing data streams.",
+      "chart_or_structure": "加盟資訊系統圖，雲端 API 中心連接 GADM / OPS / CSM / BONUS 四個模組。",
+      "prompt": "Create slide 17 based on source 13: 不是找會的人加盟，而是讓想做的人學會. Main headline must be 「STAR Color 的關鍵，不只在 AI，而在教育。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: Franchise information system stage visual: cloud API core, GADM headquarters, OPS store, CSM member, BONUS profit-sharing backend, glowing data streams. Use this chart/structure: 加盟資訊系統圖，雲端 API 中心連接 GADM / OPS / CSM / BONUS 四個模組。",
+      "presenter": "雙師 Akemi"
+    },
+    {
+      "page": 18,
+      "source_slide": "14",
+      "source_title": "微型教育系統",
+      "role": "system",
+      "headline": "把 AI 美業拆成一個人可以完成的學習路徑。",
+      "supporting_text": "大美好學院的任務，是把「一個人的經濟」從口號變成制度。",
+      "must_include_text": [
+        "把 AI 美業拆成一個人可以完成的學習路徑。",
+        "學習護照",
+        "L1-L6 技術模組",
+        "AI 染髮師培訓",
+        "實作與考核",
+        "就業 / 創業 / 加盟",
+        "→ L1-L6 技術模組"
+      ],
+      "visual_scene": "Futuristic beauty academy learning path, glowing passport or certification nodes, AI training network, premium conference style.",
+      "chart_or_structure": "發光模組系統圖，中心節點加周圍模組。",
+      "prompt": "Create slide 18 based on source 14: 微型教育系統. Main headline must be 「把 AI 美業拆成一個人可以完成的學習路徑。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: Futuristic beauty academy learning path, glowing passport or certification nodes, AI training network, premium conference style. Use this chart/structure: 發光模組系統圖，中心節點加周圍模組。",
+      "presenter": "雙師 Akemi"
+    },
+    {
+      "page": 19,
+      "source_slide": "14-1",
+      "source_title": "複製的根本，不是制度，而是流程",
+      "role": "process",
+      "headline": "所有成功最快的速度，是複製。",
+      "supporting_text": "STAR Color 要做的不是管理每一家店，而是讓每一家店都能長出下一個會開店的人。",
+      "must_include_text": [
+        "所有成功最快的速度，是複製。",
+        "STAR Color 要做的不是管理每一家店，而是讓每一家店都能長出下一個會開店的人。",
+        "但真正能被複製的，不是制度，而是流程。",
+        "制度讓人知道規則。",
+        "流程讓人知道下一步。",
+        "教育讓人學會流程。",
+        "數據讓流程被優化。"
+      ],
+      "visual_scene": "Blue-violet galaxy roadmap with numbered glowing steps, clean and readable.",
+      "chart_or_structure": "水平或弧形流程圖，步驟以發光節點呈現。",
+      "prompt": "Create slide 19 based on source 14-1: 複製的根本，不是制度，而是流程. Main headline must be 「所有成功最快的速度，是複製。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: Blue-violet galaxy roadmap with numbered glowing steps, clean and readable. Use this chart/structure: 水平或弧形流程圖，步驟以發光節點呈現。",
+      "presenter": "雙師 Akemi"
+    },
+    {
+      "page": 20,
+      "source_slide": "14-2",
+      "source_title": "AI 染髮師行銷培訓系統",
+      "role": "system",
+      "headline": "讓染髮師不只會服務，也會經營自己的客源。",
+      "supporting_text": "大美好學院訓練的不是單一技術員，而是一位能用 AI 工具經營顧客、內容與收入的 AI 染髮師。",
+      "must_include_text": [
+        "讓染髮師不只會服務，也會經營自己的客源。",
+        "大美好學院訓練的不是單一技術員，而是一位能用 AI 工具經營顧客、內容與收入的 AI 染髮師。",
+        "會說：理解 STAR Color 的服務價值與顧客痛點",
+        "會拍：把染前、染後、顧客見證變成社群素材",
+        "會用：使用 AI 工具產出貼文、圖片、短影音與活動文案",
+        "會導：把公域社群流量導入 LINE OA 與預約流程",
+        "會追：用回訪、提醒、轉介紹提高顧客回流"
+      ],
+      "visual_scene": "AI marketing brain network, central intelligence hub connected to STAR Color branch nodes, data streams and content modules.",
+      "chart_or_structure": "發光模組系統圖，中心節點加周圍模組。",
+      "prompt": "Create slide 20 based on source 14-2: AI 染髮師行銷培訓系統. Main headline must be 「讓染髮師不只會服務，也會經營自己的客源。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: AI marketing brain network, central intelligence hub connected to STAR Color branch nodes, data streams and content modules. Use this chart/structure: 發光模組系統圖，中心節點加周圍模組。",
+      "presenter": "雙師 Akemi"
+    },
+    {
+      "source_slide": "AD-1",
+      "role": "ad-performance",
+      "headline": "不是還沒開始，市場已經在回應。",
+      "supporting_text": "用目前廣告數據證明 STAR Color 的 AI 智能染髮、透明價格與主視覺已經取得市場注意，作為行銷大腦段落的前導。",
+      "must_include_text": [
+        "不是還沒開始，市場已經在回應。",
+        "曝光 287,109",
+        "觸及 128,021",
+        "傳訊 609",
+        "貼文互動 56,475",
+        "心情 364"
+      ],
+      "visual_scene": "Advertising performance command center in STAR Color 0512 Keynote style: blue-violet data stage, Meta ads inspired metric dashboard, galaxy data streams, premium AI beauty marketing energy.",
+      "chart_or_structure": "大型 KPI 數字卡 + 星河資料流，只呈現現有投放數據，不寫保證成效。",
+      "page": 21,
+      "prompt": "Create slide 21 as an inserted advertising-performance expert section before the marketing chapter. Main headline must be 「不是還沒開始，市場已經在回應。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Treat the metrics as current advertising data and initial market response, not guaranteed future results. Use this visual direction: Advertising performance command center in STAR Color 0512 Keynote style: blue-violet data stage, Meta ads inspired metric dashboard, galaxy data streams, premium AI beauty marketing energy. Use this chart/structure: 大型 KPI 數字卡 + 星河資料流，只呈現現有投放數據，不寫保證成效。",
+      "presenter": "廣告投手專家"
+    },
+    {
+      "source_slide": "AD-2",
+      "role": "ad-performance",
+      "headline": "女性 25–44，是目前最明確的市場訊號。",
+      "supporting_text": "投放回應顯示女性客群為主，25–44 區間明顯，35–44 歲表現突出，代表白髮補染、價格透明與穩定品質具有切入點。",
+      "must_include_text": [
+        "女性 25–44，是目前最明確的市場訊號。",
+        "女性觸及為主",
+        "25–44 歲區間明顯",
+        "35–44 歲表現突出",
+        "價格透明",
+        "穩定品質"
+      ],
+      "visual_scene": "Audience insight slide in premium AI beauty keynote style: female audience profile, age-band light spectrum, hair-color energy ribbons, clean analytics cards, no stock-photo feeling.",
+      "chart_or_structure": "受眾雷達 / 年齡帶光譜 / 女性主力客群卡，避免密集表格。",
+      "page": 22,
+      "prompt": "Create slide 22 as an inserted advertising-performance expert section before the marketing chapter. Main headline must be 「女性 25–44，是目前最明確的市場訊號。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Treat the metrics as current advertising data and initial market response, not guaranteed future results. Use this visual direction: Audience insight slide in premium AI beauty keynote style: female audience profile, age-band light spectrum, hair-color energy ribbons, clean analytics cards, no stock-photo feeling. Use this chart/structure: 受眾雷達 / 年齡帶光譜 / 女性主力客群卡，避免密集表格。",
+      "presenter": "廣告投手專家"
+    },
+    {
+      "source_slide": "AD-3",
+      "role": "marketing-bridge",
+      "headline": "下一步，不是只投更多廣告，而是把數據變成系統。",
+      "supporting_text": "廣告段落的結尾要把投手專家分享接到 Ewalk.ai 行銷大腦：從素材、受眾、傳訊與回訪資料，變成分店可以執行與優化的行銷系統。",
+      "must_include_text": [
+        "下一步，不是只投更多廣告，而是把數據變成系統。",
+        "素材測試",
+        "受眾洞察",
+        "傳訊追蹤",
+        "回訪資料",
+        "分店優化",
+        "Ewalk.ai 行銷大腦"
+      ],
+      "visual_scene": "Bridge from ad data to AI marketing brain: glowing data pipeline from ad dashboard into Ewalk.ai central brain, then to STAR Color branch nodes, blue-violet galaxy network, premium and clear.",
+      "chart_or_structure": "廣告資料 → 受眾洞察 → 內容包 → 分店行動 → 行銷大腦。",
+      "page": 23,
+      "prompt": "Create slide 23 as an inserted advertising-performance expert section before the marketing chapter. Main headline must be 「下一步，不是只投更多廣告，而是把數據變成系統。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Treat the metrics as current advertising data and initial market response, not guaranteed future results. Use this visual direction: Bridge from ad data to AI marketing brain: glowing data pipeline from ad dashboard into Ewalk.ai central brain, then to STAR Color branch nodes, blue-violet galaxy network, premium and clear. Use this chart/structure: 廣告資料 → 受眾洞察 → 內容包 → 分店行動 → 行銷大腦。",
+      "presenter": "廣告投手專家"
+    },
+    {
+      "page": 24,
+      "source_slide": "25",
+      "source_title": "Ewalk.ai 行銷大腦：一個人開店，集團級作戰",
+      "role": "content",
+      "headline": "一個人可以開始，但你不是一個人作戰。",
+      "supporting_text": "你負責把服務做好，AI 行銷大腦負責讓市場看見你。",
+      "must_include_text": [
+        "一個人可以開始，但你不是一個人作戰。",
+        "你負責把服務做好，AI 行銷大腦負責讓市場看見你。",
+        "每日市場資料蒐集",
+        "每月分店業績分析",
+        "下一季行銷方案",
+        "社群內容與短影音腳本",
+        "活動促銷與素材指令"
+      ],
+      "visual_scene": "AI marketing brain network, central intelligence hub connected to STAR Color branch nodes, data streams and content modules.",
+      "chart_or_structure": "發光模組系統圖，中心節點加周圍模組。",
+      "prompt": "Create slide 24 based on source 25: Ewalk.ai 行銷大腦：一個人開店，集團級作戰. Main headline must be 「一個人可以開始，但你不是一個人作戰。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: AI marketing brain network, central intelligence hub connected to STAR Color branch nodes, data streams and content modules. Use this chart/structure: 發光模組系統圖，中心節點加周圍模組。",
+      "presenter": "Ewalk.ai 行銷大腦段落（待確認講者）"
+    },
+    {
+      "page": 25,
+      "source_slide": "26",
+      "source_title": "行銷大腦如何運作",
+      "role": "process",
+      "headline": "不是每家店各打各的，而是整個集團一起跟市場打群架。",
+      "supporting_text": "Ewalk.ai 會把市場趨勢、競品活動、社群內容、分店業績與顧客回訪資料整合起來，提供每家店下一步該做什麼。",
+      "must_include_text": [
+        "不是每家店各打各的，而是整個集團一起跟市場打群架。",
+        "市場資料蒐集",
+        "→ AI 市場分析",
+        "→ 季度行銷策略",
+        "→ 總部活動方案",
+        "→ 分店內容包",
+        "→ 業績分析"
+      ],
+      "visual_scene": "AI marketing brain network, central intelligence hub connected to STAR Color branch nodes, data streams and content modules.",
+      "chart_or_structure": "發光模組系統圖，中心節點加周圍模組。",
+      "prompt": "Create slide 25 based on source 26: 行銷大腦如何運作. Main headline must be 「不是每家店各打各的，而是整個集團一起跟市場打群架。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: AI marketing brain network, central intelligence hub connected to STAR Color branch nodes, data streams and content modules. Use this chart/structure: 發光模組系統圖，中心節點加周圍模組。",
+      "presenter": "Ewalk.ai 行銷大腦段落（待確認講者）"
+    },
+    {
+      "page": 26,
+      "source_slide": "27",
+      "source_title": "每家店都能擁有總部級行銷品質",
+      "role": "content",
+      "headline": "行銷不再只靠店主自己想。",
+      "supporting_text": "讓每一家店即使是一個人經營，也能擁有穩定、均質、可升級的行銷輸出。",
+      "must_include_text": [
+        "行銷不再只靠店主自己想。",
+        "讓每一家店即使是一個人經營，也能擁有穩定、均質、可升級的行銷輸出。",
+        "Ewalk.ai 行銷大腦提供：",
+        "每週社群內容包",
+        "每月活動企劃",
+        "Google 商家貼文",
+        "Reels 腳本"
+      ],
+      "visual_scene": "AI marketing brain network, central intelligence hub connected to STAR Color branch nodes, data streams and content modules.",
+      "chart_or_structure": "簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "prompt": "Create slide 26 based on source 27: 每家店都能擁有總部級行銷品質. Main headline must be 「行銷不再只靠店主自己想。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: AI marketing brain network, central intelligence hub connected to STAR Color branch nodes, data streams and content modules. Use this chart/structure: 簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "presenter": "Ewalk.ai 行銷大腦段落（待確認講者）"
+    },
+    {
+      "page": 27,
+      "source_slide": "16",
+      "source_title": "36 小時特訓，30 天結訓週期",
+      "role": "finance-franchise",
+      "headline": "訓練不是漫長等待，而是有節奏的上手計畫。",
+      "supporting_text": "- 36 小時訓練基底 - 無經驗者最長 30 天結訓 - 搭配 AI 機台與標準流程 - 讓學員更快進入可服務狀態",
+      "must_include_text": [
+        "訓練不是漫長等待，而是有節奏的上手計畫。",
+        "36 小時訓練基底",
+        "無經驗者最長 30 天結訓",
+        "搭配 AI 機台與標準流程",
+        "讓學員更快進入可服務狀態"
+      ],
+      "visual_scene": "STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer.",
+      "chart_or_structure": "大型數字卡與產品科技視覺，最多三個指標。",
+      "prompt": "Create slide 27 as a finance and franchise operation section for the business manager. Main headline must be 「訓練不是漫長等待，而是有節奏的上手計畫。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer. Use this chart/structure: 大型數字卡與產品科技視覺，最多三個指標。",
+      "presenter": "業務部經理"
+    },
+    {
+      "page": 28,
+      "source_slide": "17",
+      "source_title": "學習護照：從學習到經營的路徑地圖",
+      "role": "finance-franchise",
+      "headline": "學習護照，讓每個人知道自己下一步在哪裡。",
+      "supporting_text": "它不只是學習紀錄，而是一個人進入 AI 美業經濟的通行證。",
+      "must_include_text": [
+        "學習護照，讓每個人知道自己下一步在哪裡。",
+        "它不只是學習紀錄，而是一個人進入 AI 美業經濟的通行證。",
+        "學習護照記錄：",
+        "課程完成度",
+        "技術等級",
+        "實作紀錄",
+        "考核結果"
+      ],
+      "visual_scene": "Futuristic beauty academy learning path, glowing passport or certification nodes, AI training network, premium conference style.",
+      "chart_or_structure": "簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "prompt": "Create slide 28 as a finance and franchise operation section for the business manager. Main headline must be 「學習護照，讓每個人知道自己下一步在哪裡。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: Futuristic beauty academy learning path, glowing passport or certification nodes, AI training network, premium conference style. Use this chart/structure: 簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "presenter": "業務部經理"
+    },
+    {
+      "page": 29,
+      "source_slide": "18",
+      "source_title": "微型門店模型",
+      "role": "finance-franchise",
+      "headline": "小坪數、低人力、低庫存，才適合一個人的經濟。",
+      "supporting_text": "不是把傳統髮廊縮小，而是重新設計一個更輕的 AI 美業單位。",
+      "must_include_text": [
+        "小坪數、低人力、低庫存，才適合一個人的經濟。",
+        "不是把傳統髮廊縮小，而是重新設計一個更輕的 AI 美業單位。",
+        "STAR Color 的營運模型聚焦：",
+        "低人力配置",
+        "小坪數啟動",
+        "低庫存管理",
+        "標準化流程"
+      ],
+      "visual_scene": "STAR Color store-design landing scene based on STAR_Color_門店設計資產資料庫.md: compact white and gray salon, S.Color signage, NT / 999 vertical acrylic signboards, glass door waist band, sofa waiting area, clean reproducible franchise store.",
+      "chart_or_structure": "簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "prompt": "Create slide 29 as a finance and franchise operation section for the business manager. Main headline must be 「小坪數、低人力、低庫存，才適合一個人的經濟。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: STAR Color store-design landing scene based on STAR_Color_門店設計資產資料庫.md: compact white and gray salon, S.Color signage, NT / 999 vertical acrylic signboards, glass door waist band, sofa waiting area, clean reproducible franchise store. Use this chart/structure: 簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "presenter": "業務部經理"
+    },
+    {
+      "page": 30,
+      "source_slide": "19",
+      "source_title": "數位營運：讓門店不只靠人記",
+      "role": "finance-franchise",
+      "headline": "經營不能只靠記憶，要靠資料。",
+      "supporting_text": "數位營運系統應包含：",
+      "must_include_text": [
+        "經營不能只靠記憶，要靠資料。",
+        "雲端資料與 API 服務層",
+        "GADM 總部中心",
+        "OPS 店家端",
+        "CSM 會員端",
+        "交易同步",
+        "分潤規則引擎"
+      ],
+      "visual_scene": "Franchise information system stage visual: cloud API core, GADM headquarters, OPS store, CSM member, BONUS profit-sharing backend, glowing data streams.",
+      "chart_or_structure": "加盟資訊系統圖，雲端 API 中心連接 GADM / OPS / CSM / BONUS 四個模組。",
+      "prompt": "Create slide 30 as a finance and franchise operation section for the business manager. Main headline must be 「經營不能只靠記憶，要靠資料。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: Franchise information system stage visual: cloud API core, GADM headquarters, OPS store, CSM member, BONUS profit-sharing backend, glowing data streams. Use this chart/structure: 加盟資訊系統圖，雲端 API 中心連接 GADM / OPS / CSM / BONUS 四個模組。",
+      "presenter": "業務部經理"
+    },
+    {
+      "page": 31,
+      "source_slide": "20",
+      "source_title": "店型與空間：坪效最大化",
+      "role": "finance-franchise",
+      "headline": "一個人的經濟，需要一個更聰明的空間。",
+      "supporting_text": "空間不是裝潢，而是營運效率的一部分。",
+      "must_include_text": [
+        "一個人的經濟，需要一個更聰明的空間。",
+        "空間不是裝潢，而是營運效率的一部分。",
+        "店型設計重點：",
+        "動線短",
+        "操作標準",
+        "等候與服務區清楚",
+        "機台位置合理"
+      ],
+      "visual_scene": "STAR Color store-design landing scene based on STAR_Color_門店設計資產資料庫.md: compact white and gray salon, S.Color signage, NT / 999 vertical acrylic signboards, glass door waist band, sofa waiting area, clean reproducible franchise store.",
+      "chart_or_structure": "簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "prompt": "Create slide 31 as a finance and franchise operation section for the business manager. Main headline must be 「一個人的經濟，需要一個更聰明的空間。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: STAR Color store-design landing scene based on STAR_Color_門店設計資產資料庫.md: compact white and gray salon, S.Color signage, NT / 999 vertical acrylic signboards, glass door waist band, sofa waiting area, clean reproducible franchise store. Use this chart/structure: 簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "presenter": "業務部經理"
+    },
+    {
+      "page": 32,
+      "source_slide": "21",
+      "source_title": "投資邏輯：從一次性開店，變成可計算的系統投入",
+      "role": "finance-franchise",
+      "headline": "加盟者要看的不是夢想，而是算得清楚。",
+      "supporting_text": "這一章要回答：",
+      "must_include_text": [
+        "加盟者要看的不是夢想，而是算得清楚。",
+        "這一章要回答：",
+        "要投入多少",
+        "每月固定成本是多少",
+        "需要多少客人打平",
+        "什麼情況能回本",
+        "如何放大成多店或組織收益"
+      ],
+      "visual_scene": "Premium investor-style financial slide with glowing metric cards and calm confidence, no guarantee language.",
+      "chart_or_structure": "發光模組系統圖，中心節點加周圍模組。",
+      "prompt": "Create slide 32 as a finance and franchise operation section for the business manager. Main headline must be 「加盟者要看的不是夢想，而是算得清楚。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: Premium investor-style financial slide with glowing metric cards and calm confidence, no guarantee language. Use this chart/structure: 發光模組系統圖，中心節點加周圍模組。",
+      "presenter": "業務部經理"
+    },
+    {
+      "page": 33,
+      "source_slide": "21-1",
+      "source_title": "加盟投入架構",
+      "role": "finance-franchise",
+      "headline": "40 萬啟動，不只是買設備，而是加入一套可營運的系統。",
+      "supporting_text": "加盟費買的是進入系統的資格；營運金確保的是開店初期能真正跑起來。",
+      "must_include_text": [
+        "40 萬啟動，不只是買設備，而是加入一套可營運的系統。",
+        "加盟費 29.9 萬",
+        "營運金 10 萬",
+        "合計約 40 萬",
+        "加盟費買的是進入系統的資格；營運金確保的是開店初期能真正跑起來。",
+        "加盟費",
+        "29.9 萬"
+      ],
+      "visual_scene": "Premium investor-style financial slide with glowing metric cards and calm confidence, no guarantee language.",
+      "chart_or_structure": "加盟資訊系統圖，雲端 API 中心連接 GADM / OPS / CSM / BONUS 四個模組。",
+      "prompt": "Create slide 33 as a finance and franchise operation section for the business manager. Main headline must be 「40 萬啟動，不只是買設備，而是加入一套可營運的系統。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: Premium investor-style financial slide with glowing metric cards and calm confidence, no guarantee language. Use this chart/structure: 加盟資訊系統圖，雲端 API 中心連接 GADM / OPS / CSM / BONUS 四個模組。",
+      "presenter": "業務部經理"
+    },
+    {
+      "page": 34,
+      "source_slide": "22",
+      "source_title": "四情境試算",
+      "role": "finance-franchise",
+      "headline": "用四種情境，看懂經營安全邊界。",
+      "supporting_text": "四情境試算",
+      "must_include_text": [
+        "用四種情境，看懂經營安全邊界。",
+        "保守版：每日約 3 人｜月營收 8 萬｜打平",
+        "標準版：每日約 4 人｜月營收 12 萬｜淨利 4 萬",
+        "積極版：每日約 5 人｜月營收 15 萬｜淨利 7 萬",
+        "暴衝版：每日約 7 人｜月營收 20 萬｜淨利 12 萬",
+        "保守版 / 約 3 人 / 日 / 8 萬",
+        "保守版"
+      ],
+      "visual_scene": "Premium investor-style financial slide with glowing metric cards and calm confidence, no guarantee language.",
+      "chart_or_structure": "簡化財務圖表或四格情境卡，使用大數字與短標籤。",
+      "prompt": "Create slide 34 as a finance and franchise operation section for the business manager. Main headline must be 「用四種情境，看懂經營安全邊界。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: Premium investor-style financial slide with glowing metric cards and calm confidence, no guarantee language. Use this chart/structure: 簡化財務圖表或四格情境卡，使用大數字與短標籤。",
+      "presenter": "業務部經理"
+    },
+    {
+      "page": 35,
+      "source_slide": "23",
+      "source_title": "回本與獲利模型",
+      "role": "finance-franchise",
+      "headline": "回本不是靠運氣，而是靠三個槓桿。",
+      "supporting_text": "STAR Color 的獲利邏輯，是用系統把客流、服務與成本變得可管理。",
+      "must_include_text": [
+        "回本不是靠運氣，而是靠三個槓桿。",
+        "STAR Color 的獲利邏輯，是用系統把客流、服務與成本變得可管理。",
+        "高頻剛需：染髮與白髮補染",
+        "標準流程：降低人力與訓練成本",
+        "數位導流：提高新客與回訪效率"
+      ],
+      "visual_scene": "Premium investor-style financial slide with glowing metric cards and calm confidence, no guarantee language.",
+      "chart_or_structure": "簡化財務圖表或四格情境卡，使用大數字與短標籤。",
+      "prompt": "Create slide 35 as a finance and franchise operation section for the business manager. Main headline must be 「回本不是靠運氣，而是靠三個槓桿。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: Premium investor-style financial slide with glowing metric cards and calm confidence, no guarantee language. Use this chart/structure: 簡化財務圖表或四格情境卡，使用大數字與短標籤。",
+      "presenter": "業務部經理"
+    },
+    {
+      "page": 36,
+      "source_slide": "24",
+      "source_title": "加盟不是開店，是進入系統",
+      "role": "finance-franchise",
+      "headline": "你不是從零開始，而是加入一套 AI 美業系統。",
+      "supporting_text": "加盟者得到的不是一個招牌，而是：",
+      "must_include_text": [
+        "你不是從零開始，而是加入一套 AI 美業系統。",
+        "GADM 總部中心",
+        "OPS 店家端",
+        "CSM 會員端",
+        "BONUS 獎金分潤",
+        "可管理、可追蹤、可擴張",
+        "加盟者得到的不是一個招牌，而是："
+      ],
+      "visual_scene": "Franchise information system stage visual: cloud API core, GADM headquarters, OPS store, CSM member, BONUS profit-sharing backend, glowing data streams.",
+      "chart_or_structure": "加盟資訊系統圖，雲端 API 中心連接 GADM / OPS / CSM / BONUS 四個模組。",
+      "prompt": "Create slide 36 as a finance and franchise operation section for the business manager. Main headline must be 「你不是從零開始，而是加入一套 AI 美業系統。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: Franchise information system stage visual: cloud API core, GADM headquarters, OPS store, CSM member, BONUS profit-sharing backend, glowing data streams. Use this chart/structure: 加盟資訊系統圖，雲端 API 中心連接 GADM / OPS / CSM / BONUS 四個模組。",
+      "presenter": "業務部經理"
+    },
+    {
+      "page": 37,
+      "source_slide": "28",
+      "source_title": "合夥人展店與組織分潤",
+      "role": "finance-franchise",
+      "headline": "一個人開始，不代表只能停在一個人。",
+      "supporting_text": "從一個人的經濟，走向一群人的 AI 美業網絡。",
+      "must_include_text": [
+        "一個人開始，不代表只能停在一個人。",
+        "加盟組織樹",
+        "A/B/C 代",
+        "組織領導紅利",
+        "月結資料匯入",
+        "報表與撥款",
+        "從一個人的經濟，走向一群人的 AI 美業網絡。"
+      ],
+      "visual_scene": "Franchise information system stage visual: cloud API core, GADM headquarters, OPS store, CSM member, BONUS profit-sharing backend, glowing data streams.",
+      "chart_or_structure": "加盟資訊系統圖，雲端 API 中心連接 GADM / OPS / CSM / BONUS 四個模組。",
+      "prompt": "Create slide 37 as a finance and franchise operation section for the business manager. Main headline must be 「一個人開始，不代表只能停在一個人。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: Franchise information system stage visual: cloud API core, GADM headquarters, OPS store, CSM member, BONUS profit-sharing backend, glowing data streams. Use this chart/structure: 加盟資訊系統圖，雲端 API 中心連接 GADM / OPS / CSM / BONUS 四個模組。",
+      "presenter": "業務部經理"
+    },
+    {
+      "page": 38,
+      "source_slide": "29",
+      "source_title": "2026 手牽手地圖",
+      "role": "finance-franchise",
+      "headline": "2026，不只是展店，而是建立 AI 美業網絡。",
+      "supporting_text": "可放現有手牽手地圖。",
+      "must_include_text": [
+        "2026，不只是展店，而是建立 AI 美業網絡。",
+        "可放現有手牽手地圖。",
+        "建議搭配文案：",
+        "# Chapter 8｜行動：你適不適合加入"
+      ],
+      "visual_scene": "STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer.",
+      "chart_or_structure": "簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "prompt": "Create slide 38 as a finance and franchise operation section for the business manager. Main headline must be 「2026，不只是展店，而是建立 AI 美業網絡。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer. Use this chart/structure: 簡單圖表：三到五個重點卡片，保持清楚可讀。",
+      "presenter": "業務部經理"
+    },
+    {
+      "page": 39,
+      "source_slide": "30",
+      "source_title": "誰適合加入 STAR Color",
+      "role": "finance-franchise",
+      "headline": "如果你符合其中一種，你就值得深入了解。",
+      "supporting_text": "誰適合加入 STAR Color",
+      "must_include_text": [
+        "如果你符合其中一種，你就值得深入了解。",
+        "想創業，但不想從零摸索的人",
+        "想轉型 AI 美業的快剪 / 沙龍經營者",
+        "想用小成本建立第二收入的人",
+        "美業工作者想升級成經營者",
+        "想投資可複製美業模型的人",
+        "願意學習、照流程、跟著系統走的人"
+      ],
+      "visual_scene": "STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer.",
+      "chart_or_structure": "大會舞台式主視覺，強行動感與留白。",
+      "prompt": "Create slide 39 as a finance and franchise operation section for the business manager. Main headline must be 「如果你符合其中一種，你就值得深入了解。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer. Use this chart/structure: 大會舞台式主視覺，強行動感與留白。",
+      "presenter": "業務部經理"
+    },
+    {
+      "page": 40,
+      "source_slide": "31",
+      "source_title": "加盟流程",
+      "role": "finance-franchise",
+      "headline": "加入 STAR Color 的 6 個步驟",
+      "supporting_text": "加盟流程",
+      "must_include_text": [
+        "加入 STAR Color 的 6 個步驟",
+        "會後諮詢",
+        "適性評估",
+        "加盟方案說明",
+        "大美好學院訓練",
+        "開店籌備與系統導入",
+        "試營運與正式營運"
+      ],
+      "visual_scene": "Franchise information system stage visual: cloud API core, GADM headquarters, OPS store, CSM member, BONUS profit-sharing backend, glowing data streams.",
+      "chart_or_structure": "加盟資訊系統圖，雲端 API 中心連接 GADM / OPS / CSM / BONUS 四個模組。",
+      "prompt": "Create slide 40 as a finance and franchise operation section for the business manager. Main headline must be 「加入 STAR Color 的 6 個步驟」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as financial franchise logic, operating readiness, and systemized joining criteria; do not promise guaranteed profit. Use this visual direction: Franchise information system stage visual: cloud API core, GADM headquarters, OPS store, CSM member, BONUS profit-sharing backend, glowing data streams. Use this chart/structure: 加盟資訊系統圖，雲端 API 中心連接 GADM / OPS / CSM / BONUS 四個模組。",
+      "presenter": "業務部經理"
+    },
+    {
+      "source_slide": "CH-1",
+      "role": "chairman-policy",
+      "headline": "政策不是遠方，而是正在發生的資源。",
+      "supporting_text": "此段落由許文元理事長在結尾前補強政策與人才升級脈絡，讓 STAR Color 的 AI 美業機會連到 2026 政策、學習不斷與產業人才資源。",
+      "must_include_text": [
+        "政策不是遠方，而是正在發生的資源。",
+        "2026 政策",
+        "三年 10 萬",
+        "學習不斷",
+        "AI 科技",
+        "產業人才"
+      ],
+      "visual_scene": "Chairman keynote stage before closing: premium blue-violet STAR Color conference stage, policy resources, talent upgrade, AI technology nodes, credible association tone.",
+      "chart_or_structure": "政策資源 → 學習不斷 → AI 科技 → 產業人才的四節點資源圖。",
+      "page": 41,
+      "prompt": "Create slide 41 as an inserted chairman policy-and-funding section before the closing call to action. Main headline must be 「政策不是遠方，而是正在發生的資源。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as policy resources, talent training, certification, and learning motivation; do not promise guaranteed subsidy, certification, franchise success, or income. Use this visual direction: Chairman keynote stage before closing: premium blue-violet STAR Color conference stage, policy resources, talent upgrade, AI technology nodes, credible association tone. Use this chart/structure: 政策資源 → 學習不斷 → AI 科技 → 產業人才的四節點資源圖。",
+      "presenter": "許文元理事長"
+    },
+    {
+      "source_slide": "CH-2",
+      "role": "chairman-policy",
+      "headline": "教育要被相信，就要有系統與認證。",
+      "supporting_text": "用 TTQS、iCAP 與已通過的培訓課程補強教育可信度，讓前面的學院與訓練段落更有制度基礎。",
+      "must_include_text": [
+        "教育要被相信，就要有系統與認證。",
+        "TTQS 證書銅牌",
+        "iCAP 認證",
+        "假髮造型設計班通過",
+        "頭皮調理與養髮培訓班通過",
+        "中華整體造型技能培訓協會"
+      ],
+      "visual_scene": "Certification credibility slide: abstract certificate frames, training path, beauty skill nodes, silver and blue-violet association keynote style, no fake certificate details.",
+      "chart_or_structure": "協會 → TTQS / iCAP → 培訓課程 → 學習可信度的認證路徑。",
+      "page": 42,
+      "prompt": "Create slide 42 as an inserted chairman policy-and-funding section before the closing call to action. Main headline must be 「教育要被相信，就要有系統與認證。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as policy resources, talent training, certification, and learning motivation; do not promise guaranteed subsidy, certification, franchise success, or income. Use this visual direction: Certification credibility slide: abstract certificate frames, training path, beauty skill nodes, silver and blue-violet association keynote style, no fake certificate details. Use this chart/structure: 協會 → TTQS / iCAP → 培訓課程 → 學習可信度的認證路徑。",
+      "presenter": "許文元理事長"
+    },
+    {
+      "source_slide": "CH-3",
+      "role": "chairman-policy",
+      "headline": "錢從哪裡來？從學習資源與人才計畫開始。",
+      "supporting_text": "呼應 PDF 的經費段落，把錢從哪裡來轉成學習資源、產業人才投資計畫與勞工自主學習計畫的行動線索。",
+      "must_include_text": [
+        "錢從哪裡來？",
+        "學習資源",
+        "產業人才投資計畫",
+        "勞工自主學習計畫",
+        "115 年度上半年",
+        "核定課程明細"
+      ],
+      "visual_scene": "Resource flow keynote slide: policy resource streams flowing into learning, certification, skill upgrade, and entrepreneurship readiness, premium and credible, no guarantee language.",
+      "chart_or_structure": "政策資源 → 學習課程 → 認證 → 技能升級 → 創業準備的資源流。",
+      "page": 43,
+      "prompt": "Create slide 43 as an inserted chairman policy-and-funding section before the closing call to action. Main headline must be 「錢從哪裡來？從學習資源與人才計畫開始。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as policy resources, talent training, certification, and learning motivation; do not promise guaranteed subsidy, certification, franchise success, or income. Use this visual direction: Resource flow keynote slide: policy resource streams flowing into learning, certification, skill upgrade, and entrepreneurship readiness, premium and credible, no guarantee language. Use this chart/structure: 政策資源 → 學習課程 → 認證 → 技能升級 → 創業準備的資源流。",
+      "presenter": "許文元理事長"
+    },
+    {
+      "source_slide": "CH-4",
+      "role": "chairman-policy",
+      "headline": "你不是沒有機會，你是在等一個開始。",
+      "supporting_text": "用理事長結語把聽眾從理解商機推向行動，銜接最後主持收束與現場 CTA。",
+      "must_include_text": [
+        "你不是沒有機會，你是在等一個開始。",
+        "你目前是在用命拼？",
+        "還是保留實力？",
+        "那你在等什麼？",
+        "現在，就是進場學習的時間。"
+      ],
+      "visual_scene": "Emotional but premium closing-before-closing stage: a blue-violet light path into the STAR Color AI beauty system, large negative space, dignified chairman closing tone.",
+      "chart_or_structure": "理事長結語式舞台頁，光路指向最後行動，不做複雜圖表。",
+      "page": 44,
+      "prompt": "Create slide 44 as an inserted chairman policy-and-funding section before the closing call to action. Main headline must be 「你不是沒有機會，你是在等一個開始。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Frame this as policy resources, talent training, certification, and learning motivation; do not promise guaranteed subsidy, certification, franchise success, or income. Use this visual direction: Emotional but premium closing-before-closing stage: a blue-violet light path into the STAR Color AI beauty system, large negative space, dignified chairman closing tone. Use this chart/structure: 理事長結語式舞台頁，光路指向最後行動，不做複雜圖表。",
+      "presenter": "許文元理事長"
+    },
+    {
+      "page": 45,
+      "source_slide": "32",
+      "source_title": "現場行動",
+      "role": "action",
+      "headline": "今天不是聽完一場簡報，而是決定你要不要擁有一套 AI 美業經濟。",
+      "supporting_text": "現場行動",
+      "must_include_text": [
+        "今天不是聽完一場簡報，而是決定你要不要擁有一套 AI 美業經濟。",
+        "拿出意向書，填寫意向書，預約會後一對一諮詢。",
+        "15日內水飛梭機器優惠折讓2萬元",
+        "你不需要現在就決定開店。",
+        "你只需要先看懂：這套系統適不適合你。"
+      ],
+      "visual_scene": "STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer.",
+      "chart_or_structure": "大會舞台式主視覺，強行動感與留白。",
+      "prompt": "Create slide 45 based on source 32: 現場行動. Main headline must be 「今天不是聽完一場簡報，而是決定你要不要擁有一套 AI 美業經濟。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer. Use this chart/structure: 大會舞台式主視覺，強行動感與留白。",
+      "presenter": "主持收束（待確認）"
+    },
+    {
+      "page": 46,
+      "source_slide": "33",
+      "source_title": "結尾",
+      "role": "action",
+      "headline": "一個人，也可以開始一個新的美業時代。\n這個AI染髮商機浪潮獨一無二，敬請上座。",
+      "supporting_text": "結尾",
+      "must_include_text": [
+        "一個人，也可以開始一個新的美業時代。\n這個AI染髮商機浪潮獨一無二，敬請上座。",
+        "STAR Color",
+        "一個人的 AI 美業經濟"
+      ],
+      "visual_scene": "STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer.",
+      "chart_or_structure": "大會舞台式主視覺，強行動感與留白。",
+      "prompt": "Create slide 46 based on source 33: 結尾. Main headline must be 「一個人，也可以開始一個新的美業時代。\n這個AI染髮商機浪潮獨一無二，敬請上座。」. Include only the exact visible Traditional Chinese text listed in must_include_text. Build a clear conference slide with a non-text graphic header and non-text graphic footer. Presenter names are metadata only and must not be rendered as visible slide text. Use this visual direction: STAR Color 0512 Keynote style: cosmic deep-blue conference stage, blue-violet galaxy ribbons, magenta hair-color energy, silver tech header and footer. Use this chart/structure: 大會舞台式主視覺，強行動感與留白。",
+      "presenter": "主持收束（待確認）"
+    }
+  ]
+}

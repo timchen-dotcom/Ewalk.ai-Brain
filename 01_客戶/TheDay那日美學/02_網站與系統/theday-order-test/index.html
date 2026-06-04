@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>TheDay 那日美學｜分店內部訂購測試版</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="side">
+        <a class="brand" href="#dashboard" data-nav="dashboard">
+          <span class="brand-mark">TD</span>
+          <span>
+            <strong>TheDay 那日美學</strong>
+            <small>分店內部訂購測試版</small>
+          </span>
+        </a>
+
+        <div class="user-box" id="userBox">
+          <span>尚未進入</span>
+          <strong>請選擇角色</strong>
+        </div>
+
+        <nav class="nav" aria-label="系統導覽">
+          <button type="button" data-nav="dashboard" class="active"><span class="icon">⌂</span>總覽</button>
+          <button type="button" data-nav="order"><span class="icon">＋</span>分店下單</button>
+          <button type="button" data-nav="history"><span class="icon">≡</span>我的訂單</button>
+          <button type="button" data-nav="adminOrders" data-admin-only><span class="icon">Σ</span>管理彙總</button>
+          <button type="button" data-nav="products" data-admin-only><span class="icon">□</span>商品管理</button>
+          <button type="button" data-nav="stores" data-admin-only><span class="icon">⌘</span>分店管理</button>
+        </nav>
+
+        <div class="side-note">
+          <b>測試版說明</b>
+          <span id="storageMode">正在確認資料模式。</span>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">INTERNAL ORDER PILOT</p>
+            <h1 id="pageTitle">總覽</h1>
+          </div>
+          <div class="top-actions">
+            <button class="button ghost" type="button" id="resetDemoBtn">重置測試資料</button>
+            <button class="button dark" type="button" id="logoutBtn">切換角色</button>
+          </div>
+        </header>
+
+        <section class="login-panel" id="loginPanel">
+          <div class="login-copy">
+            <p class="eyebrow">THE DAY ORDER OS</p>
+            <h2>已匯入 TheDay 品項、人員與分店資料。</h2>
+            <p>分店人員可以自己下單並查看紀錄；管理者可以看全部訂單、彙總商品數量、匯出採購表。價格欄目前依原始 Excel 保留待補。</p>
+          </div>
+          <div class="login-actions">
+            <button class="button primary" type="button" data-login="admin">以管理者進入</button>
+            <label>
+              分店測試帳號
+              <select id="storeLoginSelect"></select>
+            </label>
+            <label>
+              叫貨人員
+              <select id="staffLoginSelect"></select>
+            </label>
+            <button class="button secondary" type="button" data-login="store">以分店進入</button>
+          </div>
+        </section>
+
+        <section id="content" class="content" hidden></section>
+      </main>
+    </div>
+
+    <template id="dashboardTemplate"></template>
+    <script src="./seed-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

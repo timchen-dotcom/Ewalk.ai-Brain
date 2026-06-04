@@ -1,0 +1,69 @@
+{
+  "model": "gpt-image-2",
+  "size": "3840x2160",
+  "quality": "high",
+  "shared_style": "premium futuristic beauty-tech franchise keynote background, STAR Color brand mood, dark charcoal or warm paper minimalism, magenta accent, deep teal accent, subtle gold highlights, elegant salon technology, AI hair color system, cinematic lighting, clean negative space for Chinese typography, 16:9 presentation background, no readable text, no letters, no numbers, no logo, no watermark",
+  "negative": "avoid readable text, fake Chinese characters, English words, logos, watermarks, messy UI, distorted hands, low-resolution stock photo look, cluttered composition, over-saturated purple gradients",
+  "pages": [
+    {
+      "page": 1,
+      "theme": "dark",
+      "role": "cover",
+      "prompt": "A premium dark keynote cover background for an AI hair-color entrepreneurship summit. A sleek futuristic salon counter, luminous hair color machine silhouette, soft magenta and teal data light trails, elegant beauty-tech atmosphere, spacious left side for title."
+    },
+    {
+      "page": 2,
+      "theme": "light",
+      "role": "opening thesis",
+      "prompt": "A warm minimal business transformation scene. One independent beauty professional standing at the entrance of a modern micro salon, an AI assistant light interface nearby, calm confident mood, clean right side visual anchor and large empty area for typography."
+    },
+    {
+      "page": 3,
+      "theme": "dark",
+      "role": "core formula",
+      "prompt": "A dark premium abstract system formula background. Modular glowing blocks connected by thin light lines, representing AI technology, standardized workflow, transparent pricing, education, marketing and franchise operations, elegant and uncluttered."
+    },
+    {
+      "page": 4,
+      "theme": "light",
+      "role": "AI beauty organism",
+      "prompt": "A clean high-end ecosystem background. Abstract organism network made of soft circular nodes and flowing connections, beauty holding group, AI brain, academy, salon services and customer data represented as elegant non-text symbols, lots of white space."
+    },
+    {
+      "page": 5,
+      "theme": "dark",
+      "role": "conference promise",
+      "prompt": "A dark cinematic keynote background with three luminous pathways moving forward into a premium beauty-tech stage, representing trend, system and joining path, magenta and teal light, gold subtle highlights, center space for three cards."
+    },
+    {
+      "page": 6,
+      "theme": "light",
+      "role": "market shift",
+      "prompt": "A sophisticated light business-market background. Abstract beauty industry pressure points shown through subtle charts, small salon silhouettes, supply chain lines and rising cost indicators as visual motifs only, clean white and warm paper palette."
+    },
+    {
+      "page": 7,
+      "theme": "dark",
+      "role": "human dependency risk",
+      "prompt": "A dark dramatic operational risk background. Several fading human silhouettes connected to fragile manual workflow lines, showing a business overly dependent on individual skill, premium beauty-tech style, calm but tense."
+    },
+    {
+      "page": 8,
+      "theme": "light",
+      "role": "customer certainty",
+      "prompt": "A bright reassuring customer experience background. A modern beauty client looking at a clear digital color preview in a salon mirror, transparent pricing and predictable result suggested by clean visual icons without text, warm trustful atmosphere."
+    },
+    {
+      "page": 9,
+      "theme": "light",
+      "role": "system solution",
+      "prompt": "A clean STAR Color operating system background. Futuristic salon machine at center with orbiting abstract modules for app color mixing, SOP, customer records, AI consultant, academy and digital marketing, no text, premium white space."
+    },
+    {
+      "page": 10,
+      "theme": "dark",
+      "role": "machine proof",
+      "prompt": "A dark high-tech close-up of an AI hair color mixing machine producing precise color formula drops, subtle measuring light, premium salon laboratory feeling, magenta and teal highlights, space for large metrics and final statement."
+    }
+  ]
+}

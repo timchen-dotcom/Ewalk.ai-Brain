@@ -1,0 +1,432 @@
+{
+  "brand": "STAR Color",
+  "version": "1.5",
+  "updated_at": "2026-05-12",
+  "usage": [
+    "STAR Color 0520 創業大會簡報",
+    "AI 智能染髮加盟簡報",
+    "GPT Image 2 整頁烘字簡報",
+    "純視覺簡報",
+    "0512 Keynote 風格延伸生成",
+    "有固定頁首頁尾的創業大會簡報",
+    "廣告投放數據與行銷大腦前導段落",
+    "AI 染髮機出場與機器廠商上台段落",
+    "許文元理事長政策經費與結尾前行動段落",
+    "門店設計模擬圖與加盟落地場景",
+    "小坪數門店與店觀設計參考"
+  ],
+  "brand_names": {
+    "formal": "S.Color 芯 STAR Color",
+    "deck_primary": "STAR Color",
+    "event": "STAR Color Colorists",
+    "forbidden_spellings": [
+      "S color",
+      "S-Color",
+      "StarColour",
+      "Star Color",
+      "STAR Colour"
+    ]
+  },
+  "core_message": "一個人的 AI 美業經濟",
+  "brand_keywords": [
+    "AI 智能染髮",
+    "透明定價",
+    "標準化流程",
+    "微型教育系統",
+    "可複製的經營模型",
+    "AI 行銷系統",
+    "加盟營運模型",
+    "GADM 總部中心",
+    "OPS 店家端",
+    "CSM 會員端",
+    "獎金分潤系統",
+    "雲端資料與 API 服務層",
+    "分潤規則引擎",
+    "廣告投放數據",
+    "市場回應",
+    "受眾洞察",
+    "投手專家段落",
+    "芯色彩 AI 智能色彩引擎系統",
+    "雲端智能配色中心",
+    "色彩資料庫",
+    "機器廠商上台",
+    "許文元理事長",
+    "政策經費",
+    "TTQS",
+    "iCAP",
+    "產業人才投資計畫",
+    "勞工自主學習計畫",
+    "門店設計",
+    "小坪數門店",
+    "店觀規範",
+    "NT / 999 立牌",
+    "AI 智能染髮專門店",
+    "玻璃門腰帶",
+    "S.Color pattern 牆"
+  ],
+  "base_cis_palette": {
+    "cloud_white": {
+      "name_zh": "雲朵淨白",
+      "hex": "#FFFFFF",
+      "usage": "日常品牌底色與留白"
+    },
+    "smoky_rose": {
+      "name_zh": "煙燻玫瑰",
+      "hex": "#CFA0A9",
+      "usage": "品牌柔性強調、CTA、女性美感"
+    },
+    "haze_blue": {
+      "name_zh": "霧霾深藍",
+      "hex": "#4A5A75",
+      "usage": "內文、圖表、理性科技感"
+    },
+    "lavender_gray": {
+      "name_zh": "丁香灰紫",
+      "hex": "#8F86A5",
+      "usage": "輔助圖標、分隔線、柔和科技點綴"
+    }
+  },
+  "presentation_palette": {
+    "deep_tech_teal": {
+      "name_zh": "深海科技綠",
+      "hex": "#062F33",
+      "ratio": "45-60%",
+      "usage": "深色大會封面、科技背景、舞台感"
+    },
+    "star_magenta": {
+      "name_zh": "星芒洋紅",
+      "hex": "#E93B8F",
+      "ratio": "10-15%",
+      "usage": "髮色光流、重點線條、能量感"
+    },
+    "champagne_gold": {
+      "name_zh": "精緻香檳金",
+      "hex": "#D8B36A",
+      "ratio": "5-10%",
+      "usage": "大標、邊框、關鍵數字、尊榮感"
+    },
+    "pearl_warm_white": {
+      "name_zh": "珍珠暖白",
+      "hex": "#F7F2E8",
+      "ratio": "15-25%",
+      "usage": "深色背景上的主文字"
+    },
+    "nebula_violet": {
+      "name_zh": "星雲藍紫",
+      "hex": "#6C63FF",
+      "ratio": "0-5%",
+      "usage": "AI、資料流、系統節點"
+    }
+  },
+  "typography": {
+    "language": "Traditional Chinese",
+    "headline": "large, premium, high contrast, readable from a conference screen",
+    "body": "short, clear, no dense paragraphs",
+    "numbers": "large metric-card style for key numbers"
+  },
+  "logo_rules": {
+    "real_logo_folder": "assets/logo",
+    "current_status": "已補正式透明 Logo PNG。生成簡報時可使用 assets/logo/star_color_logo_primary_transparent.png 作為正式 Logo 來源；GPT Image 2 不應自行重畫 Logo 文字。",
+    "allowed_text_marks": [
+      "STAR Color",
+      "S.Color 芯 STAR Color",
+      "STAR Color Colorists"
+    ],
+    "forbidden": [
+      "fake logo",
+      "random star mark",
+      "misspelled STAR Color",
+      "unreadable brand mark"
+    ],
+    "primary_logo": "assets/logo/star_color_logo_primary_transparent.png",
+    "logo_dimensions_px": "673x264",
+    "usage_rule": "正式輸出時優先以後製或版面工具疊放此透明 PNG。若在 GPT Image 2 prompt 中提及 Logo，只能要求保留 Logo 區域或使用提供的 Logo 參考，不要讓模型憑空生成商標。"
+  },
+  "product_rules": {
+    "product_folder": "assets/product",
+    "current_status": "已補 AI 染髮機正式正面產品圖。需要機器外觀時，優先使用 assets/product/star_color_ai_machine_front.png 作為參考或後製素材。",
+    "required_assets": [
+      "AI 智能染髮機正面照",
+      "AI 智能染髮機側面照",
+      "App 配方調色介面",
+      "顧客色彩紀錄 / CRM 介面",
+      "店面招牌或門店照",
+      "染髮師操作場景"
+    ],
+    "conceptual_generation_allowed": true,
+    "conceptual_generation_rule": "若要讓 GPT Image 2 生成場景，可使用正式產品圖作為參考；若無法使用圖片輸入，描述必須貼近正式機器外觀，不要自由發明不同機型。",
+    "primary_machine_image": "assets/product/star_color_ai_machine_front.png",
+    "machine_image_dimensions_px": "1414x2000",
+    "machine_visual_description": "白色直立圓柱機身、上方黑色半透明圓頂、正面小螢幕、Digital Color 標誌、底部滾輪。"
+  },
+  "image_generation_prompt_guardrails": [
+    "Use STAR Color presentation brand kit v1.5 and the 0512 Keynote visual system as the primary style reference.",
+    "Premium AI beauty entrepreneurship keynote, not a cheap promotion poster.",
+    "Main colors: cosmic deep blue #07103A, midnight blue-black #020617, galaxy blue-violet #2F3CFF, electric violet #7A35FF, star magenta-violet #E84BFF, crystal white #F4F7FF, silver tech line #C9D8FF.",
+    "Every slide must include a non-text graphic header and a non-text graphic footer. Header/footer must contain no words, no slogan, no page number, no QR code, and no fake logo.",
+    "Keep all slide text, numbers, charts, and labels only in the main content area.",
+    "Use STAR Color, STAR Color Colorists, and 一個人的 AI 美業經濟 exactly when requested.",
+    "Do not invent or draw fake logos. If no real logo image is provided, use text-only brand marks in the main content area only.",
+    "If no real product image is provided, generate only a conceptual sleek AI hair-color machine based on the 0512 Keynote product-stage style.",
+    "Traditional Chinese only for slide text. No English filler, random letters, fake UI text, QR codes, watermarks, or tiny unreadable paragraphs.",
+    "Read and follow STAR_Color_0520加盟簡報0511.md. You may expand content and convert matching text/data into charts, but do not change core numbers.",
+    "Official STAR Color logo asset is available at assets/logo/star_color_logo_primary_transparent.png.",
+    "Do not ask GPT Image 2 to redraw the S.Color logo text. Prefer placing the official transparent PNG in layout/post-processing when exact logo is required.",
+    "Official AI hair-color machine image is available at assets/product/star_color_ai_machine_front.png.",
+    "When showing the machine, match the official product: white vertical cylindrical body, black translucent rounded top, small front screen, Digital Color mark, wheeled base.",
+    "Do not invent a different machine shape when the official AI hair-color machine is required.",
+    "For the machine-vendor stage section inside the AI hair-color machine chapter, follow STAR_Color_機器廠商出場資料庫.md.",
+    "Use machine-vendor metrics exactly: 3 大自研晶片, 12 色自研配色體系, 20 項國家專利, 50 秒調配完成配方, 711+ 色彩資料庫.",
+    "Machine-vendor content may be described as technical standardization and reproducible workflow, but never as guaranteed dyeing results.",
+    "For the latter franchise/system chapters, also follow STAR_Color_加盟資訊系統資料庫.md.",
+    "Use GADM / OPS / CSM / BONUS as the franchise information system modules when relevant.",
+    "Franchise bonus and profit-sharing numbers must not be changed; use rule-based, auditable, monthly-settlement language, not guaranteed income language.",
+    "For the advertising-performance expert section before the marketing chapter, follow STAR_Color_廣告投放數據資料庫.md.",
+    "Use ad metrics exactly: 曝光 287,109, 觸及 128,021, 傳訊 609, 貼文互動 56,475, 心情 364.",
+    "Advertising data may be described as current market response and learning material, but never as guaranteed leads, guaranteed revenue, or guaranteed branch performance.",
+    "For the chairman policy-and-funding section before the closing call to action, follow STAR_Color_許文元理事長政策經費資料庫.md.",
+    "Use policy and certification terms exactly when requested: 2026 政策, 三年 10 萬, TTQS 證書銅牌, iCAP 認證, 產業人才投資計畫, 勞工自主學習計畫, 115 年度上半年.",
+    "Policy and funding content may be described as learning-resource guidance and credibility context, but never as guaranteed subsidy, guaranteed certification, guaranteed franchise success, or guaranteed income.",
+    "Use clear hierarchy: one headline, one short supporting idea, 3-5 short points, and at most one simple chart or structure.",
+    "For store model, small-space operation, and franchise landing pages, follow STAR_Color_門店設計資產資料庫.md.",
+    "Use store design references exactly as visual direction when relevant: compact white and gray salon, S.Color signage, AI 智能染髮專門店, NT / 999 vertical acrylic signboards, glass door waist band, S.Color pattern wall, sofa waiting area, and clean reproducible franchise storefront.",
+    "Store design content may show physical implementation and franchise landing credibility, but never invent new prices, fake logos, unrelated luxury salon interiors, or non-STAR Color storefront concepts."
+  ],
+  "quality_checklist": [
+    "STAR Color 拼字正確",
+    "沒有簡體字",
+    "沒有英文雜字",
+    "沒有亂碼假中文",
+    "數字與價格正確",
+    "主標可讀",
+    "沒有假 Logo",
+    "沒有不必要 QR Code",
+    "圖表一眼能懂",
+    "每頁都有非文字頁首設計",
+    "每頁都有非文字頁尾設計",
+    "頁首 / 頁尾沒有任何文字、頁碼、口號、QR Code 或假 Logo",
+    "風格接近 0512 Keynote：宇宙深藍、藍紫光流、粉紫髮色能量、銀白科技線",
+    "內容符合 STAR_Color_0520加盟簡報0511.md",
+    "核心數字沒有被改寫",
+    "正式 Logo 需使用 assets/logo/star_color_logo_primary_transparent.png",
+    "不要讓 GPT Image 2 重畫 S.Color Logo 文字",
+    "AI 染髮機外觀需參考 assets/product/star_color_ai_machine_front.png",
+    "不要生成與正式機器差異過大的機型",
+    "機器廠商出場段落需參考 STAR_Color_機器廠商出場資料庫.md",
+    "機器廠商段落數字不可改寫",
+    "不要把機器規格寫成保證染髮成果",
+    "後半段加盟系統內容需參考 STAR_Color_加盟資訊系統資料庫.md",
+    "分潤比例與獎金數字不可改",
+    "不要把分潤寫成保證收益",
+    "廣告投放數據需參考 STAR_Color_廣告投放數據資料庫.md",
+    "廣告數字不可改寫或誇大",
+    "不要把廣告數據寫成保證獲客、保證營收或分店保證成效",
+    "許文元理事長政策經費段落需參考 STAR_Color_許文元理事長政策經費資料庫.md",
+    "政策、認證與經費來源文字不可誇大",
+    "不要把政策經費寫成保證補助、保證通過認證、保證加盟成功或保證收入",
+    "門店設計頁需參考 STAR_Color_門店設計資產資料庫.md",
+    "門店或加盟落地場景需維持白色 / 灰白空間、藍粉漸層、NT / 999 立牌與 S.Color 店觀語彙",
+    "不要把門店生成為大型豪華沙龍、醫美診所、咖啡廳、百貨櫃位或工業風空間",
+    "不要改動 NT / 999 或洗染 $999 價格"
+  ],
+  "primary_style_reference": {
+    "name": "STAR Color 0512 Keynote current style",
+    "source": "/Users/chenjinting/Downloads/STAR COLOR/STAR_Color_0520 大會簡報0512.key",
+    "brand_pack_reference_folder": "assets/reference/keynote_0512_current_style",
+    "rule": "後續 0520 創業大會簡報以此 Keynote 風格為主。"
+  },
+  "keynote_0512_palette": {
+    "cosmic_deep_blue": {
+      "name_zh": "宇宙深藍",
+      "hex": "#07103A",
+      "usage": "主要背景、舞台底色"
+    },
+    "midnight_blue_black": {
+      "name_zh": "深夜黑藍",
+      "hex": "#020617",
+      "usage": "邊緣壓暗、深場景"
+    },
+    "galaxy_blue_violet": {
+      "name_zh": "星河藍紫",
+      "hex": "#2F3CFF",
+      "usage": "AI 光圈、舞台光流"
+    },
+    "electric_violet": {
+      "name_zh": "電光紫",
+      "hex": "#7A35FF",
+      "usage": "光帶、科技節點"
+    },
+    "star_magenta_violet": {
+      "name_zh": "星芒粉紫",
+      "hex": "#E84BFF",
+      "usage": "髮色能量、主視覺動勢"
+    },
+    "crystal_white": {
+      "name_zh": "冰晶白",
+      "hex": "#F4F7FF",
+      "usage": "深色背景文字與細線"
+    },
+    "silver_tech_line": {
+      "name_zh": "銀白科技線",
+      "hex": "#C9D8FF",
+      "usage": "頁首、頁尾、分隔線"
+    }
+  },
+  "layout_system": {
+    "header_footer_required": true,
+    "header_rule": "每頁都要有圖形化頁首，使用銀白細線、光點、星塵、低透明科技刻度；頁首不得有文字、頁碼、口號、QR Code 或假 Logo。",
+    "footer_rule": "每頁都要有圖形化頁尾，使用弧形星河光帶、藍紫/粉紫髮色能量波、底部舞台腳座；頁尾不得有文字、頁碼、口號、QR Code 或假 Logo。",
+    "content_zone_rule": "所有文字、數字與圖表只放在主內容區，不進入頁首或頁尾。",
+    "safe_area": "Header 5-8% height, main content 78-85%, footer 8-12%."
+  },
+  "source_content": {
+    "primary_markdown": "Ewalk.ai Brain/01_客戶/STAR Color/03_提案與交付/0520創業大會簡報/STAR_Color_0520加盟簡報0511.md",
+    "brand_pack_database": "STAR_Color_0511內容與圖表資料庫.md",
+    "rule": "生成簡報時必須遵守 0511 原稿，可進行擴寫與圖表化；核心數字與財務試算不得改動。",
+    "machine_vendor_database": "STAR_Color_機器廠商出場資料庫.md",
+    "machine_vendor_source": "assets/reference/machine_vendor_keynote/芯色彩.pptx520優化版.key",
+    "machine_vendor_rule": "AI 染髮機出場段落安排在 STAR Color 解法總覽後、AI 染髮機 50 秒配方頁前，由機器廠商上台；可補強芯色彩 AI 智能色彩引擎、雲端配色中心、3 大自研晶片、12 色配色體系、20 項專利、50 秒調配與 711+ 色彩資料庫。",
+    "franchise_system_database": "STAR_Color_加盟資訊系統資料庫.md",
+    "franchise_system_source": "assets/reference/franchise_system_pptx/STAR_COLOR_加盟體系資訊系統架構簡報.pptx",
+    "franchise_system_rule": "後半段加盟、數位營運、系統支援、分潤章節需參考此資料，可補強 GADM / OPS / CSM / BONUS / 雲端 API / 分潤規則引擎。",
+    "ad_performance_database": "STAR_Color_廣告投放數據資料庫.md",
+    "ad_performance_source": "assets/reference/ad_performance_pptx/廣告投放數據.pptx",
+    "ad_performance_rule": "廣告投放數據段落安排在加盟系統後、Ewalk.ai 行銷大腦前，由廣告投手專家講；可說明市場有初步回應與可作為投放學習資料，不可寫成保證成效。",
+    "chairman_policy_database": "STAR_Color_許文元理事長政策經費資料庫.md",
+    "chairman_policy_source": "assets/reference/chairman_policy_pdf/簡報1150506.pdf",
+    "chairman_policy_rule": "許文元理事長政策經費段落安排在加盟流程後、現場行動結尾前；可補強 2026 政策、三年 10 萬、TTQS、iCAP、產業人才投資計畫與勞工自主學習計畫，不可寫成保證補助或保證成效。",
+    "store_design_database": "STAR_Color_門店設計資產資料庫.md",
+    "store_design_source": "assets/reference/store_design",
+    "store_design_rule": "門店、微型店型、空間、加盟落地與實體店可信度段落需參考此資料；可使用白灰小坪數店面、S.Color 招牌、NT / 999 立牌、玻璃門腰帶、Logo pattern 牆與沙發牆面主視覺，不可生成與 STAR Color 不符的店型或價格。"
+  },
+  "reusable_numbers": [
+    {
+      "label": "AI 調色速度",
+      "value": "50 秒"
+    },
+    {
+      "label": "調配精準度",
+      "value": "單次精準調配 < 0.2G"
+    },
+    {
+      "label": "染膏庫存",
+      "value": "12 款髮膏"
+    },
+    {
+      "label": "色彩變化",
+      "value": "800+ 色彩變化"
+    },
+    {
+      "label": "透明定價",
+      "value": "洗染 $999"
+    },
+    {
+      "label": "訓練時數",
+      "value": "36 小時訓練基底"
+    },
+    {
+      "label": "結訓週期",
+      "value": "無經驗者最長 30 天結訓"
+    },
+    {
+      "label": "加盟費",
+      "value": "29.9 萬"
+    },
+    {
+      "label": "營運金",
+      "value": "10 萬"
+    },
+    {
+      "label": "啟動投入",
+      "value": "約 40 萬"
+    },
+    {
+      "label": "保守情境",
+      "value": "每日約 3 人 / 月營收 8 萬 / 打平"
+    },
+    {
+      "label": "標準情境",
+      "value": "每日約 4 人 / 月營收 12 萬 / 淨利 4 萬"
+    },
+    {
+      "label": "積極情境",
+      "value": "每日約 5 人 / 月營收 15 萬 / 淨利 7 萬"
+    },
+    {
+      "label": "暴衝情境",
+      "value": "每日約 7 人 / 月營收 20 萬 / 淨利 12 萬"
+    },
+    {
+      "label": "廣告曝光",
+      "value": "287,109"
+    },
+    {
+      "label": "廣告觸及",
+      "value": "128,021"
+    },
+    {
+      "label": "廣告傳訊",
+      "value": "609"
+    },
+    {
+      "label": "貼文互動",
+      "value": "56,475"
+    },
+    {
+      "label": "心情數",
+      "value": "364"
+    },
+    {
+      "label": "自研晶片",
+      "value": "3 大自研晶片"
+    },
+    {
+      "label": "自研配色體系",
+      "value": "12 色自研配色體系"
+    },
+    {
+      "label": "國家專利",
+      "value": "20 項國家專利"
+    },
+    {
+      "label": "調配完成配方",
+      "value": "50 秒調配完成配方"
+    },
+    {
+      "label": "色彩資料庫",
+      "value": "711+ 色彩資料庫"
+    },
+    {
+      "label": "政策資源",
+      "value": "三年 10 萬"
+    },
+    {
+      "label": "年度計畫",
+      "value": "115 年度上半年"
+    },
+    {
+      "label": "訓練品質",
+      "value": "TTQS 證書銅牌"
+    },
+    {
+      "label": "職能認證",
+      "value": "iCAP 認證"
+    },
+    {
+      "label": "門頭招牌參考",
+      "value": "270 cm × 46 cm"
+    },
+    {
+      "label": "側邊立牌參考",
+      "value": "180 cm"
+    },
+    {
+      "label": "室內無框畫參考",
+      "value": "180 cm × 70 cm"
+    },
+    {
+      "label": "店面透明價格",
+      "value": "NT / 999"
+    }
+  ]
+}

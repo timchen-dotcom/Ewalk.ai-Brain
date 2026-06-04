@@ -1,0 +1,883 @@
+{
+  "mode": "create-paused",
+  "createdAt": "2026-06-04T05:07:20.178Z",
+  "previewPath": "/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/01_客戶/韓食日常鍋物/03_提案與交付/2026-06_開幕慶廣告活動/2026-06-03_GoogleAds_API_mutate_operations_preview.json",
+  "ok": true,
+  "status": 200,
+  "result": {
+    "mutateOperationResponses": [
+      {
+        "campaignBudgetResult": {
+          "resourceName": "customers/7287266360/campaignBudgets/15629019271",
+          "campaignBudget": {
+            "resourceName": "customers/7287266360/campaignBudgets/15629019271",
+            "deliveryMethod": "STANDARD",
+            "period": "DAILY",
+            "type": "STANDARD",
+            "id": "15629019271",
+            "name": "HIH_202606_Search_Brand_Map_DailyBudget",
+            "amountMicros": "43000000",
+            "explicitlyShared": false
+          }
+        }
+      },
+      {
+        "campaignResult": {
+          "resourceName": "customers/7287266360/campaigns/23907761963",
+          "campaign": {
+            "resourceName": "customers/7287266360/campaigns/23907761963",
+            "status": "PAUSED",
+            "adServingOptimizationStatus": "OPTIMIZE",
+            "advertisingChannelType": "SEARCH",
+            "networkSettings": {
+              "targetGoogleSearch": true,
+              "targetSearchNetwork": false,
+              "targetContentNetwork": false,
+              "targetPartnerSearchNetwork": false,
+              "targetYoutube": false,
+              "targetGoogleTvNetwork": false
+            },
+            "manualCpc": {
+              "enhancedCpcEnabled": false
+            },
+            "geoTargetTypeSetting": {
+              "positiveGeoTargetType": "PRESENCE_OR_INTEREST",
+              "negativeGeoTargetType": "PRESENCE"
+            },
+            "name": "HIH_202606_Search_Brand_Map",
+            "id": "23907761963",
+            "campaignBudget": "customers/7287266360/campaignBudgets/15629019271",
+            "startDate": "2026-06-04",
+            "endDate": "2026-06-30",
+            "assetAutomationSettings": [
+              {
+                "assetAutomationType": "TEXT_ASSET_AUTOMATION",
+                "assetAutomationStatus": "OPTED_OUT"
+              }
+            ],
+            "containsEuPoliticalAdvertising": "DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING"
+          }
+        }
+      },
+      {
+        "campaignCriterionResult": {
+          "resourceName": "customers/7287266360/campaignCriteria/23907761963~1012818",
+          "campaignCriterion": {
+            "resourceName": "customers/7287266360/campaignCriteria/23907761963~1012818",
+            "location": {
+              "geoTargetConstant": "geoTargetConstants/1012818"
+            },
+            "status": "ENABLED",
+            "campaign": "customers/7287266360/campaigns/23907761963",
+            "criterionId": "1012818",
+            "negative": false
+          }
+        }
+      },
+      {
+        "campaignCriterionResult": {
+          "resourceName": "customers/7287266360/campaignCriteria/23907761963~1018",
+          "campaignCriterion": {
+            "resourceName": "customers/7287266360/campaignCriteria/23907761963~1018",
+            "language": {
+              "languageConstant": "languageConstants/1018"
+            },
+            "status": "ENABLED",
+            "campaign": "customers/7287266360/campaigns/23907761963",
+            "criterionId": "1018",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupResult": {
+          "resourceName": "customers/7287266360/adGroups/195485428045",
+          "adGroup": {
+            "resourceName": "customers/7287266360/adGroups/195485428045",
+            "status": "PAUSED",
+            "type": "SEARCH_STANDARD",
+            "targetingSetting": {
+              "targetRestrictions": [
+                {
+                  "targetingDimension": "AGE_RANGE",
+                  "bidOnly": true
+                },
+                {
+                  "targetingDimension": "GENDER",
+                  "bidOnly": true
+                },
+                {
+                  "targetingDimension": "PARENTAL_STATUS",
+                  "bidOnly": true
+                },
+                {
+                  "targetingDimension": "INCOME_RANGE",
+                  "bidOnly": true
+                }
+              ]
+            },
+            "id": "195485428045",
+            "name": "Brand_Search",
+            "campaign": "customers/7287266360/campaigns/23907761963",
+            "cpcBidMicros": "20000000",
+            "cpmBidMicros": "10000",
+            "targetCpmMicros": "10000",
+            "targetCpvMicros": "10000"
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464486843",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464486843",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "韓食日常"
+            },
+            "criterionId": "2485464486843",
+            "adGroup": "customers/7287266360/adGroups/195485428045",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464486883",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464486883",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "EXACT",
+              "text": "韓食日常"
+            },
+            "criterionId": "2485464486883",
+            "adGroup": "customers/7287266360/adGroups/195485428045",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464639483",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464639483",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "韓食日常鍋物"
+            },
+            "criterionId": "2485464639483",
+            "adGroup": "customers/7287266360/adGroups/195485428045",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464407643",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464407643",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "EXACT",
+              "text": "韓食日常鍋物"
+            },
+            "criterionId": "2485464407643",
+            "adGroup": "customers/7287266360/adGroups/195485428045",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464407683",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464407683",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "韓食日常文南店"
+            },
+            "criterionId": "2485464407683",
+            "adGroup": "customers/7287266360/adGroups/195485428045",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464407883",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464407883",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "EXACT",
+              "text": "韓食日常文南店"
+            },
+            "criterionId": "2485464407883",
+            "adGroup": "customers/7287266360/adGroups/195485428045",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464407963",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464407963",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "Hansik Ilsang"
+            },
+            "criterionId": "2485464407963",
+            "adGroup": "customers/7287266360/adGroups/195485428045",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464408123",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/195485428045~2485464408123",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "韓食日常 Uber Eats"
+            },
+            "criterionId": "2485464408123",
+            "adGroup": "customers/7287266360/adGroups/195485428045",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupAdResult": {
+          "resourceName": "customers/7287266360/adGroupAds/195485428045~811758735983",
+          "adGroupAd": {
+            "resourceName": "customers/7287266360/adGroupAds/195485428045~811758735983",
+            "status": "PAUSED",
+            "ad": {
+              "responsiveSearchAd": {
+                "headlines": [
+                  {
+                    "text": "韓食日常鍋物開幕慶"
+                  },
+                  {
+                    "text": "點鍋物送手工料"
+                  },
+                  {
+                    "text": "韓食日常文南店"
+                  },
+                  {
+                    "text": "導航前往韓食日常"
+                  },
+                  {
+                    "text": "Uber Eats看韓食日常"
+                  },
+                  {
+                    "text": "6月開幕慶進行中"
+                  }
+                ],
+                "descriptions": [
+                  {
+                    "text": "韓食日常鍋物文南店6/1至6/30開幕慶，點鍋物隨鍋送手工料。"
+                  },
+                  {
+                    "text": "想吃韓式鍋物可查看菜單、導航前往，或搜尋Uber Eats韓食日常。"
+                  }
+                ],
+                "path1": "opening",
+                "path2": "hansik"
+              },
+              "resourceName": "customers/7287266360/ads/811758735983",
+              "id": "811758735983",
+              "finalUrls": [
+                "https://shop.ichefpos.com/store/nNLhMqsW/ordering"
+              ]
+            },
+            "adGroup": "customers/7287266360/adGroups/195485428045"
+          }
+        }
+      },
+      {
+        "campaignBudgetResult": {
+          "resourceName": "customers/7287266360/campaignBudgets/15629019277",
+          "campaignBudget": {
+            "resourceName": "customers/7287266360/campaignBudgets/15629019277",
+            "deliveryMethod": "STANDARD",
+            "period": "DAILY",
+            "type": "STANDARD",
+            "id": "15629019277",
+            "name": "HIH_202606_Search_Local_KoreanHotpot_DailyBudget",
+            "amountMicros": "71000000",
+            "explicitlyShared": false
+          }
+        }
+      },
+      {
+        "campaignResult": {
+          "resourceName": "customers/7287266360/campaigns/23902684203",
+          "campaign": {
+            "resourceName": "customers/7287266360/campaigns/23902684203",
+            "status": "PAUSED",
+            "adServingOptimizationStatus": "OPTIMIZE",
+            "advertisingChannelType": "SEARCH",
+            "networkSettings": {
+              "targetGoogleSearch": true,
+              "targetSearchNetwork": false,
+              "targetContentNetwork": false,
+              "targetPartnerSearchNetwork": false,
+              "targetYoutube": false,
+              "targetGoogleTvNetwork": false
+            },
+            "manualCpc": {
+              "enhancedCpcEnabled": false
+            },
+            "geoTargetTypeSetting": {
+              "positiveGeoTargetType": "PRESENCE_OR_INTEREST",
+              "negativeGeoTargetType": "PRESENCE"
+            },
+            "name": "HIH_202606_Search_Local_KoreanHotpot",
+            "id": "23902684203",
+            "campaignBudget": "customers/7287266360/campaignBudgets/15629019277",
+            "startDate": "2026-06-04",
+            "endDate": "2026-06-30",
+            "assetAutomationSettings": [
+              {
+                "assetAutomationType": "TEXT_ASSET_AUTOMATION",
+                "assetAutomationStatus": "OPTED_OUT"
+              }
+            ],
+            "containsEuPoliticalAdvertising": "DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING"
+          }
+        }
+      },
+      {
+        "campaignCriterionResult": {
+          "resourceName": "customers/7287266360/campaignCriteria/23902684203~1012818",
+          "campaignCriterion": {
+            "resourceName": "customers/7287266360/campaignCriteria/23902684203~1012818",
+            "location": {
+              "geoTargetConstant": "geoTargetConstants/1012818"
+            },
+            "status": "ENABLED",
+            "campaign": "customers/7287266360/campaigns/23902684203",
+            "criterionId": "1012818",
+            "negative": false
+          }
+        }
+      },
+      {
+        "campaignCriterionResult": {
+          "resourceName": "customers/7287266360/campaignCriteria/23902684203~1018",
+          "campaignCriterion": {
+            "resourceName": "customers/7287266360/campaignCriteria/23902684203~1018",
+            "language": {
+              "languageConstant": "languageConstants/1018"
+            },
+            "status": "ENABLED",
+            "campaign": "customers/7287266360/campaigns/23902684203",
+            "criterionId": "1018",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupResult": {
+          "resourceName": "customers/7287266360/adGroups/192372253650",
+          "adGroup": {
+            "resourceName": "customers/7287266360/adGroups/192372253650",
+            "status": "PAUSED",
+            "type": "SEARCH_STANDARD",
+            "targetingSetting": {
+              "targetRestrictions": [
+                {
+                  "targetingDimension": "AGE_RANGE",
+                  "bidOnly": true
+                },
+                {
+                  "targetingDimension": "GENDER",
+                  "bidOnly": true
+                },
+                {
+                  "targetingDimension": "PARENTAL_STATUS",
+                  "bidOnly": true
+                },
+                {
+                  "targetingDimension": "INCOME_RANGE",
+                  "bidOnly": true
+                }
+              ]
+            },
+            "id": "192372253650",
+            "name": "Local_KoreanHotpot",
+            "campaign": "customers/7287266360/campaigns/23902684203",
+            "cpcBidMicros": "20000000",
+            "cpmBidMicros": "10000",
+            "targetCpmMicros": "10000",
+            "targetCpvMicros": "10000"
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/192372253650~2485302905169",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/192372253650~2485302905169",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "附近韓式料理"
+            },
+            "criterionId": "2485302905169",
+            "adGroup": "customers/7287266360/adGroups/192372253650",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/192372253650~2485302905209",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/192372253650~2485302905209",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "附近韓式鍋物"
+            },
+            "criterionId": "2485302905209",
+            "adGroup": "customers/7287266360/adGroups/192372253650",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/192372253650~320663063945",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/192372253650~320663063945",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "韓式火鍋"
+            },
+            "criterionId": "320663063945",
+            "adGroup": "customers/7287266360/adGroups/192372253650",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/192372253650~317395024252",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/192372253650~317395024252",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "韓式料理"
+            },
+            "criterionId": "317395024252",
+            "adGroup": "customers/7287266360/adGroups/192372253650",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/192372253650~458625104807",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/192372253650~458625104807",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "泡菜鍋"
+            },
+            "criterionId": "458625104807",
+            "adGroup": "customers/7287266360/adGroups/192372253650",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/192372253650~362084263900",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/192372253650~362084263900",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "大醬湯"
+            },
+            "criterionId": "362084263900",
+            "adGroup": "customers/7287266360/adGroups/192372253650",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/192372253650~364583575850",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/192372253650~364583575850",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "韓式湯飯"
+            },
+            "criterionId": "364583575850",
+            "adGroup": "customers/7287266360/adGroups/192372253650",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/192372253650~2487106332233",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/192372253650~2487106332233",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "海鮮豆腐湯"
+            },
+            "criterionId": "2487106332233",
+            "adGroup": "customers/7287266360/adGroups/192372253650",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/192372253650~2258886899234",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/192372253650~2258886899234",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "馬鈴薯排骨湯"
+            },
+            "criterionId": "2258886899234",
+            "adGroup": "customers/7287266360/adGroups/192372253650",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupAdResult": {
+          "resourceName": "customers/7287266360/adGroupAds/192372253650~811661783454",
+          "adGroupAd": {
+            "resourceName": "customers/7287266360/adGroupAds/192372253650~811661783454",
+            "status": "PAUSED",
+            "ad": {
+              "responsiveSearchAd": {
+                "headlines": [
+                  {
+                    "text": "韓式鍋物新選擇"
+                  },
+                  {
+                    "text": "今天晚餐來一鍋"
+                  },
+                  {
+                    "text": "泡菜鍋與大醬湯"
+                  },
+                  {
+                    "text": "附近韓式鍋物"
+                  },
+                  {
+                    "text": "平日也能吃韓食"
+                  },
+                  {
+                    "text": "文南店開幕慶"
+                  }
+                ],
+                "descriptions": [
+                  {
+                    "text": "想吃韓式鍋物、泡菜鍋、大醬湯或韓式湯飯？韓食日常鍋物文南店開幕慶進行中。"
+                  },
+                  {
+                    "text": "文南店6月開幕慶進行中，點鍋物隨鍋送手工料，適合午餐晚餐到店享用。"
+                  }
+                ],
+                "path1": "korean",
+                "path2": "hotpot"
+              },
+              "resourceName": "customers/7287266360/ads/811661783454",
+              "id": "811661783454",
+              "finalUrls": [
+                "https://shop.ichefpos.com/store/nNLhMqsW/ordering"
+              ]
+            },
+            "adGroup": "customers/7287266360/adGroups/192372253650"
+          }
+        }
+      },
+      {
+        "campaignBudgetResult": {
+          "resourceName": "customers/7287266360/campaignBudgets/15623679591",
+          "campaignBudget": {
+            "resourceName": "customers/7287266360/campaignBudgets/15623679591",
+            "deliveryMethod": "STANDARD",
+            "period": "DAILY",
+            "type": "STANDARD",
+            "id": "15623679591",
+            "name": "HIH_202606_Search_Delivery_DailyBudget",
+            "amountMicros": "29000000",
+            "explicitlyShared": false
+          }
+        }
+      },
+      {
+        "campaignResult": {
+          "resourceName": "customers/7287266360/campaigns/23912188936",
+          "campaign": {
+            "resourceName": "customers/7287266360/campaigns/23912188936",
+            "status": "PAUSED",
+            "adServingOptimizationStatus": "OPTIMIZE",
+            "advertisingChannelType": "SEARCH",
+            "networkSettings": {
+              "targetGoogleSearch": true,
+              "targetSearchNetwork": false,
+              "targetContentNetwork": false,
+              "targetPartnerSearchNetwork": false,
+              "targetYoutube": false,
+              "targetGoogleTvNetwork": false
+            },
+            "manualCpc": {
+              "enhancedCpcEnabled": false
+            },
+            "geoTargetTypeSetting": {
+              "positiveGeoTargetType": "PRESENCE_OR_INTEREST",
+              "negativeGeoTargetType": "PRESENCE"
+            },
+            "name": "HIH_202606_Search_Delivery",
+            "id": "23912188936",
+            "campaignBudget": "customers/7287266360/campaignBudgets/15623679591",
+            "startDate": "2026-06-04",
+            "endDate": "2026-06-30",
+            "assetAutomationSettings": [
+              {
+                "assetAutomationType": "TEXT_ASSET_AUTOMATION",
+                "assetAutomationStatus": "OPTED_OUT"
+              }
+            ],
+            "containsEuPoliticalAdvertising": "DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING"
+          }
+        }
+      },
+      {
+        "campaignCriterionResult": {
+          "resourceName": "customers/7287266360/campaignCriteria/23912188936~1012818",
+          "campaignCriterion": {
+            "resourceName": "customers/7287266360/campaignCriteria/23912188936~1012818",
+            "location": {
+              "geoTargetConstant": "geoTargetConstants/1012818"
+            },
+            "status": "ENABLED",
+            "campaign": "customers/7287266360/campaigns/23912188936",
+            "criterionId": "1012818",
+            "negative": false
+          }
+        }
+      },
+      {
+        "campaignCriterionResult": {
+          "resourceName": "customers/7287266360/campaignCriteria/23912188936~1018",
+          "campaignCriterion": {
+            "resourceName": "customers/7287266360/campaignCriteria/23912188936~1018",
+            "language": {
+              "languageConstant": "languageConstants/1018"
+            },
+            "status": "ENABLED",
+            "campaign": "customers/7287266360/campaigns/23912188936",
+            "criterionId": "1018",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupResult": {
+          "resourceName": "customers/7287266360/adGroups/203921016384",
+          "adGroup": {
+            "resourceName": "customers/7287266360/adGroups/203921016384",
+            "status": "PAUSED",
+            "type": "SEARCH_STANDARD",
+            "targetingSetting": {
+              "targetRestrictions": [
+                {
+                  "targetingDimension": "AGE_RANGE",
+                  "bidOnly": true
+                },
+                {
+                  "targetingDimension": "GENDER",
+                  "bidOnly": true
+                },
+                {
+                  "targetingDimension": "PARENTAL_STATUS",
+                  "bidOnly": true
+                },
+                {
+                  "targetingDimension": "INCOME_RANGE",
+                  "bidOnly": true
+                }
+              ]
+            },
+            "id": "203921016384",
+            "name": "Delivery_Search",
+            "campaign": "customers/7287266360/campaigns/23912188936",
+            "cpcBidMicros": "20000000",
+            "cpmBidMicros": "10000",
+            "targetCpmMicros": "10000",
+            "targetCpvMicros": "10000"
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/203921016384~2329269477061",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/203921016384~2329269477061",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "韓式料理外送"
+            },
+            "criterionId": "2329269477061",
+            "adGroup": "customers/7287266360/adGroups/203921016384",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/203921016384~2485465273643",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/203921016384~2485465273643",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "韓式鍋物外送"
+            },
+            "criterionId": "2485465273643",
+            "adGroup": "customers/7287266360/adGroups/203921016384",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/203921016384~2485465273803",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/203921016384~2485465273803",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "泡菜鍋外送"
+            },
+            "criterionId": "2485465273803",
+            "adGroup": "customers/7287266360/adGroups/203921016384",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/203921016384~2485465273843",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/203921016384~2485465273843",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "Uber Eats 韓式"
+            },
+            "criterionId": "2485465273843",
+            "adGroup": "customers/7287266360/adGroups/203921016384",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/203921016384~2485465273883",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/203921016384~2485465273883",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "韓食日常外送"
+            },
+            "criterionId": "2485465273883",
+            "adGroup": "customers/7287266360/adGroups/203921016384",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupCriterionResult": {
+          "resourceName": "customers/7287266360/adGroupCriteria/203921016384~2485465274043",
+          "adGroupCriterion": {
+            "resourceName": "customers/7287266360/adGroupCriteria/203921016384~2485465274043",
+            "status": "PAUSED",
+            "keyword": {
+              "matchType": "PHRASE",
+              "text": "附近外送韓式料理"
+            },
+            "criterionId": "2485465274043",
+            "adGroup": "customers/7287266360/adGroups/203921016384",
+            "negative": false
+          }
+        }
+      },
+      {
+        "adGroupAdResult": {
+          "resourceName": "customers/7287266360/adGroupAds/203921016384~811689808774",
+          "adGroupAd": {
+            "resourceName": "customers/7287266360/adGroupAds/203921016384~811689808774",
+            "status": "PAUSED",
+            "ad": {
+              "responsiveSearchAd": {
+                "headlines": [
+                  {
+                    "text": "韓式鍋物也能外送"
+                  },
+                  {
+                    "text": "Uber Eats搜尋韓食日常"
+                  },
+                  {
+                    "text": "官方點餐看菜單"
+                  },
+                  {
+                    "text": "點鍋物送手工料"
+                  },
+                  {
+                    "text": "在家吃韓式鍋物"
+                  }
+                ],
+                "descriptions": [
+                  {
+                    "text": "想外送韓式鍋物，可先查看Uber Eats或官方點餐頁。6/1至6/30開幕慶點鍋物送手工料。"
+                  },
+                  {
+                    "text": "可先查看Uber Eats或官方點餐頁，想吃韓式鍋物在家也能輕鬆安排。"
+                  }
+                ],
+                "path1": "delivery",
+                "path2": "hansik"
+              },
+              "resourceName": "customers/7287266360/ads/811689808774",
+              "id": "811689808774",
+              "finalUrls": [
+                "https://www.ubereats.com/tw/store/%E9%9F%93%E9%A3%9F%E6%97%A5%E5%B8%B8%E9%8D%8B%E7%89%A9/NN13z4XCUzC1LnsuTcQjhw"
+              ]
+            },
+            "adGroup": "customers/7287266360/adGroups/203921016384"
+          }
+        }
+      }
+    ]
+  }
+}

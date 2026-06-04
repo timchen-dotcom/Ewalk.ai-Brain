@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>STAR Color AI 染髮師行銷培訓系統</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <section class="auth-screen" id="authScreen">
+      <div class="auth-visual" aria-hidden="true">
+        <div class="brand-lockup">
+          <span class="ewalk-mark"></span>
+          <span>EWALK.ai</span>
+        </div>
+        <h1>STAR Color<br />AI 染髮師行銷培訓系統</h1>
+        <p>內部專屬訓練入口，讓每一位 AI 染髮師用同一套方法經營客源、提交作業、使用工具、累積分店戰力。</p>
+        <div class="access-grid">
+          <span>分店登入</span>
+          <span>AI 工具</span>
+          <span>課後作業</span>
+          <span>老師回饋</span>
+        </div>
+      </div>
+
+      <div class="auth-panel">
+        <div class="auth-tabs" role="tablist" aria-label="登入與註冊">
+          <button class="active" type="button" data-auth-tab="login">登入</button>
+          <button type="button" data-auth-tab="register">申請帳號</button>
+        </div>
+
+        <form class="auth-form active" id="loginForm">
+          <h2>登入訓練系統</h2>
+          <label>
+            分店
+            <input name="branch" autocomplete="organization" placeholder="例：台南中華店" required />
+          </label>
+          <label>
+            英文名
+            <input name="name" autocomplete="username" placeholder="例：Sunny" required />
+          </label>
+          <label>
+            密碼
+            <input name="password" type="password" autocomplete="current-password" required />
+          </label>
+          <button class="button primary" type="submit">進入系統</button>
+          <p class="form-note">第一次使用請先申請帳號。正式上線後，離職帳號會由總部停用或刪除。</p>
+        </form>
+
+        <form class="auth-form" id="registerForm">
+          <h2>申請內部帳號</h2>
+          <label>
+            分店
+            <input name="branch" autocomplete="organization" placeholder="例：STAR Color 台南中華店" required />
+          </label>
+          <label>
+            英文名
+            <input name="name" autocomplete="username" placeholder="例：Nana" required />
+          </label>
+          <label>
+            密碼
+            <input name="password" type="password" autocomplete="new-password" minlength="4" required />
+          </label>
+          <button class="button primary" type="submit">建立帳號</button>
+          <p class="form-note">這版是本機原型，帳號先存在此瀏覽器。上線版會改成真正後台資料庫。</p>
+        </form>
+      </div>
+    </section>
+
+    <div class="training-app" id="trainingApp" hidden>
+      <aside class="sidebar">
+        <a class="brand" href="#overview" aria-label="回到總覽">
+          <span class="ewalk-mark"></span>
+          <span>
+            <strong>EWALK.ai</strong>
+            <small>STAR Color Internal</small>
+          </span>
+        </a>
+
+        <div class="user-card">
+          <span id="userBranch">STAR Color</span>
+          <strong id="userName">AI 染髮師</strong>
+          <button type="button" id="logoutBtn">登出</button>
+        </div>
+
+        <nav class="nav" aria-label="訓練系統導覽">
+          <a class="active" href="#overview"><span>總覽</span><small>系統首頁與學習地圖</small></a>
+          <a href="#lesson-1"><span>第一堂</span><small>社群基本功</small></a>
+          <a href="#lesson-2"><span>第二堂</span><small>AI 行銷術</small></a>
+          <a href="#lesson-3"><span>第三堂</span><small>LINE 色彩顧問</small></a>
+          <a href="#lesson-4"><span>第四堂</span><small>客單提升話術</small></a>
+          <a href="#lesson-5"><span>第五堂</span><small>未公開</small></a>
+          <a href="#lesson-6"><span>第六堂</span><small>未公開</small></a>
+          <a href="#tools"><span>AI 工具區</span><small>指令、圖像、話術</small></a>
+          <a href="#line"><span>LINE 作業群</span><small>提交與老師回饋</small></a>
+          <a href="#admin"><span>帳號管理</span><small>停用與刪除帳號</small></a>
+        </nav>
+      </aside>
+
+      <main>
+        <section class="section overview" id="overview" data-page>
+          <div class="hero-copy">
+            <p class="eyebrow">AI HAIRSTYLIST TRAINING OS</p>
+            <h1>STAR Color AI染髮師行銷培訓系統</h1>
+            <p class="hero-subtitle">讓 Ewalk.Ai 在背後支援你：一個人經濟發揮到極致的美學。</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#lesson-1">進入第一堂</a>
+              <a class="button secondary" href="#tools">打開 AI 工具區</a>
+            </div>
+          </div>
+
+          <div class="command-visual" aria-label="訓練系統狀態">
+            <div class="visual-top">
+              <span>STAR COLOR NODE</span>
+              <b>ONLINE</b>
+            </div>
+            <div class="signal-map">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <div class="metric-row">
+              <article><span>01</span><b>社群</b><small>內容產能</small></article>
+              <article><span>02</span><b>LINE</b><small>諮詢轉換</small></article>
+              <article><span>03</span><b>服務</b><small>客單提升</small></article>
+            </div>
+          </div>
+
+          <div class="system-grid">
+            <article>
+              <span>Training</span>
+              <h2>訓練標準化</h2>
+              <p>承接大美好學院的微型教育系統，把染髮師需要的社群、AI、色彩判斷與服務話術變成可複製的訓練流程。</p>
+            </article>
+            <article>
+              <span>Tools</span>
+              <h2>工具集中化</h2>
+              <p>Ewalk.Ai 在背後提供行銷大腦，讓一人店也能使用文案、圖像、LINE 顧問與客單話術工具。</p>
+            </article>
+            <article>
+              <span>Growth</span>
+              <h2>成長可追蹤</h2>
+              <p>學員每次作業、案例與回報都會沉澱為總部資料，形成能持續進化的教育資產。</p>
+            </article>
+            <article>
+              <span>Brand</span>
+              <h2>品牌可複製</h2>
+              <p>STAR Color 代表一個人的經濟，大美好學院負責把這套經濟模型教育化、制度化、品牌化。</p>
+            </article>
+          </div>
+
+          <article class="intro-panel">
+            <p class="eyebrow">System Concept</p>
+            <h2>系統介紹</h2>
+            <p>
+              STAR Color 的核心不是單純開一間染髮店，而是把「一個人的經濟」做到極致：一位 AI 染髮師也能有總部等級的行銷支援、教育支援、工具支援與服務標準。大美好學院則是這套模型的神經系統，負責把經驗變成課程，把課程變成流程，把流程變成每位學員都能複製的能力。
+            </p>
+            <p>
+              這套培訓系統會把 STAR Color 的價格透明、AI 智能染髮、底色判斷、顧客教育與客單提升整合起來。學員不是只學會發文，而是學會如何從公域社群吸引顧客，再導入 LINE OA 私域經營，最後透過專業判斷與服務話術提高成交率、滿意度與回訪率。
+            </p>
+          </article>
+        </section>
+
+        <section class="section lessons" id="lesson-1" data-page hidden>
+          <div class="section-head">
+            <p class="eyebrow">Lesson 01</p>
+            <h2>社群基本功：從零開始建立 AI 染髮師的信任感</h2>
+            <p>先理解每個平台的角色，再建立從公域到私域的社群漏斗。社群不是發漂亮圖，而是讓陌生客願意把頭髮交給你。</p>
+          </div>
+          <div class="content-stack">
+            <article class="content-block resource-block">
+              <div>
+                <h3>STAR Color 行銷庫</h3>
+                <p>上課相關素材、範例與補充資料會集中放在 STAR Color 行銷庫，學員課前課後都可以回來複習與取用。</p>
+              </div>
+              <a class="button primary" href="https://drive.google.com/drive/folders/1i8mMYPdtU1QtLUOW6nJ_5CTXJqg-IqxS?usp=drive_link" target="_blank" rel="noopener">開啟 STAR Color 行銷庫</a>
+            </article>
+            <article class="content-block">
+              <h3>平台特性與經營重點</h3>
+              <div class="analysis-table">
+                <div class="table-head"><span>平台</span><span>主要年齡層</span><span>經營特性</span><span>經營重點</span><span>演算法雷區</span></div>
+                <div><b>IG</b><span>18-35 歲為主</span><span>視覺審美、Reels、案例收藏</span><span>髮色案例、前後對比、短影音、限動互動</span><span>低畫質、重複素材、只發促銷、互動率過低</span></div>
+                <div><b>FB</b><span>30-55 歲為主</span><span>在地生活圈、社團、熟客擴散</span><span>活動資訊、顧客見證、商圈曝光、親友分享</span><span>過度廣告語、外部連結太多、長期無互動</span></div>
+                <div><b>Threads</b><span>18-35 歲為主</span><span>即時觀點、人格感、輕量互動</span><span>用口語分享髮色觀念、現場日常、設計師個性</span><span>硬賣、複製貼文、沒有觀點、情緒失控</span></div>
+                <div><b>Google 商家</b><span>25-55 歲高意圖客</span><span>搜尋與地圖決策，接近預約時刻</span><span>評論、照片、營業資訊、活動貼文、關鍵字</span><span>資訊錯誤、負評不回、照片過少、長期不更新</span></div>
+                <div><b>LINE OA</b><span>20-60 歲皆可</span><span>私域經營、諮詢、預約、回訪</span><span>照片分析、菜單、優惠、回訪、分眾訊息</span><span>群發過多、沒有分眾、回覆慢、只發促銷</span></div>
+              </div>
+            </article>
+            <article class="content-block">
+              <h3>最低標社群經營方法</h3>
+              <div class="lesson-layout">
+                <article><b>每週 3 則內容</b><p>1 則案例、1 則髮色知識、1 則服務或活動。先穩定，不追求華麗。</p></article>
+                <article><b>每天 3 則限動</b><p>現場、預約空檔、客人髮況、老師觀點。讓帳號看起來有人在經營。</p></article>
+                <article><b>每週 1 次 Google</b><p>更新作品照片、活動貼文、回覆評論。搜尋來的客人通常更接近成交。</p></article>
+              </div>
+            </article>
+            <article class="content-block">
+              <h3>社群漏斗：從公域到私域</h3>
+              <div class="funnel">
+                <article><span>公域曝光</span><b>IG / FB / Threads / Google</b><p>用案例、短影音、髮色知識讓陌生人先看見你。</p></article>
+                <article><span>興趣建立</span><b>收藏 / 私訊 / 留言</b><p>回答客人在意的價格、失敗風險、退色、白髮、保養。</p></article>
+                <article><span>私域導入</span><b>LINE OA</b><p>引導傳照片，進入底色判斷、諮詢、報價與預約。</p></article>
+                <article><span>成交回訪</span><b>服務紀錄</b><p>染後保養、下次補染提醒、案例累積，讓一次客變回訪客。</p></article>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section lessons" id="lesson-2" data-page hidden>
+          <div class="section-head">
+            <p class="eyebrow">Lesson 02</p>
+            <h2>AI 行銷術：從提問到工具化內容產出</h2>
+            <p>先理解 AI 怎麼思考，再學會如何下指令，最後把品牌調性固定成可複製的內容架構。</p>
+          </div>
+          <div class="content-stack">
+            <article class="content-block">
+              <h3>AI 的底層邏輯</h3>
+              <p>大型語言模型不是查答案機器，而是根據你給的上下文、角色、目標與限制，預測最合理的下一段內容。你給它的資訊越完整，它越能穩定輸出符合品牌調性的文案、話術與企劃。</p>
+              <div class="lesson-layout">
+                <article><b>文生圖</b><p>把文字變成圖像，適合做社群圖、活動公告、品牌視覺草稿。</p></article>
+                <article><b>圖生影</b><p>把靜態圖延伸為短影音，適合做吸睛素材、活動預告與社群廣告。</p></article>
+                <article><b>重要性</b><p>美業競爭不只比技術，也比誰能更快產出高品質內容並持續測試市場反應。</p></article>
+              </div>
+            </article>
+            <article class="content-block">
+              <h3>常見大型語言模型</h3>
+              <div class="model-grid">
+                <article><b>ChatGPT</b><p>適合企劃、文案、教學、品牌內容、工具流程。</p></article>
+                <article><b>Gemini</b><p>適合 Google 生態、資料整理、文件與搜尋整合。</p></article>
+                <article><b>Claude</b><p>適合長文、邏輯整理、品牌策略與大型文件分析。</p></article>
+                <article><b>Grok</b><p>適合即時話題、社群語感與趨勢觀察。</p></article>
+                <article><b>Meta</b><p>適合社群平台語境、開源模型與未來多模態應用。</p></article>
+              </div>
+            </article>
+            <article class="content-block">
+              <h3>完整提問結構</h3>
+              <div class="flow-row">
+                <article><span>01</span><b>角色</b><p>你是 STAR Color AI 染髮師的社群企劃。</p></article>
+                <article><span>02</span><b>目標</b><p>我要產出七天貼文，導向 LINE 諮詢。</p></article>
+                <article><span>03</span><b>背景</b><p>客群、服務、價格、商圈、活動檔期。</p></article>
+                <article><span>04</span><b>格式</b><p>標題、鉤子、文案、畫面、CTA、注意事項。</p></article>
+              </div>
+            </article>
+            <article class="content-block">
+              <h3>指令架構：讓 AI 輸出一致調性</h3>
+              <p>固定品牌角色、語氣、禁忌、輸出格式與範例，AI 才不會每次寫出不同風格。STAR Color 的內容要專業親切、價格透明、避免誇大，並且永遠導向 LINE 照片分析或預約。</p>
+              <a class="button primary" href="#tools">打開 AI 工具與指令架構</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section lessons" id="lesson-3" data-page hidden>
+          <div class="section-head">
+            <p class="eyebrow">Lesson 03</p>
+            <h2>LINE 色彩顧問：把底色判斷接回現場服務</h2>
+            <p>底色判斷是配方穩定的前提。AI 不是取代髮型師，而是降低人為誤差，讓現場判斷更穩。</p>
+          </div>
+          <div class="content-stack">
+            <article class="content-block">
+              <h3>為什麼底色判斷重要</h3>
+              <p>底色判斷錯誤，會直接影響 AI 染髮機配方與最終髮色表現。常見風險包含髮根髮尾色差、過度漂淺、白髮遮蓋不足、目標色落差、顧客期待失準。</p>
+            </article>
+            <article class="content-block">
+              <h3>LINE 色彩顧問使用流程</h3>
+              <div class="flow-row">
+                <article><span>01</span><b>自然光拍照</b><p>拍正面、側面、髮尾近照，不開美肌與濾鏡。</p></article>
+                <article><span>02</span><b>傳給顧問</b><p>把照片傳到 LINE 色彩顧問，取得 AI 初步判斷。</p></article>
+                <article><span>03</span><b>現場交叉確認</b><p>AI 判斷搭配髮型師肉眼、髮質與過往染燙紀錄。</p></article>
+                <article><span>04</span><b>回到服務設計</b><p>決定配方、保養、風險告知與預約建議。</p></article>
+              </div>
+            </article>
+            <article class="content-block">
+              <h3>工具使用教學重點</h3>
+              <div class="lesson-layout">
+                <article><b>拍照標準</b><p>光線穩定、角度清楚、髮根與髮尾分開拍。</p></article>
+                <article><b>判斷標準</b><p>AI 結果只做輔助，最後仍由髮型師確認。</p></article>
+                <article><b>溝通標準</b><p>把風險說成專業建議，不讓客人覺得被推銷。</p></article>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section lessons" id="lesson-4" data-page hidden>
+          <div class="section-head">
+            <p class="eyebrow">Lesson 04</p>
+            <h2>客單提升術：從客群心理設計服務話術</h2>
+            <p>STAR Color 的客人重視效率、價格透明與結果安全。客單提升不是推銷，而是讓客人理解不加做的風險。</p>
+          </div>
+          <div class="content-stack">
+            <article class="content-block">
+              <h3>STAR Color 客群分析</h3>
+              <div class="analysis-table">
+                <div class="table-head"><span>客群</span><span>優點</span><span>顧慮</span><span>話術進攻點</span><span>適合提升項目</span></div>
+                <div><b>上班族</b><span>重視效率、願意為穩定付費</span><span>怕時間太久、怕髮色太高調</span><span>強調快速、自然、好整理、不影響上班</span><span>染中護髮、居家保養</span></div>
+                <div><b>白髮補染客</b><span>需求穩定、回訪機率高</span><span>怕遮不住、怕布丁明顯</span><span>強調遮白穩定、配方紀錄、下次回訪</span><span>頭皮隔離、護髮保養</span></div>
+                <div><b>年輕流行客</b><span>願意嘗試、社群分享力高</span><span>怕不夠好看、怕退色太快</span><span>強調退色管理、拍照質感、髮質保護</span><span>深層護髮、居家護理</span></div>
+                <div><b>價格敏感客</b><span>容易被活動吸引</span><span>怕加價、怕被推銷</span><span>先講風險，再給選擇，不強迫</span><span>基礎頭皮隔離、入門護髮</span></div>
+              </div>
+            </article>
+            <article class="content-block">
+              <h3>心理學話術原則</h3>
+              <div class="lesson-layout">
+                <article><b>損失規避</b><p>客人通常比起獲得美髮，更害怕受損、失敗、退色。話術先說清楚不處理的風險。</p></article>
+                <article><b>選擇架構</b><p>不要只問「要不要加做」，而是提供基礎、推薦、完整三種選項。</p></article>
+                <article><b>專業安心</b><p>把護髮、頭皮隔離、居家保養包裝成安全控管，而不是額外推銷。</p></article>
+              </div>
+            </article>
+            <article class="content-block">
+              <h3>AI 客單提升話術工具</h3>
+              <div class="tool-grid single-tool">
+                <form class="tool-panel" id="upsellForm">
+                  <label>客群<input name="audience" value="白髮補染客" /></label>
+                  <label>年齡<input name="age" value="45-55 歲" /></label>
+                  <label>想提升的服務項目<input name="service" value="頭皮隔離與染中護髮" /></label>
+                  <label>語氣
+                    <select name="tone">
+                      <option>親切專業</option>
+                      <option>溫柔安心</option>
+                      <option>俐落直接</option>
+                      <option>高級顧問感</option>
+                    </select>
+                  </label>
+                  <button class="button primary" type="submit">產生客單提升話術</button>
+                </form>
+                <article class="output-panel compact-output">
+                  <div><b>客單提升話術</b><button class="copy-btn" data-copy-target="upsellOutput">複製</button></div>
+                  <pre id="upsellOutput"></pre>
+                </article>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section lessons" id="lesson-5" data-page hidden>
+          <div class="section-head">
+            <p class="eyebrow">Lesson 05</p>
+            <h2>第五堂課程未公開</h2>
+            <p>此課程會在後續版本開放，目前先保留給總部規劃。</p>
+          </div>
+          <div class="locked-panel">
+            <span>LOCKED</span>
+            <b>尚未開放</b>
+            <p>等待 Ewalk.Ai 與 STAR Color 總部完成下一階段教材設計。</p>
+          </div>
+        </section>
+
+        <section class="section lessons" id="lesson-6" data-page hidden>
+          <div class="section-head">
+            <p class="eyebrow">Lesson 06</p>
+            <h2>第六堂課程未公開</h2>
+            <p>此課程會在後續版本開放，目前先保留給總部規劃。</p>
+          </div>
+          <div class="locked-panel">
+            <span>LOCKED</span>
+            <b>尚未開放</b>
+            <p>等待 Ewalk.Ai 與 STAR Color 總部完成下一階段教材設計。</p>
+          </div>
+        </section>
+
+        <section class="section tools" id="tools" data-page hidden>
+          <div class="section-head">
+            <p class="eyebrow">AI TOOL CENTER</p>
+            <h2>AI 工具區</h2>
+            <p>把上課會用到的提示詞集中在這裡，學員直接複製到 ChatGPT 或 Images 使用。</p>
+          </div>
+
+          <div class="tool-grid">
+            <form class="tool-panel" id="copyForm">
+              <h3>七天文案產生器</h3>
+              <label>主要客群<input name="audience" value="想快速、安全、價格透明染髮的上班族與白髮補染客" /></label>
+              <label>本週主打<input name="offer" value="AI 底色判斷、透明染髮、染中保養加值" /></label>
+              <label>在地商圈<input name="area" value="台南在地生活圈" /></label>
+              <button class="button primary" type="submit">產生指令</button>
+            </form>
+
+            <form class="tool-panel" id="imageForm">
+              <h3>社群圖提示詞</h3>
+              <label>主標題<input name="headline" value="先判斷底色，再決定髮色" /></label>
+              <label>行動呼籲<input name="cta" value="傳照片到 LINE，先做髮色分析" /></label>
+              <label>尺寸<select name="size"><option>1080x1350</option><option>1080x1080</option><option>1920x1080</option></select></label>
+              <button class="button primary" type="submit">產生提示詞</button>
+            </form>
+
+            <form class="tool-panel" id="scriptForm">
+              <h3>LINE 回覆話術</h3>
+              <label>客人情境<select name="caseType"><option>底色不均</option><option>髮質偏乾</option><option>退色風險</option><option>白髮補染</option></select></label>
+              <label>目標色<input name="targetColor" value="霧感奶茶棕" /></label>
+              <button class="button primary" type="submit">產生話術</button>
+            </form>
+
+            <form class="tool-panel" id="upsellFormTools">
+              <h3>客單提升話術</h3>
+              <label>客群<input name="audience" value="白髮補染客" /></label>
+              <label>年齡<input name="age" value="45-55 歲" /></label>
+              <label>想提升的服務項目<input name="service" value="頭皮隔離與染中護髮" /></label>
+              <label>語氣
+                <select name="tone">
+                  <option>親切專業</option>
+                  <option>溫柔安心</option>
+                  <option>俐落直接</option>
+                  <option>高級顧問感</option>
+                </select>
+              </label>
+              <button class="button primary" type="submit">產生客單提升話術</button>
+            </form>
+          </div>
+
+          <div class="output-grid">
+            <article class="output-panel"><div><b>七天文案指令</b><button class="copy-btn" data-copy-target="copyPrompt">複製</button></div><pre id="copyPrompt"></pre></article>
+            <article class="output-panel"><div><b>生圖提示詞</b><button class="copy-btn" data-copy-target="imagePrompt">複製</button></div><pre id="imagePrompt"></pre></article>
+            <article class="output-panel"><div><b>現場話術</b><button class="copy-btn" data-copy-target="scriptOutput">複製</button></div><pre id="scriptOutput"></pre></article>
+            <article class="output-panel"><div><b>客單提升話術</b><button class="copy-btn" data-copy-target="upsellToolsOutput">複製</button></div><pre id="upsellToolsOutput"></pre></article>
+          </div>
+        </section>
+
+        <section class="section line" id="line" data-page hidden>
+          <div class="section-head">
+            <p class="eyebrow">LINE HOMEWORK FLOW</p>
+            <h2>加入 LINE Ewalk.ai AI 染髮師訓練系統群組</h2>
+            <p>上課內容與作業都回到群組，老師看作業、給建議、再把好的案例整理成總部教材。</p>
+          </div>
+          <div class="line-layout">
+            <div class="qr-box qr-image-box">
+              <img src="./assets/line-homework-qr.jpg" alt="LINE Ewalk.ai AI 染髮師訓練系統群組 QR Code" />
+              <small>掃描加入 LINE 作業群</small>
+            </div>
+            <div class="flow-list">
+              <article><span>01</span><b>上課後交作業</b><p>貼文、圖像、話術、LINE 截圖統一丟到群組。</p></article>
+              <article><span>02</span><b>老師回饋</b><p>指出文案、圖像、CTA、服務話術可以優化的地方。</p></article>
+              <article><span>03</span><b>總部沉澱</b><p>優秀案例會整理成模板，回到所有分店共用。</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section admin" id="admin" data-page hidden>
+          <div class="section-head">
+            <p class="eyebrow">ACCOUNT CONTROL</p>
+            <h2>帳號管理</h2>
+            <p>原型版可在本機測試新增、停用、刪除帳號；正式版會改成總部管理後台。</p>
+          </div>
+          <div class="account-table" id="accountTable"></div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast">已複製</div>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+{
+  "model": "gpt-image-2",
+  "size": "3840x2160",
+  "quality": "high",
+  "brand_kit_path": "../../../01_品牌資料/簡報生成品牌包/brand_kit.json",
+  "deck_title": "STAR Color 0520 加盟簡報0511 10頁版 GPT Image 2 整頁烘字",
+  "brand_style": "STAR Color presentation brand kit v1.1. Follow the 0512 Keynote visual system as the primary style reference: cosmic deep-blue AI beauty conference stage, blue-violet galaxy ribbons, star magenta hair-color energy waves, crystal white and silver tech line details, premium product-stage composition. Every slide must include a non-text graphic header and non-text graphic footer; all text stays in the main content area.",
+  "global_rules": [
+    "Create one complete 16:9 presentation slide as a single finished image.",
+    "All visible text must be Traditional Chinese only.",
+    "Use only the exact Chinese text listed in each page's must_include_text and optional short labels.",
+    "Do not add English, fake logos, fake QR codes, random watermarks, unreadable microtext, or extra captions.",
+    "Keep the slide readable from a conference screen: large headline, clear spacing, few text groups.",
+    "If making charts, use simple visual structures with short Chinese labels, not dense data tables.",
+    "Every slide must include a non-text graphic header and a non-text graphic footer.",
+    "Header and footer must contain no words, no slogan, no page number, no QR code, and no fake logo.",
+    "Use STAR_Color_0520加盟簡報0511.md as the source of truth for content, numbers, and chartable data."
+  ],
+  "negative": "No English words, no random letters, no gibberish Chinese, no fake brand marks, no extra tiny paragraphs, no misspelled STAR Color, no over-crowded dashboard, no stock-photo watermark, no QR code.",
+  "pages": [
+    {
+      "page": 1,
+      "role": "cover",
+      "headline": "AI 智能染髮創業大會",
+      "supporting_text": "STAR Color Colorists｜一個人的 AI 美業經濟",
+      "must_include_text": [
+        "AI 智能染髮創業大會",
+        "STAR Color Colorists",
+        "一個人的 AI 美業經濟",
+        "科技賦能・趨勢引領・創造美業新未來"
+      ],
+      "visual_scene": "A premium futuristic beauty conference cover. One confident solo colorist stands beside an elegant AI hair-color machine, with flowing magenta and teal hair-color light ribbons. Large stage-like negative space for the title.",
+      "chart_or_structure": "No chart. Hero poster composition.",
+      "prompt": "Design a premium 16:9 keynote cover slide for STAR Color. Make it look like a high-end AI beauty entrepreneurship summit opening screen. Include the exact Traditional Chinese and brand text: 「AI 智能染髮創業大會」, 「STAR Color Colorists」, 「一個人的 AI 美業經濟」, 「科技賦能・趨勢引領・創造美業新未來」. Use a strong title hierarchy, cinematic salon technology visuals, deep teal background, magenta hair-color light, subtle gold accents, pearl highlights."
+    },
+    {
+      "page": 2,
+      "role": "opening reframing",
+      "headline": "今天，我們不只談染髮。",
+      "supporting_text": "我們要看懂一個人如何用 AI 進入美業、建立現金流、走向經營者。",
+      "must_include_text": [
+        "今天，我們不只談染髮。",
+        "用 AI 進入美業",
+        "學會可複製的技術",
+        "建立穩定現金流",
+        "從服務者走向經營者",
+        "一個人的 AI 美業經濟"
+      ],
+      "visual_scene": "A solo entrepreneur opening a luminous salon doorway, AI hair-color machine inside, city opportunity outside. The visual should feel like entering a new economy, not a product demo.",
+      "chart_or_structure": "Four stepping stones from left to right: 進入美業, 複製技術, 現金流, 經營者.",
+      "prompt": "Create a 16:9 keynote slide that reframes the event from product introduction to new economic opportunity. Use exact text: 「今天，我們不只談染髮。」 as the main headline. Add four short visual steps: 「用 AI 進入美業」, 「學會可複製的技術」, 「建立穩定現金流」, 「從服務者走向經營者」. Add the conclusion phrase 「一個人的 AI 美業經濟」. Premium AI salon doorway scene, confident, inspiring, clean hierarchy."
+    },
+    {
+      "page": 3,
+      "role": "core formula",
+      "headline": "STAR Color = 一個人的經濟",
+      "supporting_text": "把技術、流程、教育、行銷與加盟模型組成可複製的微型創業系統。",
+      "must_include_text": [
+        "STAR Color = 一個人的經濟",
+        "AI 染髮技術",
+        "標準化流程",
+        "透明定價",
+        "微型教育系統",
+        "AI 行銷系統",
+        "加盟營運模型"
+      ],
+      "visual_scene": "A clean formula board made of glowing modular blocks assembling into one solo business engine. Use STAR Color as the central result.",
+      "chart_or_structure": "Six ingredient blocks converge into one large result block: 一個人的 AI 美業經濟.",
+      "prompt": "Design a 16:9 strategic formula slide. Main headline must read 「STAR Color = 一個人的經濟」. Show six modular blocks with exact labels: 「AI 染髮技術」, 「標準化流程」, 「透明定價」, 「微型教育系統」, 「AI 行銷系統」, 「加盟營運模型」. The blocks converge into a premium glowing business engine. Keep text large, accurate, and minimal."
+    },
+    {
+      "page": 4,
+      "role": "ecosystem metaphor",
+      "headline": "一個人的經濟，背後是一整個生命體。",
+      "supporting_text": "加盟 STAR Color 不是從零開店，而是加入會學習、會支援、會複製的 AI 美業生命體。",
+      "must_include_text": [
+        "一個人的經濟，背後是一整個生命體。",
+        "骨架：幻色鏡方美業控股集團",
+        "大腦：Ewalk.ai",
+        "神經系統：大美好學院",
+        "血肉：STAR Color / STAR SPA",
+        "心臟：一個人的經濟",
+        "資料・顧客・內容・現金流"
+      ],
+      "visual_scene": "A refined organism-like AI beauty ecosystem diagram. Not biological horror, but elegant living network: central heart, brain node, training nervous system, brand service body, data flows.",
+      "chart_or_structure": "Living ecosystem map with five labeled nodes around a central heart.",
+      "prompt": "Create a 16:9 keynote slide with an elegant AI beauty ecosystem diagram. Main headline: 「一個人的經濟，背後是一整個生命體。」 Include exact node labels: 「骨架：幻色鏡方美業控股集團」, 「大腦：Ewalk.ai」, 「神經系統：大美好學院」, 「血肉：STAR Color / STAR SPA」, 「心臟：一個人的經濟」, and flow label 「資料・顧客・內容・現金流」. Make it premium, clear, and conference-ready."
+    },
+    {
+      "page": 5,
+      "role": "event promise",
+      "headline": "90 分鐘後，你會看懂三件事",
+      "supporting_text": "趨勢、系統、加入路徑。",
+      "must_include_text": [
+        "90 分鐘後，你會看懂三件事",
+        "趨勢",
+        "系統",
+        "加入",
+        "AI 與微型創業時代",
+        "可複製的經營模型",
+        "學習・就業・創業・加盟"
+      ],
+      "visual_scene": "A confident conference roadmap slide with three large milestone pillars, from market trend to STAR Color system to participation path.",
+      "chart_or_structure": "Three-step roadmap: 趨勢 -> 系統 -> 加入.",
+      "prompt": "Design a 16:9 roadmap slide. Main headline: 「90 分鐘後，你會看懂三件事」. Use three large pillars or milestone cards labeled 「趨勢」, 「系統」, 「加入」. Under them include exact short lines: 「AI 與微型創業時代」, 「可複製的經營模型」, 「學習・就業・創業・加盟」. Professional keynote style, strong spacing, no extra text."
+    },
+    {
+      "page": 6,
+      "role": "market pressure",
+      "headline": "美業的需求還在，但傳統做法越來越難。",
+      "supporting_text": "下一波機會不在更大的店，而在更容易複製的系統。",
+      "must_include_text": [
+        "美業的需求還在，但傳統做法越來越難。",
+        "人才難找",
+        "技術難教",
+        "成本提高",
+        "顧客要求透明與效率",
+        "更容易複製的系統"
+      ],
+      "visual_scene": "Split contrast between a pressured traditional salon and a streamlined AI-enabled compact beauty system. Business tension but optimistic solution.",
+      "chart_or_structure": "Four pressure indicators feeding into one solution label.",
+      "prompt": "Create a 16:9 market opportunity slide. Main headline: 「美業的需求還在，但傳統做法越來越難。」 Show four pressure indicators with exact labels: 「人才難找」, 「技術難教」, 「成本提高」, 「顧客要求透明與效率」. End with one large solution phrase: 「更容易複製的系統」. Use a polished visual contrast: old pressure on one side, AI system opportunity on the other."
+    },
+    {
+      "page": 7,
+      "role": "traditional risk",
+      "headline": "傳統染髮生意，最大的風險不是沒有客人。",
+      "supporting_text": "真正的風險是太依賴人。",
+      "must_include_text": [
+        "傳統染髮生意，最大的風險不是沒有客人。",
+        "太依賴人",
+        "顏色判斷靠經驗",
+        "服務品質靠手感",
+        "價格說明靠話術",
+        "訓練速度靠師徒制",
+        "回訪靠記憶與關係"
+      ],
+      "visual_scene": "A salon workflow risk map: many fragile human-dependent links shown as thin threads, contrasted with a stable system backbone.",
+      "chart_or_structure": "Five fragile links connected to the central risk label 太依賴人.",
+      "prompt": "Design a 16:9 risk diagnosis slide. Main headline: 「傳統染髮生意，最大的風險不是沒有客人。」 Make the central warning label 「太依賴人」 very clear. Around it show five fragile links labeled exactly: 「顏色判斷靠經驗」, 「服務品質靠手感」, 「價格說明靠話術」, 「訓練速度靠師徒制」, 「回訪靠記憶與關係」. Premium strategic consulting style, not too dark, readable text."
+    },
+    {
+      "page": 8,
+      "role": "customer change",
+      "headline": "現在的消費者，不只想變美，更想安心。",
+      "supporting_text": "AI 智能染髮讓美變得更可預期。",
+      "must_include_text": [
+        "現在的消費者，不只想變美，更想安心。",
+        "價格先知道",
+        "髮色不翻車",
+        "不被推銷",
+        "下次染回同樣顏色",
+        "流程清楚",
+        "更可預期"
+      ],
+      "visual_scene": "A modern customer consultation scene with transparent color preview, clear price display, calm trustful mood, AI-assisted hair color planning.",
+      "chart_or_structure": "Five customer certainty bubbles surrounding the conclusion 更可預期.",
+      "prompt": "Create a 16:9 customer insight slide. Main headline: 「現在的消費者，不只想變美，更想安心。」 Show five certainty bubbles with exact labels: 「價格先知道」, 「髮色不翻車」, 「不被推銷」, 「下次染回同樣顏色」, 「流程清楚」. Make the conclusion 「更可預期」 prominent. Premium salon consultation visual with AI color preview."
+    },
+    {
+      "page": 9,
+      "role": "solution overview",
+      "headline": "把染髮從「靠經驗」變成「靠系統」。",
+      "supporting_text": "STAR Color 用技術、流程、紀錄、訓練與行銷，組成可複製的智能染髮系統。",
+      "must_include_text": [
+        "把染髮從「靠經驗」變成「靠系統」。",
+        "STAR Color",
+        "AI 智能染髮機",
+        "App 配方調色",
+        "標準化服務流程",
+        "顧客色彩紀錄",
+        "透明均一價",
+        "大美好學院訓練系統",
+        "AI 髮色顧問",
+        "數位營運與行銷導流"
+      ],
+      "visual_scene": "A central STAR Color hub with orbiting modules, like a refined business operating system for AI hair coloring.",
+      "chart_or_structure": "Radial module system with STAR Color center and eight surrounding modules.",
+      "prompt": "Design a 16:9 system overview slide. Main headline: 「把染髮從「靠經驗」變成「靠系統」。」 Put 「STAR Color」 in the center. Around it show eight clear module labels: 「AI 智能染髮機」, 「App 配方調色」, 「標準化服務流程」, 「顧客色彩紀錄」, 「透明均一價」, 「大美好學院訓練系統」, 「AI 髮色顧問」, 「數位營運與行銷導流」. Premium radial system diagram, high contrast, readable."
+    },
+    {
+      "page": 10,
+      "role": "AI machine proof",
+      "headline": "50 秒，完成一份可被記錄的染髮配方。",
+      "supporting_text": "AI 不是取代人，而是讓一個人更快達到穩定專業。",
+      "must_include_text": [
+        "50 秒",
+        "完成一份可被記錄的染髮配方",
+        "單次精準調配 < 0.2G",
+        "快速調配髮色",
+        "降低人工判斷不穩定",
+        "服務品質更容易複製",
+        "AI 不是取代人，而是讓一個人更快達到穩定專業"
+      ],
+      "visual_scene": "Close-up of a sleek AI hair color mixing machine producing a precise formula, with digital measurement graphics and salon professional beside it.",
+      "chart_or_structure": "Large metric pair: 50 秒 and < 0.2G, plus three compact benefit points.",
+      "prompt": "Create a 16:9 proof slide about the AI hair-color machine. Make the biggest metric 「50 秒」. Include exact phrase 「完成一份可被記錄的染髮配方」. Include second metric 「單次精準調配 < 0.2G」. Add three benefit labels: 「快速調配髮色」, 「降低人工判斷不穩定」, 「服務品質更容易複製」. Bottom conclusion: 「AI 不是取代人，而是讓一個人更快達到穩定專業」. Premium technology close-up, clean, readable, no extra text."
+    }
+  ]
+}

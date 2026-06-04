@@ -1,0 +1,144 @@
+{
+  "mode": "enable-hansik",
+  "enabledAt": "2026-06-04T11:35:57.745Z",
+  "ok": true,
+  "status": 200,
+  "before": [
+    {
+      "name": "HIH_202606_Search_Brand_Map",
+      "resourceName": "customers/7287266360/campaigns/23907761963",
+      "status": "PAUSED",
+      "dailyBudgetTwd": 43
+    },
+    {
+      "name": "HIH_202606_Search_Delivery",
+      "resourceName": "customers/7287266360/campaigns/23912188936",
+      "status": "PAUSED",
+      "dailyBudgetTwd": 29
+    },
+    {
+      "name": "HIH_202606_Search_Local_KoreanHotpot",
+      "resourceName": "customers/7287266360/campaigns/23902684203",
+      "status": "PAUSED",
+      "dailyBudgetTwd": 71
+    }
+  ],
+  "result": {
+    "mutateOperationResponses": [
+      {
+        "campaignResult": {
+          "resourceName": "customers/7287266360/campaigns/23907761963",
+          "campaign": {
+            "resourceName": "customers/7287266360/campaigns/23907761963",
+            "status": "ENABLED",
+            "adServingOptimizationStatus": "OPTIMIZE",
+            "advertisingChannelType": "SEARCH",
+            "networkSettings": {
+              "targetGoogleSearch": true,
+              "targetSearchNetwork": false,
+              "targetContentNetwork": false,
+              "targetPartnerSearchNetwork": false,
+              "targetYoutube": false,
+              "targetGoogleTvNetwork": false
+            },
+            "manualCpc": {
+              "enhancedCpcEnabled": false
+            },
+            "geoTargetTypeSetting": {
+              "positiveGeoTargetType": "PRESENCE_OR_INTEREST",
+              "negativeGeoTargetType": "PRESENCE"
+            },
+            "name": "HIH_202606_Search_Brand_Map",
+            "id": "23907761963",
+            "campaignBudget": "customers/7287266360/campaignBudgets/15629019271",
+            "startDate": "2026-06-04",
+            "endDate": "2026-06-30",
+            "assetAutomationSettings": [
+              {
+                "assetAutomationType": "TEXT_ASSET_AUTOMATION",
+                "assetAutomationStatus": "OPTED_OUT"
+              }
+            ],
+            "containsEuPoliticalAdvertising": "DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING"
+          }
+        }
+      },
+      {
+        "campaignResult": {
+          "resourceName": "customers/7287266360/campaigns/23912188936",
+          "campaign": {
+            "resourceName": "customers/7287266360/campaigns/23912188936",
+            "status": "ENABLED",
+            "adServingOptimizationStatus": "OPTIMIZE",
+            "advertisingChannelType": "SEARCH",
+            "networkSettings": {
+              "targetGoogleSearch": true,
+              "targetSearchNetwork": false,
+              "targetContentNetwork": false,
+              "targetPartnerSearchNetwork": false,
+              "targetYoutube": false,
+              "targetGoogleTvNetwork": false
+            },
+            "manualCpc": {
+              "enhancedCpcEnabled": false
+            },
+            "geoTargetTypeSetting": {
+              "positiveGeoTargetType": "PRESENCE_OR_INTEREST",
+              "negativeGeoTargetType": "PRESENCE"
+            },
+            "name": "HIH_202606_Search_Delivery",
+            "id": "23912188936",
+            "campaignBudget": "customers/7287266360/campaignBudgets/15623679591",
+            "startDate": "2026-06-04",
+            "endDate": "2026-06-30",
+            "assetAutomationSettings": [
+              {
+                "assetAutomationType": "TEXT_ASSET_AUTOMATION",
+                "assetAutomationStatus": "OPTED_OUT"
+              }
+            ],
+            "containsEuPoliticalAdvertising": "DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING"
+          }
+        }
+      },
+      {
+        "campaignResult": {
+          "resourceName": "customers/7287266360/campaigns/23902684203",
+          "campaign": {
+            "resourceName": "customers/7287266360/campaigns/23902684203",
+            "status": "ENABLED",
+            "adServingOptimizationStatus": "OPTIMIZE",
+            "advertisingChannelType": "SEARCH",
+            "networkSettings": {
+              "targetGoogleSearch": true,
+              "targetSearchNetwork": false,
+              "targetContentNetwork": false,
+              "targetPartnerSearchNetwork": false,
+              "targetYoutube": false,
+              "targetGoogleTvNetwork": false
+            },
+            "manualCpc": {
+              "enhancedCpcEnabled": false
+            },
+            "geoTargetTypeSetting": {
+              "positiveGeoTargetType": "PRESENCE_OR_INTEREST",
+              "negativeGeoTargetType": "PRESENCE"
+            },
+            "name": "HIH_202606_Search_Local_KoreanHotpot",
+            "id": "23902684203",
+            "campaignBudget": "customers/7287266360/campaignBudgets/15629019277",
+            "startDate": "2026-06-04",
+            "endDate": "2026-06-30",
+            "assetAutomationSettings": [
+              {
+                "assetAutomationType": "TEXT_ASSET_AUTOMATION",
+                "assetAutomationStatus": "OPTED_OUT"
+              }
+            ],
+            "containsEuPoliticalAdvertising": "DOES_NOT_CONTAIN_EU_POLITICAL_ADVERTISING"
+          }
+        }
+      }
+    ]
+  }
+}

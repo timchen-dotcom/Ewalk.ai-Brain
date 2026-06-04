@@ -1,0 +1,30 @@
+{
+  "id": "toyota-altis-2020-white",
+  "status": "available",
+  "featured": true,
+  "title": "Toyota Altis 1.8 尊爵",
+  "brand": "Toyota",
+  "model": "Altis",
+  "year": "2020",
+  "grade": "尊爵版",
+  "price": "45.8萬",
+  "mileage": "52,000 km",
+  "color": "珍珠白",
+  "location": "台中可約看車",
+  "transmission": "自排",
+  "fuel": "汽油",
+  "highlights": [
+    "一手車",
+    "原廠保養紀錄",
+    "內裝乾淨"
+  ],
+  "description": "這裡放霖老師整理後的車況重點，建議用 3 至 5 句說清楚車源、車況、配備、適合誰，以及看車注意事項。",
+  "images": [
+    "assets/cars/toyota-altis-2020-white/01.jpg",
+    "assets/cars/toyota-altis-2020-white/02.jpg",
+    "assets/cars/toyota-altis-2020-white/03.jpg",
+    "assets/cars/toyota-altis-2020-white/04.jpg",
+    "assets/cars/toyota-altis-2020-white/05.jpg"
+  ],
+  "updatedAt": "2026-05-17"
+}

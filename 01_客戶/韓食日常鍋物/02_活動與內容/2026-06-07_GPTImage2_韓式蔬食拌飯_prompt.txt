@@ -1,0 +1,10 @@
+Use case: ads-marketing
+Asset type: Facebook/Instagram social post visual, vertical 1080x1350.
+Primary request: Create the final social media image for 韓食日常鍋物 featuring 韓式蔬食拌飯, using the product reference images only as food/composition reference. Do not copy the reference photo directly.
+Brand: 韓食日常鍋物, modern Korean hot pot / Korean everyday meal brand.
+Scene/backdrop: bright clean tabletop, modern Korean casual dining mood, fresh and appetizing, white/cream surface with subtle brand color graphic accents.
+Subject: a generous Korean vegetable bibimbap bowl in a stainless steel bowl with rice, spinach greens, sliced zucchini, carrot, shiitake mushrooms, yellow egg strips, bean sprouts, and a small dish of red gochujang sauce nearby. Food should look like real restaurant serving, colorful but not exaggerated.
+Composition: vertical poster, hero food bowl fills lower two-thirds, clean negative space in upper area for simple headline. Add restrained graphic blocks/curves in Hermes orange #F37021, deep navy #0B2545, pure warm white #FAFAF7, and a touch of fresh green. Professional Taiwanese restaurant social post, polished but approachable.
+Text on image: include only these readable Traditional Chinese text elements: 「韓式蔬食拌飯」 and smaller line 「清爽也很有味道」. If text quality may degrade, prioritize food and clean layout.
+Style: high-end but friendly restaurant ad, bright natural light, crisp appetizing food detail, clean commercial photography with minimal modern design overlay.
+Avoid: do not include people, Korean hanbok, traditional heavy pattern, red-black BBQ aesthetic, oily greasy filter, cluttered text, fake coupons, prices, QR codes, watermarks, distorted bowls, unreadable fake text.

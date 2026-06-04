@@ -1,0 +1,294 @@
+{
+  "brand": "STAR Color",
+  "package": "簡報生成品牌包",
+  "updated_at": "2026-05-12",
+  "folders": {
+    "logo": {
+      "path": "assets/logo",
+      "status": "已補正式透明 Logo PNG",
+      "notes": "正式 Logo：assets/logo/star_color_logo_primary_transparent.png。建議後續再補 SVG / PDF / 深色背景反白版。"
+    },
+    "product": {
+      "path": "assets/product",
+      "status": "已補 AI 染髮機正式正面產品圖",
+      "notes": "正式機器正面圖：assets/product/star_color_ai_machine_front.png。後續仍建議補側面照、操作照、App UI。"
+    },
+    "reference": {
+      "path": "assets/reference",
+      "status": "已放入參考素材",
+      "notes": "包含素材總覽與既有 PPTX 抽出的媒體。"
+    },
+    "generated_style_samples": {
+      "path": "assets/generated_style_samples",
+      "status": "已放入 GPT Image 2 滿意樣張",
+      "notes": "前 5 頁整頁烘字樣張可作為風格參考，但不是正式 CIS 資產。"
+    },
+    "keynote_0512_current_style": {
+      "path": "assets/reference/keynote_0512_current_style",
+      "status": "primary_style_reference",
+      "notes": "提姆目前製作的 0512 Keynote 與抽出素材。後續簡報生成以此風格為主，包含星河科技舞台、藍紫光流、粉紫髮色能量、頁首與頁尾圖形化設計。"
+    },
+    "machine_vendor_keynote": {
+      "path": "assets/reference/machine_vendor_keynote",
+      "status": "machine_vendor_reference",
+      "notes": "機器廠商出場 Keynote 來源檔與抽出素材，供 AI 染髮機出場段落使用。"
+    },
+    "franchise_system_pptx": {
+      "path": "assets/reference/franchise_system_pptx",
+      "status": "franchise_system_reference",
+      "notes": "加盟體系資訊系統架構簡報來源檔，供後半段加盟、數位營運與分潤章節使用。"
+    },
+    "ad_performance_pptx": {
+      "path": "assets/reference/ad_performance_pptx",
+      "status": "ad_performance_reference",
+      "notes": "廣告投放數據簡報來源檔與抽出媒體，供行銷大腦前的廣告投手專家段落使用。"
+    },
+    "chairman_policy_pdf": {
+      "path": "assets/reference/chairman_policy_pdf",
+      "status": "chairman_policy_reference",
+      "notes": "許文元理事長政策、認證與經費來源 PDF，供結尾前政策經費段落使用。"
+    },
+    "store_design": {
+      "path": "assets/reference/store_design",
+      "status": "store_design_reference",
+      "notes": "STAR Color 店觀設計、門面招牌、玻璃門腰帶、NT / 999 立牌與室內模擬圖，供微型門店與加盟落地段落使用。"
+    }
+  },
+  "files": [
+    {
+      "path": "assets/reference/material_overview/STAR_Color_0520_素材總覽.jpg",
+      "type": "material_overview",
+      "status": "reference_only",
+      "usage": "快速查看既有 Logo、機器、圖表與封面方向，不建議直接拿來當乾淨素材。"
+    },
+    {
+      "path": "assets/reference/from_existing_pptx/star_color_existing_pptx_media_01.jpeg",
+      "type": "material_overview_from_pptx",
+      "status": "reference_only",
+      "usage": "既有 PPTX 抽出的素材總覽。"
+    },
+    {
+      "path": "assets/reference/from_existing_pptx/star_color_existing_pptx_media_02.jpeg",
+      "type": "slide_reference",
+      "status": "reference_only",
+      "usage": "既有 PPTX 抽出的流程或教育體系參考。"
+    },
+    {
+      "path": "assets/reference/from_existing_pptx/star_color_existing_pptx_media_03.jpeg",
+      "type": "slide_reference",
+      "status": "reference_only",
+      "usage": "既有 PPTX 抽出的參考圖。"
+    },
+    {
+      "path": "assets/reference/from_existing_pptx/star_color_existing_pptx_media_04.jpeg",
+      "type": "slide_reference",
+      "status": "reference_only",
+      "usage": "既有 PPTX 抽出的參考圖。"
+    },
+    {
+      "path": "assets/reference/from_existing_pptx/star_color_existing_pptx_media_05.jpeg",
+      "type": "slide_reference",
+      "status": "reference_only",
+      "usage": "既有 PPTX 抽出的參考圖。"
+    },
+    {
+      "path": "assets/generated_style_samples/fullslide_sample_page_01.png",
+      "type": "generated_style_sample",
+      "status": "approved_direction",
+      "usage": "GPT Image 2 整頁烘字風格參考。"
+    },
+    {
+      "path": "assets/generated_style_samples/fullslide_sample_page_02.png",
+      "type": "generated_style_sample",
+      "status": "approved_direction",
+      "usage": "GPT Image 2 整頁烘字風格參考。"
+    },
+    {
+      "path": "assets/generated_style_samples/fullslide_sample_page_03.png",
+      "type": "generated_style_sample",
+      "status": "approved_direction",
+      "usage": "GPT Image 2 整頁烘字風格參考。"
+    },
+    {
+      "path": "assets/generated_style_samples/fullslide_sample_page_04.png",
+      "type": "generated_style_sample",
+      "status": "approved_direction",
+      "usage": "GPT Image 2 整頁烘字風格參考。"
+    },
+    {
+      "path": "assets/generated_style_samples/fullslide_sample_page_05.png",
+      "type": "generated_style_sample",
+      "status": "approved_direction",
+      "usage": "GPT Image 2 整頁烘字風格參考。"
+    },
+    {
+      "path": "STAR_Color_0512_Keynote風格基準.md",
+      "type": "style_guideline",
+      "status": "primary_rule",
+      "usage": "0512 Keynote 主視覺、頁首/頁尾、色彩與版面規範。"
+    },
+    {
+      "path": "STAR_Color_0511內容與圖表資料庫.md",
+      "type": "content_database",
+      "status": "source_of_truth",
+      "usage": "讀取 STAR_Color_0520加盟簡報0511.md 後整理出的可擴寫內容、可用數字與圖表素材。"
+    },
+    {
+      "path": "assets/reference/keynote_0512_current_style/STAR_Color_0520_大會簡報0512.key",
+      "type": "keynote_source",
+      "status": "primary_style_reference",
+      "usage": "提姆目前製作的 Keynote 原始檔備份與風格基準。"
+    },
+    {
+      "path": "assets/reference/keynote_0512_current_style/preview.jpg",
+      "type": "keynote_preview",
+      "status": "primary_style_reference",
+      "usage": "0512 Keynote 封面風格預覽：星河光流、AI 染髮機、人物、藍紫舞台。"
+    },
+    {
+      "path": "assets/reference/keynote_0512_current_style/preview-web.jpg",
+      "type": "keynote_preview",
+      "status": "primary_style_reference",
+      "usage": "0512 Keynote web 預覽。"
+    },
+    {
+      "path": "assets/logo/star_color_logo_primary_transparent.png",
+      "type": "official_logo",
+      "status": "approved_asset",
+      "usage": "STAR Color 正式透明 PNG Logo，673x264。需要精準 Logo 時，優先用後製或版面工具疊放，不要讓 GPT Image 2 自行重畫。"
+    },
+    {
+      "path": "assets/product/star_color_ai_machine_front.png",
+      "type": "official_product_image",
+      "status": "approved_asset",
+      "usage": "AI 染髮機正式正面產品圖，1414x2000。生成或後製機器視覺時優先參考此圖；不要自由發明不同機型。"
+    },
+    {
+      "path": "STAR_Color_機器廠商出場資料庫.md",
+      "type": "content_database",
+      "status": "machine_vendor_source",
+      "usage": "AI 染髮機出場、機器廠商上台、雲端配色中心與技術可信度段落資料庫；安排於 STAR Color 解法總覽後、AI 染髮機 50 秒配方頁前。"
+    },
+    {
+      "path": "assets/reference/machine_vendor_keynote/芯色彩.pptx520優化版.key",
+      "type": "keynote_source",
+      "status": "machine_vendor_reference",
+      "usage": "機器廠商出場 Keynote 來源備份。"
+    },
+    {
+      "path": "assets/reference/machine_vendor_keynote/extracted/machine_vendor_contact_sheet.jpg",
+      "type": "contact_sheet",
+      "status": "machine_vendor_reference",
+      "usage": "機器廠商 Keynote 抽出圖片縮圖總覽，供快速確認機器、髮膏、案例與雲端系統素材。"
+    },
+    {
+      "path": "assets/reference/machine_vendor_keynote/extracted/Data",
+      "type": "source_media_folder",
+      "status": "machine_vendor_reference",
+      "usage": "機器廠商 Keynote 抽出的圖片素材，可作為 AI 染髮機出場段落的視覺參考。"
+    },
+    {
+      "path": "STAR_Color_加盟資訊系統資料庫.md",
+      "type": "content_database",
+      "status": "franchise_system_source",
+      "usage": "後半段加盟資訊系統、三端 App、雲端資料層與獎金分潤系統資料庫。"
+    },
+    {
+      "path": "assets/reference/franchise_system_pptx/STAR_COLOR_加盟體系資訊系統架構簡報.pptx",
+      "type": "source_pptx",
+      "status": "franchise_system_reference",
+      "usage": "加盟體系資訊系統架構簡報來源備份。"
+    },
+    {
+      "path": "STAR_Color_廣告投放數據資料庫.md",
+      "type": "content_database",
+      "status": "ad_performance_source",
+      "usage": "廣告投放數據、受眾洞察與行銷大腦前導段落資料庫；安排於加盟系統後、Ewalk.ai 行銷大腦前。"
+    },
+    {
+      "path": "assets/reference/ad_performance_pptx/廣告投放數據.pptx",
+      "type": "source_pptx",
+      "status": "ad_performance_reference",
+      "usage": "廣告投放數據來源備份。"
+    },
+    {
+      "path": "assets/reference/ad_performance_pptx/media",
+      "type": "source_media_folder",
+      "status": "ad_performance_reference",
+      "usage": "廣告投放簡報抽出的圖片與影片素材，可作為投手專家段落的視覺參考。"
+    },
+    {
+      "path": "STAR_Color_許文元理事長政策經費資料庫.md",
+      "type": "content_database",
+      "status": "chairman_policy_source",
+      "usage": "結尾段前許文元理事長政策、認證、經費來源與行動提醒段落資料庫。"
+    },
+    {
+      "path": "assets/reference/chairman_policy_pdf/簡報1150506.pdf",
+      "type": "source_pdf",
+      "status": "chairman_policy_reference",
+      "usage": "許文元理事長政策經費段落來源 PDF 備份。"
+    },
+    {
+      "path": "STAR_Color_門店設計資產資料庫.md",
+      "type": "content_database",
+      "status": "store_design_source",
+      "usage": "門店設計、微型店型、加盟落地與實體店可信度段落資料庫。"
+    },
+    {
+      "path": "assets/reference/store_design/store_design_C_04.jpg",
+      "type": "store_design_reference",
+      "status": "approved_reference",
+      "usage": "沙發上方無框畫 / 室內牆面主視覺尺寸圖。"
+    },
+    {
+      "path": "assets/reference/store_design/store_design_ol_01.jpg",
+      "type": "store_design_reference",
+      "status": "approved_reference",
+      "usage": "門頭招牌與兩側 NT / 999 立牌設計圖。"
+    },
+    {
+      "path": "assets/reference/store_design/store_design_ol_02.jpg",
+      "type": "store_design_reference",
+      "status": "approved_reference",
+      "usage": "牆面帆布與玻璃門腰帶設計圖。"
+    },
+    {
+      "path": "assets/reference/store_design/store_design_ol_03.jpg",
+      "type": "store_design_reference",
+      "status": "approved_reference",
+      "usage": "櫃檯後方 Logo 字與空間配置。"
+    },
+    {
+      "path": "assets/reference/store_design/store_design_ol_04.jpg",
+      "type": "store_design_reference",
+      "status": "approved_reference",
+      "usage": "室內沙發牆面主視覺尺寸圖。"
+    },
+    {
+      "path": "assets/reference/store_design/store_design_ol_05.jpg",
+      "type": "store_design_reference",
+      "status": "approved_reference",
+      "usage": "門頭招牌整合設計圖。"
+    },
+    {
+      "path": "assets/reference/store_design/store_design_mockup_exterior.jpg",
+      "type": "store_design_reference",
+      "status": "approved_reference",
+      "usage": "實景門面模擬圖，可作為加盟落地場景參考。"
+    },
+    {
+      "path": "assets/reference/store_design/store_design_mockup_interior.jpg",
+      "type": "store_design_reference",
+      "status": "approved_reference",
+      "usage": "室內店觀模擬圖，可作為微型店面與等候區場景參考。"
+    }
+  ],
+  "style_reference_priority": [
+    "assets/reference/keynote_0512_current_style/preview.jpg",
+    "assets/reference/keynote_0512_current_style/STAR_Color_0520_大會簡報0512.key",
+    "assets/generated_style_samples/fullslide_sample_page_01.png",
+    "assets/reference/store_design/store_design_mockup_exterior.jpg",
+    "assets/reference/store_design/store_design_mockup_interior.jpg"
+  ]
+}

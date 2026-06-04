@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="霖老師的模範生車庫，嚴選中古車在庫資訊，提供車況、售價、照片與 LINE 詢問入口。"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:title" content="霖老師的模範生車庫" />
+    <meta
+      property="og:description"
+      content="霖老師嚴選中古車在庫資訊，提供車況重點、售價、照片與 LINE 詢問入口。"
+    />
+    <meta property="og:image" content="./assets/brand/lin-teacher-logo.png" />
+    <title>霖老師的模範生車庫</title>
+    <link rel="stylesheet" href="./styles.css?v=20260517-photo-contain" />
+    <script src="./garage-data.js"></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand-lockup" href="#inventory" aria-label="回到在庫車列表">
+        <img id="brandLogo" src="./assets/brand/lin-teacher-logo.png" alt="中古車補教名師霖老師 LOGO" />
+        <span>
+          <strong id="brandTitle">霖老師的模範生車庫</strong>
+          <small id="brandSubtitle">中古車補教名師嚴選在庫車</small>
+        </span>
+      </a>
+      <nav class="header-actions" aria-label="主要操作">
+        <a href="#inventory">在庫車</a>
+        <a id="headerPhone" href="tel:0916056554">電話詢問</a>
+        <a id="headerLine" class="solid-action" href="https://lin.ee/ZvB7HAX" target="_blank" rel="noopener">LINE 詢問</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="garage-hero" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <p class="eyebrow">MODEL STUDENT GARAGE</p>
+          <h1 id="heroTitle">霖老師的模範生車庫</h1>
+          <p id="brandTagline">專業嚴選、透明資訊、安心詢問</p>
+          <div class="hero-actions">
+            <a id="heroLine" class="button primary" href="https://lin.ee/ZvB7HAX" target="_blank" rel="noopener">
+              詢問在庫車
+            </a>
+            <a id="heroPhone" class="button secondary" href="tel:0916056554">電話聯繫</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="車庫狀態">
+          <img src="./assets/brand/lin-teacher-logo.png" alt="" />
+          <dl>
+            <div>
+              <dt>在庫車</dt>
+              <dd><span id="inventoryCount">0</span> 台</dd>
+            </div>
+            <div>
+              <dt>最新更新</dt>
+              <dd id="lastUpdated">2026-05-17</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="inventory-section" id="inventory" aria-labelledby="inventoryTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">CURRENT INVENTORY</p>
+            <h2 id="inventoryTitle">嚴選在庫車</h2>
+          </div>
+          <p id="inventorySummary">目前在庫 0 台</p>
+        </div>
+
+        <form class="inventory-toolbar" id="filterForm" role="search">
+          <label>
+            搜尋
+            <input id="keywordInput" type="search" placeholder="品牌、車型、年份、車色" autocomplete="off" />
+          </label>
+          <label>
+            預算
+            <select id="budgetSelect">
+              <option value="all">全部預算</option>
+              <option value="under50">50 萬以下</option>
+              <option value="50to80">50 至 80 萬</option>
+              <option value="80to120">80 至 120 萬</option>
+              <option value="over120">120 萬以上</option>
+            </select>
+          </label>
+          <label>
+            排序
+            <select id="sortSelect">
+              <option value="newest">最新上架</option>
+              <option value="priceAsc">售價由低到高</option>
+              <option value="priceDesc">售價由高到低</option>
+              <option value="yearDesc">年份由新到舊</option>
+            </select>
+          </label>
+        </form>
+
+        <div class="vehicle-grid" id="vehicleGrid" aria-live="polite"></div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <img src="./assets/brand/lin-teacher-logo.png" alt="" />
+          <h3>目前暫無公開在庫車</h3>
+          <p>新車輛整理完成後，這裡會同步更新照片、車況重點與詢問入口。</p>
+          <a id="emptyLine" class="button primary" href="https://lin.ee/ZvB7HAX" target="_blank" rel="noopener">先用 LINE 詢問</a>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="vehicle-dialog" id="vehicleDialog" aria-labelledby="dialogTitle">
+      <div class="dialog-shell">
+        <button class="icon-button" id="closeDialog" type="button" aria-label="關閉車輛詳情">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+
+        <div class="detail-gallery">
+          <div class="detail-main-photo" id="detailMainPhoto"></div>
+          <div class="thumbnail-row" id="thumbnailRow"></div>
+        </div>
+
+        <article class="detail-content">
+          <p class="eyebrow" id="dialogStatus">嚴選在庫</p>
+          <h2 id="dialogTitle">車型名稱</h2>
+          <p class="detail-price" id="dialogPrice">售價洽詢</p>
+
+          <dl class="detail-specs" id="dialogSpecs"></dl>
+
+          <div class="detail-block">
+            <h3>車況重點</h3>
+            <ul id="dialogHighlights"></ul>
+          </div>
+
+          <div class="detail-block">
+            <h3>霖老師說明</h3>
+            <p id="dialogDescription"></p>
+          </div>
+
+          <div class="dialog-actions">
+            <a id="dialogLine" class="button primary" href="https://lin.ee/ZvB7HAX" target="_blank" rel="noopener">LINE 詢問這台車</a>
+            <a id="dialogPhone" class="button secondary" href="tel:0916056554">電話聯繫</a>
+          </div>
+        </article>
+      </div>
+    </dialog>
+
+    <noscript>
+      <p class="noscript">請開啟瀏覽器 JavaScript 以查看在庫車列表。</p>
+    </noscript>
+  </body>
+</html>

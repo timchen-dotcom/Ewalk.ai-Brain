@@ -1,0 +1,167 @@
+{
+  "client": "韓食日常鍋物",
+  "generatedAt": "2026-06-03T10:44:19.649Z",
+  "graphVersion": "v25.0",
+  "mode": "dry-run",
+  "livePolicy": "所有 Campaign / Ad Set / Ad 正式建立時一律使用 PAUSED；ACTIVE 需提姆先生另行批准。",
+  "adAccountId": "act_1628673485077920",
+  "pageId": "1082884688247950",
+  "campaignPayload": {
+    "name": "HIH_202606_OpeningPromo_Meta_Local",
+    "objective": "OUTCOME_TRAFFIC",
+    "status": "PAUSED",
+    "special_ad_categories": [],
+    "daily_budget": 214,
+    "bid_strategy": "LOWEST_COST_WITHOUT_CAP"
+  },
+  "schedule": {
+    "startTime": "2026-06-03T00:00:00+0800",
+    "endTime": "2026-06-30T23:59:00+0800"
+  },
+  "location": {
+    "latitude": 22.9830414,
+    "longitude": 120.1897276,
+    "radiusKm": 3
+  },
+  "taiwanUniversalBeneficiaryId": "1775945603789493",
+  "taiwanUniversalPayerId": "1775945603789493",
+  "ads": [
+    {
+      "campaign": "HIH_202606_OpeningPromo_Meta_Local",
+      "adSet": "Local_3km_Core",
+      "objective": "Traffic or Engagement",
+      "age": "18-44",
+      "geo": "店址周遭3公里",
+      "audience": "韓式料理、火鍋、餐廳、美食、聚餐",
+      "dailyBudgetReferenceTwd": 85,
+      "creativePath": "/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/01_客戶/韓食日常鍋物/04_素材/Generated/2026-06_開幕慶廣告/Image2_FullDesign/Final_v4/2026-06-03_韓食日常鍋物_開幕慶廣告_魚漿正確版_4x5_v4.png",
+      "primaryText": "韓食日常鍋物 6/1-6/30 開幕慶。點鍋物，隨鍋送手工魚冊、手工魚餃、手工魚丸，共四顆。活動細節以現場公告為準。",
+      "primaryTextPreview": "韓食日常鍋物 6/1-6/30 開幕慶。點鍋物，隨鍋送手工魚冊、手工魚餃、手工魚丸，共四顆。活動細節以現場公告為準。",
+      "headline": "開幕慶｜鍋物送手工料",
+      "description": "6/1-6/30 開幕慶",
+      "cta": "導航前往",
+      "metaCtaType": "LEARN_MORE",
+      "destination": "https://www.google.com/maps/place/%E9%9F%93%E9%A3%9F%E6%97%A5%E5%B8%B8%E9%8D%8B%E7%89%A9+%E6%96%87%E5%8D%97%E5%BA%97/@22.9830414,120.1897276,1948m/data=!3m2!1e3!4b1!4m6!3m5!1s0x346e77f80f0cb895:0x25665092d56ed1cb!8m2!3d22.9830414!4d120.1897276!16s%2Fg%2F11z9rg471f?entry=ttu",
+      "destinationSource": "META_HANSIK_GOOGLE_MAPS_URL",
+      "status": "待建稿",
+      "targeting": {
+        "age_min": 18,
+        "age_max": 44,
+        "geo_locations": {
+          "custom_locations": [
+            {
+              "latitude": 22.9830414,
+              "longitude": 120.1897276,
+              "radius": 3,
+              "distance_unit": "kilometer"
+            }
+          ]
+        }
+      },
+      "blockers": []
+    },
+    {
+      "campaign": "HIH_202606_OpeningPromo_Meta_Local",
+      "adSet": "Local_5km_Delivery",
+      "objective": "Traffic or Engagement",
+      "age": "20-44",
+      "geo": "店址周遭5公里",
+      "audience": "Uber Eats、Foodpanda、外送、美食外送、晚餐",
+      "dailyBudgetReferenceTwd": 35,
+      "creativePath": "/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/01_客戶/韓食日常鍋物/04_素材/Generated/2026-06_開幕慶廣告/Image2_FullDesign/Final_v4/2026-06-03_韓食日常鍋物_開幕慶廣告_魚漿正確版_1x1_v4.png",
+      "primaryText": "想在家吃一鍋韓式熱湯？搜尋韓食日常，先查看 Uber Eats / Foodpanda。外送頁上架後使用。",
+      "primaryTextPreview": "想在家吃一鍋韓式熱湯？搜尋韓食日常，先查看 Uber Eats / Foodpanda。外送頁上架後使用。",
+      "headline": "韓式鍋物也能外送",
+      "description": "外送平台連結確認後上線",
+      "cta": "查看菜單",
+      "metaCtaType": "LEARN_MORE",
+      "destination": "https://shop.ichefpos.com/store/nNLhMqsW/ordering",
+      "destinationSource": "META_HANSIK_DELIVERY_URL",
+      "status": "待連結確認",
+      "targeting": {
+        "age_min": 20,
+        "age_max": 44,
+        "geo_locations": {
+          "custom_locations": [
+            {
+              "latitude": 22.9830414,
+              "longitude": 120.1897276,
+              "radius": 3,
+              "distance_unit": "kilometer"
+            }
+          ]
+        }
+      },
+      "blockers": []
+    },
+    {
+      "campaign": "HIH_202606_OpeningPromo_Meta_Local",
+      "adSet": "Student_Office_Meal",
+      "objective": "Traffic or Engagement",
+      "age": "18-35",
+      "geo": "店址周遭3-5公里",
+      "audience": "大學生、上班族、午餐、晚餐、平價美食",
+      "dailyBudgetReferenceTwd": 55,
+      "creativePath": "/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/01_客戶/韓食日常鍋物/04_素材/Generated/2026-06_開幕慶廣告/Image2_FullDesign/Final_v4/2026-06-03_韓食日常鍋物_開幕慶廣告_魚漿正確版_4x5_v4.png",
+      "primaryText": "附近想吃韓式鍋物？韓食日常鍋物開幕慶進行中，6/1-6/30 點鍋物隨鍋送手工料。",
+      "primaryTextPreview": "附近想吃韓式鍋物？韓食日常鍋物開幕慶進行中，6/1-6/30 點鍋物隨鍋送手工料。",
+      "headline": "附近韓式鍋物新選擇",
+      "description": "平日午餐、下班晚餐都適合",
+      "cta": "立即來店",
+      "metaCtaType": "LEARN_MORE",
+      "destination": "https://www.google.com/maps/place/%E9%9F%93%E9%A3%9F%E6%97%A5%E5%B8%B8%E9%8D%8B%E7%89%A9+%E6%96%87%E5%8D%97%E5%BA%97/@22.9830414,120.1897276,1948m/data=!3m2!1e3!4b1!4m6!3m5!1s0x346e77f80f0cb895:0x25665092d56ed1cb!8m2!3d22.9830414!4d120.1897276!16s%2Fg%2F11z9rg471f?entry=ttu",
+      "destinationSource": "META_HANSIK_GOOGLE_MAPS_URL",
+      "status": "待建稿",
+      "targeting": {
+        "age_min": 18,
+        "age_max": 35,
+        "geo_locations": {
+          "custom_locations": [
+            {
+              "latitude": 22.9830414,
+              "longitude": 120.1897276,
+              "radius": 3,
+              "distance_unit": "kilometer"
+            }
+          ]
+        }
+      },
+      "blockers": []
+    },
+    {
+      "campaign": "HIH_202606_OpeningPromo_Meta_Local",
+      "adSet": "IG_FB_Engagers",
+      "objective": "Traffic or Engagement",
+      "age": "18-44",
+      "geo": "店址周遭5公里",
+      "audience": "粉專互動、IG互動、影片觀看、私訊互動",
+      "dailyBudgetReferenceTwd": 39,
+      "creativePath": "/Users/chenjinting/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/01_客戶/韓食日常鍋物/04_素材/Generated/2026-06_開幕慶廣告/Image2_FullDesign/Final_v4/2026-06-03_韓食日常鍋物_開幕慶廣告_魚漿正確版_9x16_v4.png",
+      "primaryText": "熱熱一鍋，加上手工料。6/30 前來韓食日常鍋物，點鍋物就有手工料隨鍋附上。",
+      "primaryTextPreview": "熱熱一鍋，加上手工料。6/30 前來韓食日常鍋物，點鍋物就有手工料隨鍋附上。",
+      "headline": "今天晚餐來一鍋",
+      "description": "泡菜鍋、大醬湯、海鮮豆腐湯都適合",
+      "cta": "私訊詢問",
+      "metaCtaType": "MESSAGE_PAGE",
+      "destination": "https://www.facebook.com/profile.php?id=61589429556499",
+      "destinationSource": "META_HANSIK_MESSAGE_URL",
+      "status": "待建稿",
+      "targeting": {
+        "age_min": 18,
+        "age_max": 44,
+        "geo_locations": {
+          "custom_locations": [
+            {
+              "latitude": 22.9830414,
+              "longitude": 120.1897276,
+              "radius": 3,
+              "distance_unit": "kilometer"
+            }
+          ]
+        }
+      },
+      "blockers": []
+    }
+  ],
+  "blockers": []
+}

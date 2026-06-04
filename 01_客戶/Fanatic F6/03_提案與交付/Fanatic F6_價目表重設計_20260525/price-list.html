@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fanatic F6 Price List</title>
+  <style>
+    :root {
+      --paper: #f8f1e7;
+      --paper-soft: #fffaf2;
+      --ink: #3f2c1e;
+      --muted: #866e5b;
+      --line: #b79473;
+      --line-soft: rgba(183, 148, 115, 0.44);
+      --wash: #dccab4;
+      --accent: #684321;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #d8c7b4;
+      color: var(--ink);
+      font-family: "PingFang TC", "Noto Serif TC", "Songti TC", "Hiragino Mincho ProN", serif;
+      letter-spacing: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 0;
+    }
+
+    .sheet {
+      position: relative;
+      width: 1240px;
+      height: 1754px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 8%, rgba(255, 255, 255, 0.9), transparent 29%),
+        radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.72), transparent 25%),
+        radial-gradient(circle at 82% 82%, rgba(255, 255, 255, 0.62), transparent 28%),
+        linear-gradient(135deg, var(--paper-soft), var(--paper) 45%, #f3e7d8);
+      box-shadow: 0 22px 60px rgba(61, 42, 27, 0.22);
+    }
+
+    .sheet::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.18;
+      background:
+        repeating-linear-gradient(0deg, rgba(87, 60, 39, 0.06) 0 1px, transparent 1px 7px),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0 1px, transparent 1px 9px);
+      pointer-events: none;
+    }
+
+    .frame,
+    .frame::after {
+      position: absolute;
+      pointer-events: none;
+      border: 1.5px solid rgba(123, 88, 58, 0.55);
+    }
+
+    .frame {
+      inset: 30px;
+    }
+
+    .frame::after {
+      content: "";
+      inset: 10px;
+    }
+
+    .shape {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.74;
+    }
+
+    .shape.top-left {
+      width: 620px;
+      height: 320px;
+      left: -165px;
+      top: -92px;
+      border-radius: 0 0 68% 0;
+      background: rgba(218, 197, 174, 0.48);
+      transform: rotate(-8deg);
+    }
+
+    .shape.top-right {
+      width: 520px;
+      height: 300px;
+      right: -135px;
+      top: -68px;
+      border-radius: 0 0 0 70%;
+      background: rgba(122, 92, 65, 0.42);
+      transform: rotate(8deg);
+    }
+
+    .shape.bottom-left {
+      width: 410px;
+      height: 260px;
+      left: -125px;
+      bottom: -70px;
+      border-radius: 0 82% 0 0;
+      background: rgba(111, 80, 53, 0.44);
+      transform: rotate(4deg);
+    }
+
+    .shape.bottom-right {
+      width: 500px;
+      height: 260px;
+      right: -145px;
+      bottom: -54px;
+      border-radius: 85% 0 0 0;
+      background: rgba(229, 218, 205, 0.78);
+      transform: rotate(-8deg);
+    }
+
+    .leaf {
+      position: absolute;
+      z-index: 1;
+      width: 250px;
+      height: auto;
+      fill: none;
+      stroke: rgba(125, 91, 63, 0.52);
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      pointer-events: none;
+    }
+
+    .leaf.left {
+      left: 38px;
+      top: 38px;
+      transform: rotate(-8deg);
+    }
+
+    .leaf.right {
+      right: 52px;
+      bottom: 64px;
+      transform: rotate(4deg);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      padding: 86px 98px 92px;
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .brand-mark {
+      display: inline-block;
+      font-family: "Snell Roundhand", "Zapfino", "Apple Chancery", cursive;
+      font-size: 98px;
+      line-height: 0.88;
+      color: #4a2e18;
+      transform: translateY(8px);
+    }
+
+    .brand-name {
+      margin-top: -6px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      line-height: 1;
+      font-weight: 500;
+      text-transform: lowercase;
+    }
+
+    .brand-sub {
+      margin-top: 18px;
+      font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .spark {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin: 0 24px;
+      background: var(--ink);
+      clip-path: polygon(50% 0, 58% 42%, 100% 50%, 58% 58%, 50% 100%, 42% 58%, 0 50%, 42% 42%);
+      transform: translateY(-4px);
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 66px;
+      position: relative;
+    }
+
+    .columns::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      bottom: 4px;
+      left: 50%;
+      width: 1.5px;
+      background: linear-gradient(transparent, rgba(117, 83, 56, 0.68) 5%, rgba(117, 83, 56, 0.68) 95%, transparent);
+      transform: translateX(-33px);
+    }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 29px;
+    }
+
+    .section {
+      break-inside: avoid;
+    }
+
+    .section-title {
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr);
+      align-items: end;
+      gap: 14px;
+      padding-bottom: 11px;
+      margin-bottom: 14px;
+      border-bottom: 1.8px solid rgba(134, 95, 62, 0.56);
+    }
+
+    .section-title.compact {
+      grid-template-columns: 34px minmax(0, 1fr);
+      margin-top: -3px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "PingFang TC", serif;
+      font-size: 28px;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    .section-title.compact h2 {
+      font-size: 25px;
+    }
+
+    .section-title small {
+      font-family: "PingFang TC", "Noto Serif TC", serif;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .note {
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-left: 5px;
+    }
+
+    .icon {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      color: var(--accent);
+    }
+
+    .icon.filled {
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff8ef;
+    }
+
+    .icon svg {
+      width: 34px;
+      height: 34px;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .icon.filled svg {
+      width: 27px;
+      height: 27px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 16px;
+      align-items: baseline;
+      min-height: 41px;
+      font-size: 21px;
+      line-height: 1.28;
+    }
+
+    .row .label {
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .row .dots {
+      height: 1px;
+      border-bottom: 2px dotted rgba(157, 122, 92, 0.46);
+      transform: translateY(-5px);
+    }
+
+    .row .price {
+      min-width: 88px;
+      text-align: right;
+      font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: #352719;
+      white-space: nowrap;
+    }
+
+    .tier-block {
+      margin: 2px 0 0;
+      font-size: 21px;
+      line-height: 1.55;
+    }
+
+    .tier-block .length {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .tier-block .prices {
+      margin-top: 3px;
+      font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-size: 23px;
+    }
+
+    .fine-row .label {
+      font-size: 18px;
+    }
+
+    .fine-row .price {
+      font-size: 21px;
+    }
+
+    .final-note {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 3px;
+      padding-top: 1px;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .final-note small {
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .footer {
+      position: absolute;
+      z-index: 2;
+      left: 98px;
+      right: 98px;
+      bottom: 54px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      color: rgba(83, 58, 39, 0.48);
+      font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .footer::before,
+    .footer::after {
+      content: "";
+      height: 1px;
+      width: 160px;
+      background: rgba(128, 91, 61, 0.22);
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet" aria-label="Fanatic F6 價目表">
+    <div class="shape top-left"></div>
+    <div class="shape top-right"></div>
+    <div class="shape bottom-left"></div>
+    <div class="shape bottom-right"></div>
+    <div class="frame"></div>
+
+    <svg class="leaf left" viewBox="0 0 260 270" aria-hidden="true">
+      <path d="M42 238 C48 180 70 106 124 26" />
+      <path d="M58 188 C26 174 18 135 27 94 C62 117 74 150 58 188" />
+      <path d="M83 134 C48 116 39 75 52 38 C91 67 100 100 83 134" />
+      <path d="M111 86 C88 56 94 25 130 4 C143 39 137 67 111 86" />
+      <path d="M83 158 C125 127 166 124 212 146 C171 178 123 184 83 158" />
+      <path d="M105 104 C143 70 186 60 232 72 C194 108 149 123 105 104" />
+      <path d="M55 187 C80 168 103 158 132 156" />
+      <path d="M83 134 C102 116 121 106 148 102" />
+      <path d="M111 86 C124 65 134 48 141 26" />
+    </svg>
+
+    <svg class="leaf right" viewBox="0 0 260 270" aria-hidden="true">
+      <path d="M42 238 C48 180 70 106 124 26" />
+      <path d="M58 188 C26 174 18 135 27 94 C62 117 74 150 58 188" />
+      <path d="M83 134 C48 116 39 75 52 38 C91 67 100 100 83 134" />
+      <path d="M111 86 C88 56 94 25 130 4 C143 39 137 67 111 86" />
+      <path d="M83 158 C125 127 166 124 212 146 C171 178 123 184 83 158" />
+      <path d="M105 104 C143 70 186 60 232 72 C194 108 149 123 105 104" />
+      <path d="M55 187 C80 168 103 158 132 156" />
+      <path d="M83 134 C102 116 121 106 148 102" />
+      <path d="M111 86 C124 65 134 48 141 26" />
+    </svg>
+
+    <section class="content">
+      <header class="brand">
+        <div>
+          <span class="spark"></span>
+          <span class="brand-mark">f6</span>
+          <span class="spark"></span>
+        </div>
+        <div class="brand-name">fanatic</div>
+        <div class="brand-sub">Hair Salon</div>
+      </header>
+
+      <div class="columns">
+        <div class="col">
+          <section class="section">
+            <div class="section-title">
+              <div class="icon">
+                <svg viewBox="0 0 40 40"><path d="M13 14h11v21H13z"/><path d="M16 10h5v4h-5z"/><path d="M25 22h7v13h-7z"/><path d="M27 18h3v4h-3z"/></svg>
+              </div>
+              <h2>SHAMPOO <small>洗髮 &amp; CUT 剪髮</small></h2>
+            </div>
+            <div class="row"><span class="label">質感洗髮修剪到海</span><span class="dots"></span><span class="price">600</span></div>
+            <div class="row"><span class="label">質感洗髮</span><span class="dots"></span><span class="price">500</span></div>
+            <div class="row"><span class="label">醫美 SPA 洗髮</span><span class="dots"></span><span class="price">1000</span></div>
+            <div class="row"><span class="label">剪髮</span><span class="dots"></span><span class="price">800 / 900 / 1000 / 1200</span></div>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <div class="icon filled">
+                <svg viewBox="0 0 40 40"><path d="M9 9l22 22"/><path d="M31 9L9 31"/><circle cx="10" cy="30" r="3.5"/><circle cx="30" cy="30" r="3.5"/></svg>
+              </div>
+              <h2>STYLE <small>造型</small></h2>
+            </div>
+            <div class="row"><span class="label">造型</span><span class="dots"></span><span class="price">400~1200</span></div>
+            <div class="row"><span class="label">電棒造型</span><span class="dots"></span><span class="price">200~600</span></div>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <div class="icon filled">
+                <svg viewBox="0 0 40 40"><path d="M20 5C14 12 10 18 10 25a10 10 0 0 0 20 0C30 18 26 12 20 5z"/><path d="M17 29c5-2 7-6 7-12"/></svg>
+              </div>
+              <h2>TREATMENT <small>結構式護髮</small></h2>
+            </div>
+            <div class="tier-block">
+              <div class="length">短 / 中 / 長 / 超長</div>
+              <div class="prices">1500 / 1800 / 2100 / 2300</div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-title compact">
+              <div class="icon">
+                <svg viewBox="0 0 40 40"><path d="M8 28c10-1 19-8 24-19"/><path d="M14 27c3-10 9-17 20-21"/><path d="M12 23c8 0 14-4 19-12"/><path d="M18 17c4 1 8 0 12-3"/></svg>
+              </div>
+              <h2>京喚羽護髮</h2>
+            </div>
+            <div class="tier-block">
+              <div class="length">短 / 中 / 長 / 超長</div>
+              <div class="prices">1500 / 1800 / 2100 / 2300</div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-title compact">
+              <div class="icon">
+                <svg viewBox="0 0 40 40"><path d="M13 34c5-8-4-12 1-20"/><path d="M21 34c5-8-4-12 1-20"/><path d="M29 34c5-8-4-12 1-20"/></svg>
+              </div>
+              <h2>PERM <small>燙髮</small></h2>
+            </div>
+            <div class="tier-block">
+              <div class="length">短 / 中 / 長 / 超長</div>
+              <div class="prices">3000 / 3500 / 4000 / 4500</div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-title compact">
+              <div class="icon">
+                <svg viewBox="0 0 40 40"><path d="M11 34c5-8-4-12 1-20"/><path d="M20 34c5-8-4-12 1-20"/><path d="M29 34c5-8-4-12 1-20"/></svg>
+              </div>
+              <h2>HOT PERM</h2>
+            </div>
+            <div class="tier-block">
+              <div class="length">短 / 中 / 長 / 超長</div>
+              <div class="prices">4100 / 4600 / 5100 / 5600</div>
+            </div>
+            <div class="row fine-row"><span class="label">局部燙髮（不打折扣）</span><span class="dots"></span><span class="price">1100</span></div>
+            <div class="row fine-row"><span class="label">染燙前保養</span><span class="dots"></span><span class="price">1400</span></div>
+          </section>
+        </div>
+
+        <div class="col">
+          <section class="section">
+            <div class="section-title">
+              <div class="icon">
+                <svg viewBox="0 0 40 40"><path d="M11 29c3-10 9-17 20-21"/><path d="M13 29c9 0 17-7 19-18"/><path d="M14 24c6 1 11-2 15-8"/><path d="M19 17c4 1 8 0 11-4"/></svg>
+              </div>
+              <h2>SCALP CARE <small>頭皮護理療程</small></h2>
+            </div>
+            <div class="row"><span class="label">頭皮賦活</span><span class="dots"></span><span class="price">1000</span></div>
+            <div class="row"><span class="label">頭皮養護</span><span class="dots"></span><span class="price">1000</span></div>
+            <div class="row"><span class="label">頭皮菁華</span><span class="dots"></span><span class="price">1000</span></div>
+            <div class="row"><span class="label">頭皮隔離</span><span class="dots"></span><span class="price">1000</span></div>
+            <div class="row"><span class="label">抗敏菁萃</span><span class="dots"></span><span class="price">1000</span></div>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <div class="icon">
+                <svg viewBox="0 0 40 40"><path d="M8 32l15-15"/><path d="M20 6l14 14"/><path d="M16 13l11 11"/><path d="M12 26l2 2"/><path d="M16 22l2 2"/><path d="M20 18l2 2"/></svg>
+              </div>
+              <h2>COLOR <small>染髮</small></h2>
+            </div>
+            <div class="row"><span class="label">短</span><span class="dots"></span><span class="price">2000</span></div>
+            <div class="row"><span class="label">中</span><span class="dots"></span><span class="price">2500</span></div>
+            <div class="row"><span class="label">長</span><span class="dots"></span><span class="price">3000</span></div>
+            <div class="row"><span class="label">超長</span><span class="dots"></span><span class="price">3400</span></div>
+          </section>
+
+          <section class="section">
+            <div class="section-title compact">
+              <div class="icon">
+                <svg viewBox="0 0 40 40"><path d="M20 5l3 11 11 4-11 4-3 11-4-11-10-4 10-4 4-11z"/></svg>
+              </div>
+              <h2>去色處理 <span class="note">（不打折扣）</span></h2>
+            </div>
+            <div class="row"><span class="label">短</span><span class="dots"></span><span class="price">2000</span></div>
+            <div class="row"><span class="label">中</span><span class="dots"></span><span class="price">2500</span></div>
+            <div class="row"><span class="label">長</span><span class="dots"></span><span class="price">3000</span></div>
+            <div class="row"><span class="label">超長</span><span class="dots"></span><span class="price">3400</span></div>
+          </section>
+
+          <section class="section">
+            <div class="section-title compact">
+              <div class="icon filled">
+                <svg viewBox="0 0 40 40"><circle cx="13" cy="14" r="2.5"/><circle cx="23" cy="12" r="2.5"/><circle cx="27" cy="23" r="2.5"/><circle cx="16" cy="26" r="2.5"/><path d="M20 6a14 14 0 1 0 13 19c-4 2-8 1-9-2-1-4 4-5 6-8A14 14 0 0 0 20 6z"/></svg>
+              </div>
+              <h2>挑染 / 補染</h2>
+            </div>
+            <div class="row"><span class="label">局部挑染</span><span class="dots"></span><span class="price">1000</span></div>
+            <div class="row fine-row"><span class="label">髮根補染（不打折扣）</span><span class="dots"></span><span class="price">1700</span></div>
+          </section>
+
+          <section class="section">
+            <div class="section-title compact">
+              <div class="icon">
+                <svg viewBox="0 0 40 40"><path d="M12 7h16l-2 25H14L12 7z"/><path d="M15 14h10"/><path d="M16 24h8"/><path d="M28 10h4v17h-4"/></svg>
+              </div>
+              <h2>色彩保養 <span class="note">（不打折扣）</span></h2>
+            </div>
+            <div class="row"><span class="label">短</span><span class="dots"></span><span class="price">1800</span></div>
+            <div class="row"><span class="label">長</span><span class="dots"></span><span class="price">2000</span></div>
+          </section>
+
+          <section class="section">
+            <div class="final-note">
+              <div class="icon">
+                <svg viewBox="0 0 40 40"><path d="M12 33c4-8-4-10 0-18"/><path d="M20 33c4-8-4-10 0-18"/><path d="M28 33c4-8-4-10 0-18"/><circle cx="12" cy="34" r="2"/><circle cx="20" cy="34" r="2"/><circle cx="28" cy="34" r="2"/></svg>
+              </div>
+              <div>接髮服務 <small>（價格面議）</small></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Fanatic F6 Price List</div>
+  </main>
+</body>
+</html>

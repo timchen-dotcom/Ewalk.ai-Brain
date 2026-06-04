@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>正官庄 AI 行銷稽核系統 Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <section class="login-view" id="loginView" data-testid="login-view">
+      <div class="login-brand">
+        <div class="brand-line"></div>
+        <div class="brand-lockup">
+          <img src="./assets/logo-BTJOMqsm.png" alt="正官庄 logo" />
+          <span>
+            <strong>正官庄</strong>
+            <small>JUNG KWAN JANG</small>
+          </span>
+        </div>
+        <div class="login-copy">
+          <p>Internal Marketing Compliance Workspace</p>
+          <h1>AI 行銷稽核系統</h1>
+          <span>內部員工專用。所有生成行為先稽核，再產出，再送審。</span>
+        </div>
+        <div class="login-metrics" aria-label="demo metrics">
+          <div>
+            <b>214</b>
+            <span>本月稽核</span>
+          </div>
+          <div>
+            <b>32</b>
+            <span>紅燈攔截</span>
+          </div>
+          <div>
+            <b>76</b>
+            <span>通過素材</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="login-panel" id="loginForm">
+        <p class="section-kicker">SECURE SIGN IN</p>
+        <h2>登入內部系統</h2>
+        <label>
+          帳號
+          <input name="email" type="email" value="marketing@kgc.demo" autocomplete="username" />
+        </label>
+        <label>
+          密碼
+          <input name="password" type="password" value="demo1234" autocomplete="current-password" />
+        </label>
+        <label>
+          身份
+          <select name="role" id="roleSelect">
+            <option value="staff">一般員工</option>
+            <option value="lead">行銷主管</option>
+            <option value="legal">法規／法務</option>
+            <option value="admin">管理者進階登入</option>
+          </select>
+        </label>
+        <button class="btn primary full" type="submit" data-testid="login-button">登入系統</button>
+        <button class="btn ghost full" type="button" id="adminQuickLogin">以管理者進階登入</button>
+        <p class="form-note">Demo 密碼固定為 demo1234。正式版需串接企業帳號與二次驗證。</p>
+      </form>
+    </section>
+
+    <div class="app-shell" id="appShell" hidden>
+      <aside class="sidebar" aria-label="主選單">
+        <a class="app-brand" href="#dashboard" data-page-link="dashboard">
+          <img class="sidebar-logo" src="./assets/logo-BTJOMqsm.png" alt="正官庄 logo" />
+          <span>
+            <strong>正官庄 AI</strong>
+            <small>Compliance OS</small>
+          </span>
+        </a>
+
+        <div class="profile-box">
+          <span id="roleBadge">一般員工</span>
+          <strong id="profileName">Marketing Team</strong>
+          <small id="profileScope">僅可查看自己的送審紀錄</small>
+        </div>
+
+        <nav class="nav-list">
+          <a class="active" href="#dashboard" data-page-link="dashboard">儀表板</a>
+          <a href="#copy-generator" data-page-link="copy-generator">文案生成</a>
+          <a href="#image-generator" data-page-link="image-generator">圖像生成</a>
+          <a href="#copy-audit" data-page-link="copy-audit">文案稽核</a>
+          <a href="#video-audit" data-page-link="video-audit">影片稽查</a>
+          <a href="#sku-rules" data-page-link="sku-rules">SKU 規則庫</a>
+          <a href="#review-log" data-page-link="review-log">審核紀錄</a>
+          <a href="#admin-settings" data-page-link="admin-settings" data-admin-only>管理者設定</a>
+        </nav>
+
+        <button class="btn subtle full" type="button" id="logoutButton">登出</button>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="section-kicker" id="pageKicker">DASHBOARD</p>
+            <h1 id="pageTitle">儀表板</h1>
+          </div>
+          <div class="topbar-actions">
+            <span class="risk-alert">今日紅燈攔截 7 件</span>
+            <button class="btn primary" type="button" data-page-link-button="copy-audit">快速稽核</button>
+          </div>
+        </header>
+
+        <section class="page active" id="dashboard" data-title="儀表板" data-kicker="DASHBOARD">
+          <div class="metric-grid">
+            <article class="metric-card">
+              <span>本月生成素材</span>
+              <strong>128</strong>
+              <small>文案、圖像、影片腳本</small>
+            </article>
+            <article class="metric-card">
+              <span>本月稽核次數</span>
+              <strong>214</strong>
+              <small>含生成前與生成後</small>
+            </article>
+            <article class="metric-card danger">
+              <span>紅燈攔截</span>
+              <strong>32</strong>
+              <small>疾病、療效、醫療暗示</small>
+            </article>
+            <article class="metric-card warn">
+              <span>黃燈提醒</span>
+              <strong>56</strong>
+              <small>需人工覆核</small>
+            </article>
+            <article class="metric-card success">
+              <span>已通過素材</span>
+              <strong>76</strong>
+              <small>可進入素材庫</small>
+            </article>
+            <article class="metric-card">
+              <span>平均審核時間</span>
+              <strong>4.6h</strong>
+              <small>送審至結案</small>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel wide">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">QUEUE</p>
+                  <h2>今日待處理</h2>
+                </div>
+                <button class="btn small" type="button" data-page-link-button="review-log">查看全部</button>
+              </div>
+              <div class="queue-list">
+                <div class="queue-row">
+                  <span class="status-dot red"></span>
+                  <div>
+                    <strong>父親節禮盒 Meta 廣告文案</strong>
+                    <small>紅燈：預防感冒、改善疲勞</small>
+                  </div>
+                  <b>待修改</b>
+                </div>
+                <div class="queue-row">
+                  <span class="status-dot amber"></span>
+                  <div>
+                    <strong>EVERYTIME PLUS LINE 文案</strong>
+                    <small>黃燈：免疫調節語句需法規覆核</small>
+                  </div>
+                  <b>待覆核</b>
+                </div>
+                <div class="queue-row">
+                  <span class="status-dot green"></span>
+                  <div>
+                    <strong>中秋企業贈禮 EDM 首圖</strong>
+                    <small>通過初審，等待主管核准</small>
+                  </div>
+                  <b>待主管</b>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <p class="section-kicker">RISK RANKING</p>
+              <h2>風險類型排行</h2>
+              <div class="rank-list">
+                <span><b>療效詞</b><i style="--w: 90%"></i><em>18</em></span>
+                <span><b>疾病詞</b><i style="--w: 62%"></i><em>9</em></span>
+                <span><b>功效擴張</b><i style="--w: 52%"></i><em>7</em></span>
+                <span><b>醫療畫面</b><i style="--w: 38%"></i><em>5</em></span>
+              </div>
+            </article>
+
+            <article class="panel visual-panel">
+              <img src="./assets/jung-kwan-jang-product.jpg" alt="正官庄產品參考圖" />
+              <div>
+                <p class="section-kicker">BRAND GUARDRAIL</p>
+                <h2>稽核優先</h2>
+                <p>生成前先選 SKU，系統依產品分類套用不同規則，避免把食品或健康食品寫成藥效。</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page" id="copy-generator" data-title="文案生成" data-kicker="CHATGPT COPY GENERATION">
+          <div class="tool-layout">
+            <form class="panel tool-form" id="copyGeneratorForm">
+              <p class="section-kicker">INPUT</p>
+              <h2>生成前稽核條件</h2>
+              <label>SKU
+                <select name="sku">
+                  <option>紅蔘禮盒</option>
+                  <option>高麗蔘精 EVERYTIME PLUS</option>
+                  <option>天鹿精華飲</option>
+                </select>
+              </label>
+              <label>通路
+                <select name="channel">
+                  <option>Instagram</option>
+                  <option>Facebook</option>
+                  <option>LINE</option>
+                  <option>Meta Ads</option>
+                </select>
+              </label>
+              <label>用途
+                <select name="purpose">
+                  <option>父親節送禮</option>
+                  <option>中秋企業贈禮</option>
+                  <option>品牌故事</option>
+                  <option>KOL 口播</option>
+                </select>
+              </label>
+              <label>需求描述
+                <textarea name="brief">請生成父親節正官庄高麗蔘禮盒貼文，語氣溫暖高級，強調日常保養與送禮心意。</textarea>
+              </label>
+              <button class="btn primary full" type="submit" data-testid="generate-copy">模擬 ChatGPT 生成</button>
+            </form>
+
+            <article class="panel result-panel" id="copyGeneratorResult">
+              <p class="section-kicker">OUTPUT</p>
+              <h2>生成結果</h2>
+              <div class="audit-banner green">
+                <strong>綠燈</strong>
+                <span>已避開疾病、療效與醫療暗示。可送主管審核。</span>
+              </div>
+              <div class="copy-output">
+                <h3>父親節，把照顧化成一份溫潤心意</h3>
+                <p>正官庄高麗蔘禮盒，獻給每天為家人努力的爸爸。從嚴選原料到品質標準，讓日常保養多一份穩妥與體面。</p>
+                <b>CTA：前往門市或官方通路挑選父親節禮盒</b>
+              </div>
+              <div class="action-row">
+                <button class="btn" type="button">儲存草稿</button>
+                <button class="btn primary" type="button" id="sendCopyReview">送審</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page" id="image-generator" data-title="圖像生成" data-kicker="IMAGE2 GENERATION">
+          <div class="tool-layout">
+            <form class="panel tool-form" id="imageGeneratorForm">
+              <p class="section-kicker">INPUT</p>
+              <h2>image2 圖像條件</h2>
+              <label>SKU
+                <select>
+                  <option>紅蔘禮盒</option>
+                  <option>高麗蔘精 EVERYTIME PLUS</option>
+                </select>
+              </label>
+              <label>尺寸
+                <select>
+                  <option>1080 x 1350</option>
+                  <option>1080 x 1080</option>
+                  <option>1200 x 628</option>
+                </select>
+              </label>
+              <label>主題
+                <select>
+                  <option>父親節送禮</option>
+                  <option>中秋企業贈禮</option>
+                  <option>日常保養</option>
+                </select>
+              </label>
+              <label>Prompt
+                <textarea>以正官庄深紅、金色、米白為主視覺，生成父親節送禮社群圖。畫面包含高麗蔘禮盒、溫暖家庭餐桌、乾淨高級光線。不得出現醫療場景、白袍、疾病暗示、療效文字。</textarea>
+              </label>
+              <button class="btn primary full" type="submit">模擬 image2 生成</button>
+            </form>
+
+            <article class="panel image-preview">
+              <p class="section-kicker">PREVIEW</p>
+              <h2>生成預覽</h2>
+              <div class="generated-art" aria-label="父親節送禮視覺預覽">
+                <img src="./assets/jung-kwan-jang-product.jpg" alt="正官庄產品參考圖" />
+                <div>
+                  <span>FATHER'S DAY</span>
+                  <strong>把照顧化成一份心意</strong>
+                  <small>正官庄高麗蔘禮盒</small>
+                </div>
+              </div>
+              <div class="check-grid">
+                <span class="check ok">OCR 無療效文字</span>
+                <span class="check ok">無醫療場景</span>
+                <span class="check ok">品牌色符合</span>
+                <span class="check warn">Logo 需正式檔替換</span>
+              </div>
+              <button class="btn primary full" type="button">送審圖像</button>
+            </article>
+          </div>
+        </section>
+
+        <section class="page" id="copy-audit" data-title="文案稽核" data-kicker="COPY AUDIT">
+          <div class="tool-layout">
+            <form class="panel tool-form" id="auditForm">
+              <p class="section-kicker">INPUT</p>
+              <h2>貼上待查文案</h2>
+              <label>SKU
+                <select name="auditSku">
+                  <option>紅蔘禮盒</option>
+                  <option>高麗蔘精 EVERYTIME PLUS</option>
+                  <option>天鹿精華飲</option>
+                </select>
+              </label>
+              <label>發布通路
+                <select name="auditChannel">
+                  <option>Meta Ads</option>
+                  <option>Instagram</option>
+                  <option>LINE</option>
+                  <option>官網</option>
+                </select>
+              </label>
+              <label>原始文案
+                <textarea name="auditText" data-testid="audit-text">正官庄高麗蔘幫你改善疲勞、增強免疫力、預防感冒，是全家人的健康守護。</textarea>
+              </label>
+              <button class="btn primary full" type="submit" data-testid="run-audit">開始稽核</button>
+            </form>
+
+            <article class="panel result-panel" id="auditResult">
+              <p class="section-kicker">RESULT</p>
+              <h2>稽核結果</h2>
+              <div class="audit-banner red">
+                <strong>紅燈</strong>
+                <span>文案含疾病預防與療效暗示，禁止送出。</span>
+              </div>
+              <div class="highlight-copy" id="highlightCopy">
+                正官庄高麗蔘幫你 <mark>改善疲勞</mark>、<mark>增強免疫力</mark>、<mark>預防感冒</mark>，是全家人的健康守護。
+              </div>
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>問題詞</th>
+                    <th>等級</th>
+                    <th>原因</th>
+                    <th>建議</th>
+                  </tr>
+                </thead>
+                <tbody id="auditTableBody">
+                  <tr>
+                    <td>改善疲勞</td>
+                    <td><span class="pill red">紅燈</span></td>
+                    <td>涉及療效暗示</td>
+                    <td>改為日常精神補給或生活保養</td>
+                  </tr>
+                  <tr>
+                    <td>預防感冒</td>
+                    <td><span class="pill red">紅燈</span></td>
+                    <td>涉及疾病預防</td>
+                    <td>移除</td>
+                  </tr>
+                  <tr>
+                    <td>增強免疫力</td>
+                    <td><span class="pill amber">黃燈</span></td>
+                    <td>需確認健康食品核准功效</td>
+                    <td>送法規覆核或改寫</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="safe-rewrite">
+                <span>安全改寫</span>
+                <p id="safeRewrite">正官庄高麗蔘，給忙碌日常一份溫潤保養。季節轉換時，把照顧自己和家人的心意，變成每天都能做到的小習慣。</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page" id="video-audit" data-title="影片稽查" data-kicker="VIDEO AUDIT">
+          <div class="video-layout">
+            <article class="panel video-card">
+              <p class="section-kicker">UPLOAD</p>
+              <h2>KOL 影片／字幕稽查</h2>
+              <div class="upload-box">
+                <span>MP4 / SRT / TXT</span>
+                <strong>拖曳影片、字幕或逐字稿</strong>
+                <small>Demo 使用假資料模擬時間碼與風險片段</small>
+              </div>
+              <button class="btn primary full" type="button" id="runVideoAudit">開始影片稽查</button>
+            </article>
+            <article class="panel wide">
+              <p class="section-kicker">TIMECODE REPORT</p>
+              <h2>風險時間碼</h2>
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>時間碼</th>
+                    <th>等級</th>
+                    <th>類型</th>
+                    <th>原句／畫面</th>
+                    <th>建議</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>00:08</td>
+                    <td><span class="pill red">紅燈</span></td>
+                    <td>疾病預防</td>
+                    <td>預防感冒</td>
+                    <td>刪除</td>
+                  </tr>
+                  <tr>
+                    <td>00:15</td>
+                    <td><span class="pill red">紅燈</span></td>
+                    <td>療效暗示</td>
+                    <td>改善睡眠</td>
+                    <td>改為睡前日常保養情境</td>
+                  </tr>
+                  <tr>
+                    <td>00:27</td>
+                    <td><span class="pill amber">黃燈</span></td>
+                    <td>保健語句</td>
+                    <td>增強免疫力</td>
+                    <td>需確認 SKU 核准功效</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button class="btn" type="button">匯出剪輯修正清單</button>
+            </article>
+          </div>
+        </section>
+
+        <section class="page" id="sku-rules" data-title="SKU 規則庫" data-kicker="SKU RULE DATABASE">
+          <div class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">PRODUCT RULES</p>
+                <h2>產品分類與可用語言</h2>
+              </div>
+              <button class="btn primary" type="button">新增 SKU</button>
+            </div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>SKU</th>
+                  <th>分類</th>
+                  <th>許可／狀態</th>
+                  <th>通路</th>
+                  <th>風險設定</th>
+                  <th>狀態</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>高麗蔘精 EVERYTIME PLUS</td>
+                  <td>健康食品</td>
+                  <td>衛部健食字第 A00429 號</td>
+                  <td>LINE / IG / 官網</td>
+                  <td>不得擴張為疾病預防</td>
+                  <td><span class="pill green">啟用</span></td>
+                </tr>
+                <tr>
+                  <td>紅蔘禮盒</td>
+                  <td>品牌／禮贈內容</td>
+                  <td>待確認</td>
+                  <td>IG / Meta Ads / EDM</td>
+                  <td>送禮、品質、產地敘事</td>
+                  <td><span class="pill green">啟用</span></td>
+                </tr>
+                <tr>
+                  <td>天鹿精華飲</td>
+                  <td>待分類</td>
+                  <td>待確認</td>
+                  <td>禁止輸出功效文案</td>
+                  <td>未分類前黑燈鎖定</td>
+                  <td><span class="pill black">鎖定</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="page" id="review-log" data-title="審核紀錄" data-kicker="REVIEW LOG">
+          <div class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">ADMIN ACCESS</p>
+                <h2>生成、稽核與審核留痕</h2>
+              </div>
+              <button class="btn" type="button">匯出報告</button>
+            </div>
+            <div class="permission-banner" id="reviewPermission">
+              一般員工僅能查看自己的送審紀錄。完整紀錄需管理者進階登入。
+            </div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>素材 ID</th>
+                  <th>類型</th>
+                  <th>SKU</th>
+                  <th>建立者</th>
+                  <th>風險</th>
+                  <th>狀態</th>
+                  <th>審核者</th>
+                </tr>
+              </thead>
+              <tbody id="reviewRows">
+                <tr>
+                  <td>KGC-0521-018</td>
+                  <td>文案</td>
+                  <td>紅蔘禮盒</td>
+                  <td>Marketing A</td>
+                  <td><span class="pill red">紅燈</span></td>
+                  <td>待修改</td>
+                  <td>法規組</td>
+                </tr>
+                <tr>
+                  <td>KGC-0521-019</td>
+                  <td>圖像</td>
+                  <td>紅蔘禮盒</td>
+                  <td>Designer B</td>
+                  <td><span class="pill amber">黃燈</span></td>
+                  <td>待主管審核</td>
+                  <td>王經理</td>
+                </tr>
+                <tr>
+                  <td>KGC-0521-020</td>
+                  <td>影片</td>
+                  <td>EVERYTIME PLUS</td>
+                  <td>Agency C</td>
+                  <td><span class="pill red">紅燈</span></td>
+                  <td>待法規覆核</td>
+                  <td>法務</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="page" id="admin-settings" data-title="管理者設定" data-kicker="ADMIN SETTINGS">
+          <div class="admin-grid">
+            <article class="panel">
+              <p class="section-kicker">ACCOUNTS</p>
+              <h2>帳號與權限</h2>
+              <div class="setting-list">
+                <span><b>marketing@kgc.demo</b><em>一般員工</em></span>
+                <span><b>lead@kgc.demo</b><em>行銷主管</em></span>
+                <span><b>legal@kgc.demo</b><em>法規／法務</em></span>
+                <span><b>admin@kgc.demo</b><em>管理者</em></span>
+              </div>
+            </article>
+            <article class="panel">
+              <p class="section-kicker">GUARDRAILS</p>
+              <h2>風險詞庫</h2>
+              <div class="tag-cloud">
+                <span>治療</span>
+                <span>預防感冒</span>
+                <span>降血糖</span>
+                <span>抗病毒</span>
+                <span>改善睡眠</span>
+                <span>醫師推薦</span>
+              </div>
+            </article>
+            <article class="panel wide">
+              <p class="section-kicker">AUDIT REPORT</p>
+              <h2>月度稽核報告</h2>
+              <p class="muted">可匯出本月生成數、退件數、紅燈攔截、SKU 風險排行與審核者留痕。正式版會加上 PDF 報告。</p>
+              <button class="btn primary" type="button">產生月報</button>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>
