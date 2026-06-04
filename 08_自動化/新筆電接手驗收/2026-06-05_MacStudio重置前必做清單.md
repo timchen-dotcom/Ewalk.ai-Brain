@@ -79,6 +79,8 @@ HEAD = origin/main = 86a15b9f9c6ee218869dc1e978dfd9e740371f78
 
 以下項目需要在 Mac Studio 原主機上完成，不能只靠新筆電判定。
 
+原機操作手順：[[2026-06-05_MacStudio原機操作手順]]
+
 ### 1. 舊 Codex thread 交接摘要
 
 最低需要輸出或補完以下舊釘選 thread 的交接摘要：
