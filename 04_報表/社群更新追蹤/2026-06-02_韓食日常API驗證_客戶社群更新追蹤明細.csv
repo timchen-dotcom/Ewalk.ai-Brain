@@ -1,0 +1,2 @@
+clientId,clientName,owner,platform,displayName,source,weeklyTarget,weeklyActual,weeklyGap,monthlyTarget,monthlyExpectedToDate,monthlyActual,monthlyGapToDate,monthlyRemainingGap,status,needReminder,latestPostAt,latestPermalink
+hansik-daily-hotpot,韓食日常鍋物,阿順,facebook,韓食日常鍋物 FB 粉專,facebook_page_graph,3,2,1,12,1,2,0,10,稍微落後,true,2026-06-02 10:08,https://www.facebook.com/122101992501314318/posts/122105459433314318

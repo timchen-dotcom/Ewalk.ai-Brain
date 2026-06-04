@@ -1,0 +1,3 @@
+clientId,clientName,owner,platform,displayName,source,weeklyTarget,weeklyActual,weeklyGap,monthlyTarget,monthlyExpectedToDate,monthlyActual,monthlyGapToDate,monthlyRemainingGap,status,needReminder,latestPostAt,latestPermalink
+xxx-hair-stylist,XXX髮型師,客戶成功經理待指派,instagram,XXX髮型師 IG,sample,3,2,1,12,1,2,0,10,稍微落後,true,2026-06-02 15:10,https://www.instagram.com/p/sample-002/
+xxx-hair-stylist,XXX髮型師,客戶成功經理待指派,facebook,XXX髮型師 FB,sample,3,1,2,12,1,1,0,11,稍微落後,true,2026-06-01 19:00,https://www.facebook.com/sample/posts/fb_001

@@ -1,0 +1,2 @@
+clientId,clientName,staffId,staffName,role,owner,platform,displayName,source,weeklyTarget,weeklyActual,weeklyGap,monthlyTarget,monthlyExpectedToDate,monthlyActual,monthlyGapToDate,monthlyRemainingGap,status,needReminder,latestPostAt,latestPermalink
+thevision,TheVision,olivia,Olivia,髮型師 / 創始人,客戶成功經理待指派,instagram,Olivia IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2026-01-21 10:30,https://www.instagram.com/p/DTwYvc_E9JD/

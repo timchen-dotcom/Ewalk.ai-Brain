@@ -1,0 +1,6 @@
+clientId,clientName,staffId,staffName,role,owner,platform,displayName,source,weeklyTarget,weeklyActual,weeklyGap,monthlyTarget,monthlyExpectedToDate,monthlyActual,monthlyGapToDate,monthlyRemainingGap,status,needReminder,latestPostAt,latestPermalink,validationNote
+thevision,TheVision,olivia,Olivia,髮型師 / 創始人,客戶成功經理待指派,instagram,Olivia IG,apify_instagram_public,3,0,3,12,2,0,2,12,待確認,true,2026-01-02 13:44,https://www.instagram.com/p/DS_zj2jES2t/,Apify 回傳 owner 不符：thevision_salon、no_kay_do126；已排除不屬於 thevision_olivia 的貼文
+thevision,TheVision,nana,Nana,髮型師,客戶成功經理待指派,instagram,Nana IG,apify_instagram_public,3,0,3,12,2,0,2,12,待確認,true,2024-12-19 20:00,https://www.instagram.com/p/DDwcm0nh9VQ/,Apify 回傳 owner 不符：thevision_salon；已排除不屬於 thevision_nana 的貼文
+thevision,TheVision,luke,Luke,髮型師,客戶成功經理待指派,instagram,Luke IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2024-06-15 20:33,https://www.instagram.com/p/C8PIXdgp1Ky/,
+oc-hair-vogue,OC hair Vogue,akiwang,Akiwang,髮型師,客戶成功經理待指派,instagram,Akiwang IG,apify_instagram_public,3,0,3,12,2,0,2,12,待確認,true,2026-05-29 21:01,https://www.instagram.com/p/DY7Gj2fNv2p/,Apify 回傳 owner 不符：yunaro_tw、theopenhair；已排除不屬於 oc_akiwang 的貼文
+oc-hair-vogue,OC hair Vogue,lyra,Lyra,髮型師,客戶成功經理待指派,instagram,Lyra IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2026-05-29 19:00,https://www.instagram.com/p/DY64ympApqd/,

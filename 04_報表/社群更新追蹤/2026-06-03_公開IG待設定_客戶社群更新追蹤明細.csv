@@ -1,0 +1,2 @@
+clientId,clientName,owner,platform,displayName,source,weeklyTarget,weeklyActual,weeklyGap,monthlyTarget,monthlyExpectedToDate,monthlyActual,monthlyGapToDate,monthlyRemainingGap,status,needReminder,latestPostAt,latestPermalink
+thevision-designers,TheVision 設計師帳號,客戶成功經理待指派,instagram,TheVision Olivia IG,apify_instagram_public,3,0,3,12,2,0,2,12,待設定,true,,

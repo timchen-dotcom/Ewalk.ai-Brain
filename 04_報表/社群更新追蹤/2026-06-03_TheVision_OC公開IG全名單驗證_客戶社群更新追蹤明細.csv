@@ -1,0 +1,18 @@
+clientId,clientName,staffId,staffName,role,owner,platform,displayName,source,weeklyTarget,weeklyActual,weeklyGap,monthlyTarget,monthlyExpectedToDate,monthlyActual,monthlyGapToDate,monthlyRemainingGap,status,needReminder,latestPostAt,latestPermalink,validationNote
+thevision,TheVision,olivia,Olivia,髮型師 / 創始人,客戶成功經理待指派,instagram,Olivia IG,apify_instagram_public,3,0,3,12,2,0,2,12,待確認,true,2026-01-02 13:44,https://www.instagram.com/p/DS_zj2jES2t/,Apify 回傳 owner 不符：thevision_salon、no_kay_do126；已排除不屬於 thevision_olivia 的貼文
+thevision,TheVision,vanilla,Vanilla,髮型師,客戶成功經理待指派,instagram,Vanilla IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2026-05-26 13:06,https://www.instagram.com/p/DYyhzunRXW_/,
+thevision,TheVision,nana,Nana,髮型師,客戶成功經理待指派,instagram,Nana IG,apify_instagram_public,3,0,3,12,2,0,2,12,待確認,true,2024-12-19 20:00,https://www.instagram.com/p/DDwcm0nh9VQ/,Apify 回傳 owner 不符：thevision_salon；已排除不屬於 thevision_nana 的貼文
+thevision,TheVision,nico,Nico,髮型師,客戶成功經理待指派,instagram,Nico IG,apify_instagram_public,3,0,3,12,2,0,2,12,待確認,true,2025-06-25 23:33,https://www.instagram.com/p/DLVDUffJhkD/,Apify 回傳 owner 不符：thevision_salon；已排除不屬於 thevision_nico 的貼文
+thevision,TheVision,mandy,Mandy,髮型師,客戶成功經理待指派,instagram,Mandy IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2026-04-30 17:39,https://www.instagram.com/p/DXwEYW7j6XF/,
+thevision,TheVision,molly,Molly,髮型師,客戶成功經理待指派,instagram,Molly IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2026-05-24 20:53,https://www.instagram.com/p/DYuNtrej4Lz/,
+thevision,TheVision,luke,Luke,髮型師,客戶成功經理待指派,instagram,Luke IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2024-06-15 20:33,https://www.instagram.com/p/C8PIXdgp1Ky/,
+thevision,TheVision,kk,KK,髮型師,客戶成功經理待指派,instagram,KK IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2025-12-13 18:45,https://www.instagram.com/p/DSM2VueEfwo/,
+thevision,TheVision,hsu-mo,Hsu Mo,髮型師,客戶成功經理待指派,instagram,Hsu Mo IG,apify_instagram_public,3,0,3,12,2,0,2,12,待確認,true,2026-02-27 00:18,https://www.instagram.com/p/DVOjoaZkUrE/,Apify 回傳 owner 不符：thevision_salon；已排除不屬於 thevision_hsu.mo 的貼文
+thevision,TheVision,luta,Luta,髮型師,客戶成功經理待指派,instagram,Luta IG,apify_instagram_public,3,0,3,12,2,0,2,12,待確認,true,2024-11-24 12:54,https://www.instagram.com/p/DCvchLwJrn-/,Apify 回傳 owner 不符：blackee_621、no_kay_do126、thevision_salon；已排除不屬於 thevision_luta 的貼文
+thevision,TheVision,berry,Berry,髮型師,客戶成功經理待指派,instagram,Berry IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2026-05-11 23:26,https://www.instagram.com/p/DYNAdR5T09H/,
+oc-hair-vogue,OC hair Vogue,akiwang,Akiwang,髮型師,客戶成功經理待指派,instagram,Akiwang IG,apify_instagram_public,3,0,3,12,2,0,2,12,待確認,true,2026-05-29 21:01,https://www.instagram.com/p/DY7Gj2fNv2p/,Apify 回傳 owner 不符：yunaro_tw、theopenhair；已排除不屬於 oc_akiwang 的貼文
+oc-hair-vogue,OC hair Vogue,eide,Eide,髮型師,客戶成功經理待指派,instagram,Eide IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2026-05-07 15:39,https://www.instagram.com/p/DYB4QLcPcDk/,
+oc-hair-vogue,OC hair Vogue,lyra,Lyra,髮型師,客戶成功經理待指派,instagram,Lyra IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2026-05-29 19:00,https://www.instagram.com/p/DY64ympApqd/,
+oc-hair-vogue,OC hair Vogue,xmei,Xmei,髮型師,客戶成功經理待指派,instagram,Xmei IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2026-05-26 15:16,https://www.instagram.com/p/DYywUJezvzZ/,
+oc-hair-vogue,OC hair Vogue,orange,Orange,髮型師,客戶成功經理待指派,instagram,Orange IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2026-05-29 18:40,https://www.instagram.com/p/DY62GksCTRI/,
+oc-hair-vogue,OC hair Vogue,ron,Ron,髮型師,客戶成功經理待指派,instagram,Ron IG,apify_instagram_public,3,0,3,12,2,0,2,12,嚴重落後,true,2026-03-27 13:47,https://www.instagram.com/p/DWYGpUcjBBA/,

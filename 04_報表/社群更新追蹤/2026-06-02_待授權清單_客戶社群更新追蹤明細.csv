@@ -1,0 +1,9 @@
+clientId,clientName,owner,platform,displayName,source,weeklyTarget,weeklyActual,weeklyGap,monthlyTarget,monthlyExpectedToDate,monthlyActual,monthlyGapToDate,monthlyRemainingGap,status,needReminder,latestPostAt,latestPermalink
+hansik-daily-hotpot,韓食日常鍋物,阿順,facebook,韓食日常鍋物 FB 粉專,pending_auth,3,0,3,12,1,0,1,12,待授權,true,,
+hansik-daily-hotpot,韓食日常鍋物,阿順,instagram,韓食日常鍋物 IG,pending_auth,3,0,3,12,1,0,1,12,待授權,true,,
+thevision,TheVision,客戶成功經理待指派,instagram,TheVision IG,pending_auth,3,0,3,12,1,0,1,12,待授權,true,,
+thevision,TheVision,客戶成功經理待指派,facebook,TheVision FB,pending_auth,2,0,2,8,1,0,1,8,待授權,true,,
+jiayu-window-film,嘉昱隔熱膜,客戶成功經理待指派,facebook,嘉昱隔熱膜 FB,pending_auth,2,0,2,8,1,0,1,8,待授權,true,,
+jiayu-window-film,嘉昱隔熱膜,客戶成功經理待指派,instagram,嘉昱隔熱膜 IG,pending_auth,1,0,1,4,1,0,1,4,待授權,true,,
+star-spa,STAR SPA,客戶成功經理待指派,instagram,STAR SPA IG,pending_auth,3,0,3,12,1,0,1,12,待授權,true,,
+tg-hair-salon,TG hair salon,客戶成功經理待指派,instagram,TG hair salon IG,pending_auth,3,0,3,12,1,0,1,12,待授權,true,,
