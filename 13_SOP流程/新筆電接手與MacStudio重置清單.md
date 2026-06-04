@@ -133,8 +133,9 @@ Mac Studio 目前角色：
 - P0 / P1 工作接續摘要已建立，可從 Vault 承接日常管理脈絡。
 - 新筆電可取代判定已建立：可取代日常阿順工作入口，不可取代 Mac Studio 歷史 thread 備援與未來 24H 主機。
 - `Ewalk.ai Brain` Git 狀態已盤點：261 筆 dirty，其中 30 筆已追蹤修改、約 231 筆未追蹤。
-- `Ewalk.ai Brain` 三批文字資料已分批 commit 並推送 GitHub，`HEAD` 與 `origin/main` 已同步到 `131a103`。
+- `Ewalk.ai Brain` 三批文字資料與重置前清單已分批 commit 並推送 GitHub，`HEAD` 與 `origin/main` 已同步到 `86a15b9`。
 - 剩餘 156 筆 dirty 已分類為本機設定、素材成品、產出資料夾與私密設定，暫不提交到 Git。
+- 新筆電剩餘非敏感 dirty 已備份到 `/Users/timchen/Desktop/Ewalk.ai 自動化系統/_重置前備份/2026-06-05_dirty_nonsensitive`；私密設定未讀取、未打包。
 - 霖老師線上車庫已在提姆先生批准後完成 Vercel production 部署，公開站驗證通過。
 
 尚未完成：

@@ -21,7 +21,8 @@ Mac Studio 目前仍不可重置。
 - [x] P0 / P1 工作接續摘要已建立。
 - [x] 舊主機 Codex 釘選聊天室喚起清單已建立。
 - [x] Ewalk.ai Brain 三批文字資料已分批 commit。
-- [x] GitHub 遠端備份已完成，`HEAD` 與 `origin/main` 均為 `131a1031e1fef433ef7fd254e3d541a1514134ef`。
+- [x] GitHub 遠端備份已完成，`HEAD` 與 `origin/main` 均為 `86a15b9f9c6ee218869dc1e978dfd9e740371f78`。
+- [x] 新筆電剩餘非敏感 dirty 已備份到 `/Users/timchen/Desktop/Ewalk.ai 自動化系統/_重置前備份/2026-06-05_dirty_nonsensitive`。
 
 ## Git 與資料狀態
 
@@ -30,14 +31,14 @@ Mac Studio 目前仍不可重置。
 本次推送到 GitHub 的最後 commit：
 
 ```text
-131a103 chore: snapshot daily handoff records
+86a15b9 docs: add Mac Studio reset readiness checklist
 ```
 
 確認狀態：
 
 ```text
 main...origin/main
-HEAD = origin/main = 131a1031e1fef433ef7fd254e3d541a1514134ef
+HEAD = origin/main = 86a15b9f9c6ee218869dc1e978dfd9e740371f78
 ```
 
 ### 剩餘 dirty 分類
@@ -57,6 +58,22 @@ HEAD = origin/main = 131a1031e1fef433ef7fd254e3d541a1514134ef
 - `08_自動化/firebase/command-center-app/firebase-config.local.js`
 - `腳本/google-ads/.google-ads-secret-input-url`
 - `腳本/meta-facebook/.ads-token-input-url`
+
+### 新筆電非敏感 dirty 備份
+
+已建立本機備份：
+
+```text
+/Users/timchen/Desktop/Ewalk.ai 自動化系統/_重置前備份/2026-06-05_dirty_nonsensitive
+```
+
+驗證結果：
+
+- 備份容量：約 `2.1G`
+- 備份檔案數：`371`
+- 已排除私密設定與 token / secret input URL
+
+注意：這是新筆電上的非敏感 dirty 備份，不等於 Mac Studio 完整備份。Mac Studio 重置前仍需在原主機做完整備份驗證。
 
 ## Mac Studio 上必做
 
