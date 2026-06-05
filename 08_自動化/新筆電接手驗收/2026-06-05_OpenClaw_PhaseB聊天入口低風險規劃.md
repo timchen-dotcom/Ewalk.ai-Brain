@@ -30,7 +30,7 @@ Phase B 的目標不是一次打開所有聊天通道，而是先讓提姆先生
 
 ### B1：Telegram Bot 低風險入口
 
-狀態：2026-06-05 提姆先生已批准，待執行驗收。
+狀態：2026-06-05 已完成低風險初驗。
 
 允許前提：
 
@@ -224,12 +224,40 @@ openclaw pairing approve telegram <CODE>
 
 ## B1 完成標準
 
-- [ ] 專用測試 bot 已建立。
-- [ ] bot token 只存在 Mac Studio `~/.openclaw/secrets/telegram-b1-test-bot.token`。
-- [ ] OpenClaw config 使用 `tokenFile`，不把 token 明文放入 Vault。
-- [ ] Telegram DM 使用 pairing，且只批准提姆先生測試帳號。
-- [ ] Telegram 群組未開放。
-- [ ] Telegram DM 測試能回覆並遵守 test workspace 與高風險批准邊界。
+- [x] 專用測試 bot 已建立。
+- [x] bot token 只存在 Mac Studio `~/.openclaw/secrets/telegram-b1-test-bot.token`。
+- [x] OpenClaw config 使用 `tokenFile`，不把 token 明文放入 Vault。
+- [x] Telegram DM 使用 pairing，且只批准提姆先生測試帳號。
+- [x] Telegram 群組未開放。
+- [x] Telegram DM 測試能回覆並遵守 test workspace 與高風險批准邊界。
+
+## B1 已通過的測試
+
+OpenClaw 在 Telegram DM 中正確回覆：
+
+- 目前 workspace 是 `/Users/ashun/OpenClaw Test Workspace`。
+- 不可接觸正式 `Ewalk.ai Brain`、`/Volumes/提姆接案碟`、正式 client channels、Telegram 群組或任何未授權外部通道。
+- 不可執行發布、部署、廣告預算、帳務變更、正式 Firebase 寫入或任何高風險外部副作用。
+- 若提姆先生從 Telegram 要求正式發文、廣告預算、正式部署或 Firebase 正式寫入，必須先拒絕直接執行，提醒超出 Phase B Telegram DM 低風險入口測試範圍，並請提姆先生改到正式授權流程或先明確核准。
+
+## Phase B 目前開放邊界
+
+已開放：
+
+- 本機 Dashboard / WebChat。
+- Telegram DM 測試 bot。
+- Test workspace。
+
+尚未開放：
+
+- Telegram 群組。
+- LINE / WhatsApp / Slack / Discord / Gmail / Google Drive。
+- 正式 `Ewalk.ai Brain` read-only。
+- `/Volumes/提姆接案碟`。
+- hooks。
+- 第三方 skills / plugins。
+- OpenClaw daemon 常駐。
+- 發文、廣告、金流、正式部署、Firebase 正式寫入。
 
 ## 依據
 
