@@ -475,6 +475,55 @@ openclaw status
 - [ ] `exec`、`write`、`edit`、`apply_patch` 仍不可用。
 - [ ] 回答內容仍遵守 test workspace 與高風險操作邊界。
 
+## B2D 驗收結果
+
+提姆先生回報：
+
+- Telegram `/reset` 成功，回覆 `Session reset`。
+- 貼上 B2D 只讀測試 prompt 後，Telegram 回覆 `Something went wrong while processing your request. Please try again, or use /new to start a fresh session.`
+
+判定：
+
+- B2D 已確認不是單純 session 沒重置；切換到 `openclaw` runtime 後，下一回合執行失敗。
+- 暫不反覆貼 Telegram prompt，也不為了通過測試而開 `exec`。
+- 下一步改做 B2E：抓 runtime log 判讀錯誤來源；若需要先恢復可用入口，使用 B2D 前備份回復。
+
+## B2E B2D 失敗診斷與回復
+
+### B2E 診斷指令
+
+在 Mac Studio Terminal 貼上：
+
+```bash
+openclaw status
+openclaw models status
+openclaw config get agents.defaults.models --json
+openclaw config get models.providers.openai.agentRuntime --json
+openclaw config get tools --json
+openclaw logs 160
+```
+
+將輸出貼回阿順判讀；若輸出中出現 token、API key、password、secret、auth URL 或 dashboard token，先遮掉。
+
+### B2E 快速回復指令
+
+若需要先讓 Telegram 測試 bot 回到 B2D 前可用狀態，在 Mac Studio Terminal 貼上：
+
+```bash
+cp "$HOME/.openclaw/openclaw.before-b2d-openclaw-runtime.json" "$(openclaw config file)"
+openclaw config validate
+openclaw gateway restart
+openclaw status
+```
+
+接著在 Telegram 測試 bot 送：
+
+```text
+/reset
+```
+
+回復後暫停只讀檔案測試，回到 B1 Telegram DM 低風險對話入口。
+
 ## 依據
 
 - OpenClaw Quickstart：Control UI 可用 `openclaw dashboard` 或 `http://127.0.0.1:18789/` 開啟。
