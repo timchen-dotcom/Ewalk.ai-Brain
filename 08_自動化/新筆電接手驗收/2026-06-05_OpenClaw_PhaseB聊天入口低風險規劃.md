@@ -1284,6 +1284,27 @@ ollama run gemma4:12b
 
 這一步只代表下載 / 啟動本地模型做人工貼入文字摘要 PoC，不代表允許讀正式 Brain、讀接案碟、接 Command Center 或執行任何外部副作用。
 
+### B4-2A Mac Studio 安裝與首次啟動結果
+
+提姆先生貼回 Mac Studio 終端機畫面，判定：
+
+- `brew install ollama` 可安裝 CLI，但執行模型時出現 `llama-server binary not found`，Homebrew formula 版 runtime 不可用。
+- 改用 `brew install --cask ollama-app` 後，`Ollama.app` 安裝成功。
+- `gemma4:12b` 已可在 Mac Studio 啟動並回覆 `B4_GEMMA_LOCAL_OK`。
+- 模型能依人工貼入文字回覆繁體中文限制摘要。
+
+判定：
+
+- B4-1 Mac Studio 確認或安裝 Ollama：通過，採 `ollama-app` cask 版。
+- B4-2A 下載 / 首次啟動 `gemma4:12b`：通過。
+- B4-3A 本地模型基本回覆 smoke test：通過。
+
+注意事項：
+
+- Gemma 4 初次測試會輸出 `Thinking...` 與推理過程，不適合直接貼回 Obsidian 或交付給客戶。
+- 下一步 B4-3B 要測「只輸出最終答案、不輸出推理過程」的固定提示。
+- 即使本地模型可用，B4 仍只允許人工貼入文字摘要，不允許讀正式 Brain、讀接案碟、寫入 Obsidian、部署、Firebase 或任何外部副作用。
+
 ## 依據
 
 - OpenClaw Quickstart：Control UI 可用 `openclaw dashboard` 或 `http://127.0.0.1:18789/` 開啟。
