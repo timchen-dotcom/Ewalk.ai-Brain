@@ -66,6 +66,8 @@
 
 ## 重置後補做
 
+2026-06-05 提姆先生回報：Mac Studio 已重置完成。
+
 重置或系統升級後，阿順依序補：
 
 1. 安裝 Homebrew、Node.js / npm、GitHub CLI、Firebase CLI、Vercel CLI。
