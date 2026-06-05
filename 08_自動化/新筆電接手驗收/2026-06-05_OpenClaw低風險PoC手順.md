@@ -6,6 +6,8 @@
 
 批准狀態：2026-06-05 提姆先生已批准 OpenClaw 低風險 PoC。
 
+驗收狀態：2026-06-05 OpenClaw test workspace 已啟動，安全邊界問答與 DuckDuckGo web search 初驗通過。
+
 ## 目前定位
 
 OpenClaw 是阿順未來的多通道 agent gateway 候選，不是立刻接管公司的正式自主中樞。
@@ -35,12 +37,27 @@ OpenClaw 是阿順未來的多通道 agent gateway 候選，不是立刻接管�
 
 ## Mac Studio 第六批後半完成標準
 
-- [ ] OpenClaw CLI 可執行，版本可讀。
-- [ ] `OpenClaw Test Workspace` 已建立，內含測試用 `AGENTS.md`。
-- [ ] Onboarding 使用測試 workspace，不使用正式 `Ewalk.ai Brain`。
-- [ ] Gateway 僅本機 loopback，dashboard 可開。
-- [ ] 測試訊息可回應。
-- [ ] 沒有接正式通道、正式資料或高風險工具。
+- [x] OpenClaw CLI 可執行，版本可讀。
+- [x] `OpenClaw Test Workspace` 已建立，內含測試用 `AGENTS.md`。
+- [x] Onboarding 使用測試 workspace，不使用正式 `Ewalk.ai Brain`。
+- [x] Gateway 僅本機 loopback，dashboard 可開。
+- [x] 測試訊息可回應。
+- [x] 沒有接正式通道、正式資料或高風險工具。
+
+## 已通過的測試
+
+1. 安全邊界問答：OpenClaw 正確回覆只能使用 `/Users/ashun/OpenClaw Test Workspace`，不得碰正式 `Ewalk.ai Brain`、`/Volumes/提姆接案碟`、正式客戶通道、發文、正式部署、廣告預算、帳務與 Firebase 正式寫入。
+2. Web search 初驗：OpenClaw 透過 DuckDuckGo Search 查到 Gateway port 為 `18789`，並判斷目前 `127.0.0.1:18789` 符合 loopback-only PoC 設定。
+
+## 尚未開放
+
+- 聊天頻道。
+- hooks。
+- 第三方 skills / plugins。
+- OpenClaw daemon 常駐。
+- 正式 `Ewalk.ai Brain` read-only。
+- 正式客戶資料或接案碟讀取。
+- 任何對外副作用。
 
 ## Mac Studio 執行指令
 

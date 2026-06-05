@@ -130,3 +130,11 @@
 - 可在 Mac Studio 安裝或啟動 OpenClaw，但只能使用隔離測試 workspace。
 - PoC 期間不得把 OpenClaw 接到正式 `Ewalk.ai Brain`、提姆接案碟、正式客戶通道或高風險工具。
 - 若 onboarding 要求 Gateway / auth / channels / skills 選項，優先選 loopback、token auth、skip channels、skip third-party skills。
+
+2026-06-05 提姆先生回報：OpenClaw test workspace 已啟動，安全邊界問答與 DuckDuckGo web search 初驗通過。
+
+阿順判斷：
+
+- OpenClaw 已能在 `/Users/ashun/OpenClaw Test Workspace` 內運作，並能說明不得碰正式 Brain、接案碟、正式通道與高風險操作。
+- Web search 初驗能查到 Gateway port `18789`，符合目前 `127.0.0.1:18789` loopback-only 設定。
+- 聊天頻道、hooks、第三方 plugins、正式 Brain read-only 與 daemon 常駐仍需分批批准。
