@@ -9,7 +9,7 @@
 
 Mac Studio 目前仍不可重置。
 
-新筆電已可接手日常阿順入口，且 Ewalk.ai Brain 文字資料已完成 GitHub 遠端備份；但 Mac Studio 重置前，仍需完成舊主機獨有資料、舊 Codex thread、常駐自動化與完整備份確認。
+新筆電已可接手日常阿順入口，且 Ewalk.ai Brain 文字資料已完成 GitHub 遠端備份；提姆先生帶回的 Mac Studio 主機日報已確認低風險 Harness 正常運作。Mac Studio 重置前，仍需完成舊主機獨有資料、舊 Codex thread、常駐自動化與完整備份確認。
 
 ## 已完成
 
@@ -24,6 +24,28 @@ Mac Studio 目前仍不可重置。
 - [x] GitHub 遠端備份已完成，`HEAD` 與 `origin/main` 已同步；最新 commit 以 GitHub `main` 為準。
 - [x] 新筆電剩餘非敏感 dirty 已備份到 `/Users/timchen/Desktop/Ewalk.ai 自動化系統/_重置前備份/2026-06-05_dirty_nonsensitive`。
 - [x] 舊主機 thread 交接摘要資料夾已先以新筆電 Vault 脈絡全數預回填，P0 / P1 / P2 皆有可接續版本。
+- [x] 已收到 Mac Studio 阿順主機日報、Host Harness 執行紀錄與主機狀態，並完成判讀：[[2026-06-05_MacStudio阿順主機狀態判讀]]。
+
+## Mac Studio Host Harness 判讀
+
+2026-06-05 提姆先生帶回以下檔案：
+
+```text
+/Users/timchen/Desktop/mac-studio-pre-reset-audit-20260605/
+```
+
+判讀重點：
+
+- Mac Studio 主機睡眠與磁碟睡眠已關閉，可長時間運作。
+- `/Volumes/提姆接案碟` 已掛載，約 2.2TiB 可用。
+- 客戶名冊 17 位可讀取。
+- Harness 共 16 筆紀錄，最近一批 4 筆全成功。
+- 最近任務皆為 L1，未要求批准。
+- 外部副作用、高風險動作、正式 Firestore 寫入仍有批准邊界。
+- OpenClaw 目前僅 test workspace，尚未接正式資料。
+- 內建資料碟使用率 92%，只剩約 39GiB 可用，重置前備份與大型素材整理需小心。
+
+這批檔案是主機 / Harness 狀態，不是完整重置前稽核；仍缺 `03_automation_and_schedules.txt`、`04_sensitive_path_candidates.txt` 等六份完整輸出。
 
 ## Git 與資料狀態
 
@@ -196,6 +218,7 @@ Mac Studio 重置前需完成以下至少一種備份，並確認可讀：
 - 完整備份尚未完成或未驗證可讀。
 - 私密憑證沒有重新取得或安全搬移方案。
 - 提姆先生尚未明確批准。
+- 目前只收到 Host Harness 狀態，尚未收到完整六份只讀稽核輸出。
 
 ## 下一步
 

@@ -18,3 +18,13 @@ cp -R "$HOME/Desktop"/mac-studio-pre-reset-audit-* "$HOME/Desktop/Ewalk.ai 自�
 ```
 
 放好後，等新筆電同步到這個資料夾，阿順就可以判讀。
+
+## 目前已收到的替代位置
+
+2026-06-05 提姆先生已放到：
+
+```text
+/Users/timchen/Desktop/mac-studio-pre-reset-audit-20260605/
+```
+
+這批內容已判讀為 Host Harness 狀態輸出，仍缺完整只讀稽核六份檔案。
