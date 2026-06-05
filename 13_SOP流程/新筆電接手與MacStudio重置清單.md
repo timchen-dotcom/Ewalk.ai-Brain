@@ -124,7 +124,7 @@ Mac Studio 目前角色：
 - GitHub CLI 已登入 `timchen-dotcom`，Firebase CLI 已登入 `tim.chen@ewalk.ai`，Vercel CLI 已登入 `timchen-dotcom`。
 - Firebase active project 已確認為 `ewalk-ai-system-prod`。
 - Codex GitHub 入口已可讀 `timchen-dotcom/Ewalk.ai-Brain`。
-- Codex Vercel 入口工具已出現，但讀目前 team/project 回 `403 Forbidden`，需補授權。
+- Codex Vercel 入口工具已出現，但重測 `list_teams` 仍為空，讀目前 team/project 回 `403 Forbidden`，需補授權。
 - FileVault、Touch ID、自動鎖定、尋找我的 Mac 已由提姆先生人工確認。
 - Chrome Profile 已由提姆先生人工確認。
 - Obsidian 已可開啟 `Ewalk.ai Brain`。
@@ -132,15 +132,15 @@ Mac Studio 目前角色：
 - 舊主機 Codex 釘選聊天室未自動同步到新筆電，已建立喚起清單。
 - P0 / P1 工作接續摘要已建立，可從 Vault 承接日常管理脈絡。
 - 新筆電可取代判定已建立：可取代日常阿順工作入口，不可取代 Mac Studio 歷史 thread 備援與未來 24H 主機。
-- `Ewalk.ai Brain` Git 狀態已盤點：261 筆 dirty，其中 30 筆已追蹤修改、約 231 筆未追蹤。
-- `Ewalk.ai Brain` 三批文字資料與重置前清單已分批 commit 並推送 GitHub，`HEAD` 與 `origin/main` 已同步到 `86a15b9`。
+- `Ewalk.ai Brain` Git 狀態已盤點：初盤 261 筆 dirty，其中 30 筆已追蹤修改、約 231 筆未追蹤。
+- `Ewalk.ai Brain` 三批文字資料、重置前清單、Mac Studio 原機手順、交接模板與只讀稽核腳本已分批 commit 並推送 GitHub，`HEAD` 與 `origin/main` 已驗證同步。
 - 剩餘 156 筆 dirty 已分類為本機設定、素材成品、產出資料夾與私密設定，暫不提交到 Git。
 - 新筆電剩餘非敏感 dirty 已備份到 `/Users/timchen/Desktop/Ewalk.ai 自動化系統/_重置前備份/2026-06-05_dirty_nonsensitive`；私密設定未讀取、未打包。
 - 霖老師線上車庫已在提姆先生批准後完成 Vercel production 部署，公開站驗證通過。
 
 尚未完成：
 
-- Vault 主副本策略需確認。
+- Vault 定位已確認：新筆電作為日常控制台與文字工作入口，GitHub `main` 作為文字 snapshot 主備份，Mac Studio 暫作歷史 thread、完整資料與常駐自動化備援。
 - Vercel Codex 入口需補 team/project 授權。
 - 舊主機 P0 / P1 Codex 工作窗口完整歷史可選擇由 Mac Studio 舊 thread 輸出交接摘要補強。
 - 剩餘素材、成品檔、本機設定與私密設定需在 Mac Studio 重置前完成備份策略。
