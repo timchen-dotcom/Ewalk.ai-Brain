@@ -106,6 +106,15 @@ Ewalk.ai Brain/08_自動化/新筆電接手驗收/舊主機thread交接摘要/
 
 ## 第 2 段：常駐自動化與排程盤點
 
+可先執行只讀盤點腳本：
+
+```bash
+cd "$HOME/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/08_自動化/新筆電接手驗收/tools"
+./mac_studio_pre_reset_audit.sh
+```
+
+腳本會在桌面建立 `mac-studio-pre-reset-audit-YYYYMMDD-HHMMSS` 報告資料夾。它只列路徑與狀態，不讀取 secret 內容。
+
 ### 貼給 Mac Studio Codex 的 prompt
 
 ```text
