@@ -492,6 +492,13 @@ tbody tr:hover {
   background: rgba(135, 255, 177, 0.04);
 }
 
+.empty-row {
+  color: var(--muted);
+  font-weight: 700;
+  padding: 18px 14px;
+  text-align: center;
+}
+
 .row-title {
   color: var(--text);
   font-weight: 800;

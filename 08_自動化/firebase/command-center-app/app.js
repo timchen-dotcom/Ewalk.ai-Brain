@@ -6,6 +6,7 @@ let approvalQueueData = window.EWALK_APPROVAL_QUEUE || {
   summary: { total: 0, pending: 0 },
   approvals: [],
 };
+let activeDataMode = "snapshot";
 let hostStatusData = window.EWALK_HOST_STATUS || {
   mode: "missing",
   generated_at_taipei: null,
@@ -77,6 +78,7 @@ function readinessLabel(value) {
     ready_content_queue: "可進內容佇列",
     ready_profile_and_content: "可建客戶與內容",
     ready_profile: "可建客戶名冊",
+    live_readonly: "正式只讀",
     needs整理: "需先整理",
     empty_folder: "待補資料",
   };
@@ -86,6 +88,7 @@ function readinessLabel(value) {
 function readinessClass(value) {
   if (value === "ready_content_queue") return "published";
   if (value === "ready_profile_and_content") return "approved";
+  if (value === "live_readonly") return "approved";
   if (value === "ready_profile") return "draft";
   return "pending";
 }
@@ -99,10 +102,42 @@ function metricFrom(items, status) {
   return items.filter((item) => item.status === status).length;
 }
 
+function isLiveMode() {
+  return activeDataMode === "live";
+}
+
+function appendEmptyRow(body, colSpan, message) {
+  const tr = document.createElement("tr");
+  const td = document.createElement("td");
+  td.className = "empty-row";
+  td.colSpan = colSpan;
+  td.textContent = message;
+  tr.appendChild(td);
+  body.appendChild(tr);
+}
+
+function getClientItems() {
+  if (isLiveMode()) return commandCenterData.clients || [];
+  return clientRegistryData?.clients || commandCenterData.clients || [];
+}
+
+function getApprovalItems() {
+  if (isLiveMode()) return commandCenterData.approvals || [];
+  if (approvalQueueData.approvals?.length) return approvalQueueData.approvals;
+  return commandCenterData.approvals || [];
+}
+
+function getAiRunItems() {
+  if (isLiveMode()) return commandCenterData.ai_runs || [];
+  if (aiRunsData.ai_runs?.length) return aiRunsData.ai_runs;
+  return commandCenterData.ai_runs || [];
+}
+
 function deriveSnapshot(payload) {
   const client = payload.client || payload.clients?.[0] || {};
   const contentQueue = payload.content_queue || [];
   const campaignReports = payload.campaign_reports || [];
+  const clients = payload.clients || [];
   return {
     project_id: payload.project_id || "ewalk-ai-system-prod",
     firestore_verified_at: payload.firestore_verified_at || payload.loaded_at || new Date().toISOString(),
@@ -113,6 +148,7 @@ function deriveSnapshot(payload) {
       status: client.status || "unknown",
       logo_src: client.logo_src || client.logo_url || "",
     },
+    clients,
     metrics: {
       content_total: contentQueue.length,
       published: metricFrom(contentQueue, "published"),
@@ -142,16 +178,16 @@ function setLiveReadBusy(isBusy) {
 }
 
 function renderMetrics() {
+  const approvals = getApprovalItems();
   setText("projectId", commandCenterData.project_id);
   setText("clientName", commandCenterData.client.name);
   setText("clientMeta", `${commandCenterData.client.industry} · ${commandCenterData.client.status}`);
-  setText("metricClients", clientRegistryData?.count || commandCenterData.clients?.length || 1);
+  setText("metricClients", getClientItems().length);
   setText("metricTotal", commandCenterData.metrics.content_total);
   setText("metricPublished", commandCenterData.metrics.published);
   setText("metricApproved", commandCenterData.metrics.approved);
   setText("metricFollowups", commandCenterData.metrics.followups_due);
-  setText("metricAiRuns", (commandCenterData.ai_runs || aiRunsData.ai_runs || []).length);
-  const approvals = commandCenterData.approvals?.length ? commandCenterData.approvals : approvalQueueData.approvals || [];
+  setText("metricAiRuns", getAiRunItems().length);
   const pendingApprovalCount = approvals.filter((item) => item.status === "pending").length;
   setText("metricApprovals", pendingApprovalCount);
   setText("reviewFocusValue", `${pendingApprovalCount} 筆待批准`);
@@ -200,15 +236,19 @@ function queueRow(item) {
 
 function clientRow(item) {
   const tr = document.createElement("tr");
+  const clientName = item.client_name || item.name || item.display_name || item.id || "未命名客戶";
+  const sourcePath = item.source_path || item.path || item.id || "Firestore clients";
+  const readiness = item.import_readiness || (isLiveMode() ? "live_readonly" : "empty_folder");
+  const nextActionText = item.next_action || (isLiveMode() ? "正式資料只讀檢視，不自動執行" : "待補下一步");
   tr.innerHTML = `
     <td>
-      <div class="row-title">${item.client_name}</div>
-      <div class="row-sub">${item.source_path}</div>
+      <div class="row-title">${clientName}</div>
+      <div class="row-sub">${sourcePath}</div>
     </td>
-    <td>${item.industry}</td>
-    <td>${item.status}</td>
-    <td><span class="status ${readinessClass(item.import_readiness)}">${readinessLabel(item.import_readiness)}</span></td>
-    <td>${item.next_action}</td>
+    <td>${item.industry || "未分類"}</td>
+    <td>${item.status || "unknown"}</td>
+    <td><span class="status ${readinessClass(readiness)}">${readinessLabel(readiness)}</span></td>
+    <td>${nextActionText}</td>
   `;
   return tr;
 }
@@ -217,10 +257,15 @@ function renderClientRegistry() {
   const body = document.getElementById("clientRows");
   if (!body) return;
   body.replaceChildren();
-  const clients = clientRegistryData?.clients || commandCenterData.clients || [];
+  const clients = getClientItems();
   for (const item of clients) body.appendChild(clientRow(item));
+  if (!clients.length) {
+    appendEmptyRow(body, 5, isLiveMode() ? "正式雲端 clients 目前沒有資料。" : "尚未產生客戶名冊。");
+  }
   const mode = document.getElementById("clientRegistryMode");
-  if (mode && clientRegistryData) {
+  if (mode && isLiveMode()) {
+    mode.textContent = `${clients.length} 位客戶；正式雲端只讀`;
+  } else if (mode && clientRegistryData) {
     mode.textContent = `${clientRegistryData.count} 位客戶；正式狀態以登入讀取結果為準`;
   }
 }
@@ -283,7 +328,7 @@ function renderApprovalQueue() {
   const body = document.getElementById("approvalRows");
   if (!body) return;
   body.replaceChildren();
-  const items = (commandCenterData.approvals?.length ? commandCenterData.approvals : approvalQueueData.approvals || [])
+  const items = getApprovalItems()
     .slice()
     .sort((a, b) => {
       const statusRank = { pending: 0, changes_requested: 1, approved: 2, rejected: 3, expired: 4 };
@@ -293,10 +338,18 @@ function renderApprovalQueue() {
       return String(b.requested_at || "").localeCompare(String(a.requested_at || ""));
     });
   for (const item of items) body.appendChild(approvalRow(item));
+  if (!items.length) {
+    appendEmptyRow(body, 7, isLiveMode() ? "正式雲端目前沒有批准紀錄。" : "目前沒有本機批准佇列。");
+  }
   const mode = document.getElementById("approvalQueueMode");
   if (mode) {
     const pending = items.filter((item) => item.status === "pending").length;
-    mode.textContent = `${pending} 筆待批准；${approvalQueueData.mode === "dry-run" ? "本機 dry-run" : "正式讀取或未載入"}`;
+    const sourceText = isLiveMode()
+      ? "正式雲端只讀"
+      : approvalQueueData.mode === "dry-run"
+        ? "本機 dry-run"
+        : "本機預覽或未載入";
+    mode.textContent = `${pending} 筆待批准；${sourceText}`;
   }
 }
 
@@ -332,13 +385,21 @@ function renderAiRuns() {
   const body = document.getElementById("aiRunRows");
   if (!body) return;
   body.replaceChildren();
-  const items = (commandCenterData.ai_runs?.length ? commandCenterData.ai_runs : aiRunsData.ai_runs || [])
+  const items = getAiRunItems()
     .slice()
     .sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""));
   for (const item of items) body.appendChild(aiRunRow(item));
+  if (!items.length) {
+    appendEmptyRow(body, 6, isLiveMode() ? "正式雲端目前沒有 AI 執行紀錄。" : "目前沒有本機 AI 執行紀錄。");
+  }
   const mode = document.getElementById("aiRunsMode");
   if (mode) {
-    mode.textContent = `${items.length} 筆；${aiRunsData.mode === "dry-run" ? "本機 dry-run" : "正式讀取或未載入"}`;
+    const sourceText = isLiveMode()
+      ? "正式雲端只讀"
+      : aiRunsData.mode === "dry-run"
+        ? "本機 dry-run"
+        : "本機預覽或未載入";
+    mode.textContent = `${items.length} 筆；${sourceText}`;
   }
 }
 
@@ -373,8 +434,10 @@ async function loadLiveFirestore() {
     const firebaseConfig = await loadLocalFirebaseConfig();
     const adapter = await import("./firestore-live-adapter.js");
     const livePayload = await adapter.loadFirebaseCommandCenter({ firebaseConfig });
-    if (livePayload.ai_runs?.length) aiRunsData = { mode: "live", ai_runs: livePayload.ai_runs };
-    if (livePayload.approvals?.length) approvalQueueData = { mode: "live", approvals: livePayload.approvals };
+    activeDataMode = "live";
+    clientRegistryData = { mode: "live", count: livePayload.clients?.length || 0, clients: livePayload.clients || [] };
+    aiRunsData = { mode: "live", ai_runs: livePayload.ai_runs || [] };
+    approvalQueueData = { mode: "live", approvals: livePayload.approvals || [] };
     commandCenterData = deriveSnapshot(livePayload);
     reloadView();
     const email = commandCenterData.live_user?.email || "已登入使用者";

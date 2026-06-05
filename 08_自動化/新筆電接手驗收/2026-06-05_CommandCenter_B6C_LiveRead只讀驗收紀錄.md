@@ -57,7 +57,7 @@ tim.chen@ewalk.ai 已通過內部權限檢查；目前讀到 15 位客戶、0 �
 | Rules 部署 | 未執行 |
 | 發文 / 廣告 / 金流 | 未執行 |
 
-## 重要觀察
+## B6C 原始重要觀察
 
 Live Read 成功後，畫面仍有部分區塊保留本機 dry-run 資料：
 
@@ -97,3 +97,36 @@ Command Center 已具備正式 Firestore 只讀能力，但目前仍只能定位
 - 若仍保留本機 dry-run Approval Queue，必須明確標示為「本機 dry-run 參考」，不能混入正式資料指標。
 
 B6C-1 不包含任何 Firestore 寫入、部署、發文、廣告或金流。
+
+## B6C-1 修正結果
+
+B6C-1 已完成。Command Center 前端已修正 Live Read / dry-run 混合顯示問題。
+
+本次修正：
+
+- 新增 `activeDataMode`，明確區分 `snapshot` 與 `live`。
+- Live Read 成功後，客戶名冊、批准佇列與 AI 執行紀錄皆切換成正式只讀來源。
+- 正式 approvals 為 `0` 筆時，批准佇列顯示空狀態，不再 fallback 到本機 dry-run `4` 筆。
+- 正式 clients 顯示 `15` 位客戶，不再沿用本機客戶名冊 `17`。
+- AI 執行紀錄顯示正式只讀 `2` 筆，不再沿用本機 dry-run `5` 筆。
+- `firestore-live-adapter.js` 未修改，仍只使用 Firebase Auth 與 Firestore read API。
+
+驗證結果：
+
+| 驗證 | 結果 |
+| --- | --- |
+| `node --check app.js` | 通過 |
+| 本機 dry-run 頁面 | 通過，17 客戶、4 待批准、5 AI 執行紀錄 |
+| 本機 live payload 模擬 | 通過，15 客戶、0 待批准、2 AI 執行紀錄 |
+| Live approvals 為 0 | 通過，顯示「正式雲端目前沒有批准紀錄。」 |
+| Console error / warning | dry-run 檢查為 0 |
+
+## B6C-1 判定
+
+B6C-1 通過。
+
+Command Center 目前可作為「本機 dry-run 預覽」與「正式 Firestore 只讀看板」兩種清楚分離的內部工具。仍不得視為正式寫入、批准執行、自動部署、發文、廣告或金流入口。
+
+## B6C-1 後續
+
+下一步若繼續推進，建議只做「Command Center 只讀使用 SOP 與批准邊界」整理，或另行請提姆先生批准更高風險的正式寫入 / 執行層測試。
