@@ -35,4 +35,5 @@
 - [[Ollama Gemma 本地摘要手動SOP]]
 - [[阿順三入口分工手動SOP]]
 - [[Command Center 只讀使用SOP]]
+- [[Mac Studio 阿順上工啟動SOP]]
 - [[Codex Skills 治理與分發SOP]]

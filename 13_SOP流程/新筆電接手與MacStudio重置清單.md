@@ -3,7 +3,19 @@
 建立日期：2026-06-04
 負責角色：阿順
 最終決策者：提姆先生
-狀態：新筆電日常阿順工作入口可接手，Mac Studio 暫保留為歷史 thread 與資料備援
+狀態：新筆電日常阿順工作入口可接手，Mac Studio 已重置並進入阿順主機上工啟動
+
+## 2026-06-06 狀態更新
+
+Mac Studio 已完成重置與重建，不再停留在「不可重置」階段。
+
+目前新定位：
+
+- 新筆電：提姆先生控制台、Codex 主窗口、文件整理與審核入口。
+- Mac Studio：阿順固定主機，承接 Host Harness、OpenClaw、Ollama、Command Center 與外接碟實機驗收。
+- GitHub：兩台機器之間同步 SOP、Prompt、每日工作與 Command Center 前端修正的主要路徑。
+
+後續請以 [[Mac Studio 阿順上工啟動SOP]] 作為正式上工流程，本清單保留作為重置歷程紀錄。
 
 ## 核心原則
 
