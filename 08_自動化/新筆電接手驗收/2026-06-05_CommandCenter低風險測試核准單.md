@@ -90,3 +90,17 @@ Command Center 下一步可以測，但第一輪只能測本機 snapshot / dry-r
 - 下一步若獲批准，只做 B6B 本機 snapshot / dry-run。
 - B6B 不等於批准 B6C Live Read，也不等於批准任何正式寫入或外部副作用。
 - 若 B6B 通過，再由提姆先生決定是否進入 B6C。
+
+## B6B 測試結果
+
+2026-06-05 提姆先生批准 B6B 後，已完成本機 snapshot / dry-run 驗收。
+
+- 結果：通過。
+- 預覽網址：`http://127.0.0.1:17990/`
+- 資料來源：本機預覽資料。
+- 待批准事項：4 筆。
+- AI 執行紀錄：5 筆。
+- console error / warning：0。
+- 未登入正式 Firebase、未寫入、未部署、未發文、未操作廣告預算或金流。
+
+驗收紀錄：[[2026-06-05_CommandCenter_B6B本機dryrun驗收紀錄]]
