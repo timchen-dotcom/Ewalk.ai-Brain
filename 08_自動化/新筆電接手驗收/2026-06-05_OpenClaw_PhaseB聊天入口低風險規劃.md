@@ -1333,6 +1333,21 @@ ollama run gemma4:12b
 
 下一步：進入 B4-3C，只用人工貼入文字做真實低風險本地摘要 PoC。
 
+### B4-3C 真實低風險摘要測試結果
+
+提姆先生貼回 B4-3C 測試畫面，判定：
+
+- 只根據人工貼入文字整理，未宣稱讀檔或使用工具。
+- 正確輸出四段：今日摘要、已完成、仍不可做、下一步。
+- 正確保留禁止事項：正式 Brain、接案碟、部署、Firebase、發文、廣告預算與金流不可碰。
+- 正確指出目前只專注於本地模型根據貼入文字整理摘要的能力。
+
+判定：B4-3C 通過。
+
+結論：Ollama + `gemma4:12b` 可作為 Mac Studio 上的低風險本地摘要 PoC，適用於人工貼入文字的摘要、分類、待辦整理與交接草稿；仍不代表批准讀檔、寫入 Obsidian、接 Command Center、正式部署、Firebase、發文、廣告預算或金流。
+
+下一步：沉澱一份「Ollama Gemma 本地摘要手動 SOP」，把 `/set nothink`、人工貼入、禁止邊界與驗收標準固定下來。
+
 ## 依據
 
 - OpenClaw Quickstart：Control UI 可用 `openclaw dashboard` 或 `http://127.0.0.1:18789/` 開啟。
