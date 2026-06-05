@@ -4,6 +4,8 @@
 最終決策者：提姆先生
 用途：讓 Mac Studio 重建 OpenClaw test workspace，但不碰正式 Ewalk.ai Brain、正式客戶資料、正式通道或高風險工具。
 
+批准狀態：2026-06-05 提姆先生已批准 OpenClaw 低風險 PoC。
+
 ## 目前定位
 
 OpenClaw 是阿順未來的多通道 agent gateway 候選，不是立刻接管公司的正式自主中樞。
@@ -40,9 +42,71 @@ OpenClaw 是阿順未來的多通道 agent gateway 候選，不是立刻接管�
 - [ ] 測試訊息可回應。
 - [ ] 沒有接正式通道、正式資料或高風險工具。
 
+## Mac Studio 執行指令
+
+第一段先安裝 CLI、建立隔離 workspace、寫入測試邊界：
+
+```bash
+cd "$HOME/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain"
+git pull
+
+node --version
+npm --version
+npm install -g openclaw@latest
+openclaw --version
+
+mkdir -p "$HOME/OpenClaw Test Workspace"
+cat > "$HOME/OpenClaw Test Workspace/AGENTS.md" <<'EOF'
+# OpenClaw Test Workspace
+
+This is an isolated Ewalk.ai OpenClaw PoC workspace.
+
+Rules:
+- Do not access the formal Ewalk.ai Brain vault.
+- Do not access /Volumes/提姆接案碟.
+- Do not connect formal client channels.
+- Do not publish, deploy, spend ad budget, change billing, or write production Firebase data.
+- Use loopback-only local testing.
+- Ask 提姆先生 before any external side effect.
+EOF
+
+ls -la "$HOME/OpenClaw Test Workspace"
+```
+
+第二段進入 onboarding。這一段是互動式，遇到選項照下面選：
+
+```bash
+OPENCLAW_LOCALE=zh-TW openclaw onboard --flow manual
+```
+
+選項原則：
+
+- Workspace：選 `$HOME/OpenClaw Test Workspace`。
+- Gateway bind：選 `loopback` / local only。
+- Port：保留 `18789`。
+- Auth：選 token，產生 token；不要關閉 auth。
+- Tailscale / LAN / public exposure：選不要。
+- Channels：全部 skip，先不接 Telegram / WhatsApp / Discord / Slack / LINE。
+- Skills / plugins：不要安裝第三方；內建必要項目可先保留。
+- Daemon：若可選，先不要安裝 daemon；先完成手動測試。
+
+第三段驗收：
+
+```bash
+openclaw gateway status || openclaw status
+openclaw dashboard
+```
+
+Dashboard 應只在本機開啟，預設是：
+
+```text
+http://127.0.0.1:18789/
+```
+
+若 `openclaw dashboard` 無法自動開瀏覽器，手動用 Chrome 開上面網址。
+
 ## 完成回報格式
 
 ```text
 Mac Studio 第六批後半完成，OpenClaw test workspace 可用
 ```
-

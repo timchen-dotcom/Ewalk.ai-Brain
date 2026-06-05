@@ -122,3 +122,11 @@
 - Mac Studio 已恢復為可用的阿順定時主機與人工工作入口。
 - 下一步是 OpenClaw test workspace，但此步會安裝或啟動 agent gateway，需另行批准。
 - OpenClaw 第一階段只能跑本機測試 workspace，不得接正式 Ewalk.ai Brain、正式客戶資料、正式通道或高風險工具。
+
+2026-06-05 提姆先生批准：OpenClaw 低風險 PoC。
+
+阿順判斷：
+
+- 可在 Mac Studio 安裝或啟動 OpenClaw，但只能使用隔離測試 workspace。
+- PoC 期間不得把 OpenClaw 接到正式 `Ewalk.ai Brain`、提姆接案碟、正式客戶通道或高風險工具。
+- 若 onboarding 要求 Gateway / auth / channels / skills 選項，優先選 loopback、token auth、skip channels、skip third-party skills。
