@@ -9,8 +9,8 @@
 | 優先 | Thread | 狀態 | 摘要檔 |
 | --- | --- | --- | --- |
 | P0 | 工作交辦窗口 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P0_工作交辦窗口.md` |
-| P0 | Ewalk.ai 專業經理人 - 阿順 | 待回填 | `舊主機thread交接摘要/P0_Ewalk-ai專業經理人-阿順.md` |
-| P0 | 霖老師線上車庫 | 待回填 | `舊主機thread交接摘要/P0_霖老師線上車庫.md` |
+| P0 | Ewalk.ai 專業經理人 - 阿順 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P0_Ewalk-ai專業經理人-阿順.md` |
+| P0 | 霖老師線上車庫 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P0_霖老師線上車庫.md` |
 | P1 | 韓食日常鍋物自動發文系統 | 待回填 | `舊主機thread交接摘要/P1_韓食日常鍋物自動發文系統.md` |
 | P1 | 韓食日常鍋物六月開幕廣告 | 待回填 | `舊主機thread交接摘要/P1_韓食日常鍋物六月開幕廣告.md` |
 | P1 | TheVision 官網重做 | 待回填 | `舊主機thread交接摘要/P1_TheVision官網重做.md` |
