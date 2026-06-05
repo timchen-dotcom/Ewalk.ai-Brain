@@ -17,7 +17,7 @@
 | P1 | TheDay 分店訂購管理系統 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P1_TheDay分店訂購管理系統.md` |
 | P1 | 正官庄行銷稽核系統 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P1_正官庄行銷稽核系統.md` |
 | P1 | Ewalk.ai 阿順語音系統 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P1_Ewalk-ai阿順語音系統.md` |
-| P2 | Ewalk.ai 自動化製作文案簡報系統 | 待回填 | `舊主機thread交接摘要/P2_Ewalk-ai自動化製作文案簡報系統.md` |
+| P2 | Ewalk.ai 自動化製作文案簡報系統 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P2_Ewalk-ai自動化製作文案簡報系統.md` |
 
 ## 二、常駐自動化與排程
 
