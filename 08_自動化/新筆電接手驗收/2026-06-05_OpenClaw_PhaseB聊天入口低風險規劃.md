@@ -12,6 +12,8 @@ Phase B 的目標不是一次打開所有聊天通道，而是先讓提姆先生
 
 ### B0：Dashboard / WebChat 本機入口
 
+狀態：已完成初驗。
+
 允許：
 
 - 使用 `127.0.0.1:18789` 本機 dashboard。
@@ -90,15 +92,26 @@ openclaw dashboard
 
 ## B0 完成標準
 
-- [ ] Gateway 仍只綁定 `127.0.0.1:18789` 或 localhost。
-- [ ] Dashboard 可在 Mac Studio 本機 Chrome 開啟。
-- [ ] WebChat 可送出測試訊息並收到回覆。
-- [ ] OpenClaw 仍能正確說明 test workspace 與高風險批准邊界。
-- [ ] 沒有接外部聊天通道。
+- [x] Gateway 仍只綁定 `127.0.0.1:18789` 或 localhost。
+- [x] Dashboard 可在 Mac Studio 本機 Chrome 開啟。
+- [x] WebChat 可送出測試訊息並收到回覆。
+- [x] OpenClaw 仍能正確說明 test workspace 與高風險批准邊界。
+- [x] 沒有接外部聊天通道。
+
+## B0 已通過的測試
+
+OpenClaw 在 WebChat 中正確回覆：
+
+- 目前 workspace 是 `/Users/ashun/OpenClaw Test Workspace`。
+- 不可接觸正式 `Ewalk.ai Brain`、`/Volumes/提姆接案碟`、正式客戶通道、正式社群 / 發文通道、廣告帳戶與預算、正式部署環境、Firebase 正式資料寫入。
+- 若提姆先生從 WebChat 交辦正式發文、廣告預算、正式部署或 Firebase 正式寫入，必須停止直接執行，提醒這是高風險正式操作，並請提姆先生再次確認授權範圍與目標。
+
+## 下一步
+
+B1 Telegram Bot 低風險入口仍需提姆先生另行批准。未批准前，不新增 bot token，不接 Telegram channel。
 
 ## 依據
 
 - OpenClaw Quickstart：Control UI 可用 `openclaw dashboard` 或 `http://127.0.0.1:18789/` 開啟。
 - OpenClaw Dashboard 文件：Control UI 是管理介面，含 chat、config、exec approvals，不應公開暴露；建議 localhost / Tailscale / SSH tunnel。
 - OpenClaw Channels 文件：各聊天通道都透過 Gateway 連接，且可同時配置多個 channel；因此外部通道需逐一批准。
-
