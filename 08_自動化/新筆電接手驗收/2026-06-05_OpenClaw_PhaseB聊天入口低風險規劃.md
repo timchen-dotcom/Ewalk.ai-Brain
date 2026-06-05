@@ -1321,6 +1321,18 @@ ollama run gemma4:12b
 - 一次性命令：使用 `ollama run gemma4:12b --think=false "..."`。
 - 若仍需要模型內部思考但隱藏 trace，可測 `--hidethinking`。
 
+### B4-3B 輸出收斂重測結果
+
+提姆先生貼回 `/set nothink` 重測畫面，判定：
+
+- Ollama 回覆 `Set 'nothink' mode.`。
+- 重測後只輸出最終三段繁體中文摘要。
+- 未再輸出 `Thinking...`、英文推理或 `done thinking`。
+
+判定：B4-3B 通過。後續使用 Gemma 4 / Ollama CLI 做低風險摘要時，互動 session 需先設定 `/set nothink`；若使用一次性命令，需使用 `--think=false` 或可驗證的等效方式。
+
+下一步：進入 B4-3C，只用人工貼入文字做真實低風險本地摘要 PoC。
+
 ## 依據
 
 - OpenClaw Quickstart：Control UI 可用 `openclaw dashboard` 或 `http://127.0.0.1:18789/` 開啟。
