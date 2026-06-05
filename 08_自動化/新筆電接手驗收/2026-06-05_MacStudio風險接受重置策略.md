@@ -74,7 +74,7 @@
 2. 還原或 clone `Ewalk.ai Brain`。已完成。
 3. 重新登入 GitHub、Firebase、Vercel、Chrome、Obsidian。GitHub / Firebase / Vercel 已完成；Chrome / Obsidian 待人工確認。
 4. 重建 Host Harness，不原樣搬舊排程。手動 dry-run 已通過；常駐 LaunchAgent 已由提姆先生批准並完成安裝初驗。
-5. OpenClaw 先接 test workspace，再逐步驗收。待做。
+5. OpenClaw 先接 test workspace，再逐步驗收。待批准。
 6. 重建 Command Center 本機資料更新。
 7. 只對仍有價值的舊 automation 重新設計，不盲目復活。
 8. 需要 token / secret 時，走重新授權或安全憑證流程。
@@ -114,3 +114,11 @@
 - 阿順已回到 Mac Studio 作為定時主機，但仍保持低風險權限邊界。
 - 常駐任務不代表正式發文、廣告、金流、正式部署或 Firebase 高風險寫入已被批准。
 - 後續需驗收常駐 log、Command Center 狀態更新與 OpenClaw test workspace。
+
+2026-06-05 提姆先生回報：Mac Studio 第六批前半完成，常駐排程穩定，Chrome / Obsidian 可用。
+
+阿順判斷：
+
+- Mac Studio 已恢復為可用的阿順定時主機與人工工作入口。
+- 下一步是 OpenClaw test workspace，但此步會安裝或啟動 agent gateway，需另行批准。
+- OpenClaw 第一階段只能跑本機測試 workspace，不得接正式 Ewalk.ai Brain、正式客戶資料、正式通道或高風險工具。
