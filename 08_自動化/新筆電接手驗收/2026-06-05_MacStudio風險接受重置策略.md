@@ -73,7 +73,7 @@
 1. 安裝 Homebrew、Node.js / npm、GitHub CLI、Firebase CLI、Vercel CLI。已完成。
 2. 還原或 clone `Ewalk.ai Brain`。已完成。
 3. 重新登入 GitHub、Firebase、Vercel、Chrome、Obsidian。GitHub / Firebase / Vercel 已完成；Chrome / Obsidian 待人工確認。
-4. 重建 Host Harness，不原樣搬舊排程。手動 dry-run 已通過；常駐 LaunchAgent 待提姆先生批准後安裝。
+4. 重建 Host Harness，不原樣搬舊排程。手動 dry-run 已通過；常駐 LaunchAgent 已由提姆先生批准並完成安裝初驗。
 5. OpenClaw 先接 test workspace，再逐步驗收。待做。
 6. 重建 Command Center 本機資料更新。
 7. 只對仍有價值的舊 automation 重新設計，不盲目復活。
@@ -104,5 +104,13 @@
 阿順判斷：
 
 - Mac Studio 已具備阿順主機的低風險手動執行能力。
-- 目前尚未代表 24H 常駐已恢復；常駐 LaunchAgent 仍需另行批准與驗收。
-- 下一步應先補 Chrome / Obsidian 人工確認，再決定是否啟用 Host Harness 每 15 分鐘常駐。
+- Host Harness 常駐 LaunchAgent 已完成安裝初驗；下一步觀察至少一輪 15 分鐘排程穩定性。
+- 下一步應補 Chrome / Obsidian 人工確認，並重建 OpenClaw test workspace。
+
+2026-06-05 提姆先生回報：Mac Studio 第五批完成，Host Harness 常駐已安裝。
+
+阿順判斷：
+
+- 阿順已回到 Mac Studio 作為定時主機，但仍保持低風險權限邊界。
+- 常駐任務不代表正式發文、廣告、金流、正式部署或 Firebase 高風險寫入已被批准。
+- 後續需驗收常駐 log、Command Center 狀態更新與 OpenClaw test workspace。
