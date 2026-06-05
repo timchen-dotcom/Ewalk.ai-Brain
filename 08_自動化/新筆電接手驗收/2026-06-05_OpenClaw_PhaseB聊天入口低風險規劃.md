@@ -500,7 +500,7 @@ openclaw models status
 openclaw config get agents.defaults.models --json
 openclaw config get models.providers.openai.agentRuntime --json
 openclaw config get tools --json
-openclaw logs 160
+openclaw logs --limit 160 --plain
 ```
 
 將輸出貼回阿順判讀；若輸出中出現 token、API key、password、secret、auth URL 或 dashboard token，先遮掉。
@@ -510,7 +510,7 @@ openclaw logs 160
 若需要先讓 Telegram 測試 bot 回到 B2D 前可用狀態，在 Mac Studio Terminal 貼上：
 
 ```bash
-cp "$HOME/.openclaw/openclaw.before-b2d-openclaw-runtime.json" "$(openclaw config file)"
+openclaw config unset 'agents.defaults.models["openai/gpt-5.5"].agentRuntime'
 openclaw config validate
 openclaw gateway restart
 openclaw status
@@ -524,6 +524,49 @@ openclaw status
 
 回復後暫停只讀檔案測試，回到 B1 Telegram DM 低風險對話入口。
 
+### B2E 診斷結果
+
+提姆先生貼回 Mac Studio 診斷輸出後，判讀如下：
+
+- B2D 備份沒有成功建立：輸出顯示 `cp: ~/.openclaw/openclaw.json: No such file or directory`。原因很可能是 `openclaw config file` 回傳 `~/.openclaw/openclaw.json`，但 `~` 在命令替換與引號中沒有被 shell 展開；因此不可再依賴 `openclaw.before-b2d-openclaw-runtime.json` 回復。
+- B2D runtime 切換已生效：`agents.defaults.models` 目前包含 `"openai/gpt-5.5": {"agentRuntime": {"id": "openclaw"}}`，`openclaw status` 的 Telegram session runtime 顯示 `OpenClaw Default`。
+- OpenAI OAuth 仍顯示可用：`openclaw models status` 顯示 `openai:tim.chen@ewalk.ai=OAuth` 且狀態可用；官方 OpenClaw 文件也說明 OpenAI OAuth 可用於 OpenClaw 工作流，因此目前不能判定為「缺 API key」。
+- B2E log 指令需修正：`openclaw logs 160` 不是有效語法；應使用 `openclaw logs --limit 160 --plain` 抓固定行數，或用 `openclaw logs --follow` 追即時 log。
+- 決策：先不要繼續在 Telegram 反覆貼只讀測試 prompt。優先移除 `agentRuntime.id: "openclaw"` override，回到 OpenAI agent model 的預設 Codex harness，先恢復 B1 Telegram DM 穩定入口。
+
+### B2E 回復後驗收
+
+在 Mac Studio 執行快速回復指令後，於 Telegram 測試 bot 送：
+
+```text
+/reset
+```
+
+再送：
+
+```text
+請只回覆：B2E_ROLLBACK_OK
+```
+
+完成標準：
+
+- [ ] Telegram 能回覆 `B2E_ROLLBACK_OK`。
+- [ ] `openclaw status` 中 Telegram session runtime 回到 `OpenAI Codex` 或不再顯示 `OpenClaw Default`。
+- [ ] `exec`、`write`、`edit`、`apply_patch` 仍未開放。
+- [ ] B2A / B2B 只讀檔案測試暫停，不再用破壞穩定性的方式硬闖。
+
+### B2F 建議方向
+
+B2E 回復穩定後，下一步不急著把「檔案 read 工具」當作唯一路徑。
+
+建議 B2F 先採「人工提供精選 context」：
+
+1. 阿順在 Codex / Brain 端整理 `B2_READONLY_CONTEXT.md` 的短版。
+2. 提姆先生把短版 context 貼入 Telegram 測試 bot。
+3. 驗證 OpenClaw 是否能依據貼入 context 做低風險判斷、回覆與分類。
+
+只有在 B2F 通過後，才再考慮是否繼續調 OpenClaw embedded runtime、正式 read tool 或其他 context injection。這樣可以先驗證「聊天入口是否有用」，而不是被工具相容性卡住。
+
 ## 依據
 
 - OpenClaw Quickstart：Control UI 可用 `openclaw dashboard` 或 `http://127.0.0.1:18789/` 開啟。
@@ -533,3 +576,4 @@ openclaw status
 - OpenClaw Tool policy 文件：可用 `tools.allow` / `tools.deny` 控制工具；deny 優先於 allow。
 - OpenClaw Gateway protocol 文件：`tools.effective` 可查指定 session 的 runtime-effective tool inventory。
 - OpenClaw Agent runtimes / OpenAI 文件：OpenAI agent turns 預設可走 native Codex runtime；若要使用 OpenClaw embedded runtime，需用 provider/model-scoped `agentRuntime.id: "openclaw"`。
+- OpenClaw Logs CLI 文件：`openclaw logs` 使用 `--limit <n>` 指定回傳行數，使用 `--follow` 追即時 log。
