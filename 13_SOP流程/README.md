@@ -31,4 +31,5 @@
 - [[NotebookLM到Codex簡報美感重製SOP]]
 - [[Discord頻道新增與通知串聯SOP]]
 - [[Higgsfield CLI 安裝與最小回歸驗證SOP]]
+- [[OpenClaw Telegram 每日交接手動SOP]]
 - [[Codex Skills 治理與分發SOP]]
