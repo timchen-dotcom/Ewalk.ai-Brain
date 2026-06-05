@@ -1348,6 +1348,29 @@ ollama run gemma4:12b
 
 下一步：沉澱一份「Ollama Gemma 本地摘要手動 SOP」，把 `/set nothink`、人工貼入、禁止邊界與驗收標準固定下來。
 
+## B5 阿順三入口分工
+
+### 目標
+
+把目前已通過的三個入口固定成可操作分工，避免提姆先生之後不知道要叫哪一個阿順：
+
+- Codex 主窗口：正式文件、Git、工具鏈、批准流程。
+- OpenClaw Telegram DM：手機端低風險文字交辦。
+- Ollama Gemma：Mac Studio 本地低風險貼入文字摘要。
+
+### 判定
+
+- B5 文件基礎通過。
+- 已建立 [[../../13_SOP流程/阿順三入口分工手動SOP|阿順三入口分工手動 SOP]]。
+- 這一步只固定入口分工，不等於批准讀正式 Brain、讀接案碟、寫 Obsidian、接 Command Center、正式部署、Firebase、發文、廣告預算或金流。
+
+### 下一步
+
+接下來有兩條路：
+
+1. 繼續維持目前手動低風險流程，用 Telegram / Gemma / Codex 主窗口分工上工。
+2. 若提姆先生批准，再進入 Command Center 低風險測試規劃。
+
 ## 依據
 
 - OpenClaw Quickstart：Control UI 可用 `openclaw dashboard` 或 `http://127.0.0.1:18789/` 開啟。
