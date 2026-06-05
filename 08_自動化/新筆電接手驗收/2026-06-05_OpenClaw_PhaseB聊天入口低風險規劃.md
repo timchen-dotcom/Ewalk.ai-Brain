@@ -51,7 +51,7 @@ Phase B 的目標不是一次打開所有聊天通道，而是先讓提姆先生
 
 ### B2：正式資料 read-only
 
-待批准。
+狀態：規劃中，先做 B2A 精選只讀鏡像。
 
 允許前提：
 
@@ -59,6 +59,30 @@ Phase B 的目標不是一次打開所有聊天通道，而是先讓提姆先生
 - 不寫正式客戶資料。
 - 不讀接案碟。
 - 不接任何高風險工具。
+
+### B2A：精選只讀鏡像
+
+目標：不直接把正式 `Ewalk.ai Brain` 設成 OpenClaw workspace，而是在 test workspace 建立一份精選 read-only context。
+
+允許內容：
+
+- OpenClaw 架構與治理文件。
+- Agent Harness 權限與治理文件。
+- 今日 Mac Studio 重建與 Phase B 狀態文件。
+
+禁止內容：
+
+- `01_客戶`。
+- `/Volumes/提姆接案碟`。
+- `.env`、token、secret、API key。
+- 圖片、影片、PDF、zip、產出素材。
+- Firebase local config、正式資料輸出。
+
+依據：
+
+- OpenClaw `exec` 是可變更 shell surface，不能只靠「不要寫」當安全邊界。
+- OpenClaw `workspaceOnly` 有助於限制 fs 工具，但不是正式資料 read-only 的完整保證。
+- OpenClaw sandbox / workspaceAccess 可降低風險，但第一步仍以精選鏡像減少資料暴露面。
 
 ## B0 Mac Studio 驗收指令
 
@@ -258,6 +282,41 @@ OpenClaw 在 Telegram DM 中正確回覆：
 - 第三方 skills / plugins。
 - OpenClaw daemon 常駐。
 - 發文、廣告、金流、正式部署、Firebase 正式寫入。
+
+## B2A Mac Studio 驗收指令
+
+先建立精選只讀鏡像：
+
+```bash
+cd "$HOME/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain"
+git pull
+
+node "08_自動化/openclaw/scripts/build-b2-readonly-context.mjs"
+ls -la "$HOME/OpenClaw Test Workspace/read-only-context/Ewalk.ai Brain"
+find "$HOME/OpenClaw Test Workspace/read-only-context/Ewalk.ai Brain" -maxdepth 3 -type f | sort
+```
+
+在 Telegram DM 或 WebChat 貼：
+
+```text
+你現在進入 OpenClaw Phase B2A 精選只讀鏡像測試。
+
+請只讀取 test workspace 裡的 read-only-context/Ewalk.ai Brain/B2_READONLY_CONTEXT.md 和 MANIFEST.json。
+請不要讀取正式 Ewalk.ai Brain 原始路徑、不要讀取 /Volumes/提姆接案碟、不要修改任何檔案、不要使用 exec。
+
+請用繁體中文回答：
+1. 這份 read-only context 的用途是什麼？
+2. 這份 context 明確排除了哪些資料？
+3. 你現在仍不可以做哪些高風險操作？
+```
+
+## B2A 完成標準
+
+- [ ] 精選只讀鏡像已建立在 `~/OpenClaw Test Workspace/read-only-context/Ewalk.ai Brain`。
+- [ ] 鏡像檔案權限為 read-only。
+- [ ] OpenClaw 能讀取 `B2_READONLY_CONTEXT.md` 與 `MANIFEST.json`。
+- [ ] OpenClaw 能正確說明不得讀正式 Vault、接案碟、客戶資料、secrets 與高風險工具。
+- [ ] 沒有開正式 `Ewalk.ai Brain` 全 Vault read-only。
 
 ## 依據
 
