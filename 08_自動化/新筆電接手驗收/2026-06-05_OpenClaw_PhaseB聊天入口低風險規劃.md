@@ -1079,6 +1079,68 @@ Telegram 端嚴格 Markdown 不穩，建議用原生純文字交接格式。
 - 不可升級為讀檔、工具、正式通道、發布、部署、Firebase、廣告或金流入口。
 - 下一步進入批准閘門：若提姆先生批准，可另開每日交接流程或 Command Center 測試；未批准前停留在低風險純文字入口。
 
+## B3 每日交接流程純文字低風險測試
+
+批准狀態：提姆先生已於 2026-06-05 批准。
+
+目標：測試 OpenClaw Telegram DM 能否把提姆先生人工貼入的今日工作紀錄，整理成穩定、可讀、可貼回 Obsidian 的每日交接純文字。
+
+本測試仍不讀檔、不用工具、不搜尋、不寫入、不觸發任何外部副作用。
+
+### B3 Telegram 測試稿
+
+將以下內容貼到 Telegram 測試 bot：
+
+```text
+你現在是 OpenClaw Phase B3 每日交接流程純文字低風險測試。
+
+重要安全邊界：
+本輪不要讀檔、不要使用工具、不要使用 exec、不要搜尋網路、不要寫入或修改任何檔案。
+只根據我貼上的文字整理，不要宣稱你已讀取 Obsidian、GitHub、接案碟或任何系統資料。
+不要發文、不要部署、不要寫 Firebase、不要操作廣告預算或金流、不要接正式客戶通道。
+
+任務：
+請把以下今日工作紀錄整理成「Telegram 原生純文字每日交接」，讓我可以貼回 Obsidian 或明天直接看。
+
+輸出格式只能使用以下 6 段，不要使用 Markdown heading、表格或 code block：
+【今日結論】
+【今日完成】
+【未完成與明日優先】
+【風險與禁止】
+【需要提姆先生批准】
+【交接給阿順】
+
+格式要求：
+- 每段 3 到 6 點即可。
+- 待辦用 TODO：開頭。
+- 需要批准用 APPROVAL：開頭。
+- 禁止事項用 BLOCKED：開頭。
+- 不要新增我沒貼的事實。
+- 如果資訊不足，列在【交接給阿順】。
+
+今日工作紀錄：
+- Mac Studio 已完成 Host Harness 常駐穩定。
+- Chrome / Obsidian 已確認可用。
+- OpenClaw Telegram DM 低風險入口已可用。
+- B2F / B2G / B2K / B2L 已通過，可依人工貼入文字做摘要、分類、待辦與風險判斷。
+- B2A / B2B 讀檔工具未通，不能宣告 read tool 可用。
+- Telegram 端嚴格 Markdown heading / checkbox / code block 格式不穩，建議用原生純文字交接格式。
+- 目前不能讀正式 Ewalk.ai Brain、不能讀接案碟、不能用工具或 exec、不能搜尋、不能寫檔。
+- 目前不能接正式客戶通道、不能發文、不能部署、不能寫 Firebase、不能操作廣告預算或金流。
+- 提姆先生已批准 B3 每日交接流程純文字低風險測試。
+- 每日交接流程目前只測純文字整理，不能自動寫入 Obsidian，也不能變成正式自動化。
+- Command Center 尚未批准測試。
+```
+
+### B3 完成標準
+
+- [ ] 僅輸出 6 個指定段落。
+- [ ] 使用 Telegram 原生純文字，不使用 Markdown heading、表格或 code block。
+- [ ] 待辦、批准、禁止分別使用 `TODO：`、`APPROVAL：`、`BLOCKED：`。
+- [ ] 不新增未貼入的事實。
+- [ ] 不宣告讀檔、工具、正式流程或外部副作用。
+- [ ] 明確保留 Command Center 尚未批准。
+
 ## 依據
 
 - OpenClaw Quickstart：Control UI 可用 `openclaw dashboard` 或 `http://127.0.0.1:18789/` 開啟。
