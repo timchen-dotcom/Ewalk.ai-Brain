@@ -11,12 +11,12 @@
 | P0 | 工作交辦窗口 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P0_工作交辦窗口.md` |
 | P0 | Ewalk.ai 專業經理人 - 阿順 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P0_Ewalk-ai專業經理人-阿順.md` |
 | P0 | 霖老師線上車庫 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P0_霖老師線上車庫.md` |
-| P1 | 韓食日常鍋物自動發文系統 | 待回填 | `舊主機thread交接摘要/P1_韓食日常鍋物自動發文系統.md` |
-| P1 | 韓食日常鍋物六月開幕廣告 | 待回填 | `舊主機thread交接摘要/P1_韓食日常鍋物六月開幕廣告.md` |
-| P1 | TheVision 官網重做 | 待回填 | `舊主機thread交接摘要/P1_TheVision官網重做.md` |
-| P1 | TheDay 分店訂購管理系統 | 待回填 | `舊主機thread交接摘要/P1_TheDay分店訂購管理系統.md` |
-| P1 | 正官庄行銷稽核系統 | 待回填 | `舊主機thread交接摘要/P1_正官庄行銷稽核系統.md` |
-| P1 | Ewalk.ai 阿順語音系統 | 待回填 | `舊主機thread交接摘要/P1_Ewalk-ai阿順語音系統.md` |
+| P1 | 韓食日常鍋物自動發文系統 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P1_韓食日常鍋物自動發文系統.md` |
+| P1 | 韓食日常鍋物六月開幕廣告 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P1_韓食日常鍋物六月開幕廣告.md` |
+| P1 | TheVision 官網重做 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P1_TheVision官網重做.md` |
+| P1 | TheDay 分店訂購管理系統 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P1_TheDay分店訂購管理系統.md` |
+| P1 | 正官庄行銷稽核系統 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P1_正官庄行銷稽核系統.md` |
+| P1 | Ewalk.ai 阿順語音系統 | 已先以 Vault 脈絡回填，待原 thread 補強 | `舊主機thread交接摘要/P1_Ewalk-ai阿順語音系統.md` |
 | P2 | Ewalk.ai 自動化製作文案簡報系統 | 待回填 | `舊主機thread交接摘要/P2_Ewalk-ai自動化製作文案簡報系統.md` |
 
 ## 二、常駐自動化與排程
