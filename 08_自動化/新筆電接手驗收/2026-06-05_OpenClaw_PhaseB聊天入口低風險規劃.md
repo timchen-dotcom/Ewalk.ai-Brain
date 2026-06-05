@@ -1305,6 +1305,22 @@ ollama run gemma4:12b
 - 下一步 B4-3B 要測「只輸出最終答案、不輸出推理過程」的固定提示。
 - 即使本地模型可用，B4 仍只允許人工貼入文字摘要，不允許讀正式 Brain、讀接案碟、寫入 Obsidian、部署、Firebase 或任何外部副作用。
 
+### B4-3B 輸出收斂第一輪
+
+提姆先生貼回 B4-3B 測試畫面，判定：
+
+- 最終三段摘要內容正確。
+- 仍輸出 `Thinking...`、英文推理與 `done thinking`。
+- 一般提示無法壓住 Gemma 4 / Ollama CLI 的 thinking 顯示。
+
+判定：B4-3B 第一輪內容通過、格式未通過；不可直接作為可貼回 Obsidian 或對外交付格式。
+
+下一步：使用 Ollama thinking 控制方式重測。
+
+- 互動模式：先輸入 `/set nothink`，再貼測試內容。
+- 一次性命令：使用 `ollama run gemma4:12b --think=false "..."`。
+- 若仍需要模型內部思考但隱藏 trace，可測 `--hidethinking`。
+
 ## 依據
 
 - OpenClaw Quickstart：Control UI 可用 `openclaw dashboard` 或 `http://127.0.0.1:18789/` 開啟。
@@ -1316,3 +1332,4 @@ ollama run gemma4:12b
 - OpenClaw Agent runtimes / OpenAI 文件：OpenAI agent turns 預設可走 native Codex runtime；若要使用 OpenClaw embedded runtime，需用 provider/model-scoped `agentRuntime.id: "openclaw"`。
 - OpenClaw Logs CLI 文件：`openclaw logs` 使用 `--limit <n>` 指定回傳行數，使用 `--follow` 追即時 log。
 - Ollama 官方模型庫：`gemma4:12b` 可用 `ollama run gemma4:12b` 啟動。
+- Ollama Thinking 官方文件：CLI 可用 `/set nothink`、`--think=false` 或 `--hidethinking` 控制 thinking 顯示。
