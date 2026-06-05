@@ -70,7 +70,7 @@
 
 重置或系統升級後，阿順依序補：
 
-1. 安裝 Homebrew、Node.js / npm、GitHub CLI、Firebase CLI、Vercel CLI。
+1. 安裝 Homebrew、Node.js / npm、GitHub CLI、Firebase CLI、Vercel CLI。已完成。
 2. 還原或 clone `Ewalk.ai Brain`。
 3. 重新登入 GitHub、Firebase、Vercel、Chrome、Obsidian。
 4. 重建 Host Harness，不原樣搬舊排程。
