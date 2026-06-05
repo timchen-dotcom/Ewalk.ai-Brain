@@ -185,6 +185,31 @@ B7B 已在新筆電端準備修正：
 
 本修正只影響本機 dry-run app data，不寫 Firestore、不部署、不發文、不動廣告或金流。
 
+## B7B 二次回報
+
+報告資料夾：
+
+```text
+mac-studio-startup-check-20260606-010211
+```
+
+二次回報結論：
+
+- Mac Studio 已拉到 `0202633 fix: tolerate missing command center dry-run data`，代表 B7B 程式碼已同步到 Mac Studio。
+- Command Center 本機檔案存在，`data/approval-queue.js`、`data/ai-runs.js`、`data/host-status.js` 均存在，`app.js` 語法檢查通過。
+- `firebase-config.local.js` 仍未建立，因此 Mac Studio 的 Command Center Live Read 仍維持「未開放」，本機 dry-run 不受影響。
+- OpenClaw Gateway、Telegram channel 設定、Ollama `gemma4:12b`、本機 port `18789` / `11434` 均正常。
+- Host Harness output 最後更新時間為 `2026/06/06 00:55`；這份檢查報告本身只印出 `harness-runs.json` 前 120 行，因此看到的是歷史舊失敗，不能直接判定 B7B 最新任務是否已成功。
+
+判定：
+
+- B7B「程式碼已部署到 Mac Studio」通過。
+- B7B「Host Harness 最新一輪成功」尚需重跑或等待下一輪排程後再驗證。
+
+補強：
+
+- 已更新 `mac_studio_startup_check.sh`，下一版報告會同時輸出 `harness-runs.json` 最後 160 行與最近 20 筆任務摘要，讓 `command_center_local_data_refresh` 的最新狀態可直接判讀。
+
 ## B7A 暫定結論
 
 B7A 判定為「條件通過」。

@@ -110,6 +110,8 @@ if [ -d "$host_harness_root" ]; then
   fi
   if [ -f "$host_harness_root/output/harness-runs.json" ]; then
     append_cmd "$host_file" head -120 "$host_harness_root/output/harness-runs.json"
+    append_cmd "$host_file" tail -160 "$host_harness_root/output/harness-runs.json"
+    append_if_available "$host_file" node -e 'const fs = require("node:fs"); const path = process.argv[1]; const data = JSON.parse(fs.readFileSync(path, "utf8")); const runs = data.runs || []; console.log("Total runs:", runs.length); console.log("Last batch:", JSON.stringify(data.summary || {}, null, 2)); console.log("Recent runs:"); for (const run of runs.slice(-20)) { const oneLine = String(run.summary || run.error || "").split("\n")[0]; console.log(`${run.started_at_taipei || run.started_at} | ${run.task_id} | ${run.status} | ${oneLine}`); }' "$host_harness_root/output/harness-runs.json"
   fi
 else
   echo "Missing Host Harness root." >> "$host_file"
