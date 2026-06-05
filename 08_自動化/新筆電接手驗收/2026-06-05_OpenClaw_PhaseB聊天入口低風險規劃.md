@@ -417,6 +417,64 @@ openclaw status
 - 若 `agents.list[].tools` 有覆蓋全域工具政策，需改指定 agent 的工具設定。
 - 若 Telegram DM 落在非 `main` session，需查該 session 的 effective tools，而不是只看全域設定。
 
+## B2C 驗收結果
+
+提姆先生截圖回報 `openclaw status`：
+
+- Telegram session：`agent:main:telegram:direct:7855...`。
+- Model：`gpt-5.5`。
+- Runtime：`OpenAI Codex`。
+- Gateway：local loopback `127.0.0.1:18789`，Telegram channel configured。
+
+判定：
+
+- `READ_TOOL_NOT_AVAILABLE` 的主因很可能不是檔案鏡像不存在，而是 Telegram session 使用 `OpenAI Codex` runtime。
+- Codex runtime 不是一般 OpenClaw 直接 tool schema 模式；在已禁止 `exec` 的前提下，不能期待它直接拿到一般 `read`。
+- 下一步改做 B2D：將 `openai/gpt-5.5` 的 test agent turn runtime 明確切到 `openclaw`，再重開 Telegram session 驗證 `read`。
+
+## B2D 切換 OpenClaw embedded runtime 測試
+
+目標：不開 `exec`，只把 `openai/gpt-5.5` 在 OpenClaw 內的 agent runtime 改為 `openclaw`，讓一般 OpenClaw `read` 工具有機會暴露給模型。
+
+### B2D Mac Studio 設定指令
+
+在 Mac Studio Terminal 貼上：
+
+```bash
+cp "$(openclaw config file)" "$HOME/.openclaw/openclaw.before-b2d-openclaw-runtime.json"
+
+openclaw config set agents.defaults.models '{"openai/gpt-5.5":{"agentRuntime":{"id":"openclaw"}}}' --strict-json --merge
+openclaw config validate
+openclaw gateway restart
+openclaw status
+```
+
+接著在 Telegram 測試 bot 先送：
+
+```text
+/reset
+```
+
+再貼 B2B 的只讀測試 prompt。
+
+### B2D 回復方式
+
+若 B2D 造成模型或 Telegram 回覆異常，回復到備份：
+
+```bash
+cp "$HOME/.openclaw/openclaw.before-b2d-openclaw-runtime.json" "$(openclaw config file)"
+openclaw config validate
+openclaw gateway restart
+openclaw status
+```
+
+### B2D 完成標準
+
+- [ ] `openclaw status` 中新 Telegram session runtime 不再顯示 `OpenAI Codex`，或 OpenClaw 能正確使用 `read`。
+- [ ] OpenClaw 能讀取精選鏡像的 `B2_READONLY_CONTEXT.md` 與 `MANIFEST.json`。
+- [ ] `exec`、`write`、`edit`、`apply_patch` 仍不可用。
+- [ ] 回答內容仍遵守 test workspace 與高風險操作邊界。
+
 ## 依據
 
 - OpenClaw Quickstart：Control UI 可用 `openclaw dashboard` 或 `http://127.0.0.1:18789/` 開啟。
@@ -425,3 +483,4 @@ openclaw status
 - OpenClaw Tools 文件：`read` / `write` / `edit` 是 workspace 檔案工具；`exec` 是可改動系統的 shell surface，不可當作只讀替代。
 - OpenClaw Tool policy 文件：可用 `tools.allow` / `tools.deny` 控制工具；deny 優先於 allow。
 - OpenClaw Gateway protocol 文件：`tools.effective` 可查指定 session 的 runtime-effective tool inventory。
+- OpenClaw Agent runtimes / OpenAI 文件：OpenAI agent turns 預設可走 native Codex runtime；若要使用 OpenClaw embedded runtime，需用 provider/model-scoped `agentRuntime.id: "openclaw"`。
