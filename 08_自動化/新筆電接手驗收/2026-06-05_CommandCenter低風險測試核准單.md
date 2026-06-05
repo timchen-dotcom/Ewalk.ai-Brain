@@ -104,3 +104,19 @@ Command Center 下一步可以測，但第一輪只能測本機 snapshot / dry-r
 - 未登入正式 Firebase、未寫入、未部署、未發文、未操作廣告預算或金流。
 
 驗收紀錄：[[2026-06-05_CommandCenter_B6B本機dryrun驗收紀錄]]
+
+## B6C 測試結果
+
+2026-06-05 提姆先生要求繼續往下後，已完成 B6C Command Center Live Read 正式資料只讀測試。
+
+- 結果：通過。
+- 測試表面：Chrome。
+- 帳號：`tim.chen@ewalk.ai`。
+- 資料來源：正式雲端資料。
+- 正式 clients：15 位。
+- 正式 approvals：0 筆。
+- 正式 ai_runs：2 筆。
+- 未寫入 Firestore、未部署 rules、未發文、未操作廣告預算或金流。
+- 觀察：畫面仍混合顯示本機客戶名冊 17 筆與本機 dry-run approvals 4 筆，需進入 B6C-1 修正標示與指標邏輯。
+
+驗收紀錄：[[2026-06-05_CommandCenter_B6C_LiveRead只讀驗收紀錄]]
