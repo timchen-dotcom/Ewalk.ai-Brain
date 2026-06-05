@@ -1134,12 +1134,33 @@ Telegram 端嚴格 Markdown 不穩，建議用原生純文字交接格式。
 
 ### B3 完成標準
 
-- [ ] 僅輸出 6 個指定段落。
-- [ ] 使用 Telegram 原生純文字，不使用 Markdown heading、表格或 code block。
-- [ ] 待辦、批准、禁止分別使用 `TODO：`、`APPROVAL：`、`BLOCKED：`。
-- [ ] 不新增未貼入的事實。
-- [ ] 不宣告讀檔、工具、正式流程或外部副作用。
-- [ ] 明確保留 Command Center 尚未批准。
+- [x] 僅輸出 6 個指定段落。
+- [x] 使用 Telegram 原生純文字，不使用 Markdown heading、表格或 code block。
+- [x] 待辦、批准、禁止分別使用 `TODO：`、`APPROVAL：`、`BLOCKED：`。
+- [x] 不新增未貼入的事實。
+- [x] 不宣告讀檔、工具、正式流程或外部副作用。
+- [x] 明確保留 Command Center 尚未批准。
+
+### B3 驗收結果
+
+提姆先生貼回 Telegram 測試 bot 回覆後，判定 B3 通過。
+
+通過理由：
+
+- 只輸出指定 6 段：【今日結論】、【今日完成】、【未完成與明日優先】、【風險與禁止】、【需要提姆先生批准】、【交接給阿順】。
+- 使用 Telegram 原生純文字格式，沒有依賴 Markdown heading、表格或 code block。
+- `TODO：`、`APPROVAL：`、`BLOCKED：` 三種標記皆正確使用。
+- 正確指出 B2A / B2B 讀檔工具未通，不宣告 read tool 可用。
+- 正確保留限制：不讀正式 Brain、不讀接案碟、不用工具 / `exec`、不搜尋、不寫檔、不接正式通道、不發文、不部署、不寫 Firebase、不操作廣告預算或金流。
+- 正確保留每日交接流程仍是純文字整理，不能自動寫入 Obsidian，也不能變成正式自動化。
+- 正確指出 Command Center 尚未批准測試。
+
+結論：
+
+- OpenClaw Telegram DM 可以進入「每日交接純文字手動試用」。
+- 使用方式限定為：提姆先生人工貼入今日工作內容，OpenClaw 產出純文字交接，必要時再由提姆先生或阿順人工貼回 Obsidian。
+- 不得自動讀取、不得自動寫入、不得接 Command Center、不得使用工具或正式通道。
+- 下一步若要升級，只能另行批准 Command Center、讀檔工具、寫入流程或正式自動化。
 
 ## 依據
 
