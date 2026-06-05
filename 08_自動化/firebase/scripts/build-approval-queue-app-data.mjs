@@ -9,7 +9,28 @@ const firebaseDir = resolve(scriptDir, "..");
 const inputPath = resolve(firebaseDir, "output/approval-queue.dry-run.json");
 const outputPath = resolve(firebaseDir, "command-center-app/data/approval-queue.js");
 
-const payload = JSON.parse(await readFile(inputPath, "utf8"));
+async function readJsonOrFallback(path) {
+  try {
+    return JSON.parse(await readFile(path, "utf8"));
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+    return {
+      mode: "dry-run",
+      project_id: "ewalk-ai-system-prod",
+      generated_at: new Date().toISOString(),
+      summary: {
+        total: 0,
+        pending: 0,
+        approved: 0,
+        rejected: 0,
+        high_risk: 0,
+      },
+      documents: {},
+    };
+  }
+}
+
+const payload = await readJsonOrFallback(inputPath);
 const approvals = Object.values(payload.documents || {}).sort((a, b) =>
   String(b.requested_at || "").localeCompare(String(a.requested_at || ""))
 );

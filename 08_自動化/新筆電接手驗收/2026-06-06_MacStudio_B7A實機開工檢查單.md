@@ -144,13 +144,52 @@ B7A 通過需要：
 
 | 項目 | 結果 | 備註 |
 | --- | --- | --- |
-| `git pull` | 待回填 |  |
-| 上工檢查腳本 | 待回填 |  |
-| Host Harness | 待回填 |  |
-| OpenClaw Telegram DM | 待回填 |  |
-| Ollama Gemma | 待回填 |  |
-| Command Center dry-run | 待回填 |  |
-| 外部副作用 | 應為未執行 |  |
+| `git pull` | 通過 | Mac Studio 已同步到 `2861a70 docs: add mac studio startup check`。 |
+| 上工檢查腳本 | 通過 | 已產生 `mac-studio-startup-check-20260606-004200` 報告。 |
+| Host Harness | 部分通過，需 B7B 修正 | 主機狀態、客戶名冊、日報可產生；`command_center_local_data_refresh` 因缺 `ai-runs.dry-run.json` 失敗。 |
+| OpenClaw Telegram DM | 基礎通過，人工 DM 回覆待回填 | Gateway running，Telegram channel configured；尚需提姆先生貼 `B7A_TELEGRAM_OK` 測試回覆。 |
+| Ollama Gemma | 通過 | `gemma4:12b` 已下載，Ollama local API 可回應。 |
+| Command Center dry-run | 通過 | app 檔案存在，`app.js` 語法檢查通過；`firebase-config.local.js` 缺少，Live Read 需另行重建本機 config。 |
+| 外部副作用 | 未執行 | 報告確認未寫 Firestore、未部署、未發文、未動廣告或金流。 |
+
+## B7A 回填判讀
+
+報告資料夾：
+
+```text
+mac-studio-startup-check-20260606-004200
+```
+
+主要結論：
+
+- Mac Studio 已拉到最新 Git 版本，branch 為 `main`，remote 為 `timchen-dotcom/Ewalk.ai-Brain`。
+- 工具鏈可用：Git、Node、npm、Python、GitHub CLI、Firebase CLI、Vercel CLI、Ollama、OpenClaw。
+- Firebase CLI 已登入 `tim.chen@ewalk.ai`；`firebase use` 報錯是因為檢查腳本在 Brain 根目錄執行，不在 Firebase project 目錄，非阻擋。
+- OpenClaw Gateway 以 loopback-only 方式運作，port `18789` 正常 listening；Tailscale exposure 為 off。
+- Ollama 以本機 port `11434` 運作，`gemma4:12b` 可用。
+- Command Center 本機檔案與語法檢查通過。
+- Mac Studio 內建資料碟可用空間約 `394Gi`，`/Volumes/提姆接案碟` 已掛載且約 `2.2Ti` 可用。
+- 主機 sleep 為 `0`，但 disksleep 為 `10`，後續若要長時間處理外接碟任務，建議再評估是否改成 `0`。
+
+阻擋點：
+
+- `command_center_local_data_refresh` 失敗，原因是 `build-ai-runs-app-data.mjs` 找不到 `firebase/output/ai-runs.dry-run.json`。
+- `firebase-config.local.js` 不存在，因此 Mac Studio 目前不能直接做 Command Center Live Read；本機 dry-run 不受影響。
+
+## B7B 修正
+
+B7B 已在新筆電端準備修正：
+
+- `build-ai-runs-app-data.mjs`：缺 `ai-runs.dry-run.json` 時改產生空 AI runs app data，不讓 Host Harness 失敗。
+- `build-approval-queue-app-data.mjs`：缺 `approval-queue.dry-run.json` 時改產生空 Approval Queue app data，避免同型問題。
+
+本修正只影響本機 dry-run app data，不寫 Firestore、不部署、不發文、不動廣告或金流。
+
+## B7A 暫定結論
+
+B7A 判定為「條件通過」。
+
+Mac Studio 可以開始承接低風險人工上工與只讀判讀；但在 B7B 修正拉回 Mac Studio 並重跑 Host Harness 前，不應把 Host Harness Command Center 本機資料刷新視為完全穩定。
 
 ## 下一步
 
