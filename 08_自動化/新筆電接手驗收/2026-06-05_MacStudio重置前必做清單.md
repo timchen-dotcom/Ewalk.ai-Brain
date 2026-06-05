@@ -23,6 +23,7 @@ Mac Studio 目前仍不可重置。
 - [x] Ewalk.ai Brain 三批文字資料已分批 commit。
 - [x] GitHub 遠端備份已完成，`HEAD` 與 `origin/main` 已同步；最新 commit 以 GitHub `main` 為準。
 - [x] 新筆電剩餘非敏感 dirty 已備份到 `/Users/timchen/Desktop/Ewalk.ai 自動化系統/_重置前備份/2026-06-05_dirty_nonsensitive`。
+- [x] 舊主機 thread 交接摘要資料夾已先以新筆電 Vault 脈絡全數預回填，P0 / P1 / P2 皆有可接續版本。
 
 ## Git 與資料狀態
 
@@ -86,7 +87,7 @@ HEAD 與 origin/main 已在新筆電驗證同步
   - `【Ewalk.ai】Google 評論小幫手`
   - `【嘉昱】隔熱膜行銷專案`
 - 舊主機畫面中的 P0 / P1 釘選工作 thread 仍未在新筆電重現。
-- 因此舊 P0 / P1 thread 交接摘要仍需在 Mac Studio 原機完成。
+- 新筆電已先以 Vault 脈絡完成 P0 / P1 / P2 摘要預回填；Mac Studio 原 thread 仍建議逐項輸出補強，避免漏掉聊天中未沉澱到 Vault 的決策。
 
 已讀到的補充摘要：
 
@@ -124,20 +125,20 @@ HEAD 與 origin/main 已在新筆電驗證同步
 
 ### 1. 舊 Codex thread 交接摘要
 
-最低需要輸出或補完以下舊釘選 thread 的交接摘要：
+以下舊釘選 thread 已先由新筆電用 Vault 脈絡預回填；Mac Studio 原機仍需補強完整歷史：
 
-- 工作交辦窗口：已先以新筆電 Vault 脈絡回填，仍待 Mac Studio 原 thread 補強完整歷史
+- 工作交辦窗口
 - Ewalk.ai 專業經理人 - 阿順
+- 霖老師線上車庫
 - 韓食日常鍋物自動發文系統
 - 韓食日常鍋物六月開幕廣告
-- 霖老師線上車庫
 - TheVision 官網重做
 - TheDay 分店訂購管理系統
 - 正官庄行銷稽核系統
 - Ewalk.ai 阿順語音系統
 - Ewalk.ai 自動化製作文案簡報系統
 
-交接摘要至少包含：
+原 thread 補強時至少確認：
 
 - 目前狀態
 - 已完成事項
@@ -189,7 +190,7 @@ Mac Studio 重置前需完成以下至少一種備份，並確認可讀：
 
 任一條成立時，不可重置：
 
-- 舊 Codex thread 未輸出交接摘要。
+- 舊 Codex thread 原機補強未完成，且提姆先生未批准以 Vault 預回填摘要代替。
 - Mac Studio 是否存在本機常駐自動化尚未確認。
 - 完整備份尚未完成或未驗證可讀。
 - 私密憑證沒有重新取得或安全搬移方案。
@@ -197,8 +198,8 @@ Mac Studio 重置前需完成以下至少一種備份，並確認可讀：
 
 ## 下一步
 
-1. 在 Mac Studio 開啟舊 Codex，逐個輸出舊 thread 交接摘要。
-2. 將摘要貼入 `舊主機thread交接摘要` 對應檔案。
+1. 在 Mac Studio 開啟舊 Codex，逐個輸出舊 thread 補強摘要。
+2. 將補強內容貼入 `舊主機thread交接摘要` 對應檔案的「原 thread 補強」區段。
 3. 盤點 Mac Studio 是否有本機排程與常駐程序。
 4. 做完整備份並抽查可讀。
 5. 回填 [[2026-06-05_MacStudio原機檢查回填表]]。
