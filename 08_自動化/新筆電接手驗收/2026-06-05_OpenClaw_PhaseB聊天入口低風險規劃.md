@@ -1274,7 +1274,15 @@ ollama --version
 ollama list
 ```
 
-若回覆 `command not found`，再進入 Ollama 安裝步驟。模型名稱不先硬猜；安裝完成後再確認可用的 Gemma 12B 系列模型標籤，避免拉錯模型或浪費時間。
+若回覆 `command not found`，再進入 Ollama 安裝步驟。
+
+模型標籤已查官方 Ollama 模型庫，B4 預設使用：
+
+```text
+ollama run gemma4:12b
+```
+
+這一步只代表下載 / 啟動本地模型做人工貼入文字摘要 PoC，不代表允許讀正式 Brain、讀接案碟、接 Command Center 或執行任何外部副作用。
 
 ## 依據
 
@@ -1286,3 +1294,4 @@ ollama list
 - OpenClaw Gateway protocol 文件：`tools.effective` 可查指定 session 的 runtime-effective tool inventory。
 - OpenClaw Agent runtimes / OpenAI 文件：OpenAI agent turns 預設可走 native Codex runtime；若要使用 OpenClaw embedded runtime，需用 provider/model-scoped `agentRuntime.id: "openclaw"`。
 - OpenClaw Logs CLI 文件：`openclaw logs` 使用 `--limit <n>` 指定回傳行數，使用 `--follow` 追即時 log。
+- Ollama 官方模型庫：`gemma4:12b` 可用 `ollama run gemma4:12b` 啟動。
