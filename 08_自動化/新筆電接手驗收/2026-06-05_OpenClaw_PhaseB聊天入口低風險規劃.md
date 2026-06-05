@@ -30,7 +30,7 @@ Phase B 的目標不是一次打開所有聊天通道，而是先讓提姆先生
 
 ### B1：Telegram Bot 低風險入口
 
-待批准。
+狀態：2026-06-05 提姆先生已批准，待執行驗收。
 
 允許前提：
 
@@ -38,6 +38,16 @@ Phase B 的目標不是一次打開所有聊天通道，而是先讓提姆先生
 - bot token 不寫進 Vault、不截圖、不貼進聊天。
 - 僅允許提姆先生本人或白名單測試帳號。
 - 仍只接 test workspace。
+- 使用 `channels.telegram.dmPolicy = pairing`，先只開 DM。
+- 群組先停用，不開 `groups`、不開 group trigger。
+
+禁止：
+
+- 使用正式客戶 Telegram bot。
+- 把 bot token 貼給阿順或貼到任何聊天。
+- 把 bot token 寫入 `Ewalk.ai Brain` 或 Git。
+- 接 Telegram 群組。
+- 讓 Telegram 入口碰正式 `Ewalk.ai Brain`、接案碟、正式客戶資料或高風險工具。
 
 ### B2：正式資料 read-only
 
@@ -108,7 +118,118 @@ OpenClaw 在 WebChat 中正確回覆：
 
 ## 下一步
 
-B1 Telegram Bot 低風險入口仍需提姆先生另行批准。未批准前，不新增 bot token，不接 Telegram channel。
+B1 Telegram Bot 低風險入口已獲提姆先生批准，但仍需依下方手順執行，不得跳到正式通道。
+
+## B1 Mac Studio 驗收指令
+
+### 1. 建立專用測試 bot
+
+在 Telegram 手機或桌面版開啟 `@BotFather`，確認 handle 完整正確是 `@BotFather`。
+
+執行：
+
+```text
+/newbot
+```
+
+建議命名：
+
+```text
+Ewalk Ashun Test
+```
+
+username 建議：
+
+```text
+ewalk_ashun_test_bot
+```
+
+若 username 已被使用，另取相近名稱。BotFather 產生的 token 只留在 Mac Studio 設定流程，不貼給阿順。
+
+### 2. 把 token 存到 Mac Studio 本機 tokenFile
+
+在 Mac Studio 終端機跑：
+
+```bash
+mkdir -p "$HOME/.openclaw/secrets"
+chmod 700 "$HOME/.openclaw/secrets"
+
+printf "Paste Telegram bot token, then press Enter: "
+stty -echo
+IFS= read -r TELEGRAM_BOT_TOKEN
+stty echo
+printf '\n'
+printf '%s\n' "$TELEGRAM_BOT_TOKEN" > "$HOME/.openclaw/secrets/telegram-b1-test-bot.token"
+unset TELEGRAM_BOT_TOKEN
+chmod 600 "$HOME/.openclaw/secrets/telegram-b1-test-bot.token"
+```
+
+注意：
+
+- 貼 token 時畫面不會顯示，這是正常的。
+- 不要截圖 token。
+- 不要把 token 貼給阿順。
+
+### 3. 設定 Telegram channel
+
+```bash
+openclaw config set channels.telegram.enabled true
+openclaw config set channels.telegram.tokenFile "$HOME/.openclaw/secrets/telegram-b1-test-bot.token"
+openclaw config set channels.telegram.dmPolicy "pairing"
+openclaw config set channels.telegram.groupPolicy "disabled"
+openclaw config validate
+openclaw gateway restart
+openclaw gateway status || openclaw status
+```
+
+若 `openclaw gateway restart` 失敗，先不要重試一堆次，截圖給阿順。
+
+### 4. 配對提姆先生 Telegram DM
+
+1. 用 Telegram 對剛建立的 bot 傳：
+
+```text
+/start
+```
+
+2. bot 應該會回一組 pairing code。
+3. 在 Mac Studio 終端機檢查：
+
+```bash
+openclaw pairing list telegram
+```
+
+4. 核對 code 後批准：
+
+```bash
+openclaw pairing approve telegram <CODE>
+```
+
+把 `<CODE>` 換成 bot 給你的配對碼。不要把 pairing code 貼給阿順。
+
+### 5. Telegram DM 測試訊息
+
+在 Telegram bot DM 貼：
+
+```text
+你現在是 OpenClaw Phase B Telegram DM 低風險入口測試。
+
+請不要讀取檔案、不要使用工具、不要搜尋網路、不要修改任何設定。
+
+請用繁體中文回答：
+1. 你目前的 workspace 是哪裡？
+2. 你目前還不能接哪些正式資料、外部通道、群組與高風險操作？
+3. 如果提姆先生從 Telegram 要求正式發文、廣告預算、正式部署或 Firebase 正式寫入，你應該怎麼處理？
+```
+
+## B1 完成標準
+
+- [ ] 專用測試 bot 已建立。
+- [ ] bot token 只存在 Mac Studio `~/.openclaw/secrets/telegram-b1-test-bot.token`。
+- [ ] OpenClaw config 使用 `tokenFile`，不把 token 明文放入 Vault。
+- [ ] Telegram DM 使用 pairing，且只批准提姆先生測試帳號。
+- [ ] Telegram 群組未開放。
+- [ ] Telegram DM 測試能回覆並遵守 test workspace 與高風險批准邊界。
 
 ## 依據
 
