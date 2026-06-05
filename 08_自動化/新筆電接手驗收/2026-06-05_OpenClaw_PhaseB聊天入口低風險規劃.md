@@ -1229,6 +1229,53 @@ Telegram 端嚴格 Markdown 不穩，建議用原生純文字交接格式。
 - 第二階段不直接接正式資料；若提姆先生批准，下一步是 B4：Ollama + Gemma 低風險本地摘要 PoC。
 - B4 初期只允許人工貼入文字，不讀正式 Brain、不讀接案碟、不寫 Obsidian、不接 Command Center。
 
+## B4 Ollama + Gemma 低風險本地摘要 PoC
+
+批准狀態：提姆先生已於 2026-06-05 批准 B4。
+
+目標：確認本地模型能否在不讀檔、不使用外部工具、不產生外部副作用的前提下，依照人工貼入文字做摘要、分類、待辦整理與風險判斷。
+
+### B4 權限邊界
+
+允許：
+
+- 使用人工貼入文字做本地摘要測試。
+- 使用人工貼入文字做任務分類與待辦整理。
+- 比較 OpenClaw Telegram DM 與本地模型摘要品質。
+- 將測試結果整理成文件，供提姆先生決策。
+
+不允許：
+
+- 不讀正式 Ewalk.ai Brain vault。
+- 不讀 `/Volumes/提姆接案碟`。
+- 不自動寫入 Obsidian。
+- 不接 Command Center。
+- 不接正式客戶通道。
+- 不發文、不部署、不寫 Firebase。
+- 不碰廣告預算、帳務、金流或任何外部副作用。
+
+### B4-0 本機盤點結果
+
+已在目前 Codex 執行環境檢查：
+
+- `command -v ollama`：找不到。
+- `ollama --version`：`command not found`。
+- `ollama list`：`command not found`。
+
+判定：目前這台執行環境尚未安裝 Ollama 或未加入 PATH。因 OpenClaw 與 Host Harness 主要常駐在 Mac Studio，B4 優先在 Mac Studio 上確認或安裝 Ollama，再進行人工貼入文字摘要 PoC。
+
+### B4-1 下一步
+
+在 Mac Studio 終端機確認：
+
+```text
+command -v ollama
+ollama --version
+ollama list
+```
+
+若回覆 `command not found`，再進入 Ollama 安裝步驟。模型名稱不先硬猜；安裝完成後再確認可用的 Gemma 12B 系列模型標籤，避免拉錯模型或浪費時間。
+
 ## 依據
 
 - OpenClaw Quickstart：Control UI 可用 `openclaw dashboard` 或 `http://127.0.0.1:18789/` 開啟。
