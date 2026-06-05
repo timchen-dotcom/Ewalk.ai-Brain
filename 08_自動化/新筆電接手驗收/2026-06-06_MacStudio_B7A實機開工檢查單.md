@@ -210,11 +210,35 @@ mac-studio-startup-check-20260606-010211
 
 - 已更新 `mac_studio_startup_check.sh`，下一版報告會同時輸出 `harness-runs.json` 最後 160 行與最近 20 筆任務摘要，讓 `command_center_local_data_refresh` 的最新狀態可直接判讀。
 
+## B7B 三次回報
+
+報告資料夾：
+
+```text
+mac-studio-startup-check-20260606-011553
+```
+
+三次回報結論：
+
+- Mac Studio 已拉到 `4ac0918 docs: improve mac studio startup report`。
+- Host Harness 最近任務摘要可讀，`last_batch_success: 4`、`last_batch_failed: 0`、`last_batch_blocked: 0`。
+- `command_center_local_data_refresh` 已於 `2026/06/06 01:10:43` 與 `2026/06/06 01:15:52` 連續成功。
+- AI runs 與 Approval Queue 本機 app data 已在缺 dry-run JSON 時產生空資料，筆數皆為 `0`，不再因缺檔中斷。
+- Command Center dry-run 檔案齊全，`app.js` 語法檢查通過。
+- `firebase-config.local.js` 仍未建立，因此 Mac Studio 仍不做 Command Center Live Read；這是預期的保守狀態。
+- OpenClaw Gateway、Telegram channel、Ollama `gemma4:12b`、本機 ports `18789` / `11434` 均正常。
+
+判定：
+
+- B7B 通過。
+- B7A 從「條件通過」升級為「低風險上工通過」。
+- 目前仍不代表批准正式寫入、部署、發文、廣告預算、金流或正式客戶通道。
+
 ## B7A 暫定結論
 
-B7A 判定為「條件通過」。
+B7A 判定為「低風險上工通過」。
 
-Mac Studio 可以開始承接低風險人工上工與只讀判讀；但在 B7B 修正拉回 Mac Studio 並重跑 Host Harness 前，不應把 Host Harness Command Center 本機資料刷新視為完全穩定。
+Mac Studio 可以開始承接低風險人工上工與只讀判讀。Host Harness 本機任務已連續成功，Command Center 本機資料刷新缺檔容錯已驗證通過。
 
 ## 下一步
 
