@@ -7,9 +7,11 @@
 
 ## 目前結論
 
-Mac Studio 目前仍不可重置。
+Mac Studio 改為可進入「風險接受重置」準備，不再追求 100% 重置前稽核。
 
-新筆電已可接手日常阿順入口，且 Ewalk.ai Brain 文字資料已完成 GitHub 遠端備份；提姆先生帶回的 Mac Studio 主機日報已確認低風險 Harness 正常運作。Mac Studio 重置前，仍需完成舊主機獨有資料、舊 Codex thread、常駐自動化與完整備份確認。
+新筆電已可接手日常阿順入口，且 Ewalk.ai Brain 文字資料已完成 GitHub 遠端備份；提姆先生帶回的 Mac Studio 主機日報已確認低風險 Harness 正常運作。提姆先生判斷：繼續追求完整稽核的時間成本高於收益，舊主機細節改為升級後按價值補做。
+
+策略文件：[[2026-06-05_MacStudio風險接受重置策略]]
 
 ## 已完成
 
@@ -25,6 +27,7 @@ Mac Studio 目前仍不可重置。
 - [x] 新筆電剩餘非敏感 dirty 已備份到 `/Users/timchen/Desktop/Ewalk.ai 自動化系統/_重置前備份/2026-06-05_dirty_nonsensitive`。
 - [x] 舊主機 thread 交接摘要資料夾已先以新筆電 Vault 脈絡全數預回填，P0 / P1 / P2 皆有可接續版本。
 - [x] 已收到 Mac Studio 阿順主機日報、Host Harness 執行紀錄與主機狀態，並完成判讀：[[2026-06-05_MacStudio阿順主機狀態判讀]]。
+- [x] 提姆先生已決定不追求 100% 稽核，改採風險接受重置策略。
 
 ## Mac Studio Host Harness 判讀
 
@@ -45,7 +48,7 @@ Mac Studio 目前仍不可重置。
 - OpenClaw 目前僅 test workspace，尚未接正式資料。
 - 內建資料碟使用率 92%，只剩約 39GiB 可用，重置前備份與大型素材整理需小心。
 
-這批檔案是主機 / Harness 狀態，不是完整重置前稽核；仍缺 `03_automation_and_schedules.txt`、`04_sensitive_path_candidates.txt` 等六份完整輸出。
+這批檔案是主機 / Harness 狀態，不是完整重置前稽核。依新策略，缺少完整六份輸出不再阻擋重置，改列為重置後補做。
 
 ## Git 與資料狀態
 
@@ -66,7 +69,7 @@ HEAD 與 origin/main 已在新筆電驗證同步
 
 ### 剩餘 dirty 分類
 
-目前仍有 156 筆未提交狀態，暫不視為阻擋日常工作，但重置前必須有備份策略。
+目前仍有 156 筆未提交狀態，暫不視為阻擋日常工作，也不再視為 Mac Studio 重置硬阻擋；後續按素材、設定、產出資料夾分批處理。
 
 | 分類 | 數量 | 處理策略 |
 | --- | ---: | --- |
@@ -96,7 +99,7 @@ HEAD 與 origin/main 已在新筆電驗證同步
 - 備份檔案數：`371`
 - 已排除私密設定與 token / secret input URL
 
-注意：這是新筆電上的非敏感 dirty 備份，不等於 Mac Studio 完整備份。Mac Studio 重置前仍需在原主機做完整備份驗證。
+注意：這是新筆電上的非敏感 dirty 備份，不等於 Mac Studio 完整備份。依新策略，Mac Studio 完整備份驗證改為重置後視需求補查，不再阻擋升級。
 
 ## 新筆電可讀入口補查
 
@@ -134,12 +137,12 @@ HEAD 與 origin/main 已在新筆電驗證同步
 判斷：
 
 - 新筆電目前沒有可直接交接的本機 Codex automation 設定。
-- 截圖中看到的 automation 仍需在 Mac Studio 原機或 Codex app UI 逐項確認。
-- 在確認之前，不可重置 Mac Studio。
+- 截圖中看到的 automation 可在系統升級後逐項重建。
+- 不再要求確認完所有舊 automation 才能重置 Mac Studio。
 
-## Mac Studio 上必做
+## 原本必做項目改為後補
 
-以下項目需要在 Mac Studio 原主機上完成，不能只靠新筆電判定。
+以下項目原本列為重置前必做；依提姆先生決策，改為重置後補做，不再硬卡重置。
 
 原機操作手順：[[2026-06-05_MacStudio原機操作手順]]
 原機檢查回填表：[[2026-06-05_MacStudio原機檢查回填表]]
@@ -148,7 +151,7 @@ HEAD 與 origin/main 已在新筆電驗證同步
 
 ### 1. 舊 Codex thread 交接摘要
 
-以下舊釘選 thread 已先由新筆電用 Vault 脈絡預回填；Mac Studio 原機仍需補強完整歷史：
+以下舊釘選 thread 已先由新筆電用 Vault 脈絡預回填；Mac Studio 原機補強改為有需要再做：
 
 - 工作交辦窗口
 - Ewalk.ai 專業經理人 - 阿順
@@ -161,7 +164,7 @@ HEAD 與 origin/main 已在新筆電驗證同步
 - Ewalk.ai 阿順語音系統
 - Ewalk.ai 自動化製作文案簡報系統
 
-原 thread 補強時至少確認：
+後補時至少確認：
 
 - 目前狀態
 - 已完成事項
@@ -172,7 +175,7 @@ HEAD 與 origin/main 已在新筆電驗證同步
 
 ### 2. 常駐自動化來源確認
 
-需確認 Mac Studio 上是否仍有任何本機排程、常駐服務或瀏覽器登入狀態支撐下列工作：
+升級後重新設計需要的排程、常駐服務或瀏覽器登入狀態，不追求原樣搬移：
 
 - Codex Automations
 - Discord / 每日交接提醒
@@ -181,17 +184,17 @@ HEAD 與 origin/main 已在新筆電驗證同步
 - Command Center / Firebase 本機輔助流程
 - OpenClaw / Ollama / Gemma 測試環境
 
-若有本機依賴，重置前需先停用、搬移或改為雲端 / 未來 OpenClaw 主機承接。
+若升級後仍需要，才改為雲端 / 新版 OpenClaw 主機承接。
 
 ### 3. 完整備份驗證
 
-Mac Studio 重置前需完成以下至少一種備份，並確認可讀：
+Mac Studio 重置後，若有缺資料需求，再從以下來源補查：
 
 - Time Machine 完整備份
 - 外接硬碟完整資料夾備份
 - 重要資料同步到 iCloud / Google Drive / GitHub
 
-必查資料：
+優先補查資料：
 
 - `Ewalk.ai 自動化系統`
 - Desktop / Documents / Downloads 內的未歸檔素材
@@ -201,7 +204,7 @@ Mac Studio 重置前需完成以下至少一種備份，並確認可讀：
 
 ### 4. 提姆先生批准
 
-所有項目完成後，仍需提姆先生明確批准才可重置。
+新策略下，提姆先生已接受不追求 100% 稽核；實際重置前仍需最後確認目標磁碟，避免誤清外接工作碟。
 
 批准句建議：
 
@@ -213,19 +216,15 @@ Mac Studio 重置前需完成以下至少一種備份，並確認可讀：
 
 任一條成立時，不可重置：
 
-- 舊 Codex thread 原機補強未完成，且提姆先生未批准以 Vault 預回填摘要代替。
-- Mac Studio 是否存在本機常駐自動化尚未確認。
-- 完整備份尚未完成或未驗證可讀。
-- 私密憑證沒有重新取得或安全搬移方案。
-- 提姆先生尚未明確批准。
-- 目前只收到 Host Harness 狀態，尚未收到完整六份只讀稽核輸出。
+- 會清除或影響 `/Volumes/提姆接案碟`。
+- 提姆先生尚未接受重置後需重建登入、排程、Host Harness 與私密憑證。
+- 有人把重置誤解成正式發文、廣告預算、金流、Firebase 正式寫入批准。
 
 ## 下一步
 
-1. 在 Mac Studio 開啟舊 Codex，逐個輸出舊 thread 補強摘要。
-2. 將補強內容貼入 `舊主機thread交接摘要` 對應檔案的「原 thread 補強」區段。
-3. 盤點 Mac Studio 是否有本機排程與常駐程序。
-4. 做完整備份並抽查可讀。
-5. 回填 [[2026-06-05_MacStudio原機檢查回填表]]。
-6. 阿順更新本清單為「可重置」。
-7. 提姆先生批准後才進行重置。
+1. 確認重置只針對 Mac Studio 內建系統碟，不動 `/Volumes/提姆接案碟`。
+2. 提姆先生執行 Mac Studio 系統升級 / 重置。
+3. 升級後依 [[2026-06-05_MacStudio風險接受重置策略]] 重建工具鏈。
+4. OpenClaw 先接 test workspace。
+5. Host Harness 用新版方式重建，不盲目搬舊排程。
+6. 有缺資料再回頭補查舊素材、thread 或備份。
