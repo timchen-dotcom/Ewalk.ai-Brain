@@ -377,6 +377,46 @@ openclaw status
 - [ ] OpenClaw 仍不能寫入、修改、部署、發文、觸碰廣告預算或 Firebase 正式寫入。
 - [ ] 回答內容能正確說明 test workspace、排除資料與高風險邊界。
 
+## B2B 驗收結果
+
+提姆先生在 Telegram 測試 bot 回報：B2B 後仍回覆 `READ_TOOL_NOT_AVAILABLE`。
+
+判定：
+
+- Telegram 入口仍沒有拿到模型可見的 `read` 工具。
+- 不應為了通過測試而打開 `exec`。
+- 下一步改做 B2C：查 runtime-effective tool inventory，確認是工具政策、agent runtime、code mode、provider restriction 還是 session routing 導致 `read` 不可見。
+
+## B2C 有效工具清單診斷
+
+目標：只查設定與有效工具，不讀 secrets、不開正式資料、不新增權限。
+
+### B2C Mac Studio 診斷指令
+
+在 Mac Studio Terminal 貼上：
+
+```bash
+openclaw config get tools --json
+openclaw config get tools.profile --json
+openclaw config get tools.codeMode --json
+openclaw config get agents.defaults.workspace
+openclaw config get agents.defaults.model --json
+openclaw config get agents.defaults.agentRuntime --json
+openclaw config get agents.defaults.tools --json
+openclaw config get agents.list --json
+openclaw sessions --all-agents --limit 10 --json
+openclaw status
+```
+
+將輸出貼回阿順判讀；若輸出中出現 token、API key、password、secret 或 dashboard auth URL，必須先遮掉。
+
+### B2C 判讀方向
+
+- 若 `tools.profile` 是 `minimal` 或 `messaging`，可能需要改成 `coding` 或對指定 agent 加 `alsoAllow: ["read"]`。
+- 若 `tools.codeMode` 為啟用狀態，可能導致模型看不到一般 `read`，需評估關閉 code mode 或改用非 Codex code-mode runtime 做只讀測試。
+- 若 `agents.list[].tools` 有覆蓋全域工具政策，需改指定 agent 的工具設定。
+- 若 Telegram DM 落在非 `main` session，需查該 session 的 effective tools，而不是只看全域設定。
+
 ## 依據
 
 - OpenClaw Quickstart：Control UI 可用 `openclaw dashboard` 或 `http://127.0.0.1:18789/` 開啟。
@@ -384,3 +424,4 @@ openclaw status
 - OpenClaw Channels 文件：各聊天通道都透過 Gateway 連接，且可同時配置多個 channel；因此外部通道需逐一批准。
 - OpenClaw Tools 文件：`read` / `write` / `edit` 是 workspace 檔案工具；`exec` 是可改動系統的 shell surface，不可當作只讀替代。
 - OpenClaw Tool policy 文件：可用 `tools.allow` / `tools.deny` 控制工具；deny 優先於 allow。
+- OpenClaw Gateway protocol 文件：`tools.effective` 可查指定 session 的 runtime-effective tool inventory。
