@@ -17,6 +17,12 @@ cd "$HOME/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/08_自動化/新筆電
 ./mac_studio_pre_reset_audit.sh
 ```
 
+或在 Mac Studio 直接雙擊：
+
+```text
+執行MacStudio原機稽核.command
+```
+
 報告會輸出到 Mac Studio 桌面：
 
 ```text
