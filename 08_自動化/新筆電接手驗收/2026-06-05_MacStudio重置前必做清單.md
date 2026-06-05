@@ -21,7 +21,7 @@ Mac Studio 目前仍不可重置。
 - [x] P0 / P1 工作接續摘要已建立。
 - [x] 舊主機 Codex 釘選聊天室喚起清單已建立。
 - [x] Ewalk.ai Brain 三批文字資料已分批 commit。
-- [x] GitHub 遠端備份已完成，`HEAD` 與 `origin/main` 均為 `86a15b9f9c6ee218869dc1e978dfd9e740371f78`。
+- [x] GitHub 遠端備份已完成，`HEAD` 與 `origin/main` 已同步；最新 commit 以 GitHub `main` 為準。
 - [x] 新筆電剩餘非敏感 dirty 已備份到 `/Users/timchen/Desktop/Ewalk.ai 自動化系統/_重置前備份/2026-06-05_dirty_nonsensitive`。
 
 ## Git 與資料狀態
@@ -31,14 +31,14 @@ Mac Studio 目前仍不可重置。
 本次推送到 GitHub 的最後 commit：
 
 ```text
-86a15b9 docs: add Mac Studio reset readiness checklist
+以 GitHub main 最新 commit 為準
 ```
 
 確認狀態：
 
 ```text
 main...origin/main
-HEAD = origin/main = 86a15b9f9c6ee218869dc1e978dfd9e740371f78
+HEAD 與 origin/main 已在新筆電驗證同步
 ```
 
 ### 剩餘 dirty 分類
@@ -74,6 +74,45 @@ HEAD = origin/main = 86a15b9f9c6ee218869dc1e978dfd9e740371f78
 - 已排除私密設定與 token / secret input URL
 
 注意：這是新筆電上的非敏感 dirty 備份，不等於 Mac Studio 完整備份。Mac Studio 重置前仍需在原主機做完整備份驗證。
+
+## 新筆電可讀入口補查
+
+2026-06-05 已用 Codex app thread 入口補查目前新筆電可讀 thread。
+
+結果：
+
+- 可列出 3 個近期 thread：
+  - `Ewalk.ai 專業經理人 - 阿順｜新筆電接手`
+  - `【Ewalk.ai】Google 評論小幫手`
+  - `【嘉昱】隔熱膜行銷專案`
+- 舊主機畫面中的 P0 / P1 釘選工作 thread 仍未在新筆電重現。
+- 因此舊 P0 / P1 thread 交接摘要仍需在 Mac Studio 原機完成。
+
+已讀到的補充摘要：
+
+- `【Ewalk.ai】Google 評論小幫手`
+  - 正式網址：`https://ewalk-tools-google-review-helper.vercel.app`
+  - 管理入口：`https://ewalk-tools-google-review-helper.vercel.app?admin=1`
+  - 專案位置：`sites/ewalk-tools/google-review-helper`
+- `【嘉昱】隔熱膜行銷專案`
+  - 已重新整理 3+2 服務內容、3+2 預算更新、LINE 官方優化建議。
+  - 對應客戶資料夾：`01_客戶/嘉昱隔熱膜`
+
+## Codex Automations 補查
+
+2026-06-05 已檢查新筆電本機 Codex 設定：
+
+```text
+/Users/timchen/.codex/automations
+```
+
+結果：新筆電不存在此目錄，未找到可讀的 `automation.toml`。
+
+判斷：
+
+- 新筆電目前沒有可直接交接的本機 Codex automation 設定。
+- 截圖中看到的 automation 仍需在 Mac Studio 原機或 Codex app UI 逐項確認。
+- 在確認之前，不可重置 Mac Studio。
 
 ## Mac Studio 上必做
 
