@@ -43,8 +43,11 @@
 ```text
 08_自動化/firebase/scripts/prepare-approval-queue-firestore-preview.mjs
 08_自動化/firebase/scripts/review-internal-approval-workflow.mjs
+08_自動化/firebase/scripts/ensure-approval-queue-app-data.mjs
 08_自動化/firebase/B17-B20內部ApprovalQueue批次審查.command
 ```
+
+`ensure-approval-queue-app-data.mjs` 只處理一個狀況：若本機 `command-center-app/data/approval-queue.js` 被空檔覆蓋成 0 筆，才從目前 Git HEAD 還原這一個 generated snapshot。它不碰 production Firebase、不接外部通道、不改客戶資料。
 
 ## 執行方式
 
@@ -66,6 +69,15 @@ preview_write_count: 7
 overall_status: passed_internal_batch_review
 production_write_allowed: false
 ```
+
+若本機 snapshot 曾被空檔覆蓋，可能會先看到：
+
+```text
+B17A_RESTORED_APPROVAL_QUEUE_FROM_HEAD
+approval_count: 6
+```
+
+這代表 command 只還原本機 approval queue snapshot，並非正式寫入 Firebase。
 
 ## 本機執行回填
 

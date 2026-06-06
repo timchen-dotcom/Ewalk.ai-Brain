@@ -13,6 +13,10 @@ echo "B17-B20：內部 Approval Queue / Audit Log / Command Center 上工流程�
 echo "安全邊界：只產生 preview / review，不寫 production Firebase，不發文、不部署、不接正式客戶通道、不碰廣告或金流。"
 echo ""
 
+echo "Step 0/2：確認 approval queue 來源不是空檔。"
+"$NODE_BIN" scripts/ensure-approval-queue-app-data.mjs
+echo ""
+
 echo "Step 1/2：產生 B17A 正式 Firestore approvals 寫入預覽。"
 "$NODE_BIN" scripts/prepare-approval-queue-firestore-preview.mjs
 echo ""
