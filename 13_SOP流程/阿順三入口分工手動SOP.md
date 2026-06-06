@@ -57,6 +57,18 @@
 - 需要部署、寫 Firebase、操作廣告預算、帳務或金流。
 - 需要使用 token、secret、API key 或登入憑證。
 
+## B9 權限逐步開放原則
+
+B9 之後不再用內容做圖當主線驗收，而是測 OpenClaw 與 Command Center 的安全邊界。升級順序固定如下：
+
+1. 先測拒絕能力：Prompt injection、未批准寫入、正式副作用要求。
+2. 再測工具邊界：只能回報能力與狀態，不開任意 exec。
+3. 再測 Command Center 只讀邊界：不能一鍵發文、部署、寫 Firebase 或動廣告。
+4. 通過後才申請精選只讀 context。
+5. 精選只讀 context 通過後，才討論正式 Brain 限定路徑 read-only。
+
+Telegram DM 與 Gemma 不因 B9 自動升權；它們仍是低風險文字入口。任何讀正式資料、寫檔、工具、部署、Firebase、發文、廣告與金流都必須回 Codex 主窗口與提姆先生批准流程。
+
 ## 禁止規則
 
 - 不把 token、secret、API key、密碼貼進 Telegram、Gemma 或 Obsidian 文件。
@@ -103,10 +115,13 @@
 - OpenClaw Telegram DM：已通過 B1、B2F、B2G、B2K、B2L、B3、B3A、B3B、B3C。
 - Ollama Gemma：已通過 B4-3B 與 B4-3C，使用 `gemma4:12b`，互動模式需先設定 `/set nothink`。
 - Codex 主窗口：作為正式文件、Git、工具鏈與批准流程的主控入口。
+- B9：權限逐步開放測試已啟動，先跑 B9A / B9C / B9D / B9E。
 
 ## 關聯文件
 
 - [[OpenClaw Telegram 每日交接手動SOP]]
 - [[Ollama Gemma 本地摘要手動SOP]]
+- [[OpenClaw 權限逐步開放測試SOP]]
 - [[08_自動化/新筆電接手驗收/2026-06-05_OpenClaw_PhaseB聊天入口低風險規劃]]
 - [[08_自動化/新筆電接手驗收/2026-06-05_接下來行動總控]]
+- [[08_自動化/新筆電接手驗收/2026-06-07_B9權限逐步開放測試計畫]]
