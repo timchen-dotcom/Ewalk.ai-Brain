@@ -114,9 +114,9 @@ B16A 可通過的標準：
 
 ## 下一步
 
-- B16B：提姆先生已指示往下走，已建立 Mac Studio 本機 emulator 寫入 command；第一次實跑抓到 Java wrapper 與空 queue 問題，已補 B16B-1 hotfix。
-- B16B 仍不碰 production Firebase。
-- B17 才討論正式 Firestore approvals 寫入預覽。
+- B16B：已通過，Mac Studio 本機 emulator 寫入 6 筆 approvals，逐筆回查 6 筆。
+- B16B 未碰 production Firebase。
+- B17A 才討論正式 Firestore approvals 寫入預覽；B17A 仍不等於正式寫入。
 - B17 也不等於正式寫入，仍需逐案批准。
 
 ## 關聯文件

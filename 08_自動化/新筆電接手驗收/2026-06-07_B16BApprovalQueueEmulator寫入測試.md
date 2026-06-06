@@ -1,7 +1,7 @@
 ---
 類型: 權限逐步開放測試
 階段: B16B
-狀態: B16B-1 hotfix 已建立，待 Mac Studio 重跑
+狀態: 已通過
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -91,7 +91,7 @@ verified_from_emulator: 6
 
 ## 目前狀態
 
-Codex 主窗口已建立 B16B 命令與回查邏輯。
+Codex 主窗口已建立 B16B 命令與回查邏輯，Mac Studio 實跑已通過。
 
 2026-06-07 第一次 Mac Studio 實跑失敗，原因不是 production Firebase 權限問題，而是兩個本機前置問題：
 
@@ -104,15 +104,38 @@ B16B-1 hotfix 已補上：
 - `.command` 改用 `java -version` 做真檢查。
 - 若 approval queue 為 0 筆，腳本會回覆 `B16B_BLOCKED_EMPTY_APPROVAL_QUEUE` 並中止，不進入 emulator 寫入。
 
+## 通過回填
+
+2026-06-07 Mac Studio 重跑 B16B-1 後通過。
+
+通過訊號：
+
+```text
+approval_count: 6
+pending_count: 5
+approved_but_not_executed_count: 1
+wrote_to_emulator: 6
+verified_from_emulator: 6
+production_write_allowed: false
+Script exited successfully (code 0)
+```
+
+判定：
+
+- B16B 通過。
+- Java / Firestore Emulator 已可在 Mac Studio 啟動。
+- approvals 可寫入本機 emulator。
+- approvals 可逐筆從本機 emulator 回查。
+- production Firebase 未被寫入。
+
 ## 下一步
 
-- 提姆先生在 Mac Studio 執行 B16B command。
-- 將輸出貼回 Codex 主窗口。
-- 若 `wrote_to_emulator: 6` 與 `verified_from_emulator: 6` 都出現，回填 B16B 通過。
-- 若仍顯示 Java 找不到，先執行 Homebrew 提示的 JDK symlink 後重跑。
-- B17 才討論正式 Firestore approvals 寫入預覽；仍不等於正式寫入。
+- B17A：正式 Firestore approvals 寫入預覽。
+- B17A 只產生 production 寫入預覽，不寫 production Firebase。
+- 正式 production 寫入仍需提姆先生逐案批准。
 
 ## 關聯文件
 
 - [[2026-06-07_B16FirebaseEmulatorStaging寫入前防線]]
 - [[2026-06-07_B15CommandCenter本機DryRunQueue寫入]]
+- [[2026-06-07_B17A正式FirestoreApprovalQueue寫入預覽]]
