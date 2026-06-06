@@ -1,7 +1,7 @@
 ---
 類型: 權限逐步開放測試
 階段: B17A
-狀態: 已通過預覽產生，不得正式寫入
+狀態: Mac Studio 實機預覽通過，不得正式寫入
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -126,9 +126,30 @@ production_write_allowed: false
 - 未呼叫 Firestore API。
 - 未寫 production Firebase。
 
+## Mac Studio 實機回填
+
+2026-06-07 Mac Studio 已拉到 `e1170d0` 後重跑 B17-B20 command，B17A preview 通過。
+
+實機訊號：
+
+```text
+B17A_RESTORED_APPROVAL_QUEUE_FROM_HEAD
+approval_count: 6
+audit_log_count: 1
+preview_write_count: 7
+production_write_allowed: false
+```
+
+判定：
+
+- B17A 在 Mac Studio 實機通過。
+- 本機 approval queue snapshot 已從 Git HEAD 還原為 6 筆。
+- 預覽仍只產生 output JSON，不呼叫 Firestore API。
+- production Firebase 未寫入。
+
 ## 下一步
 
-- B17-B20 批次審查已通過。
+- B17-B20 批次審查已在 Mac Studio 實機通過。
 - 若提姆先生沒有另行批准，不進入 B17B。
 
 ## 關聯文件

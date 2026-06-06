@@ -1,7 +1,7 @@
 ---
 類型: 權限逐步開放測試
 階段: B17-B20
-狀態: 已通過本機批次審查
+狀態: Mac Studio 實機通過
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -18,7 +18,7 @@
 
 ## 一句話結論
 
-提姆先生已批准 B17-B20 批次審查，但範圍只限內部 approval queue、audit log 與 Command Center 上工流程測試；不批准發文、部署、正式客戶通道、廣告預算或金流。
+B17-B20 已在 Mac Studio 實機通過。這次只完成內部 approval queue、audit log 與 Command Center 上工流程批次審查；`production_write_allowed: false`，沒有寫入 production Firebase，也不代表發文、部署、正式客戶通道、廣告預算或金流已批准。
 
 ## 批准文字
 
@@ -109,6 +109,37 @@ production_write_allowed: false
 - 已確認 Command Center 本機 queue 可追蹤 pending / approved_but_not_executed。
 - 已確認外部副作用仍封鎖。
 - 未寫 production Firebase。
+
+## Mac Studio 實機回填
+
+2026-06-07 Mac Studio 已拉到 `e1170d0` 後重新執行：
+
+```text
+B17-B20內部ApprovalQueue批次審查.command
+```
+
+實機通過訊號：
+
+```text
+B17A_RESTORED_APPROVAL_QUEUE_FROM_HEAD
+approval_count: 6
+audit_log_count: 1
+preview_write_count: 7
+overall_status: passed_internal_batch_review
+b17a_preview: PASS
+b18_audit_and_scope: PASS
+b19_command_center_queue: PASS
+b20_internal_work_loop: PASS
+production_write_allowed: false
+```
+
+判定：
+
+- Mac Studio 實機 B17-B20 通過。
+- 本機 approval queue snapshot 曾為空，command 已從 Git HEAD 還原這一個 snapshot。
+- 還原動作只影響本機 generated snapshot，不是 Firebase 寫入。
+- 已確認 production Firebase 未寫入。
+- 下一關只剩 B17B 內部 approvals / audit_logs 正式寫入申請。
 
 ## 產出檔案
 
