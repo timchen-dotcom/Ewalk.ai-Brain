@@ -1,7 +1,7 @@
 ---
 類型: 權限逐步開放測試
 階段: B16B
-狀態: 已建立執行命令，待 Mac Studio 實跑
+狀態: B16B-1 hotfix 已建立，待 Mac Studio 重跑
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -93,13 +93,23 @@ verified_from_emulator: 6
 
 Codex 主窗口已建立 B16B 命令與回查邏輯。
 
-目前這台 Codex 執行環境缺 Java Runtime，因此不在此處實跑 emulator。B16B 應在 Mac Studio 上執行，因為 Mac Studio 是阿順固定主機。
+2026-06-07 第一次 Mac Studio 實跑失敗，原因不是 production Firebase 權限問題，而是兩個本機前置問題：
+
+- Homebrew 已安裝 `openjdk`，但 macOS Java wrapper 仍找不到 JDK，導致 Firebase Emulator 的 `java -version` 失敗。
+- 預檢讀到 `approval_count: 0`，不符合 B15 預期的 6 筆 approvals。
+
+B16B-1 hotfix 已補上：
+
+- `.command` 會自動設定 Homebrew OpenJDK 的 `JAVA_HOME` 與 `PATH`。
+- `.command` 改用 `java -version` 做真檢查。
+- 若 approval queue 為 0 筆，腳本會回覆 `B16B_BLOCKED_EMPTY_APPROVAL_QUEUE` 並中止，不進入 emulator 寫入。
 
 ## 下一步
 
 - 提姆先生在 Mac Studio 執行 B16B command。
 - 將輸出貼回 Codex 主窗口。
 - 若 `wrote_to_emulator: 6` 與 `verified_from_emulator: 6` 都出現，回填 B16B 通過。
+- 若仍顯示 Java 找不到，先執行 Homebrew 提示的 JDK symlink 後重跑。
 - B17 才討論正式 Firestore approvals 寫入預覽；仍不等於正式寫入。
 
 ## 關聯文件

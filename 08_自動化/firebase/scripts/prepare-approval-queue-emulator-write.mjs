@@ -148,6 +148,10 @@ assertNoProductionWrite({
 const payload = parseApprovalAppData(await readFile(appDataPath, "utf8"));
 const docs = approvalDocs(payload);
 
+if (docs.length === 0) {
+  throw new Error("B16B_BLOCKED_EMPTY_APPROVAL_QUEUE：approval queue 為 0 筆，拒絕進入 emulator 寫入流程。");
+}
+
 const summary = {
   b16_stage: "B16A",
   target,
