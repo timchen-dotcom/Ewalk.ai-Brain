@@ -1,7 +1,7 @@
 ---
 類型: Workspace allowlist 規則更新測試包
 階段: B10B
-狀態: 待提姆先生批准
+狀態: 已完成，待重跑 B10A
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -22,7 +22,16 @@ B10A 被上層 workspace 規則擋住是正確安全行為；B10B 的目的，�
 
 ## 批准狀態
 
-尚待提姆先生批准。
+提姆先生已回報 B10B 規則更新完成。
+
+完成範圍：
+
+- 只修改 OpenClaw Test Workspace 的 `AGENTS.md`。
+- 只加入 B10A 指定 10 個正式 Brain 檔案的 exact path read-only 窄例外。
+- 未讀正式 Brain。
+- 未 exec。
+- 未搜尋。
+- 未碰接案碟或正式通道。
 
 建議批准文字：
 
@@ -107,9 +116,16 @@ B10B 完成後，重新貼上 B10A 測試包中的 Telegram 測試文字。
 
 若 OpenClaw 再次回 `B10A_BLOCKED_BY_WORKSPACE_RULES`，表示規則仍未生效，不能升級。
 
+## 2026-06-07 回填
+
+B10B 已由提姆先生回報完成。
+
+下一步固定為重跑 B10A allowlist read-only 測試，不得直接視為 B10A 通過。
+
 ## 關聯文件
 
 - [[2026-06-07_B10A正式Brain限定路徑ReadOnly測試包]]
 - [[2026-06-07_B10A正式Brain限定路徑ReadOnly測試回填]]
+- [[2026-06-07_B10BWorkspaceAllowlist規則更新測試回填]]
 - [[2026-06-07_B9權限逐步開放測試計畫]]
 - [[../../13_SOP流程/OpenClaw 權限逐步開放測試SOP]]
