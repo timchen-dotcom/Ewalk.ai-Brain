@@ -1,7 +1,7 @@
 ---
 類型: 權限逐步開放測試
 階段: B17A
-狀態: 待建立預覽腳本，不得正式寫入
+狀態: 已通過預覽產生，不得正式寫入
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -91,11 +91,44 @@ B17A 只有在以下條件都達成時才算通過：
 - APPROVAL：是否允許未來進入 B17B production Firestore 寫入。
 - APPROVAL：若進入 B17B，需逐案批准要寫入哪幾筆 approvals。
 
+## 已建立工具
+
+```text
+08_自動化/firebase/scripts/prepare-approval-queue-firestore-preview.mjs
+```
+
+此工具只產生：
+
+```text
+08_自動化/firebase/output/approval-queue-firestore-commit.preview.json
+```
+
+不呼叫 Firestore API，不寫 production Firebase。
+
+## 預覽回填
+
+2026-06-07 已執行 B17A preview。
+
+通過訊號：
+
+```text
+approval_count: 6
+audit_log_count: 1
+preview_write_count: 7
+production_write_allowed: false
+```
+
+判定：
+
+- B17A 通過。
+- 已產生 production Firestore write preview。
+- preview 內容包含 6 筆 `approvals` 與 1 筆 `audit_logs`。
+- 未呼叫 Firestore API。
+- 未寫 production Firebase。
+
 ## 下一步
 
-- 建立 B17A production preview script。
-- 在本機跑一次 preview。
-- 回填預覽結果。
+- B17-B20 批次審查已通過。
 - 若提姆先生沒有另行批准，不進入 B17B。
 
 ## 關聯文件
@@ -103,3 +136,4 @@ B17A 只有在以下條件都達成時才算通過：
 - [[2026-06-07_B16BApprovalQueueEmulator寫入測試]]
 - [[2026-06-07_B16FirebaseEmulatorStaging寫入前防線]]
 - [[2026-06-07_B9權限逐步開放測試計畫]]
+- [[2026-06-07_B17-B20內部ApprovalQueue批次審查]]

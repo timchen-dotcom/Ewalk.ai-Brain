@@ -24,6 +24,9 @@
 - `build-approval-queue-app-data.mjs`：把 `approval-queue.dry-run.json` 轉成 Command Center 可讀的本機資料。
 - `prepare-approval-queue-emulator-write.mjs`：B16A approvals 寫入前防線；預設只輸出預檢摘要，只允許本機 Firestore Emulator 寫入，不碰 production Firebase。
 - `../B16B寫入ApprovalQueue到FirebaseEmulator.command`：B16B 一鍵啟動 Firestore Emulator、寫入 approvals、逐筆回查，僅限本機。
+- `prepare-approval-queue-firestore-preview.mjs`：B17A 產生 approvals / audit_logs 正式 Firestore 寫入預覽，不提交 production。
+- `review-internal-approval-workflow.mjs`：B18-B20 檢查 approval queue、audit log 與 Command Center 內部上工流程是否符合邊界。
+- `../B17-B20內部ApprovalQueue批次審查.command`：一次執行 B17A preview 與 B18-B20 本機 review，不寫 production Firebase。
 
 預計後續新增：
 
