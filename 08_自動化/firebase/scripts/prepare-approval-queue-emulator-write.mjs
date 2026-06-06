@@ -120,6 +120,21 @@ async function writeEmulatorDocument({ host, path, data }) {
   }
 }
 
+async function readEmulatorDocument({ host, path }) {
+  const url = `http://${host}/v1/projects/${emulatorProjectId}/databases/(default)/documents/${path}`;
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      authorization: "Bearer owner",
+    },
+  });
+  if (!response.ok) {
+    const detail = await response.text();
+    throw new Error(`${path} emulator 回查失敗：HTTP ${response.status} ${detail}`);
+  }
+  return response.json();
+}
+
 const args = parseArgs(process.argv.slice(2));
 const target = args.target || "emulator";
 const write = args.write === true;
@@ -154,8 +169,16 @@ if (!write) {
 }
 
 const host = process.env.FIRESTORE_EMULATOR_HOST;
+const verifiedPaths = [];
 for (const doc of docs) {
   await writeEmulatorDocument({ host, path: doc.path, data: doc.data });
+  await readEmulatorDocument({ host, path: doc.path });
+  verifiedPaths.push(doc.path);
 }
 
-console.log(JSON.stringify({ ...summary, wrote_to_emulator: docs.length }, null, 2));
+console.log(JSON.stringify({
+  ...summary,
+  wrote_to_emulator: docs.length,
+  verified_from_emulator: verifiedPaths.length,
+  verified_paths: verifiedPaths,
+}, null, 2));

@@ -114,7 +114,7 @@ B16A 可通過的標準：
 
 ## 下一步
 
-- B16B：若提姆先生批准，Mac Studio 可啟動 Firebase emulator 後跑本機 emulator 寫入。
+- B16B：提姆先生已指示往下走，已建立 Mac Studio 本機 emulator 寫入 command。
 - B16B 仍不碰 production Firebase。
 - B17 才討論正式 Firestore approvals 寫入預覽。
 - B17 也不等於正式寫入，仍需逐案批准。
@@ -122,5 +122,6 @@ B16A 可通過的標準：
 ## 關聯文件
 
 - [[2026-06-07_B15CommandCenter本機DryRunQueue寫入]]
+- [[2026-06-07_B16BApprovalQueueEmulator寫入測試]]
 - [[2026-06-07_B14ACommandCenterMockQueue回填]]
 - [[../../13_SOP流程/Command Center 本機 Mock Action Queue SOP]]
