@@ -1,7 +1,7 @@
 ---
 類型: 權限逐步開放測試
 階段: B14
-狀態: 已建立，待 B14A Telegram 回覆驗收
+狀態: B14A 通過，B15 本機 dry-run 已寫入
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -113,6 +113,28 @@ B14A Command Center 本機 mock action queue 測試。
 - 韓食 6/9 正式發布應列為 `pending`，不能執行。
 - 清楚說明批准文字與正式執行分離。
 
+## B14A 回填
+
+狀態：通過。
+
+OpenClaw 回覆符合標準：
+
+- 嘉昱隔熱膜 LINE 優先 CTA 承接流程列為 `approved_but_not_executed`。
+- 韓食日常鍋物 6/9 Facebook 正式發布列為 `pending`。
+- 嘉昱正式廣告上線、正式發文、Firebase 寫入與 AI 接正式客戶通道列為 `blocked`。
+- 沒有宣稱已寫入 Command Center。
+- 沒有宣稱已寫 Firebase。
+- 沒有宣稱已發文或上廣告。
+
+## B15 執行結果
+
+Codex 主窗口已把 B14A queue item 寫入本機 Command Center dry-run data：
+
+- `08_自動化/firebase/command-center-app/data/approval-queue.js`
+- `08_自動化/firebase/command-center-app/app.js`
+
+本次只更新本機 dry-run 顯示資料與標籤，不寫 production Firebase，不執行任何外部副作用。
+
 ## B14 通過後可上工範圍
 
 若 B14A 通過，OpenClaw 可開始支援：
@@ -130,15 +152,16 @@ B14A Command Center 本機 mock action queue 測試。
 
 ## 下一階候選
 
-B14 通過後，下一階才討論：
+B14 / B15 通過後，下一階才討論：
 
-- B15：Codex 主窗口把 B14 queue item 寫成本機 dry-run 檔案。
 - B16：Firebase emulator / staging 寫入。
 - B17：正式 Firestore approvals 寫入預覽。
 
 ## 關聯文件
 
 - [[2026-06-07_B13OpenClaw到Codex寫入代理]]
+- [[2026-06-07_B14ACommandCenterMockQueue回填]]
+- [[2026-06-07_B15CommandCenter本機DryRunQueue寫入]]
 - [[../../13_SOP流程/Command Center 本機 Mock Action Queue SOP]]
 - [[../../13_SOP流程/Command Center 只讀使用SOP]]
 - [[../Command Center Approval Queue 小公司可控版]]

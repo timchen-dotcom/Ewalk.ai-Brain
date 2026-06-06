@@ -3,7 +3,7 @@
 建立日期：2026-06-02  
 負責角色：阿順  
 最終決策者：提姆先生  
-狀態：本機 dry-run 已接入 Command Center；B14 mock action queue 測試已建立；尚未正式寫入 Firestore
+狀態：本機 dry-run 已接入 Command Center；B14A 通過；B15 本機 dry-run queue 已更新；尚未正式寫入 Firestore
 
 ## 用途
 
@@ -63,11 +63,12 @@ Approval Queue 是 Command Center 裡的「等待批准」區。
 ## 下一步
 
 1. 提姆先生檢查 Approval Queue 的欄位與呈現方式。
-2. B14 先測 OpenClaw 能否把批准文字整理成 mock action queue 草稿。
-3. 若 B14A 通過，再由 Codex 主窗口整理本機 dry-run 寫入候選。
-4. 若欄位 OK，再準備正式 Firestore `approvals` 寫入預覽。
-5. 提姆先生批准後，才正式寫入 `approvals` 與 `audit_logs`。
-6. 正式寫入後，Command Center Live Read 可讀取正式批准佇列。
+2. B14 已測 OpenClaw 能否把批准文字整理成 mock action queue 草稿。
+3. B15 已由 Codex 主窗口整理本機 dry-run queue data。
+4. 若要再往上，下一階先做 Firebase emulator / staging，不碰 production。
+5. 若欄位 OK，再準備正式 Firestore `approvals` 寫入預覽。
+6. 提姆先生批准後，才正式寫入 `approvals` 與 `audit_logs`。
+7. 正式寫入後，Command Center Live Read 可讀取正式批准佇列。
 
 ## 安全限制
 
@@ -90,3 +91,14 @@ B14 不開放：
 - OpenClaw 或 Command Center 直接執行 queue item。
 - production Firebase 寫入。
 - 發文、部署、廣告預算、金流、帳務或付款設定。
+
+## B15 本機 Dry-run Queue 更新
+
+B15 已新增兩筆本機 dry-run queue item：
+
+| 事項 | 狀態 | 判定 |
+| --- | --- | --- |
+| 嘉昱隔熱膜 LINE 優先 CTA 承接流程 | `approved_but_not_executed` | 提姆先生批准進入待辦追蹤，但尚未執行任何外部副作用。 |
+| 韓食日常鍋物 6/9 Facebook 正式發布 | `pending` | 尚未批准，不能發文。 |
+
+本次只更新 `command-center-app/data/approval-queue.js` 與本機前端顯示標籤，不寫 production Firebase。

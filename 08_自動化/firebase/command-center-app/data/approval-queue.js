@@ -1,15 +1,64 @@
 window.EWALK_APPROVAL_QUEUE = {
   "mode": "dry-run",
   "project_id": "ewalk-ai-system-prod",
-  "generated_at": "2026-06-02T15:46:49.929Z",
+  "generated_at": "2026-06-07T15:30:00.000Z",
   "summary": {
-    "total": 4,
-    "pending": 4,
+    "total": 6,
+    "pending": 5,
+    "approved_but_not_executed": 1,
     "approved": 0,
     "rejected": 0,
-    "high_risk": 3
+    "high_risk": 4
   },
   "approvals": [
+    {
+      "approval_id": "approval_20260607_jiayu_line_cta_followup_b14a",
+      "target_type": "client_channel",
+      "target_id": "jiayu-line-cta-followup",
+      "client_id": "jiayu-window-film",
+      "client_name": "嘉昱汽車/建築隔熱膜",
+      "category": "client_channel",
+      "permission_level": "L3",
+      "status": "approved_but_not_executed",
+      "requested_by": "ashun",
+      "final_approver": "提姆先生",
+      "title": "嘉昱隔熱膜 LINE 優先 CTA 承接流程進入待辦追蹤",
+      "request_summary": "提姆先生批准將嘉昱 LINE 優先 CTA 承接流程整理進 Command Center 本機待辦追蹤。",
+      "business_value": "讓嘉昱夏季隔熱膜快打方案的 LINE 承接流程可被追蹤，先沉澱客服分流與待確認事項。",
+      "risk_summary": "本項只做本機 mock action queue 追蹤；不得延伸為正式廣告上線、正式發文、Firebase 寫入或 AI 接正式客戶通道。",
+      "reject_impact": "若不追蹤，嘉昱 LINE CTA 流程仍停留在聊天紀錄與文件中，後續較難接上正式上線檢查。",
+      "rollback_plan": "移除本機 dry-run queue 項目即可；不影響正式 Firebase、Meta、LINE 或客戶資料。",
+      "ashun_recommendation": "保留為已批准未執行，下一步只由 Codex 主窗口整理本機 dry-run 與文件，不進正式外部操作。",
+      "requested_at": "2026-06-07T15:30:00.000Z",
+      "expires_at": "2026-06-14T15:30:00.000Z",
+      "source_refs": [
+        "Ewalk.ai Brain/08_自動化/新筆電接手驗收/2026-06-07_B14ACommandCenterMockQueue回填.md"
+      ]
+    },
+    {
+      "approval_id": "approval_20260607_meta_hansik_0609_publish_001",
+      "target_type": "content_queue",
+      "target_id": "meta-fb-hansik-20260609-seafood-tofu-soup",
+      "client_id": "hansik-daily-hotpot",
+      "client_name": "韓食日常鍋物",
+      "category": "publish",
+      "permission_level": "L4",
+      "status": "pending",
+      "requested_by": "ashun",
+      "final_approver": "提姆先生",
+      "title": "韓食日常鍋物 6/9 貼文正式發布到 Facebook",
+      "request_summary": "是否允許韓食日常鍋物 2026-06-09 貼文進入正式 Facebook 發布流程。",
+      "business_value": "可驗證韓食日常鍋物內容佇列從內部準備走向正式發文的批准流程。",
+      "risk_summary": "會對外出現在 Facebook 粉專，屬於正式外部副作用；目前尚未批准，不能執行。",
+      "reject_impact": "內容保留在內部候選佇列，不對外發布。",
+      "rollback_plan": "若未來批准後發出且需撤回，只能由人工到粉專刪除或隱藏貼文。",
+      "ashun_recommendation": "目前維持 pending，等待提姆先生逐案批准；B14/B15 不執行正式發布。",
+      "requested_at": "2026-06-07T15:30:00.000Z",
+      "expires_at": "2026-06-14T15:30:00.000Z",
+      "source_refs": [
+        "Ewalk.ai Brain/08_自動化/新筆電接手驗收/2026-06-07_B14ACommandCenterMockQueue回填.md"
+      ]
+    },
     {
       "approval_id": "approval_20260602_meta_hansik_publish_001",
       "target_type": "content_queue",

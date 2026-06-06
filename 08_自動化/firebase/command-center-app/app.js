@@ -23,6 +23,7 @@ const statusLabel = {
   pending_review: "待阿順檢查",
   pending_approval: "待提姆先生批准",
   approved: "已批准",
+  approved_but_not_executed: "已批准未執行",
   published: "已發布",
   failed: "失敗",
   success: "成功",
@@ -37,6 +38,10 @@ const categoryLabel = {
   scheduled_research: "排程研究",
   billing: "金流 / 付費",
   ad_budget: "廣告預算",
+  client_channel: "客戶通道 / 承接流程",
+  document_write: "文件寫入",
+  automation: "自動化",
+  firebase_write: "Firebase 寫入",
   core_rule: "核心規則",
   client_commitment: "客戶承諾",
 };
@@ -57,6 +62,7 @@ function formatDate(value) {
 
 function nextAction(item) {
   if (item.status === "published") return item.meta?.post_url ? "回收成效" : "補貼文連結";
+  if (item.status === "approved_but_not_executed") return "等待 Codex 主窗口執行";
   if (item.status === "approved") return "等待發布流程";
   if (item.status === "pending_approval") return "送提姆先生批准";
   if (item.status === "pending_review") return "阿順檢查";
@@ -67,6 +73,7 @@ function nextAction(item) {
 function statusClass(status) {
   if (status === "published") return "published";
   if (status === "approved") return "approved";
+  if (status === "approved_but_not_executed") return "pending";
   if (status === "success") return "success";
   if (status === "failed" || status === "blocked" || status === "rejected" || status === "expired") return "danger";
   if (status === "draft") return "draft";
@@ -331,7 +338,7 @@ function renderApprovalQueue() {
   const items = getApprovalItems()
     .slice()
     .sort((a, b) => {
-      const statusRank = { pending: 0, changes_requested: 1, approved: 2, rejected: 3, expired: 4 };
+      const statusRank = { pending: 0, approved_but_not_executed: 1, changes_requested: 2, approved: 3, rejected: 4, expired: 5 };
       const aRank = statusRank[a.status] ?? 9;
       const bRank = statusRank[b.status] ?? 9;
       if (aRank !== bRank) return aRank - bRank;
