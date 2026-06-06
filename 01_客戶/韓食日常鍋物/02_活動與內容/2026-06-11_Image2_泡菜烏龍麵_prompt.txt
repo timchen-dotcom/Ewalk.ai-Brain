@@ -1,0 +1,7 @@
+Use case: ads-marketing
+Asset type: Facebook / Instagram 4:5 feed visual for 韓食日常鍋物
+Primary request: Create a clean modern Korean food social ad base image for 泡菜烏龍麵. The image should show a hot bowl of kimchi udon noodles with visible udon, kimchi, tofu, mushroom or pork slices, gentle steam, bright appetizing red-orange broth, and a clean restaurant table setting.
+Composition: vertical 4:5, food hero in the lower 60-65% of the frame, generous clean negative space in the top-left for later brand logo and Traditional Chinese headline overlay.
+Style: modern Korean casual dining, bright natural light, clean white background, subtle brand-color accents inspired by orange #F37021 and deep navy #0B2545, polished but realistic.
+Avoid: no text, no logo, no watermark, no fake Korean lettering, no posters, no chopstick text, no people, no unrealistic oversized ingredients, no dark heavy BBQ mood, no fake discounts, no external brand marks.
+Output: high-resolution bitmap suitable for 1080x1350 post-production.
