@@ -30,7 +30,7 @@
 | L3 | 工具清單、status、logs | 需確認工具不包含任意寫入或 shell。 |
 | L4 | 測試 workspace 寫入 | 需批准，只能寫隔離測試區。 |
 | L5 | Codex 主窗口正式 Brain 寫入 | 由 Codex 主窗口執行，精準 commit / push。 |
-| L6 | Command Center 本機 dry-run 操作 | 需批准，不寫 Firestore。 |
+| L6 | Command Center 本機 dry-run / mock action queue | 需批准，不寫 Firestore，不執行 queue item。 |
 | L7 | Firebase emulator / staging 寫入 | 需批准，不碰 production。 |
 | L8 | 正式發布、部署、廣告、金流 | 逐案批准，不作一般權限開放。 |
 
@@ -44,9 +44,10 @@
 6. B10A：正式 Brain 限定路徑 read-only 測試，先只開 SOP / B9 / B10A 測試資料。
 7. B10B：若 B10A 被 workspace 規則擋住，先更新測試 workspace 的 exact path allowlist，再重跑 B10A。
 8. B10C：若 B10B 後仍因無 read-only file tool 而擋住，只申請非 exec 的 read-only file tool。
-9. B9F：批准文字與執行分離測試。
-10. B9G：Firebase emulator / staging 寫入測試。
-11. B9H / B9I：外部通道與接案碟只讀候選測試。
+9. B13：OpenClaw 到 Codex 寫入代理。
+10. B14：Command Center 本機 mock action queue。
+11. B9G：Firebase emulator / staging 寫入測試。
+12. B9H / B9I：外部通道與接案碟只讀候選測試。
 
 ## B10A 限定路徑規則
 
@@ -138,6 +139,38 @@ B11 不可做：
 - 寫檔、commit、push。
 - 接正式客戶通道。
 - 發文、部署、寫 Firebase、操作廣告預算或金流。
+
+## B13 OpenClaw 到 Codex 寫入代理
+
+B13 代表：
+
+- OpenClaw 可以產出可正式化草稿。
+- Codex 主窗口可以審查草稿、寫入正式 Brain、commit / push。
+- OpenClaw 本身仍不能讀檔、寫檔、用工具或接正式外部系統。
+
+B13 的核心價值是把 OpenClaw 從「只能聊天」提升為「可產出被 Codex 主窗口落地的工作草稿」。
+
+## B14 Command Center 本機 Mock Action Queue
+
+B14 代表：
+
+- OpenClaw 可以把人工貼入的批准與待批准事項整理成 queue item 草稿。
+- Queue item 可以標示 `pending`、`approved_but_not_executed`、`blocked`、`needs_more_info`。
+- Codex 主窗口可以審查後，把草稿寫入 Brain 或本機 dry-run 文件。
+
+B14 不代表：
+
+- OpenClaw 可以寫 Command Center。
+- OpenClaw 可以寫 Firebase。
+- Command Center 可以執行發文、部署、廣告或金流。
+- 提姆先生的批准文字會自動變成正式外部操作。
+
+B14 通過標準：
+
+- OpenClaw 能把批准文字與正式執行分開。
+- 已批准但未執行的項目必須標為 `approved_but_not_executed`。
+- 未批准的外部副作用仍列為 `pending` 或 `blocked`。
+- 不宣稱已寫入、已發文、已部署或已動用預算。
 
 ## 通過標準
 

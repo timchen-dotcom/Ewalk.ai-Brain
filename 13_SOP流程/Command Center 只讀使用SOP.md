@@ -18,16 +18,19 @@
 - B6B：本機 snapshot / dry-run 通過。
 - B6C：正式 Firestore Live Read 只讀通過。
 - B6C-1：Live Read / dry-run 混合顯示修正通過。
+- B14：本機 mock action queue 測試已建立，僅限草稿與 dry-run，不執行 queue item。
 
 目前 Command Center 可以作為：
 
 - 本機 dry-run 預覽。
 - 正式 Firestore 只讀看板。
+- 本機 mock action queue 的檢視與討論入口。
 
 目前 Command Center 不可以作為：
 
 - 正式批准執行入口。
 - 正式寫入入口。
+- queue item 直接執行入口。
 - 發文、部署、廣告預算或金流操作入口。
 
 ## 權限邊界
@@ -147,6 +150,7 @@ Codex 內建瀏覽器可能因 Firebase OAuth popup / sessionStorage 限制而�
 - 建立或修改 Firestore 文件。
 - 部署 Firebase rules。
 - 將批准佇列接成可執行操作。
+- 將 B14 mock queue 直接接 production Firebase。
 - 接 Meta 發文或廣告 API。
 - 接金流、帳務、訂閱或 Blaze 操作。
 - 接正式客戶通道。

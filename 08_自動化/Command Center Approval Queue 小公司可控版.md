@@ -3,7 +3,7 @@
 建立日期：2026-06-02  
 負責角色：阿順  
 最終決策者：提姆先生  
-狀態：本機 dry-run 已接入 Command Center，尚未正式寫入 Firestore
+狀態：本機 dry-run 已接入 Command Center；B14 mock action queue 測試已建立；尚未正式寫入 Firestore
 
 ## 用途
 
@@ -63,9 +63,11 @@ Approval Queue 是 Command Center 裡的「等待批准」區。
 ## 下一步
 
 1. 提姆先生檢查 Approval Queue 的欄位與呈現方式。
-2. 若欄位 OK，再準備正式 Firestore `approvals` 寫入預覽。
-3. 提姆先生批准後，才正式寫入 `approvals` 與 `audit_logs`。
-4. 正式寫入後，Command Center Live Read 可讀取正式批准佇列。
+2. B14 先測 OpenClaw 能否把批准文字整理成 mock action queue 草稿。
+3. 若 B14A 通過，再由 Codex 主窗口整理本機 dry-run 寫入候選。
+4. 若欄位 OK，再準備正式 Firestore `approvals` 寫入預覽。
+5. 提姆先生批准後，才正式寫入 `approvals` 與 `audit_logs`。
+6. 正式寫入後，Command Center Live Read 可讀取正式批准佇列。
 
 ## 安全限制
 
@@ -73,3 +75,18 @@ Approval Queue 是 Command Center 裡的「等待批准」區。
 - 本階段沒有執行發文、廣告、金流或排程。
 - 本階段沒有寫入正式 Firestore `approvals`。
 - 所有正式寫入仍需提姆先生逐項批准。
+
+## B14 Mock Action Queue 規則
+
+B14 只開放「草稿整理」：
+
+- OpenClaw 可根據人工貼入文字產出 queue item 草稿。
+- Codex 主窗口負責檢查、補欄位、寫入 Brain 或本機 dry-run。
+- Command Center 仍只顯示本機 dry-run 或正式只讀資料。
+
+B14 不開放：
+
+- OpenClaw 寫入 Command Center。
+- OpenClaw 或 Command Center 直接執行 queue item。
+- production Firebase 寫入。
+- 發文、部署、廣告預算、金流、帳務或付款設定。
