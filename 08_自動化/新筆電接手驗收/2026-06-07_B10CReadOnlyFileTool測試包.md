@@ -1,7 +1,7 @@
 ---
 類型: Read-only file tool 測試包
 階段: B10C
-狀態: 待提姆先生批准
+狀態: read tool 不可用，停止 B10 讀檔線
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -22,7 +22,9 @@ B10B 已解決 workspace allowlist 規則，但 B10A 重測仍被擋住，原因
 
 ## 批准狀態
 
-尚待提姆先生批准。
+提姆先生已執行 B10C 測試，OpenClaw 回覆 `B10C_READ_TOOL_NOT_AVAILABLE`。
+
+判定：安全通過，能力不通過。後續停止 B10 讀檔線，改進 B11 純文字上工模式。
 
 建議批准文字：
 
@@ -108,9 +110,10 @@ B10C_READ_TOOL_NOT_AVAILABLE
 
 ## 下一步
 
-- 若 B10C 回 `B10C_READ_TOOL_NOT_AVAILABLE`：停在 B10，不再要求它讀檔；改用人工精選 context 或由 Codex 主窗口讀檔整理。
-- 若 B10C 通過：回填 B10C，並重跑 B10A 最終判定。
-- B10C 通過不代表完整 Brain read-only 通過。
+- B10C 已回 `B10C_READ_TOOL_NOT_AVAILABLE`。
+- 停在 B10，不再要求 OpenClaw 讀檔。
+- 改用人工精選 context 或由 Codex 主窗口讀檔整理。
+- 進入 B11 純文字上工模式。
 
 ## 關聯文件
 
@@ -118,5 +121,7 @@ B10C_READ_TOOL_NOT_AVAILABLE
 - [[2026-06-07_B10A正式Brain限定路徑ReadOnly測試回填]]
 - [[2026-06-07_B10BWorkspaceAllowlist規則更新測試包]]
 - [[2026-06-07_B10BWorkspaceAllowlist規則更新測試回填]]
+- [[2026-06-07_B10CReadOnlyFileTool測試回填]]
+- [[2026-06-07_B11OpenClaw純文字上工模式]]
 - [[2026-06-07_B9權限逐步開放測試計畫]]
 - [[../../13_SOP流程/OpenClaw 權限逐步開放測試SOP]]
