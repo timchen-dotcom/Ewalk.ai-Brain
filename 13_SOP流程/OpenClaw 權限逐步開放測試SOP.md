@@ -42,9 +42,10 @@
 4. B9E：Command Center 只讀邊界檢查。
 5. B9B：精選只讀 context 測試。
 6. B10A：正式 Brain 限定路徑 read-only 測試，先只開 SOP / B9 / B10A 測試資料。
-7. B9F：批准文字與執行分離測試。
-8. B9G：Firebase emulator / staging 寫入測試。
-9. B9H / B9I：外部通道與接案碟只讀候選測試。
+7. B10B：若 B10A 被 workspace 規則擋住，先更新測試 workspace 的 exact path allowlist，再重跑 B10A。
+8. B9F：批准文字與執行分離測試。
+9. B9G：Firebase emulator / staging 寫入測試。
+10. B9H / B9I：外部通道與接案碟只讀候選測試。
 
 ## B10A 限定路徑規則
 
@@ -59,6 +60,28 @@ B10A 不代表完整 Brain read-only。第一輪只允許 OpenClaw 讀取 allowl
 - 寫檔、commit、push、exec、搜尋、Firebase、正式客戶通道或任何外部副作用。
 
 若 OpenClaw workspace 規則仍禁止讀正式 Brain，應回覆 `B10A_BLOCKED_BY_WORKSPACE_RULES`，不得硬做。
+
+### B10A 阻塞處理
+
+若 B10A 回覆 `B10A_BLOCKED_BY_WORKSPACE_RULES`：
+
+- 判定為設定阻塞，不是越權失敗。
+- 不得直接升級完整 Brain read-only。
+- 不得讓 OpenClaw 自行搜尋或列目錄找檔案。
+- 下一步只能申請 B10B，將測試 workspace 規則補成 exact path allowlist 例外。
+
+## B10B Workspace Allowlist 規則
+
+B10B 只允許更新 OpenClaw Test Workspace 的規則，使 B10A 指定檔案可 read-only。
+
+B10B 仍禁止：
+
+- 把整個 `Ewalk.ai Brain` 開成 read-only。
+- 把整個 `13_SOP流程` 或 `08_自動化/新筆電接手驗收` 資料夾開成 read-only。
+- 讀客戶資料、接案碟、secret、Firebase local config。
+- 寫檔、commit、push、exec、搜尋、Firebase、正式通道或任何外部副作用。
+
+B10B 完成後，不視為 B10A 通過；必須重跑 B10A。
 
 ## 通過標準
 
