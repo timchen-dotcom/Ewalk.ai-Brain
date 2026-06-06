@@ -22,6 +22,7 @@
 - `browser_firestore_commit_server.py`：當本機直連 Firestore 不穩時，透過 Chrome 完成已批准批次寫入與回查。
 - `create-approval-queue-dry-run.mjs`：產生 `approvals` 待批准佇列本機 dry-run JSON，不連正式 Firebase。
 - `build-approval-queue-app-data.mjs`：把 `approval-queue.dry-run.json` 轉成 Command Center 可讀的本機資料。
+- `prepare-approval-queue-emulator-write.mjs`：B16A approvals 寫入前防線；預設只輸出預檢摘要，只允許本機 Firestore Emulator 寫入，不碰 production Firebase。
 
 預計後續新增：
 
