@@ -1,0 +1,7 @@
+Use case: ads-marketing
+Asset type: Facebook / Instagram 4:5 feed visual for 韓食日常鍋物
+Primary request: Create a clean modern Korean food social ad base image for 韓式麻藥雞蛋 as the hero side dish. Show glossy soy-marinated soft-boiled eggs with jammy orange yolks, sesame seeds, scallions, and light soy sauce glaze in a small Korean metal bowl. Add two subtle supporting banchan side dishes nearby, inspired by seasoned wood ear mushroom strips and seasoned chives, but keep the marinated egg clearly the main subject.
+Composition: vertical 4:5, hero food in the lower 60-65% of the frame, clean bright negative space in the top-left for later brand logo and Traditional Chinese headline overlay. Table setting should feel Korean casual dining, not fine dining.
+Style: modern Korean casual dining, bright natural light, clean off-white background, fresh green accents, subtle brand-color touches inspired by orange #F37021 and deep navy #0B2545, polished but realistic, appetizing and crisp.
+Avoid: no text, no logo, no watermark, no fake Korean lettering, no posters, no people, no chopstick text, no unrealistic oversized eggs, no dark heavy BBQ mood, no fake discounts, no external brand marks.
+Output: high-resolution bitmap suitable for 1080x1350 post-production.
