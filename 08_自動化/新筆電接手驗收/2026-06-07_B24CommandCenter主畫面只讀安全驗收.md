@@ -1,7 +1,7 @@
 ---
 類型: 權限逐步開放測試
 階段: B24
-狀態: 已建立工具，等待 Mac Studio 實機執行
+狀態: 已通過
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -19,6 +19,23 @@
 ## 一句話結論
 
 B24 驗證 Command Center 主畫面能安全呈現 B23 產生的 production-readonly approval queue snapshot，並確認主畫面沒有 Firestore 寫入 API、高風險工具連結或外部執行入口。
+
+## 2026-06-07 實機結果
+
+Mac Studio 實機通過：
+
+```text
+overall_status: passed_command_center_app_readonly_review
+production_write_allowed: false
+external_side_effects_allowed: false
+```
+
+判定：
+
+- B24 通過。
+- Command Center 主畫面可安全顯示 production-readonly approval queue。
+- 主畫面仍沒有 Firestore 寫入 API、高風險工具連結或外部執行入口。
+- 下一關進入 B25 Command Center approval item 人工決策流程 mock。
 
 ## 前置條件
 

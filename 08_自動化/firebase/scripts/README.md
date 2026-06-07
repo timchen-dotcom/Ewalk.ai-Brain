@@ -35,6 +35,8 @@
 - `../B23CommandCenter正式ApprovalQueue只讀驗收.command`：一次執行 B23 production approvals / audit_logs 只讀驗收，更新本機 Command Center approval queue data。
 - `review-command-center-approval-queue-app.mjs`：B24 檢查 Command Center 主畫面、live adapter 與 production-readonly approval queue data，確認主畫面沒有 Firestore 寫入 API、高風險工具連結或外部執行入口。
 - `../B24CommandCenter主畫面只讀安全驗收.command`：一次執行 B24 Command Center 主畫面只讀安全驗收。
+- `prepare-command-center-approval-decision-mock.mjs`：B25 將單筆 approval item 轉成本機 mock decision packet 與 audit log preview，不寫 Firebase、不改 production approval status。
+- `../B25CommandCenter人工決策Mock.command`：一次執行 B25 Command Center approval item 人工決策流程 mock。
 
 預計後續新增：
 
