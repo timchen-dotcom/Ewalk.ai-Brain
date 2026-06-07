@@ -8,6 +8,7 @@ const scriptDir = dirname(fileURLToPath(import.meta.url));
 const firebaseDir = resolve(scriptDir, "..");
 const appDir = resolve(firebaseDir, "command-center-app");
 const b23ReviewPath = resolve(firebaseDir, "output/command-center-production-readonly.review.json");
+const b23SnapshotPath = resolve(firebaseDir, "output/command-center-production-readonly.snapshot.json");
 const appDataPath = resolve(appDir, "data/approval-queue.js");
 const indexPath = resolve(appDir, "index.html");
 const appJsPath = resolve(appDir, "app.js");
@@ -35,6 +36,37 @@ function hasAllColumns(html, columns) {
   return columns.every((column) => html.includes(`<th>${column}</th>`));
 }
 
+async function readJsonOrNull(path) {
+  try {
+    return JSON.parse(await readFile(path, "utf8"));
+  } catch (error) {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  }
+}
+
+function appSummary(approvals) {
+  return {
+    total: approvals.length,
+    pending: approvals.filter((item) => item.status === "pending").length,
+    approved_but_not_executed: approvals.filter((item) => item.status === "approved_but_not_executed").length,
+    approved: approvals.filter((item) => item.status === "approved").length,
+    rejected: approvals.filter((item) => item.status === "rejected").length,
+    high_risk: approvals.filter((item) => ["L4", "L5"].includes(item.permission_level)).length,
+  };
+}
+
+function appDataFromSnapshot(snapshot) {
+  const approvals = snapshot.approvals || [];
+  return {
+    mode: "production-readonly",
+    project_id: snapshot.project_id || "ewalk-ai-system-prod",
+    generated_at: snapshot.generated_at || new Date().toISOString(),
+    summary: appSummary(approvals),
+    approvals,
+  };
+}
+
 const generatedAt = new Date().toISOString();
 const [b23Review, appDataText, indexHtml, appJs, liveAdapter] = await Promise.all([
   readFile(b23ReviewPath, "utf8").then((text) => JSON.parse(text)),
@@ -44,7 +76,21 @@ const [b23Review, appDataText, indexHtml, appJs, liveAdapter] = await Promise.al
   readFile(liveAdapterPath, "utf8"),
 ]);
 
-const appData = parseAppData(appDataText);
+let appData = parseAppData(appDataText);
+let restoredFromB23Snapshot = false;
+if (appData.mode !== "production-readonly" || !(appData.approvals || []).length) {
+  const b23Snapshot = await readJsonOrNull(b23SnapshotPath);
+  if (b23Snapshot?.mode === "production-readonly" && b23Snapshot.approvals?.length) {
+    appData = appDataFromSnapshot(b23Snapshot);
+    restoredFromB23Snapshot = true;
+    await writeFile(
+      appDataPath,
+      `window.EWALK_APPROVAL_QUEUE = ${JSON.stringify(appData, null, 2)};\n`,
+      "utf8",
+    );
+    console.log("B24_RESTORED_APPROVAL_QUEUE_FROM_B23_SNAPSHOT");
+  }
+}
 const approvals = appData.approvals || [];
 const appSource = `${indexHtml}\n${appJs}\n${liveAdapter}`;
 const mainUiSource = `${indexHtml}\n${appJs}`;
@@ -79,7 +125,9 @@ const checks = {
       && approvals.length >= 6
       && pendingCount >= 1
       && approvedButNotExecutedCount >= 1,
-    "Command Center approval queue data 使用 production-readonly snapshot，且讀到待批准與已批准未執行項目。",
+    restoredFromB23Snapshot
+      ? "Command Center approval queue data 已從 B23 production-readonly snapshot 還原，且讀到待批准與已批准未執行項目。"
+      : "Command Center approval queue data 使用 production-readonly snapshot，且讀到待批准與已批准未執行項目。",
   ),
   b24_required_columns: pass(
     hasAllColumns(indexHtml, ["事項", "客戶 / 系統", "類型", "為什麼要做", "風險", "狀態", "阿順建議"])
@@ -140,3 +188,7 @@ console.log(`approved_but_not_executed_count: ${review.approved_but_not_executed
 console.log(`overall_status: ${review.overall_status}`);
 console.log("production_write_allowed: false");
 console.log("external_side_effects_allowed: false");
+
+if (!allPassed) {
+  process.exitCode = 1;
+}

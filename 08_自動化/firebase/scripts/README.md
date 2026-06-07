@@ -33,9 +33,9 @@
 - `../B17B-B22內部ApprovalQueue正式寫入批次驗證.command`：一次執行 B17A preview、B18-B20 review、B17B 正式內部寫入與 B21-B22 寫後審查。
 - `read-approval-queue-firestore.mjs`：B23 只讀 production Firebase 的 approvals / audit_logs，產生 Command Center 本機 production-readonly snapshot 與 review，不寫 Firebase、不改 approval status。
 - `../B23CommandCenter正式ApprovalQueue只讀驗收.command`：一次執行 B23 production approvals / audit_logs 只讀驗收，更新本機 Command Center approval queue data。
-- `review-command-center-approval-queue-app.mjs`：B24 檢查 Command Center 主畫面、live adapter 與 production-readonly approval queue data，確認主畫面沒有 Firestore 寫入 API、高風險工具連結或外部執行入口。
+- `review-command-center-approval-queue-app.mjs`：B24 檢查 Command Center 主畫面、live adapter 與 production-readonly approval queue data，確認主畫面沒有 Firestore 寫入 API、高風險工具連結或外部執行入口；若 `approval-queue.js` 被 `git pull` 蓋回空資料，會從 B23 snapshot 還原。
 - `../B24CommandCenter主畫面只讀安全驗收.command`：一次執行 B24 Command Center 主畫面只讀安全驗收。
-- `prepare-command-center-approval-decision-mock.mjs`：B25 將單筆 approval item 轉成本機 mock decision packet 與 audit log preview，不寫 Firebase、不改 production approval status。
+- `prepare-command-center-approval-decision-mock.mjs`：B25 將單筆 approval item 轉成本機 mock decision packet 與 audit log preview，不寫 Firebase、不改 production approval status；若本機 app data 空了，會從 B23 snapshot 還原 approval queue。
 - `../B25CommandCenter人工決策Mock.command`：一次執行 B25 Command Center approval item 人工決策流程 mock。
 
 預計後續新增：

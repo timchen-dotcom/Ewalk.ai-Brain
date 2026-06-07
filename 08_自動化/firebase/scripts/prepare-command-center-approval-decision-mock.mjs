@@ -8,6 +8,7 @@ const scriptDir = dirname(fileURLToPath(import.meta.url));
 const firebaseDir = resolve(scriptDir, "..");
 const appDataPath = resolve(firebaseDir, "command-center-app/data/approval-queue.js");
 const b24ReviewPath = resolve(firebaseDir, "output/command-center-approval-queue-app.review.json");
+const b23SnapshotPath = resolve(firebaseDir, "output/command-center-production-readonly.snapshot.json");
 const decisionOutputPath = resolve(firebaseDir, "output/command-center-approval-decision.mock.json");
 const reviewOutputPath = resolve(firebaseDir, "output/command-center-approval-decision.review.json");
 const expectedScope = "B25_MOCK_DECISION_ONLY";
@@ -61,6 +62,37 @@ function pass(condition, detail) {
   return { pass: Boolean(condition), detail };
 }
 
+async function readJsonOrNull(path) {
+  try {
+    return JSON.parse(await readFile(path, "utf8"));
+  } catch (error) {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  }
+}
+
+function appSummary(approvals) {
+  return {
+    total: approvals.length,
+    pending: approvals.filter((item) => item.status === "pending").length,
+    approved_but_not_executed: approvals.filter((item) => item.status === "approved_but_not_executed").length,
+    approved: approvals.filter((item) => item.status === "approved").length,
+    rejected: approvals.filter((item) => item.status === "rejected").length,
+    high_risk: approvals.filter((item) => ["L4", "L5"].includes(item.permission_level)).length,
+  };
+}
+
+function appDataFromSnapshot(snapshot) {
+  const approvals = snapshot.approvals || [];
+  return {
+    mode: "production-readonly",
+    project_id: snapshot.project_id || "ewalk-ai-system-prod",
+    generated_at: snapshot.generated_at || new Date().toISOString(),
+    summary: appSummary(approvals),
+    approvals,
+  };
+}
+
 const scope = requiredArg("--confirm-scope");
 if (scope !== expectedScope) {
   throw new Error(`B25_BLOCKED_SCOPE：需要 ${expectedScope}，收到 ${scope}`);
@@ -78,7 +110,19 @@ const [b24Review, appDataText] = await Promise.all([
   readFile(b24ReviewPath, "utf8").then((text) => JSON.parse(text)),
   readFile(appDataPath, "utf8"),
 ]);
-const appData = parseAppData(appDataText);
+let appData = parseAppData(appDataText);
+if (appData.mode !== "production-readonly" || !(appData.approvals || []).length) {
+  const b23Snapshot = await readJsonOrNull(b23SnapshotPath);
+  if (b23Snapshot?.mode === "production-readonly" && b23Snapshot.approvals?.length) {
+    appData = appDataFromSnapshot(b23Snapshot);
+    await writeFile(
+      appDataPath,
+      `window.EWALK_APPROVAL_QUEUE = ${JSON.stringify(appData, null, 2)};\n`,
+      "utf8",
+    );
+    console.log("B25_RESTORED_APPROVAL_QUEUE_FROM_B23_SNAPSHOT");
+  }
+}
 const approvals = appData.approvals || [];
 const selected = pickApproval(approvals, args.get("--approval-id"));
 
@@ -211,3 +255,7 @@ console.log(`proposed_status: ${afterStatus}`);
 console.log(`overall_status: ${review.overall_status}`);
 console.log("production_write_allowed: false");
 console.log("external_side_effects_allowed: false");
+
+if (!allPassed) {
+  process.exitCode = 1;
+}

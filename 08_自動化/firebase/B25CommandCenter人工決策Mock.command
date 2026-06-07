@@ -12,6 +12,7 @@ fi
 echo "B25：Command Center approval item 人工決策流程 mock"
 echo "安全邊界：只產生本機 mock decision packet 與 audit log preview。"
 echo "不寫 Firebase、不改 approval status、不發文、不部署、不接正式客戶通道、不碰廣告預算、不碰金流。"
+echo "若本機 approval queue data 是空的，會從 B23 production-readonly snapshot 自動還原。"
 echo ""
 
 echo "Step 1/2：產生單筆 approval 人工決策 mock。"

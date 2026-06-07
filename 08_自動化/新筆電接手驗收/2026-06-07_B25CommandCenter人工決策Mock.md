@@ -1,7 +1,7 @@
 ---
 類型: 權限逐步開放測試
 階段: B25
-狀態: 已建立工具，等待 Mac Studio 實機執行
+狀態: 已建立工具，等待 B24 重跑通過後 Mac Studio 實機執行
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -77,6 +77,11 @@ external_side_effects_allowed: false
 - 不把 `pending` 改成 `approved`。
 - 不發文、不部署、不接正式客戶通道。
 - 不操作廣告預算、金流、帳務或付款設定。
+
+## 防呆
+
+- 若本機 `approval-queue.js` 是空的或不是 production-readonly，B25 會從 B23 production-readonly snapshot 還原 approval queue，再產生 mock decision packet。
+- 若 B24 review 不是 `passed_command_center_app_readonly_review`，B25 會判定 blocked，不得前進。
 
 ## B25 通過後代表什麼
 

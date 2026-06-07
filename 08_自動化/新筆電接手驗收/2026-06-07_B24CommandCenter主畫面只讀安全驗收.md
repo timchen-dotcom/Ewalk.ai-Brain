@@ -1,7 +1,7 @@
 ---
 類型: 權限逐步開放測試
 階段: B24
-狀態: 已通過
+狀態: 已補防呆，待 Mac Studio 重跑
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -20,22 +20,26 @@
 
 B24 驗證 Command Center 主畫面能安全呈現 B23 產生的 production-readonly approval queue snapshot，並確認主畫面沒有 Firestore 寫入 API、高風險工具連結或外部執行入口。
 
-## 2026-06-07 實機結果
+## 2026-06-07 第一次實機結果與修正
 
-Mac Studio 實機通過：
+Mac Studio 第一次實機結果：
 
 ```text
-overall_status: passed_command_center_app_readonly_review
+approval_count: 0
+pending_count: 0
+approved_but_not_executed_count: 0
+overall_status: blocked
 production_write_allowed: false
 external_side_effects_allowed: false
 ```
 
 判定：
 
-- B24 通過。
-- Command Center 主畫面可安全顯示 production-readonly approval queue。
-- 主畫面仍沒有 Firestore 寫入 API、高風險工具連結或外部執行入口。
-- 下一關進入 B25 Command Center approval item 人工決策流程 mock。
+- B24 第一次實跑未通過。
+- 原因是 `command-center-app/data/approval-queue.js` 在 `git pull` 後可能被 repo 版空資料覆蓋，導致 approval queue 為 0 筆。
+- 已補防呆：B24 會從 B23 production-readonly snapshot 還原 app data。
+- 已補防呆：若 B24 判定 blocked，script 會回傳非 0，不再讓後續流程誤判通過。
+- 待 Mac Studio 重跑 B24。
 
 ## 前置條件
 
@@ -102,6 +106,11 @@ external_side_effects_allowed: false
 - 主畫面不得提供批准並執行、立即發文、部署、付款或啟用廣告的入口。
 - approval queue 只做呈現，不改 status。
 - B24 不寫 Firebase。
+
+## 防呆
+
+- 若 `command-center-app/data/approval-queue.js` 在 `git pull` 後被 repo 版空資料覆蓋，B24 會從 `output/command-center-production-readonly.snapshot.json` 還原 production-readonly app data。
+- 若 B24 判定 `overall_status: blocked`，script 會回傳非 0，不應繼續進 B25。
 
 ## B24 通過後代表什麼
 
