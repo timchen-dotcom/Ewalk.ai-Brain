@@ -1,0 +1,159 @@
+{
+  "mode": "openclaw-external-ops-gate",
+  "version": "2026-06-07",
+  "owner": "提姆先生",
+  "purpose": "一次開啟 OpenClaw 高權限作業入口：發文、部署、production Firebase 改狀態、正式客戶通道、廣告預算、金流。所有能力由 blocked 改為 approval_required，不允許無批准直接執行。",
+  "default_state": "enabled_with_explicit_approval",
+  "default_without_approval": "preview_only",
+  "capabilities": [
+    {
+      "id": "social_publish",
+      "label": "發文 / 排程發文",
+      "state": "enabled_with_explicit_approval",
+      "allowed_preapproval_work": [
+        "整理貼文草稿",
+        "準備圖文檢查清單",
+        "產生發布 preview",
+        "建立 approval item"
+      ],
+      "execution_requires": [
+        "提姆先生明確批准發文平台、客戶、文案、素材、日期時間",
+        "留下 approval_id",
+        "留下可回溯 audit log"
+      ],
+      "blocked_without_approval": [
+        "正式發布",
+        "排程發布",
+        "修改已發布內容"
+      ]
+    },
+    {
+      "id": "deploy",
+      "label": "部署",
+      "state": "enabled_with_explicit_approval",
+      "allowed_preapproval_work": [
+        "建置前檢查",
+        "產生 deployment preview",
+        "整理 release note",
+        "建立 rollback plan"
+      ],
+      "execution_requires": [
+        "提姆先生明確批准部署目標、專案、環境",
+        "有 rollback plan",
+        "留下 deployment audit log"
+      ],
+      "blocked_without_approval": [
+        "production deploy",
+        "修改 production env",
+        "推送正式網站"
+      ]
+    },
+    {
+      "id": "firebase_production_status",
+      "label": "production Firebase 改狀態",
+      "state": "enabled_with_explicit_approval",
+      "allowed_preapproval_work": [
+        "讀取已批准 collection 範圍",
+        "產生 write preview",
+        "產生 before / after diff",
+        "建立 audit log preview"
+      ],
+      "execution_requires": [
+        "提姆先生明確批准 collection、document path、欄位 diff",
+        "write preview 已檢查",
+        "回查驗證計畫"
+      ],
+      "blocked_without_approval": [
+        "直接 updateDoc / setDoc / deleteDoc",
+        "更改 approval status",
+        "刪除 production data"
+      ]
+    },
+    {
+      "id": "formal_client_channel",
+      "label": "正式客戶通道",
+      "state": "enabled_with_explicit_approval",
+      "allowed_preapproval_work": [
+        "撰寫客戶訊息草稿",
+        "整理回覆建議",
+        "建立人工發送清單",
+        "建立 channel approval item"
+      ],
+      "execution_requires": [
+        "提姆先生明確批准客戶、通道、訊息內容",
+        "保留人工或工具發送紀錄",
+        "不得自動加入未批准群組"
+      ],
+      "blocked_without_approval": [
+        "傳送正式訊息",
+        "加入客戶群組",
+        "代表 Ewalk.ai 對外承諾"
+      ]
+    },
+    {
+      "id": "ad_budget",
+      "label": "廣告預算",
+      "state": "enabled_with_explicit_approval",
+      "allowed_preapproval_work": [
+        "整理投放架構",
+        "建立預算配置草案",
+        "產生 paused draft",
+        "產生風險與上限檢查"
+      ],
+      "execution_requires": [
+        "提姆先生明確批准客戶、平台、每日或總預算上限",
+        "預設先建立 PAUSED draft",
+        "啟用前再次確認"
+      ],
+      "blocked_without_approval": [
+        "啟用廣告",
+        "提高預算",
+        "修改付款方式",
+        "改 bidding strategy 造成實際花費"
+      ]
+    },
+    {
+      "id": "finance_cashflow",
+      "label": "金流 / 帳務 / 付款設定",
+      "state": "enabled_with_explicit_approval",
+      "allowed_preapproval_work": [
+        "整理付款或帳務檢查清單",
+        "整理訂閱稽核草稿",
+        "建立付款設定變更建議",
+        "建立 approval item"
+      ],
+      "execution_requires": [
+        "提姆先生明確批准金額、對象、平台、付款方式或帳務變更",
+        "必要時人工二次確認",
+        "保留 audit log"
+      ],
+      "blocked_without_approval": [
+        "付款",
+        "退款",
+        "取消訂閱",
+        "修改付款方式",
+        "更改帳務設定"
+      ]
+    }
+  ],
+  "global_required_fields": [
+    "approval_id",
+    "capability_id",
+    "client_or_project",
+    "requested_action",
+    "risk_summary",
+    "preview_or_diff_path",
+    "rollback_or_recovery_plan",
+    "approved_by",
+    "approval_text",
+    "approved_at"
+  ],
+  "global_rules": [
+    "沒有 approval_text 時，只能 preview，不得 execute。",
+    "高權限 action 必須留下 audit log。",
+    "廣告與金流必須包含金額或預算上限。",
+    "Firebase production 寫入必須包含 before / after diff。",
+    "部署必須包含 rollback plan。",
+    "正式客戶通道必須保存訊息內容與發送紀錄。"
+  ]
+}

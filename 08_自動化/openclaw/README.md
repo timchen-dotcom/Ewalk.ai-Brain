@@ -11,6 +11,10 @@
 - `B26-B28OpenClaw受控上工啟動.command`：一次跑完 B26、B27、B28 三個受控上工必做關卡。
 - `B27OpenClaw限定草稿寫入.command`：單獨執行 B27。
 - `B28OpenClaw指定資料只讀.command`：單獨執行 B28。
+- `config/openclaw-external-ops.policy.json`：B29 高權限總閘門政策，將發文、部署、production Firebase、正式通道、廣告與金流改為 approval gate。
+- `scripts/prepare-external-ops-gate.mjs`：B29 高權限總閘門檢查，產生本機 review、queue 與 playbook。
+- `B29OpenClaw高權限總閘門.command`：單獨執行 B29。
+- `B26-B29OpenClaw受控上工與高權限總啟動.command`：一次跑完 B26-B29，通過後停止擴驗證並開始受控上工。
 
 ## 邊界
 
@@ -19,6 +23,7 @@
 - 不複製接案碟。
 - 不複製 `.env`、token、secret、API key。
 - 不啟用正式寫入、發文、部署、正式客戶通道、廣告預算、金流或帳務付款設定。
+- B29 通過後，上述高權限能力改為 `enabled_with_explicit_approval`：可準備、preview、送審，取得提姆先生針對單一 action 批准後才執行。
 
 ## 受控上工讀寫範圍
 
@@ -35,3 +40,16 @@
 - `00_收件匣/OpenClaw草稿`
 - `14_每日工作/OpenClaw草稿回填`
 - `08_自動化/openclaw/action-queue`
+
+## 高權限總閘門
+
+B29 開啟後，高權限能力不再永久封鎖，而是進入 approval gate：
+
+- 發文 / 排程發文
+- 部署
+- production Firebase 改狀態
+- 正式客戶通道
+- 廣告預算
+- 金流 / 帳務 / 付款設定
+
+沒有 approval 時只能 preview。要執行必須有 `approval_id`、`approval_text`、`approved_by`、風險摘要、preview/diff 與 rollback/recovery plan。
