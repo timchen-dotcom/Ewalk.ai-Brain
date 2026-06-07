@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { spawn } from "node:child_process";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -11,7 +11,7 @@ const vaultRoot = resolve(scriptDir, "../../..");
 const projectRoot = resolve(vaultRoot, "..");
 const defaultPreviewPath = resolve(firebaseDir, "output/approval-queue-firestore-commit.preview.json");
 const defaultOutputPath = resolve(firebaseDir, "output/approval-queue-firestore-write-result.json");
-const defaultFirebaseAuthPath = resolve(projectRoot, ".firebase-home/.config/configstore/firebase-tools.json");
+const projectFirebaseAuthPath = resolve(projectRoot, ".firebase-home/.config/configstore/firebase-tools.json");
 const expectedProjectId = "ewalk-ai-system-prod";
 const expectedScope = "B17B_APPROVALS_AUDIT_LOGS_ONLY";
 const allowedCollections = new Set(["approvals", "audit_logs"]);
@@ -140,8 +140,41 @@ async function requestJson(url, options = {}) {
   });
 }
 
+function uniqueValues(values) {
+  return [...new Set(values.filter(Boolean))];
+}
+
+function firebaseAuthCandidates() {
+  const explicitAuthPath = args.get("--firebase-auth");
+  return uniqueValues([
+    explicitAuthPath && resolve(explicitAuthPath),
+    projectFirebaseAuthPath,
+    process.env.XDG_CONFIG_HOME
+      && resolve(process.env.XDG_CONFIG_HOME, "configstore/firebase-tools.json"),
+    process.env.HOME
+      && resolve(process.env.HOME, ".config/configstore/firebase-tools.json"),
+  ]);
+}
+
+async function findFirebaseAuthPath() {
+  const candidates = firebaseAuthCandidates();
+  for (const candidate of candidates) {
+    try {
+      await access(candidate);
+      return candidate;
+    } catch {
+      // Try the next candidate.
+    }
+  }
+  throw new Error(
+    `Firebase CLI 尚未登入，找不到 firebase-tools.json。已檢查：${candidates.join("、")}`,
+  );
+}
+
 async function accessToken() {
-  const auth = JSON.parse(await readFile(defaultFirebaseAuthPath, "utf8"));
+  const firebaseAuthPath = await findFirebaseAuthPath();
+  console.log(`firebase_auth_source: ${firebaseAuthPath}`);
+  const auth = JSON.parse(await readFile(firebaseAuthPath, "utf8"));
   const tokens = auth.tokens || {};
   if (tokens.access_token && tokens.expires_at && Number(tokens.expires_at) > Date.now() + 60_000) {
     return tokens.access_token;
