@@ -1,7 +1,7 @@
 ---
 類型: 權限逐步開放測試
 階段: B23
-狀態: 已建立工具，等待 Mac Studio 實機執行
+狀態: 已通過
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -19,6 +19,23 @@
 ## 一句話結論
 
 B23 是在 B17B-B22 正式 approvals / audit_logs 窄範圍寫入通過後，驗證 Command Center 能不能只讀 production Firebase 的 approval queue 並產生本機畫面資料；不寫 Firebase、不發文、不部署、不接正式客戶通道、不碰廣告預算或金流。
+
+## 2026-06-07 實機結果
+
+Mac Studio 實機通過：
+
+```text
+overall_status: passed_command_center_production_readonly
+production_write_allowed: false
+external_side_effects_allowed: false
+```
+
+判定：
+
+- B23 通過。
+- Command Center 已可取得 production-readonly approval queue snapshot。
+- 本階段仍未開放任何寫入、發文、部署、正式客戶通道、廣告預算或金流操作。
+- 下一關進入 B24 Command Center 主畫面只讀安全驗收。
 
 ## 前置條件
 

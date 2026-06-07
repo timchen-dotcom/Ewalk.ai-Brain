@@ -33,6 +33,8 @@
 - `../B17B-B22內部ApprovalQueue正式寫入批次驗證.command`：一次執行 B17A preview、B18-B20 review、B17B 正式內部寫入與 B21-B22 寫後審查。
 - `read-approval-queue-firestore.mjs`：B23 只讀 production Firebase 的 approvals / audit_logs，產生 Command Center 本機 production-readonly snapshot 與 review，不寫 Firebase、不改 approval status。
 - `../B23CommandCenter正式ApprovalQueue只讀驗收.command`：一次執行 B23 production approvals / audit_logs 只讀驗收，更新本機 Command Center approval queue data。
+- `review-command-center-approval-queue-app.mjs`：B24 檢查 Command Center 主畫面、live adapter 與 production-readonly approval queue data，確認主畫面沒有 Firestore 寫入 API、高風險工具連結或外部執行入口。
+- `../B24CommandCenter主畫面只讀安全驗收.command`：一次執行 B24 Command Center 主畫面只讀安全驗收。
 
 預計後續新增：
 
