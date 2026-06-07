@@ -1,7 +1,7 @@
 ---
 類型: 權限逐步開放測試
 階段: B25
-狀態: 已建立工具，等待 B24 重跑通過後 Mac Studio 實機執行
+狀態: 已通過
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -19,6 +19,27 @@
 ## 一句話結論
 
 B25 驗證 Command Center 可以把單筆 approval item 轉成「人工決策資料包」與「audit log 預覽」，但不寫入 production Firebase、不改 approval status、不執行任何外部動作。
+
+## 2026-06-07 實機結果
+
+Mac Studio 實機結果：
+
+```text
+approval_id: approval_20260607_meta_hansik_0609_publish_001
+mock_decision: keep_pending
+original_status: pending
+proposed_status: pending
+overall_status: passed_command_center_decision_mock
+production_write_allowed: false
+external_side_effects_allowed: false
+```
+
+判定：
+
+- B25 通過。
+- Command Center 可將單筆 approval item 轉成本機 mock decision packet。
+- `keep_pending` 維持 `pending`，沒有改 production approval status。
+- 未寫入 Firebase、未發文、未部署、未接正式客戶通道、未碰廣告預算或金流。
 
 ## 前置條件
 

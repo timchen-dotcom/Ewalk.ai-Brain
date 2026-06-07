@@ -37,6 +37,8 @@
 - `../B24CommandCenter主畫面只讀安全驗收.command`：一次執行 B24 Command Center 主畫面只讀安全驗收。
 - `prepare-command-center-approval-decision-mock.mjs`：B25 將單筆 approval item 轉成本機 mock decision packet 與 audit log preview，不寫 Firebase、不改 production approval status；若本機 app data 空了，會從 B23 snapshot 還原 approval queue。
 - `../B25CommandCenter人工決策Mock.command`：一次執行 B25 Command Center approval item 人工決策流程 mock。
+- `build-command-center-decision-dry-run.mjs`：B26 根據 B25 mock decision packet 產生本機 audit trail 與 action queue dry-run，不寫 production Firebase、不改 approval status、不執行外部副作用。
+- `../B26CommandCenter決策DryRun寫入.command`：一次執行 B26 Command Center 決策結果本機 dry-run 寫入驗收。
 
 預計後續新增：
 

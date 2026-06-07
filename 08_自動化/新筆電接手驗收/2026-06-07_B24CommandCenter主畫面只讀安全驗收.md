@@ -1,7 +1,7 @@
 ---
 類型: 權限逐步開放測試
 階段: B24
-狀態: 已補防呆，待 Mac Studio 重跑
+狀態: 已通過
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -39,7 +39,28 @@ external_side_effects_allowed: false
 - 原因是 `command-center-app/data/approval-queue.js` 在 `git pull` 後可能被 repo 版空資料覆蓋，導致 approval queue 為 0 筆。
 - 已補防呆：B24 會從 B23 production-readonly snapshot 還原 app data。
 - 已補防呆：若 B24 判定 blocked，script 會回傳非 0，不再讓後續流程誤判通過。
-- 待 Mac Studio 重跑 B24。
+- 後續已由 Mac Studio 重跑通過。
+
+## 2026-06-07 第二次實機結果
+
+Mac Studio 第二次實機結果：
+
+```text
+B24_RESTORED_APPROVAL_QUEUE_FROM_B23_SNAPSHOT
+approval_count: 6
+pending_count: 5
+approved_but_not_executed_count: 1
+overall_status: passed_command_center_app_readonly_review
+production_write_allowed: false
+external_side_effects_allowed: false
+```
+
+判定：
+
+- B24 通過。
+- Command Center 主畫面可安全顯示 production-readonly approval queue。
+- 本機 app data 被 `git pull` 覆蓋時，已能從 B23 snapshot 自動還原。
+- 主畫面仍沒有 production write、外部副作用、高風險工具入口或正式執行能力。
 
 ## 前置條件
 
