@@ -58,15 +58,14 @@ Live Read 會在本機 Command Center 按「登入讀正式資料」後才啟用
 - 登入後會先讀 `users/{uid}` 檢查 role
 - 只允許 `owner` / `admin` / `manager` / `staff` 讀取
 - 目前只讀，不寫入 Firestore
-- Approval Queue 目前先使用本機 dry-run；正式 `approvals` 寫入需提姆先生另行批准
+- Approval Queue 本機 dry-run 已通過；正式 `approvals` / `audit_logs` 寫入需走 B17B-B22 批次驗證，且只限內部追蹤資料
 
 ## 下一階段
 
 1. 檢查 Approval Queue 欄位與呈現方式
-2. 準備正式 Firestore `approvals` 寫入預覽
-3. 提姆先生批准後正式寫入 `approvals`
-4. 測試 Firestore Live Read 讀取正式批准佇列
-5. 再評估是否加入只改狀態、不直接執行的批准按鈕
+2. B17B-B22 批次驗證正式寫入 `approvals` / `audit_logs`
+3. 測試 Firestore Live Read 讀取正式批准佇列
+4. 再評估是否加入只改狀態、不直接執行的批准按鈕
 
 ## 安全限制
 
