@@ -1,7 +1,7 @@
 ---
 類型: 權限逐步開放測試
 階段: B17B-B22
-狀態: 已建立工具，等待 Mac Studio 實機執行
+狀態: 已通過
 日期: 2026-06-07
 負責角色: 阿順
 最終決策者: 提姆先生
@@ -19,6 +19,22 @@
 ## 一句話結論
 
 B17B-B22 是把前面已通過的 approvals / audit_logs preview 寫入 production Firebase 的窄權限批次驗證；只允許內部批准佇列與稽核紀錄，不批准發文、部署、正式客戶通道、廣告預算、金流、任意 exec、完整 Brain 或接案碟讀取。
+
+## 2026-06-07 實機結果
+
+Mac Studio 實機通過：
+
+```text
+overall_status: passed_internal_production_write_review
+external_side_effects_allowed: false
+```
+
+判定：
+
+- B17B-B22 通過。
+- production Firebase 已寫入內部 approvals / audit_logs。
+- 寫後審查確認外部副作用仍為 false。
+- 下一關進入 B23 Command Center 正式 Approval Queue 只讀驗收。
 
 ## 批准文字
 

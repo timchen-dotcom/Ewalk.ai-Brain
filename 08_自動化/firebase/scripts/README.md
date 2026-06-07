@@ -31,6 +31,8 @@
 - `write-approval-queue-firestore.mjs`：B17B 只允許將 approvals / audit_logs 寫入 production Firebase，並逐筆回查；需明確 project、批准人、scope 與 `--write`。Firebase CLI 登入檔會依序找 `--firebase-auth`、專案 `.firebase-home`、使用者 `~/.config/configstore/firebase-tools.json`，並支援秒數、毫秒與 ISO 格式的 token 到期時間；若 token refresh 回傳 `invalid_rapt`、`reauth` 或 `invalid_grant`，會停止並要求重新登入 Firebase CLI，不再 fallback 到舊 access token。
 - `review-approval-queue-firestore-write.mjs`：B17B-B22 寫後審查，確認正式寫入只限 approvals / audit_logs，且外部副作用仍封鎖。
 - `../B17B-B22內部ApprovalQueue正式寫入批次驗證.command`：一次執行 B17A preview、B18-B20 review、B17B 正式內部寫入與 B21-B22 寫後審查。
+- `read-approval-queue-firestore.mjs`：B23 只讀 production Firebase 的 approvals / audit_logs，產生 Command Center 本機 production-readonly snapshot 與 review，不寫 Firebase、不改 approval status。
+- `../B23CommandCenter正式ApprovalQueue只讀驗收.command`：一次執行 B23 production approvals / audit_logs 只讀驗收，更新本機 Command Center approval queue data。
 
 預計後續新增：
 

@@ -64,8 +64,9 @@ Live Read 會在本機 Command Center 按「登入讀正式資料」後才啟用
 
 1. 檢查 Approval Queue 欄位與呈現方式
 2. B17B-B22 批次驗證正式寫入 `approvals` / `audit_logs`
-3. 測試 Firestore Live Read 讀取正式批准佇列
-4. 再評估是否加入只改狀態、不直接執行的批准按鈕
+3. B23 只讀 production `approvals` / `audit_logs`，產生本機 Command Center production-readonly snapshot
+4. 測試 Firestore Live Read 讀取正式批准佇列
+5. 再評估是否加入只改狀態、不直接執行的批准按鈕
 
 ## 安全限制
 
@@ -82,5 +83,6 @@ Live Read 會在本機 Command Center 按「登入讀正式資料」後才啟用
 - `取得FirebaseUID.command`：登入一次並取得 Firebase Authentication UID
 - `產生CommandCenterApp.command`：重新產生 snapshot 並以本機網址開啟 App
 - `建立ApprovalQueueDryRun.command`：建立本機 Approval Queue dry-run 與 App 資料
+- `B23CommandCenter正式ApprovalQueue只讀驗收.command`：只讀 production approvals / audit_logs，更新本機 Command Center approval queue snapshot
 - `開啟FirebaseAuthUsers.command`：開啟 Firebase Auth 使用者頁
 - `寫入Firebase使用者角色.command`：建立 `users/{uid}` role 文件
