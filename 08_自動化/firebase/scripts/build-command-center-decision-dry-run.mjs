@@ -205,7 +205,7 @@ const review = {
   external_side_effects_allowed: false,
   checks,
   next_allowed_step: allPassed
-    ? "可進入 B27：Command Center 決策 review UI / 人工確認流程，不直接改 production。"
+    ? "可進入 B27：OpenClaw 限定草稿寫入，不直接改 production。"
     : "不得前進，先修正 failed checks。",
 };
 

@@ -99,7 +99,7 @@ external_side_effects_allowed: false
 若 B26 通過，下一步才評估：
 
 ```text
-B27 Command Center 決策 review UI / 人工確認流程。
+B27 OpenClaw 限定草稿區寫入。
 ```
 
-B27 仍應維持人工確認，不直接改 production 或執行外部副作用。
+B27 仍只允許草稿區寫入，不直接改 production 或執行外部副作用。

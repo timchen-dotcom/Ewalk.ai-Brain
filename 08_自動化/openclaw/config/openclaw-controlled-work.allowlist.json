@@ -1,0 +1,87 @@
+{
+  "mode": "openclaw-controlled-work",
+  "version": "2026-06-07",
+  "owner": "提姆先生",
+  "purpose": "讓 OpenClaw 進入受控上工模式：可讀指定 Brain 資料、可寫指定草稿區，但不可產生外部副作用。",
+  "read_roots": [
+    {
+      "id": "clients",
+      "path": "01_客戶",
+      "mode": "read-only",
+      "purpose": "讀取客戶現況、需求、草稿與交接資訊。"
+    },
+    {
+      "id": "content",
+      "path": "02_內容",
+      "mode": "read-only",
+      "purpose": "讀取內容方向、社群規劃與文案素材。"
+    },
+    {
+      "id": "ads",
+      "path": "03_廣告",
+      "mode": "read-only",
+      "purpose": "讀取廣告企劃、主軸、草稿與上線前檢查資料。"
+    },
+    {
+      "id": "sop",
+      "path": "13_SOP流程",
+      "mode": "read-only",
+      "purpose": "讀取已批准 SOP，沿用既有流程。"
+    },
+    {
+      "id": "daily-work",
+      "path": "14_每日工作",
+      "mode": "read-only",
+      "purpose": "讀取每日交接、進度與待辦。"
+    }
+  ],
+  "write_roots": [
+    {
+      "id": "openclaw-inbox-drafts",
+      "path": "00_收件匣/OpenClaw草稿",
+      "mode": "draft-write",
+      "purpose": "OpenClaw 產出的客戶上工單、文案草稿、整理稿先落在此處。"
+    },
+    {
+      "id": "openclaw-daily-draft-backfill",
+      "path": "14_每日工作/OpenClaw草稿回填",
+      "mode": "draft-write",
+      "purpose": "OpenClaw 產出的每日工作回填草稿。"
+    },
+    {
+      "id": "openclaw-action-queue",
+      "path": "08_自動化/openclaw/action-queue",
+      "mode": "draft-write",
+      "purpose": "OpenClaw 交給 Codex 或 Command Center 的本機 action queue 草稿。"
+    }
+  ],
+  "blocked_roots": [
+    ".git",
+    ".obsidian",
+    "04_報表",
+    "06_素材",
+    "07_會議",
+    "08_自動化/firebase/output",
+    "08_自動化/firebase/command-center-app/firebase-config.local.js",
+    "99_封存",
+    "腳本",
+    "Ewalk.ai"
+  ],
+  "blocked_external_actions": [
+    "正式發文",
+    "排程發文",
+    "部署",
+    "寫入 production Firebase",
+    "接正式客戶通道",
+    "操作廣告預算",
+    "操作金流",
+    "帳務或付款設定",
+    "讀取 token / secret / API key"
+  ],
+  "rules": [
+    "讀取只限 read_roots。",
+    "寫入只限 write_roots，且必須標示 draft / 待審。",
+    "任何對外副作用都只能進 approval queue，不能直接執行。",
+    "客戶正式發文、部署、Firebase production、廣告預算、金流與帳務必須回到提姆先生批准。"
+  ]
+}
