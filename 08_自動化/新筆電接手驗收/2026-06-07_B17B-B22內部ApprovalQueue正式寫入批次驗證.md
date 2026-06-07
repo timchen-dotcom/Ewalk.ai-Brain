@@ -115,6 +115,7 @@ external_side_effects_allowed: false
 - `--confirm-scope B17B_APPROVALS_AUDIT_LOGS_ONLY`
 - `--write`
 - 找到 Firebase CLI 登入檔，來源可為專案 `.firebase-home` 或使用者 `~/.config/configstore/firebase-tools.json`。
+- 正確判斷 Firebase CLI token 到期時間；若 refresh 失敗，需印出可讀錯誤原因。
 - preview 必須是 B17A / B17-B20 產生。
 - preview 必須標示 `production_write_allowed: false`。
 - preview 寫入路徑只能是 `approvals/` 或 `audit_logs/`。

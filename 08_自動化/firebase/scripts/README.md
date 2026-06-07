@@ -28,7 +28,7 @@
 - `review-internal-approval-workflow.mjs`：B18-B20 檢查 approval queue、audit log 與 Command Center 內部上工流程是否符合邊界。
 - `ensure-approval-queue-app-data.mjs`：B17A 前置檢查；若本機 `approval-queue.js` 被空檔覆蓋，僅從 Git HEAD 還原這一個 generated snapshot。
 - `../B17-B20內部ApprovalQueue批次審查.command`：一次執行 B17A preview 與 B18-B20 本機 review，不寫 production Firebase。
-- `write-approval-queue-firestore.mjs`：B17B 只允許將 approvals / audit_logs 寫入 production Firebase，並逐筆回查；需明確 project、批准人、scope 與 `--write`。Firebase CLI 登入檔會依序找 `--firebase-auth`、專案 `.firebase-home`、使用者 `~/.config/configstore/firebase-tools.json`。
+- `write-approval-queue-firestore.mjs`：B17B 只允許將 approvals / audit_logs 寫入 production Firebase，並逐筆回查；需明確 project、批准人、scope 與 `--write`。Firebase CLI 登入檔會依序找 `--firebase-auth`、專案 `.firebase-home`、使用者 `~/.config/configstore/firebase-tools.json`，並支援秒數、毫秒與 ISO 格式的 token 到期時間。
 - `review-approval-queue-firestore-write.mjs`：B17B-B22 寫後審查，確認正式寫入只限 approvals / audit_logs，且外部副作用仍封鎖。
 - `../B17B-B22內部ApprovalQueue正式寫入批次驗證.command`：一次執行 B17A preview、B18-B20 review、B17B 正式內部寫入與 B21-B22 寫後審查。
 

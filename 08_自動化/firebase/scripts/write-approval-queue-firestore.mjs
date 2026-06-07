@@ -121,7 +121,12 @@ function curlJson(url, { method = "GET", headers = {}, body = null } = {}) {
         }
       }
       if (status < 200 || status >= 300) {
-        const message = parsed?.error?.message || parsed?.raw || stderr || `HTTP ${status}`;
+        const message = parsed?.error?.message
+          || parsed?.error_description
+          || (typeof parsed?.error === "string" ? parsed.error : null)
+          || parsed?.raw
+          || stderr
+          || `HTTP ${status}`;
         rejectPromise(new Error(`${status} ${message}`));
         return;
       }
@@ -171,12 +176,27 @@ async function findFirebaseAuthPath() {
   );
 }
 
+function tokenExpiryMs(value) {
+  if (value === null || value === undefined) return null;
+  const numeric = Number(value);
+  if (Number.isFinite(numeric)) {
+    return numeric < 10_000_000_000 ? numeric * 1000 : numeric;
+  }
+  if (typeof value === "string") {
+    const parsed = Date.parse(value);
+    return Number.isNaN(parsed) ? null : parsed;
+  }
+  return null;
+}
+
 async function accessToken() {
   const firebaseAuthPath = await findFirebaseAuthPath();
   console.log(`firebase_auth_source: ${firebaseAuthPath}`);
   const auth = JSON.parse(await readFile(firebaseAuthPath, "utf8"));
   const tokens = auth.tokens || {};
-  if (tokens.access_token && tokens.expires_at && Number(tokens.expires_at) > Date.now() + 60_000) {
+  const expiresAtMs = tokenExpiryMs(tokens.expires_at);
+  if (tokens.access_token && expiresAtMs && expiresAtMs > Date.now() + 60_000) {
+    console.log("firebase_token_source: existing_access_token");
     return tokens.access_token;
   }
   if (!tokens.refresh_token) throw new Error("Firebase CLI 尚未登入，缺少 refresh token。");
@@ -188,12 +208,23 @@ async function accessToken() {
     grant_type: "refresh_token",
   });
 
-  const refreshed = await requestJson("https://oauth2.googleapis.com/token", {
-    method: "POST",
-    headers: { "content-type": "application/x-www-form-urlencoded" },
-    body: params.toString(),
-  });
+  let refreshed;
+  try {
+    refreshed = await requestJson("https://oauth2.googleapis.com/token", {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      body: params.toString(),
+    });
+  } catch (error) {
+    if (tokens.access_token) {
+      console.log(`firebase_token_refresh_failed: ${error.message}`);
+      console.log("firebase_token_fallback: existing_access_token");
+      return tokens.access_token;
+    }
+    throw error;
+  }
   if (!refreshed.access_token) throw new Error("無法更新 Firebase 登入 token。");
+  console.log("firebase_token_source: refreshed_access_token");
   return refreshed.access_token;
 }
 
