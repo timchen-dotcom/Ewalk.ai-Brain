@@ -15,6 +15,8 @@
 - `scripts/prepare-external-ops-gate.mjs`：B29 高權限總閘門檢查，產生本機 review、queue 與 playbook。
 - `B29OpenClaw高權限總閘門.command`：單獨執行 B29。
 - `B26-B29OpenClaw受控上工與高權限總啟動.command`：一次跑完 B26-B29，通過後停止擴驗證並開始受控上工。
+- `scripts/install-authoritative-rules.mjs`：B30 將 B26-B29 受控上工規則寫入 OpenClaw Test Workspace 的 `AGENTS.md`。
+- `B30OpenClaw載入B26-B29權限規則.command`：單獨執行 B30，讓 Telegram 新 session 讀到新版 authoritative rules。
 
 ## 邊界
 
@@ -53,3 +55,11 @@ B29 開啟後，高權限能力不再永久封鎖，而是進入 approval gate�
 - 金流 / 帳務 / 付款設定
 
 沒有 approval 時只能 preview。要執行必須有 `approval_id`、`approval_text`、`approved_by`、風險摘要、preview/diff 與 rollback/recovery plan。
+
+## Telegram session 同步
+
+GitHub / Brain 更新不會自動灌進既有 Telegram session。若 OpenClaw 仍回覆 B10A/B10B：
+
+1. 在 Mac Studio 執行 `B30OpenClaw載入B26-B29權限規則.command`。
+2. 在 Telegram 傳 `/new`。
+3. 要求 OpenClaw 重新讀取 `AGENTS.md`。
