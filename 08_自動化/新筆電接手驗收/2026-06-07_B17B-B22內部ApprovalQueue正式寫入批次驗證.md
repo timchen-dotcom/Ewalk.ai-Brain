@@ -116,10 +116,26 @@ external_side_effects_allowed: false
 - `--write`
 - 找到 Firebase CLI 登入檔，來源可為專案 `.firebase-home` 或使用者 `~/.config/configstore/firebase-tools.json`。
 - 正確判斷 Firebase CLI token 到期時間；若 refresh 失敗，需印出可讀錯誤原因。
+- 若 refresh 回傳 `invalid_rapt`、`reauth` 或 `invalid_grant`，必須停止並要求重新登入 Firebase CLI，不能使用舊 access token 繼續撞正式 Firestore。
 - preview 必須是 B17A / B17-B20 產生。
 - preview 必須標示 `production_write_allowed: false`。
 - preview 寫入路徑只能是 `approvals/` 或 `audit_logs/`。
 - preview 必須明確封鎖正式客戶通道、廣告預算與金流。
+
+## 常見阻塞
+
+### B17B_REAUTH_REQUIRED / invalid_rapt
+
+代表 Mac Studio 的 Firebase CLI 登入已過期，或 Google 要求重新驗證。這不是 queue、Java、Firestore collection 或腳本路徑問題。
+
+在 Mac Studio 重新登入後再重跑：
+
+```zsh
+firebase logout
+firebase login
+cd "$HOME/Desktop/Ewalk.ai 自動化系統/Ewalk.ai Brain/08_自動化/firebase"
+zsh "./B17B-B22內部ApprovalQueue正式寫入批次驗證.command"
+```
 
 ## 明確禁止
 

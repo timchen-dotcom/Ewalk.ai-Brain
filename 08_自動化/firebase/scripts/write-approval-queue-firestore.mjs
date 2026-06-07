@@ -189,6 +189,11 @@ function tokenExpiryMs(value) {
   return null;
 }
 
+function requiresFirebaseReauth(error) {
+  const message = String(error?.message || "");
+  return /invalid_rapt|reauth|invalid_grant/i.test(message);
+}
+
 async function accessToken() {
   const firebaseAuthPath = await findFirebaseAuthPath();
   console.log(`firebase_auth_source: ${firebaseAuthPath}`);
@@ -216,8 +221,13 @@ async function accessToken() {
       body: params.toString(),
     });
   } catch (error) {
+    console.log(`firebase_token_refresh_failed: ${error.message}`);
+    if (requiresFirebaseReauth(error)) {
+      throw new Error(
+        `B17B_REAUTH_REQUIRED：Firebase CLI 登入已過期或需要重新驗證。請在 Mac Studio 執行 firebase logout、firebase login 後重跑 B17B-B22。原始錯誤：${error.message}`,
+      );
+    }
     if (tokens.access_token) {
-      console.log(`firebase_token_refresh_failed: ${error.message}`);
       console.log("firebase_token_fallback: existing_access_token");
       return tokens.access_token;
     }
